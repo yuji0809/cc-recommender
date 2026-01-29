@@ -5,7 +5,8 @@
  * Source: https://github.com/hesreallyhim/awesome-claude-code
  */
 
-import type { RawSkillEntry, Recommendation } from "../types/index.js";
+import type { Recommendation } from "../types/domain-types.js";
+import type { RawSkillEntry } from "../types/raw-types.js";
 
 const CSV_URL =
   "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/THE_RESOURCES_TABLE.csv";

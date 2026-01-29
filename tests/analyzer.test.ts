@@ -2,7 +2,7 @@ import { mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterAll, beforeAll, describe, expect, test } from "vitest";
-import { analyzeProject } from "../src/services/analyzer.js";
+import { analyzeProject } from "../src/services/analyzer/project-analyzer.service.js";
 
 describe("Analyzer Service", () => {
   describe("analyzeProject", () => {

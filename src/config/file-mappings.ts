@@ -1,0 +1,71 @@
+/**
+ * File Mappings Configuration
+ *
+ * Mappings between files/extensions and their corresponding languages/frameworks
+ */
+
+/** Common config files and their frameworks/languages */
+export const CONFIG_FILE_MAPPINGS: Record<string, { framework?: string; language?: string }> = {
+  "package.json": { language: "javascript" },
+  "tsconfig.json": { language: "typescript" },
+  "next.config.js": { framework: "nextjs" },
+  "next.config.mjs": { framework: "nextjs" },
+  "next.config.ts": { framework: "nextjs" },
+  "nuxt.config.ts": { framework: "nuxt" },
+  "nuxt.config.js": { framework: "nuxt" },
+  "vite.config.ts": { framework: "vite" },
+  "vite.config.js": { framework: "vite" },
+  "svelte.config.js": { framework: "svelte" },
+  "angular.json": { framework: "angular" },
+  "vue.config.js": { framework: "vue" },
+  "remix.config.js": { framework: "remix" },
+  "astro.config.mjs": { framework: "astro" },
+  "requirements.txt": { language: "python" },
+  "pyproject.toml": { language: "python" },
+  "setup.py": { language: "python" },
+  "Cargo.toml": { language: "rust" },
+  "go.mod": { language: "go" },
+  Gemfile: { language: "ruby" },
+  "composer.json": { language: "php" },
+  "pom.xml": { language: "java" },
+  "build.gradle": { language: "java" },
+  "build.gradle.kts": { language: "kotlin" },
+  ".csproj": { language: "csharp" },
+  Dockerfile: { framework: "docker" },
+  "docker-compose.yml": { framework: "docker" },
+  "docker-compose.yaml": { framework: "docker" },
+  "kubernetes.yml": { framework: "kubernetes" },
+  "k8s.yml": { framework: "kubernetes" },
+  ".github/workflows": { framework: "github-actions" },
+  "vercel.json": { framework: "vercel" },
+  "netlify.toml": { framework: "netlify" },
+  "prisma/schema.prisma": { framework: "prisma" },
+  "drizzle.config.ts": { framework: "drizzle" },
+  "CLAUDE.md": { framework: "claude-code" },
+  ".claude": { framework: "claude-code" },
+};
+
+/** Extension to language mappings */
+export const EXTENSION_TO_LANGUAGE: Record<string, string> = {
+  ".ts": "typescript",
+  ".tsx": "typescript",
+  ".js": "javascript",
+  ".jsx": "javascript",
+  ".mjs": "javascript",
+  ".cjs": "javascript",
+  ".py": "python",
+  ".rs": "rust",
+  ".go": "go",
+  ".rb": "ruby",
+  ".php": "php",
+  ".java": "java",
+  ".kt": "kotlin",
+  ".kts": "kotlin",
+  ".cs": "csharp",
+  ".swift": "swift",
+  ".lua": "lua",
+  ".c": "c",
+  ".cpp": "cpp",
+  ".h": "c",
+  ".hpp": "cpp",
+};

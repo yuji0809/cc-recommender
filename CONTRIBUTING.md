@@ -2,6 +2,13 @@
 
 cc-recommenderへの貢献ありがとうございます！
 
+## 重要なドキュメント
+
+開発を始める前に、以下のドキュメントを必ず確認してください:
+
+- **[CLAUDE.md](./CLAUDE.md)** - 開発ガイドライン、コーディング規約、アーキテクチャ原則
+- **[ARCHITECTURE.md](./docs/ARCHITECTURE.md)** - 詳細なアーキテクチャドキュメント
+
 ## 開発環境のセットアップ
 
 ### 前提条件
@@ -121,29 +128,49 @@ pnpm run build
 
 ## ディレクトリ構造
 
+詳細は [CLAUDE.md](./CLAUDE.md) および [ARCHITECTURE.md](./docs/ARCHITECTURE.md) を参照してください。
+
 ```
 cc-recommender/
 ├── src/
 │   ├── index.ts              # MCPサーバーエントリーポイント
-│   ├── tools/                # ツール定義
+│   ├── config/               # 設定ファイル
+│   ├── repositories/         # データアクセス層
+│   ├── utils/                # 共通ユーティリティ
+│   ├── types/                # 型定義（ドメイン別）
+│   ├── schemas/              # Zodバリデーションスキーマ
 │   ├── services/             # ビジネスロジック
-│   │   ├── analyzer.ts       # プロジェクト分析
-│   │   ├── recommender.ts    # 推薦アルゴリズム
+│   │   ├── analyzer/         # プロジェクト分析
+│   │   ├── recommender/      # 推薦アルゴリズム
 │   │   ├── plugin-fetcher.ts # プラグインデータ取得
 │   │   ├── mcp-fetcher.ts    # MCPサーバーデータ取得
 │   │   └── skill-fetcher.ts  # スキルデータ取得
-│   └── types/                # TypeScript型定義
+│   ├── tools/                # MCPツール層
+│   │   └── handlers/         # 各ツールの実装
+│   └── server/               # サーバーセットアップ
 ├── data/
 │   └── recommendations.json  # 統合データベース
 ├── scripts/
 │   └── fetch-data.ts         # データ更新スクリプト
+├── tests/                    # テストファイル
 ├── .husky/                   # Git hooks
+├── CLAUDE.md                 # 開発ガイドライン（重要！）
+├── ARCHITECTURE.md           # アーキテクチャドキュメント
 ├── biome.json               # Biome設定
 ├── tsconfig.json            # TypeScript設定
 └── package.json             # プロジェクト設定
 ```
 
 ## コーディング規約
+
+**重要**: 詳細なコーディング規約とアーキテクチャガイドラインは [CLAUDE.md](./CLAUDE.md) を参照してください。
+
+### 重要なルール
+
+1. **index.ts は使用禁止** - すべてのインポートは直接個別ファイルから
+2. **type を使用** - interface は使用しない
+3. **レイヤー間の依存方向を守る** - 上位→下位のみ
+4. **ファイルサイズは 50-150 行** - 大きくなりすぎた場合は分割
 
 ### TypeScript
 
@@ -155,9 +182,9 @@ cc-recommender/
 ### 命名規則
 
 - **関数/変数**: camelCase (`getUserData`)
-- **型/インターフェース**: PascalCase (`UserData`)
+- **型**: PascalCase (`UserData`)
 - **定数**: UPPER_SNAKE_CASE (`MAX_RESULTS`)
-- **ファイル**: kebab-case (`plugin-fetcher.ts`)
+- **ファイル**: kebab-case + suffix (`plugin-fetcher.service.ts`)
 
 ### フォーマット
 

@@ -23,7 +23,6 @@ Examples of behavior that contributes to a positive environment:
   and learning from the experience
 * Focusing on what is best not just for us as individuals, but for the
   overall community
-
 Examples of unacceptable behavior:
 
 * The use of inappropriate language or imagery

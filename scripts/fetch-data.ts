@@ -13,7 +13,7 @@ import { fileURLToPath } from "node:url";
 import { fetchMCPServers } from "../src/services/mcp-fetcher.js";
 import { fetchPlugins } from "../src/services/plugin-fetcher.js";
 import { fetchSkills } from "../src/services/skill-fetcher.js";
-import type { Recommendation, RecommendationDatabase } from "../src/types/index.js";
+import type { Recommendation, RecommendationDatabase } from "../src/types/domain-types.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

@@ -1,12 +1,11 @@
 import { describe, expect, test } from "vitest";
+import { formatRecommendations, groupByType } from "../src/services/recommender/formatters.js";
 import {
-  calculateScore,
-  formatRecommendations,
-  groupByType,
   type RecommendOptions,
   recommend,
-  search,
-} from "../src/services/recommender.js";
+} from "../src/services/recommender/recommendation.service.js";
+import { calculateScore } from "../src/services/recommender/scoring/scorer.js";
+import { search } from "../src/services/recommender/search.service.js";
 import type {
   ProjectInfo,
   Recommendation,
