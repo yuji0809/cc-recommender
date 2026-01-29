@@ -34,12 +34,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fujinamiyuji/cc-recommender.git"
+    "url": "https://github.com/yuji0809/cc-recommender.git"
   },
   "bugs": {
-    "url": "https://github.com/fujinamiyuji/cc-recommender/issues"
+    "url": "https://github.com/yuji0809/cc-recommender/issues"
   },
-  "homepage": "https://github.com/fujinamiyuji/cc-recommender#readme",
+  "homepage": "https://github.com/yuji0809/cc-recommender#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.25.3",
     "zod": "^3.23.0"

@@ -1,8 +1,8 @@
 # cc-recommender
 
 [![npm version](https://img.shields.io/npm/v/cc-recommender.svg)](https://www.npmjs.com/package/cc-recommender)
-[![CI](https://github.com/fujinamiyuji/cc-recommender/actions/workflows/ci.yml/badge.svg)](https://github.com/fujinamiyuji/cc-recommender/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/fujinamiyuji/cc-recommender/branch/main/graph/badge.svg)](https://codecov.io/gh/fujinamiyuji/cc-recommender)
+[![CI](https://github.com/yuji0809/cc-recommender/actions/workflows/ci.yml/badge.svg)](https://github.com/yuji0809/cc-recommender/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/yuji0809/cc-recommender/branch/main/graph/badge.svg)](https://codecov.io/gh/yuji0809/cc-recommender)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)
 [![pnpm](https://img.shields.io/badge/pnpm-%3E%3D10.0.0-orange.svg)](https://pnpm.io/)
@@ -32,7 +32,7 @@ npm install -g cc-recommender
 ### Local Build
 
 ```bash
-git clone https://github.com/fujinamiyuji/cc-recommender.git
+git clone https://github.com/yuji0809/cc-recommender.git
 cd cc-recommender
 pnpm install
 pnpm run build

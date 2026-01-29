@@ -16,7 +16,7 @@ We take the security of cc-recommender seriously. If you believe you have found 
 
 Instead, please report them via GitHub's Security Advisory feature:
 
-1. Go to the [Security Advisories](https://github.com/fujinamiyuji/cc-recommender/security/advisories) page
+1. Go to the [Security Advisories](https://github.com/yuji0809/cc-recommender/security/advisories) page
 2. Click "Report a vulnerability"
 3. Fill out the form with details about the vulnerability
 

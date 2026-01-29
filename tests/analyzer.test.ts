@@ -1,4 +1,7 @@
-import { describe, expect, test } from "vitest";
+import { mkdir, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { afterAll, beforeAll, describe, expect, test } from "vitest";
 import { analyzeProject } from "../src/services/analyzer.js";
 
 describe("Analyzer Service", () => {
@@ -352,6 +355,203 @@ describe("Analyzer Service", () => {
         if (result.files.includes("package.json")) {
           expect(hasPnpm || hasNpm || hasYarn).toBe(true);
         }
+      });
+    });
+
+    describe("Python project support", () => {
+      let tempDir: string;
+
+      beforeAll(async () => {
+        tempDir = join(tmpdir(), `test-python-project-${Date.now()}`);
+        await mkdir(tempDir, { recursive: true });
+
+        // Create requirements.txt
+        const requirementsContent = `# Python dependencies
+django>=4.0.0
+flask==2.0.1
+fastapi
+torch>=1.9.0
+pandas
+numpy>=1.20.0
+scikit-learn
+# Comment line
+requests`;
+
+        await writeFile(join(tempDir, "requirements.txt"), requirementsContent);
+
+        // Create Python files
+        await writeFile(join(tempDir, "main.py"), "print('Hello')");
+        await writeFile(join(tempDir, "app.py"), "# Flask app");
+      });
+
+      afterAll(async () => {
+        await rm(tempDir, { recursive: true, force: true });
+      });
+
+      test("should parse requirements.txt and detect dependencies", async () => {
+        const result = await analyzeProject(tempDir);
+
+        expect(result.dependencies).toContain("django");
+        expect(result.dependencies).toContain("flask");
+        expect(result.dependencies).toContain("fastapi");
+        expect(result.dependencies).toContain("torch");
+        expect(result.dependencies).toContain("pandas");
+        expect(result.dependencies).toContain("numpy");
+        expect(result.dependencies).toContain("scikit-learn");
+        expect(result.dependencies).toContain("requests");
+      });
+
+      test("should detect Python language from .py files", async () => {
+        const result = await analyzeProject(tempDir);
+
+        expect(result.languages).toContain("python");
+      });
+
+      test("should detect Python frameworks from requirements.txt", async () => {
+        const result = await analyzeProject(tempDir);
+
+        expect(result.frameworks).toContain("django");
+        expect(result.frameworks).toContain("flask");
+        expect(result.frameworks).toContain("fastapi");
+        expect(result.frameworks).toContain("pytorch");
+        expect(result.frameworks).toContain("pandas");
+        expect(result.frameworks).toContain("numpy");
+        expect(result.frameworks).toContain("sklearn");
+      });
+
+      test("should ignore comments in requirements.txt", async () => {
+        const result = await analyzeProject(tempDir);
+
+        // Should not include comment lines
+        expect(result.dependencies.every((dep) => !dep.startsWith("#"))).toBe(true);
+      });
+
+      test("should normalize dependency names to lowercase", async () => {
+        const result = await analyzeProject(tempDir);
+
+        // All dependencies should be lowercase
+        expect(result.dependencies.every((dep) => dep === dep.toLowerCase())).toBe(true);
+      });
+    });
+
+    describe("Go project support", () => {
+      let tempDir: string;
+
+      beforeAll(async () => {
+        tempDir = join(tmpdir(), `test-go-project-${Date.now()}`);
+        await mkdir(tempDir, { recursive: true });
+
+        // Create go.mod
+        const goModContent = `module example.com/myapp
+
+go 1.21
+
+require (
+	github.com/gin-gonic/gin v1.9.0
+	github.com/gorilla/mux v1.8.0
+	github.com/stretchr/testify v1.8.4
+	golang.org/x/sync v0.3.0
+	// Indirect dependency
+	github.com/google/uuid v1.3.0
+)`;
+
+        await writeFile(join(tempDir, "go.mod"), goModContent);
+
+        // Create Go files
+        await writeFile(join(tempDir, "main.go"), "package main\n\nfunc main() {}");
+        await writeFile(join(tempDir, "handler.go"), "package main");
+      });
+
+      afterAll(async () => {
+        await rm(tempDir, { recursive: true, force: true });
+      });
+
+      test("should parse go.mod and detect dependencies", async () => {
+        const result = await analyzeProject(tempDir);
+
+        expect(result.dependencies).toContain("github.com/gin-gonic/gin");
+        expect(result.dependencies).toContain("github.com/gorilla/mux");
+        expect(result.dependencies).toContain("github.com/stretchr/testify");
+        expect(result.dependencies).toContain("golang.org/x/sync");
+        expect(result.dependencies).toContain("github.com/google/uuid");
+      });
+
+      test("should detect Go language from .go files", async () => {
+        const result = await analyzeProject(tempDir);
+
+        expect(result.languages).toContain("go");
+      });
+
+      test("should detect Go from go.mod file", async () => {
+        const result = await analyzeProject(tempDir);
+
+        expect(result.languages).toContain("go");
+      });
+
+      test("should ignore comments in go.mod", async () => {
+        const result = await analyzeProject(tempDir);
+
+        // Dependencies should not start with //
+        expect(result.dependencies.every((dep) => !dep.startsWith("//"))).toBe(true);
+      });
+    });
+
+    describe("Multi-language project support", () => {
+      let tempDir: string;
+
+      beforeAll(async () => {
+        tempDir = join(tmpdir(), `test-multi-lang-${Date.now()}`);
+        await mkdir(tempDir, { recursive: true });
+
+        // Create package.json
+        await writeFile(
+          join(tempDir, "package.json"),
+          JSON.stringify({
+            name: "multi-lang-project",
+            dependencies: {
+              react: "^18.0.0",
+              express: "^4.18.0",
+            },
+          }),
+        );
+
+        // Create requirements.txt
+        await writeFile(join(tempDir, "requirements.txt"), "flask\ndjango");
+
+        // Create files for multiple languages
+        await writeFile(join(tempDir, "app.js"), "console.log('Hello')");
+        await writeFile(join(tempDir, "main.py"), "print('Hello')");
+        await writeFile(join(tempDir, "script.ts"), "const x: number = 1");
+      });
+
+      afterAll(async () => {
+        await rm(tempDir, { recursive: true, force: true });
+      });
+
+      test("should detect multiple languages", async () => {
+        const result = await analyzeProject(tempDir);
+
+        expect(result.languages).toContain("javascript");
+        expect(result.languages).toContain("typescript");
+        expect(result.languages).toContain("python");
+        expect(result.languages.length).toBeGreaterThanOrEqual(3);
+      });
+
+      test("should combine dependencies from multiple sources", async () => {
+        const result = await analyzeProject(tempDir);
+
+        // Should have dependencies from both package.json and requirements.txt
+        expect(result.dependencies).toContain("react");
+        expect(result.dependencies).toContain("express");
+        expect(result.dependencies).toContain("flask");
+        expect(result.dependencies).toContain("django");
+      });
+
+      test("should detect frameworks from multiple ecosystems", async () => {
+        const result = await analyzeProject(tempDir);
+
+        expect(result.frameworks).toContain("flask");
+        expect(result.frameworks).toContain("django");
       });
     });
   });

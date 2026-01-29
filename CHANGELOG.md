@@ -38,5 +38,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TypeScript configuration
 - Build and development scripts
 
-[Unreleased]: https://github.com/fujinamiyuji/cc-recommender/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/fujinamiyuji/cc-recommender/releases/tag/v0.1.0
+[Unreleased]: https://github.com/yuji0809/cc-recommender/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/yuji0809/cc-recommender/releases/tag/v0.1.0
