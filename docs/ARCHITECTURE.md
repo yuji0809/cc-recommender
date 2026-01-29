@@ -86,6 +86,7 @@ cc-recommender は、レイヤードアーキテクチャに基づいて設計�
 - レスポンスをフォーマットして返す
 
 **ファイル:**
+- `index.ts` - ツールの公開 API（外部からはこれを使用）
 - `recommend-skills.tool.ts` - プロジェクト分析に基づく推薦
 - `search-skills.tool.ts` - キーワード検索
 - `get-skill-details.tool.ts` - 詳細情報取得
@@ -95,7 +96,7 @@ cc-recommender は、レイヤードアーキテクチャに基づいて設計�
 **依存関係:**
 - Business Logic Layer (services/)
 - Schemas (schemas/)
-- Types (types/)
+- Types (types/index.ts)
 
 ### 2. Business Logic Layer (services/)
 
@@ -200,8 +201,10 @@ cc-recommender は、レイヤードアーキテクチャに基づいて設計�
 **責務:**
 - 型定義の集約
 - ドメインモデルの定義
+- 公開 API の提供
 
 **ファイル:**
+- `index.ts` - 型定義の公開 API（外部からはこれを使用）
 - `domain-types.ts` - ドメインモデル（Recommendation, Author, etc.）
 - `service-types.ts` - サービス層の型（ProjectInfo, ScoredRecommendation）
 - `raw-types.ts` - 外部データの型（RawPluginEntry, RawMCPEntry, etc.）
@@ -244,8 +247,8 @@ Presentation → Business Logic → Data Access → Infrastructure
 - ✅ Business Logic → Data Access
 - ✅ Business Logic → Infrastructure
 - ✅ Data Access → Infrastructure
-- ✅ Server → Presentation (ツール登録のため)
-- ✅ Server → Infrastructure (Types)
+- ✅ Server → Presentation (ツール登録のため - handlers/index.ts 経由)
+- ✅ Server → Infrastructure (types/index.ts 経由)
 
 ### 禁止される依存
 
@@ -359,8 +362,7 @@ try {
 
 ### カバレッジ目標
 
-- 全体: 96.83%（現在）
-- 目標: 95% 以上
+新規コードは高いカバレッジを維持し、重要なロジックは必ずテストを書く。
 
 ### テスト種類
 
@@ -374,8 +376,8 @@ try {
 
 ### テストファイル
 
-- `tests/analyzer.test.ts` - 分析機能のテスト (51 tests)
-- `tests/recommender.test.ts` - 推薦機能のテスト (86 tests)
+- `tests/analyzer.test.ts` - 分析機能のテスト
+- `tests/recommender.test.ts` - 推薦機能のテスト
 
 ## パフォーマンス最適化
 

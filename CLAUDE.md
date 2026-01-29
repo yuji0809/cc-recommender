@@ -26,7 +26,6 @@ presentation (tools) → business logic (services) → data access (repositories
 ### 2. 単一責任の原則 (SRP)
 
 - 各ファイルは1つの責務のみを持つ
-- ファイルサイズは 50-150 行を目安とする
 - 大きくなりすぎた場合は分割を検討
 
 ### 3. 直接インポートの原則
@@ -73,6 +72,7 @@ src/
 │   └── glob-matcher.ts # Glob パターンマッチング
 │
 ├── types/              # 型定義（ドメイン別に分割）
+│   ├── index.ts        # 型定義の公開 API
 │   ├── domain-types.ts # ドメイン型（Recommendation, Author, etc.）
 │   ├── service-types.ts # サービス型（ProjectInfo, ScoredRecommendation）
 │   └── raw-types.ts    # 外部データ型（RawPluginEntry, etc.）
@@ -101,6 +101,7 @@ src/
 │
 ├── tools/              # MCP ツール層（プレゼンテーション）
 │   └── handlers/       # 各ツールの実装
+│       ├── index.ts    # ツールの公開 API
 │       ├── recommend-skills.tool.ts
 │       ├── search-skills.tool.ts
 │       ├── get-skill-details.tool.ts
@@ -164,49 +165,6 @@ export interface User {
 }
 ```
 
-### 2. インポート順序（Biome が自動整形）
-
-```typescript
-// 1. Node.js 組み込みモジュール
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
-
-// 2. 外部パッケージ
-import { z } from "zod";
-
-// 3. 内部モジュール（アルファベット順）
-import { CONFIG_FILE_MAPPINGS } from "../../config/file-mappings.js";
-import type { ProjectInfo } from "../../types/service-types.js";
-```
-
-### 3. 非同期関数
-
-```typescript
-// ✅ async/await を使用
-export async function analyzeProject(path: string): Promise<ProjectInfo> {
-  const content = await readFile(path, "utf-8");
-  return parseContent(content);
-}
-
-// ❌ Promise チェーンは避ける（特殊な場合を除く）
-export function analyzeProject(path: string): Promise<ProjectInfo> {
-  return readFile(path, "utf-8").then(parseContent);
-}
-```
-
-### 4. エラーハンドリング
-
-```typescript
-// ✅ 明示的な try-catch（必要な場合のみ）
-try {
-  const data = await readFile(path, "utf-8");
-  return JSON.parse(data);
-} catch (error) {
-  console.error(`Failed to read ${path}:`, error);
-  return null;
-}
-```
-
 ## 新機能追加ガイドライン
 
 ### 1. 新しいツールを追加する場合
@@ -262,40 +220,10 @@ tests/analyzer.test.ts に新しい言語のテストケースを追加
 
 ## テスト規約
 
-### 1. テストファイルの配置
+### カバレッジ目標
 
-```bash
-tests/
-├── analyzer.test.ts      # アナライザーのテスト
-└── recommender.test.ts   # レコメンダーのテスト
-```
-
-### 2. テストの構造
-
-```typescript
-import { describe, expect, test } from "vitest";
-
-describe("ServiceName", () => {
-  describe("functionName", () => {
-    test("should do something when condition", async () => {
-      // Arrange
-      const input = "test";
-
-      // Act
-      const result = await someFunction(input);
-
-      // Assert
-      expect(result).toBe("expected");
-    });
-  });
-});
-```
-
-### 3. カバレッジ目標
-
-- 全体: 95% 以上
-- 新規コード: 100%
-- 重要なロジック: 100%
+- 新規コードは高いカバレッジを維持
+- 重要なロジックは必ずテストを書く
 
 ## 禁止事項
 
@@ -316,7 +244,7 @@ describe("ServiceName", () => {
    - データベースなどは repository を通してアクセス
 
 5. **巨大なファイルの作成**
-   - 200 行を超える場合は分割を検討
+   - ファイルが大きくなりすぎた場合は分割を検討
    - 単一責任の原則を守る
 
 ## ツールとコマンド
@@ -369,7 +297,7 @@ pnpm run check
 - [ ] 直接インポートを使用しているか（index.ts は使っていないか）？
 - [ ] 型定義は適切なファイルに配置されているか？
 - [ ] レイヤー間の依存方向は正しいか？
-- [ ] ファイルサイズは適切か（50-150 行）？
+- [ ] ファイルサイズは適切か？
 - [ ] テストは書いたか？
 - [ ] `pnpm run check` が通るか？
 - [ ] ドキュメントを更新したか（必要に応じて）？

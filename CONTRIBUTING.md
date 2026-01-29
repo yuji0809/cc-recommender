@@ -154,8 +154,11 @@ cc-recommender/
 │   └── fetch-data.ts         # データ更新スクリプト
 ├── tests/                    # テストファイル
 ├── .husky/                   # Git hooks
+├── docs/                     # 技術ドキュメント
+│   └── ARCHITECTURE.md      # アーキテクチャドキュメント
 ├── CLAUDE.md                 # 開発ガイドライン（重要！）
-├── ARCHITECTURE.md           # アーキテクチャドキュメント
+├── CONTRIBUTING.md           # コントリビューションガイド
+├── CHANGELOG.md              # 変更履歴
 ├── biome.json               # Biome設定
 ├── tsconfig.json            # TypeScript設定
 └── package.json             # プロジェクト設定
@@ -167,40 +170,23 @@ cc-recommender/
 
 ### 重要なルール
 
-1. **index.ts は使用禁止** - すべてのインポートは直接個別ファイルから
+1. **index.ts は原則禁止** - ただし `types/` と `tools/handlers/` のみ例外
 2. **type を使用** - interface は使用しない
 3. **レイヤー間の依存方向を守る** - 上位→下位のみ
-4. **ファイルサイズは 50-150 行** - 大きくなりすぎた場合は分割
-
-### TypeScript
-
-- **型定義**: 明示的な型定義を使用（`any`は警告）
-- **const優先**: `let`より`const`を優先
-- **テンプレートリテラル**: 文字列連結より`\`${}\``を使用
-- **インポート**: 未使用インポートは自動削除
+4. **単一責任の原則** - ファイルは1つの責務のみを持つ
 
 ### 命名規則
 
-- **関数/変数**: camelCase (`getUserData`)
-- **型**: PascalCase (`UserData`)
-- **定数**: UPPER_SNAKE_CASE (`MAX_RESULTS`)
 - **ファイル**: kebab-case + suffix (`plugin-fetcher.service.ts`)
-
-### フォーマット
-
-- **インデント**: 2スペース
-- **行幅**: 100文字
-- **クォート**: ダブルクォート (`"`)
-- **セミコロン**: 必須
-- **末尾カンマ**: あり
 
 ## データ更新
 
 新しいデータソースを追加する場合：
 
 1. `scripts/fetch-data.ts`にフェッチャー追加
-2. `src/types/index.ts`に型定義追加
-3. テスト実行
+2. `src/types/`に型定義追加（domain-types.ts, raw-types.ts など）
+3. `src/types/index.ts`で公開APIとしてエクスポート
+4. テスト実行
 
 ```bash
 pnpm run fetch-data

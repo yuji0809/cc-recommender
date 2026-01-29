@@ -16,7 +16,7 @@ Just ask "What should I install?" in Claude Code, and it will analyze your proje
 ## Features
 
 - 📦 **Plugin Recommendations** - Suggests optimal plugins from the official marketplace
-- 🔌 **MCP Server Recommendations** - Search 500+ MCP servers from awesome-mcp-servers
+- 🔌 **MCP Server Recommendations** - Search MCP servers from awesome-mcp-servers
 - 🎯 **Skill/Workflow Recommendations** - Suggests skills, hooks, and commands from awesome-claude-code
 - 🔍 **Project Analysis** - Automatically detects languages, frameworks, and dependencies
 - 🏷️ **Keyword Search** - Search by name or tags
@@ -194,33 +194,71 @@ pnpm run test:coverage
 pnpm run build
 ```
 
-## Directory Structure
+## Project Structure
 
 ```
 cc-recommender/
 ├── src/
-│   ├── index.ts              # MCP server entry point
-│   ├── tools/
-│   │   └── index.ts          # Tool definitions
-│   ├── services/
-│   │   ├── analyzer.ts       # Project analysis
-│   │   ├── recommender.ts    # Recommendation logic
-│   │   ├── plugin-fetcher.ts # Plugin fetcher
-│   │   ├── mcp-fetcher.ts    # MCP server fetcher
-│   │   └── skill-fetcher.ts  # Skill fetcher
-│   └── types/
-│       └── index.ts          # Type definitions
+│   ├── config/                      # Configuration
+│   │   ├── constants.ts
+│   │   ├── file-mappings.ts
+│   │   └── scoring-config.ts
+│   ├── repositories/                # Data access layer
+│   │   └── recommendation.repository.ts
+│   ├── utils/                       # Utilities
+│   │   └── glob-matcher.ts
+│   ├── types/                       # Type definitions
+│   │   ├── index.ts                # Public API
+│   │   ├── domain-types.ts
+│   │   ├── service-types.ts
+│   │   └── raw-types.ts
+│   ├── schemas/                     # Zod validation schemas
+│   │   └── tool-schemas.ts
+│   ├── services/                    # Business logic
+│   │   ├── analyzer/               # Project analysis
+│   │   │   ├── parsers/
+│   │   │   └── project-analyzer.service.ts
+│   │   ├── recommender/            # Recommendation logic
+│   │   │   ├── scoring/
+│   │   │   ├── recommendation.service.ts
+│   │   │   ├── search.service.ts
+│   │   │   └── formatters.ts
+│   │   ├── plugin-fetcher.ts
+│   │   ├── mcp-fetcher.ts
+│   │   └── skill-fetcher.ts
+│   ├── tools/                       # MCP tools
+│   │   └── handlers/
+│   │       ├── index.ts            # Public API
+│   │       ├── recommend-skills.tool.ts
+│   │       ├── search-skills.tool.ts
+│   │       ├── get-skill-details.tool.ts
+│   │       ├── list-categories.tool.ts
+│   │       └── get-stats.tool.ts
+│   ├── server/                      # Server setup
+│   │   ├── mcp-server.ts
+│   │   └── tool-registry.ts
+│   └── index.ts                     # Entry point
 ├── data/
-│   └── recommendations.json  # Unified database
+│   └── recommendations.json         # Unified database
 ├── scripts/
-│   └── fetch-data.ts         # Data fetch script
+│   └── fetch-data.ts                # Data fetch script
 ├── tests/
-│   ├── analyzer.test.ts      # Analyzer tests
-│   └── recommender.test.ts   # Recommender tests
-├── package.json
-├── tsconfig.json
+│   ├── analyzer.test.ts             # Analyzer tests
+│   └── recommender.test.ts          # Recommender tests
+├── docs/
+│   └── ARCHITECTURE.md              # Architecture details
+├── CLAUDE.md                        # Development guidelines
+├── CONTRIBUTING.md                  # Contribution guide
 └── README.md
 ```
+
+See [ARCHITECTURE.md](./docs/ARCHITECTURE.md) for detailed architecture documentation.
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for development guidelines.
+
+For detailed architecture information, see [ARCHITECTURE.md](./docs/ARCHITECTURE.md).
 
 ## License
 
