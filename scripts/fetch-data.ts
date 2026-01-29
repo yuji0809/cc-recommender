@@ -1,20 +1,19 @@
 #!/usr/bin/env npx tsx
 /**
  * Data Fetch Script
- * 
+ *
  * Fetches data from all sources and generates the recommendations database
- * 
+ *
  * Usage: npm run fetch-data
  */
 
-import { writeFile, mkdir } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-
-import type { Recommendation, RecommendationDatabase } from "../src/types/index.js";
-import { fetchPlugins } from "../src/services/plugin-fetcher.js";
 import { fetchMCPServers } from "../src/services/mcp-fetcher.js";
+import { fetchPlugins } from "../src/services/plugin-fetcher.js";
 import { fetchSkills } from "../src/services/skill-fetcher.js";
+import type { Recommendation, RecommendationDatabase } from "../src/types/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -27,9 +26,9 @@ const OUTPUT_PATH = join(__dirname, "..", "data", "recommendations.json");
 async function main() {
   console.log("🚀 cc-recommender Data Fetcher");
   console.log("================================\n");
-  
+
   const allItems: Recommendation[] = [];
-  
+
   // 1. Fetch plugins from official marketplace
   try {
     const plugins = await fetchPlugins();
@@ -37,7 +36,7 @@ async function main() {
   } catch (error) {
     console.error("Failed to fetch plugins:", error);
   }
-  
+
   // 2. Fetch MCP servers from awesome-mcp-servers
   try {
     const mcpServers = await fetchMCPServers();
@@ -45,7 +44,7 @@ async function main() {
   } catch (error) {
     console.error("Failed to fetch MCP servers:", error);
   }
-  
+
   // 3. Fetch skills from awesome-claude-code
   try {
     const skills = await fetchSkills();
@@ -53,31 +52,31 @@ async function main() {
   } catch (error) {
     console.error("Failed to fetch skills:", error);
   }
-  
+
   // 4. Deduplicate by URL
   const deduped = deduplicateByUrl(allItems);
-  
+
   console.log("\n📊 Summary:");
   console.log(`   Total items: ${deduped.length}`);
-  console.log(`   - Plugins: ${deduped.filter(i => i.type === "plugin").length}`);
-  console.log(`   - MCP servers: ${deduped.filter(i => i.type === "mcp").length}`);
-  console.log(`   - Skills: ${deduped.filter(i => i.type === "skill").length}`);
-  console.log(`   - Workflows: ${deduped.filter(i => i.type === "workflow").length}`);
-  console.log(`   - Hooks: ${deduped.filter(i => i.type === "hook").length}`);
-  console.log(`   - Commands: ${deduped.filter(i => i.type === "command").length}`);
-  console.log(`   - Agents: ${deduped.filter(i => i.type === "agent").length}`);
-  
+  console.log(`   - Plugins: ${deduped.filter((i) => i.type === "plugin").length}`);
+  console.log(`   - MCP servers: ${deduped.filter((i) => i.type === "mcp").length}`);
+  console.log(`   - Skills: ${deduped.filter((i) => i.type === "skill").length}`);
+  console.log(`   - Workflows: ${deduped.filter((i) => i.type === "workflow").length}`);
+  console.log(`   - Hooks: ${deduped.filter((i) => i.type === "hook").length}`);
+  console.log(`   - Commands: ${deduped.filter((i) => i.type === "command").length}`);
+  console.log(`   - Agents: ${deduped.filter((i) => i.type === "agent").length}`);
+
   // 5. Create database
   const database: RecommendationDatabase = {
     version: "0.1.0",
     lastUpdated: new Date().toISOString(),
     items: deduped,
   };
-  
+
   // 6. Write to file
   await mkdir(dirname(OUTPUT_PATH), { recursive: true });
   await writeFile(OUTPUT_PATH, JSON.stringify(database, null, 2));
-  
+
   console.log(`\n✅ Database saved to: ${OUTPUT_PATH}`);
 }
 
@@ -86,21 +85,21 @@ async function main() {
  */
 function deduplicateByUrl(items: Recommendation[]): Recommendation[] {
   const seen = new Map<string, Recommendation>();
-  
+
   for (const item of items) {
     const normalizedUrl = normalizeUrl(item.url);
-    
+
     if (!seen.has(normalizedUrl)) {
       seen.set(normalizedUrl, item);
     } else {
       // Prefer official over community
-      const existing = seen.get(normalizedUrl)!;
-      if (item.metrics.isOfficial && !existing.metrics.isOfficial) {
+      const existing = seen.get(normalizedUrl);
+      if (existing !== undefined && item.metrics.isOfficial && !existing.metrics.isOfficial) {
         seen.set(normalizedUrl, item);
       }
     }
   }
-  
+
   return Array.from(seen.values());
 }
 

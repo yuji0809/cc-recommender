@@ -1,40 +1,40 @@
 /**
  * cc-recommender Type Definitions
- * 
+ *
  * Unified schema for skills, plugins, and MCP servers
  */
 
 /** レコメンドアイテムのタイプ */
-export type RecommendationType = 
-  | "plugin"      // Claude Code プラグイン
-  | "mcp"         // MCP サーバー
-  | "skill"       // スキル
-  | "workflow"    // ワークフロー
-  | "hook"        // フック
-  | "command"     // スラッシュコマンド
-  | "agent";      // エージェント
+export type RecommendationType =
+  | "plugin" // Claude Code プラグイン
+  | "mcp" // MCP サーバー
+  | "skill" // スキル
+  | "workflow" // ワークフロー
+  | "hook" // フック
+  | "command" // スラッシュコマンド
+  | "agent"; // エージェント
 
 /** データソースの種類 */
-export type SourceType = 
-  | "official"        // 公式 (Anthropic)
-  | "community"       // コミュニティマーケット
-  | "awesome-list";   // awesome-* リスト
+export type SourceType =
+  | "official" // 公式 (Anthropic)
+  | "community" // コミュニティマーケット
+  | "awesome-list"; // awesome-* リスト
 
 /** インストール方法 */
-export type InstallMethod = 
-  | "plugin"      // /plugin install X
-  | "mcp-add"     // claude mcp add X
-  | "manual";     // 手動コピー / git clone
+export type InstallMethod =
+  | "plugin" // /plugin install X
+  | "mcp-add" // claude mcp add X
+  | "manual"; // 手動コピー / git clone
 
 /** 作者情報 */
-export interface Author {
+export type Author = {
   name: string;
   url?: string;
   email?: string;
-}
+};
 
 /** 検出ルール */
-export interface DetectionRules {
+export type DetectionRules = {
   /** package.json の依存関係 */
   dependencies?: string[];
   /** ファイルパターン (glob) */
@@ -45,10 +45,10 @@ export interface DetectionRules {
   frameworks?: string[];
   /** 説明文キーワード */
   keywords?: string[];
-}
+};
 
 /** 品質指標 */
-export interface Metrics {
+export type Metrics = {
   /** データソース */
   source: SourceType;
   /** セキュリティスコア (0-100, cc-audit) */
@@ -59,20 +59,20 @@ export interface Metrics {
   isOfficial?: boolean;
   /** 最終更新日 */
   lastUpdated?: string;
-}
+};
 
 /** インストール情報 */
-export interface InstallInfo {
+export type InstallInfo = {
   /** インストール方法 */
   method: InstallMethod;
   /** インストールコマンド */
   command?: string;
   /** マーケットプレイス名 */
   marketplace?: string;
-}
+};
 
 /** 統一レコメンデーションアイテム */
-export interface Recommendation {
+export type Recommendation = {
   /** 一意な識別子 */
   id: string;
   /** 表示名 */
@@ -95,17 +95,17 @@ export interface Recommendation {
   metrics: Metrics;
   /** インストール情報 */
   install: InstallInfo;
-}
+};
 
 /** スコア付きレコメンデーション */
-export interface ScoredRecommendation {
+export type ScoredRecommendation = {
   item: Recommendation;
   score: number;
   reasons: string[];
-}
+};
 
 /** プロジェクト情報 (分析結果) */
-export interface ProjectInfo {
+export type ProjectInfo = {
   /** プロジェクトパス */
   path: string;
   /** 使用言語 */
@@ -118,17 +118,17 @@ export interface ProjectInfo {
   frameworks: string[];
   /** プロジェクト説明 (README等から) */
   description?: string;
-}
+};
 
 /** データベース (全レコメンデーション) */
-export interface RecommendationDatabase {
+export type RecommendationDatabase = {
   version: string;
   lastUpdated: string;
   items: Recommendation[];
-}
+};
 
 /** プラグインマーケットプレイスのエントリ (生データ) */
-export interface RawPluginEntry {
+export type RawPluginEntry = {
   name: string;
   description: string;
   version?: string;
@@ -141,10 +141,10 @@ export interface RawPluginEntry {
   homepage?: string;
   tags?: string[];
   lspServers?: Record<string, unknown>;
-}
+};
 
 /** awesome-mcp-servers のエントリ (パース後) */
-export interface RawMCPEntry {
+export type RawMCPEntry = {
   owner: string;
   repo: string;
   url: string;
@@ -154,10 +154,10 @@ export interface RawMCPEntry {
   platforms?: string[];
   isOfficial?: boolean;
   category: string;
-}
+};
 
 /** awesome-claude-code CSV のエントリ */
-export interface RawSkillEntry {
+export type RawSkillEntry = {
   name: string;
   url: string;
   author: string;
@@ -165,4 +165,4 @@ export interface RawSkillEntry {
   license?: string;
   description: string;
   category: string;
-}
+};

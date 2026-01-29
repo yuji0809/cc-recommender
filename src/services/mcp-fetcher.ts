@@ -1,14 +1,13 @@
 /**
  * MCP Server Fetcher
- * 
+ *
  * Fetches MCP servers from awesome-mcp-servers repository
  * Source: https://github.com/punkpeye/awesome-mcp-servers
  */
 
-import type { Recommendation, RawMCPEntry } from "../types/index.js";
+import type { RawMCPEntry, Recommendation } from "../types/index.js";
 
-const README_URL = 
-  "https://raw.githubusercontent.com/punkpeye/awesome-mcp-servers/main/README.md";
+const README_URL = "https://raw.githubusercontent.com/punkpeye/awesome-mcp-servers/main/README.md";
 
 /** Emoji to metadata mappings */
 const EMOJI_MAPPINGS = {
@@ -73,22 +72,21 @@ const CATEGORY_HEADERS = [
  */
 export async function fetchMCPServers(): Promise<Recommendation[]> {
   console.log("🔌 Fetching MCP servers from awesome-mcp-servers...");
-  
+
   try {
     const response = await fetch(README_URL);
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
-    
+
     const markdown = await response.text();
     const entries = parseMarkdown(markdown);
     const recommendations = entries
       .map(transformMCPEntry)
       .filter((r): r is Recommendation => r !== null);
-    
+
     console.log(`   ✓ Fetched ${recommendations.length} MCP servers`);
     return recommendations;
-    
   } catch (error) {
     console.error("   ✗ Failed to fetch MCP servers:", error);
     return [];
@@ -101,37 +99,39 @@ export async function fetchMCPServers(): Promise<Recommendation[]> {
 function parseMarkdown(markdown: string): RawMCPEntry[] {
   const entries: RawMCPEntry[] = [];
   let currentCategory = "Uncategorized";
-  
+
   const lines = markdown.split("\n");
-  
+
   for (const line of lines) {
     // Check for category headers
-    const headerMatch = line.match(/^###?\s+(?:🔗|🎨|📐|📂|🧬|☁️|👨‍💻|🤖|🖥️|💬|👤|🗄️|📊|🚚|🛠️|🧮|📟|💰|🎮|🧠|🗺️|🎯|🔎|🔒|🌐|🏃|🎧|🌎|🚆|🔄|🏢)?\s*(.+?)\s*(?:\[|$)/);
+    const headerMatch = line.match(
+      /^###?\s+(?:🔗|🎨|📐|📂|🧬|☁️|👨‍💻|🤖|🖥️|💬|👤|🗄️|📊|🚚|🛠️|🧮|📟|💰|🎮|🧠|🗺️|🎯|🔎|🔒|🌐|🏃|🎧|🌎|🚆|🔄|🏢)?\s*(.+?)\s*(?:\[|$)/,
+    );
     if (headerMatch) {
       const potentialCategory = headerMatch[1].trim();
-      if (CATEGORY_HEADERS.some(c => potentialCategory.toLowerCase().includes(c.toLowerCase()))) {
+      if (CATEGORY_HEADERS.some((c) => potentialCategory.toLowerCase().includes(c.toLowerCase()))) {
         currentCategory = potentialCategory;
       }
       continue;
     }
-    
+
     // Parse entry lines: * [owner/repo](url) emojis - description
     const entryMatch = line.match(/^\*\s+\[([^\]]+)\]\(([^)]+)\)\s*(.+)?$/);
     if (entryMatch) {
-      const [, nameOrPath, url, rest] = entryMatch;
-      
+      const [, _nameOrPath, url, rest] = entryMatch;
+
       // Skip if not a GitHub URL
       if (!url.includes("github.com")) continue;
-      
+
       // Parse owner/repo from URL or name
       const repoMatch = url.match(/github\.com\/([^/]+)\/([^/\s#]+)/);
       if (!repoMatch) continue;
-      
+
       const [, owner, repo] = repoMatch;
-      
+
       // Parse emojis and description
       const { metadata, description } = parseEmojisAndDescription(rest || "");
-      
+
       entries.push({
         owner,
         repo: repo.replace(/\.git$/, ""),
@@ -142,7 +142,7 @@ function parseMarkdown(markdown: string): RawMCPEntry[] {
       });
     }
   }
-  
+
   return entries;
 }
 
@@ -156,9 +156,9 @@ function parseEmojisAndDescription(text: string): {
   const metadata: Partial<RawMCPEntry> = {
     platforms: [],
   };
-  
+
   let remaining = text.trim();
-  
+
   // Extract emojis from the beginning
   for (const [emoji, props] of Object.entries(EMOJI_MAPPINGS)) {
     if (remaining.includes(emoji)) {
@@ -169,7 +169,7 @@ function parseEmojisAndDescription(text: string): {
         metadata.scope = props.scope;
       }
       if ("platform" in props) {
-        metadata.platforms!.push(props.platform);
+        metadata.platforms?.push(props.platform);
       }
       if ("isOfficial" in props) {
         metadata.isOfficial = props.isOfficial;
@@ -177,16 +177,16 @@ function parseEmojisAndDescription(text: string): {
       remaining = remaining.replace(emoji, "").trim();
     }
   }
-  
+
   // Clean up platforms
-  if (metadata.platforms!.length === 0) {
+  if (metadata.platforms?.length === 0) {
     delete metadata.platforms;
   }
-  
+
   // Extract description (after " - ")
   const descMatch = remaining.match(/^-\s*(.+)$/);
   const description = descMatch ? descMatch[1].trim() : remaining;
-  
+
   return { metadata, description };
 }
 
@@ -199,30 +199,30 @@ function transformMCPEntry(raw: RawMCPEntry): Recommendation | null {
     const detection: Recommendation["detection"] = {
       keywords: [raw.category.toLowerCase()],
     };
-    
+
     // Add language-specific detection
     if (raw.language) {
       detection.languages = [raw.language];
     }
-    
+
     // Category-based detection enhancement
     const categoryKeywords = getCategoryKeywords(raw.category);
     if (categoryKeywords.length > 0) {
-      detection.keywords = [...detection.keywords!, ...categoryKeywords];
+      detection.keywords = [...(detection.keywords ?? []), ...categoryKeywords];
     }
-    
+
     const categoryDeps = getCategoryDependencies(raw.category);
     if (categoryDeps.length > 0) {
       detection.dependencies = categoryDeps;
     }
-    
+
     // Build tags
     const tags: string[] = [raw.category.toLowerCase()];
     if (raw.language) tags.push(raw.language);
     if (raw.scope) tags.push(raw.scope);
     if (raw.platforms) tags.push(...raw.platforms);
     if (raw.isOfficial) tags.push("official");
-    
+
     return {
       id: `mcp-${raw.owner}-${raw.repo}`,
       name: raw.repo,
@@ -256,22 +256,22 @@ function transformMCPEntry(raw: RawMCPEntry): Recommendation | null {
  */
 function getCategoryKeywords(category: string): string[] {
   const mappings: Record<string, string[]> = {
-    "Databases": ["database", "sql", "nosql", "db", "query"],
+    Databases: ["database", "sql", "nosql", "db", "query"],
     "Browser Automation": ["browser", "selenium", "playwright", "puppeteer", "scraping"],
     "Cloud Platforms": ["aws", "gcp", "azure", "cloud", "kubernetes", "docker"],
-    "Communication": ["slack", "discord", "email", "chat", "messaging"],
+    Communication: ["slack", "discord", "email", "chat", "messaging"],
     "Developer Tools": ["git", "github", "ci", "cd", "devops"],
     "File Systems": ["file", "storage", "filesystem", "s3"],
-    "Security": ["security", "auth", "encryption", "vulnerability"],
+    Security: ["security", "auth", "encryption", "vulnerability"],
     "Version Control": ["git", "github", "gitlab", "bitbucket"],
   };
-  
+
   for (const [cat, keywords] of Object.entries(mappings)) {
     if (category.toLowerCase().includes(cat.toLowerCase())) {
       return keywords;
     }
   }
-  
+
   return [];
 }
 
@@ -280,16 +280,16 @@ function getCategoryKeywords(category: string): string[] {
  */
 function getCategoryDependencies(category: string): string[] {
   const mappings: Record<string, string[]> = {
-    "Databases": ["prisma", "@prisma/client", "mongoose", "typeorm", "pg", "mysql2", "sqlite3"],
+    Databases: ["prisma", "@prisma/client", "mongoose", "typeorm", "pg", "mysql2", "sqlite3"],
     "Browser Automation": ["playwright", "puppeteer", "selenium-webdriver"],
-    "Communication": ["@slack/web-api", "discord.js", "nodemailer"],
+    Communication: ["@slack/web-api", "discord.js", "nodemailer"],
   };
-  
+
   for (const [cat, deps] of Object.entries(mappings)) {
     if (category.toLowerCase().includes(cat.toLowerCase())) {
       return deps;
     }
   }
-  
+
   return [];
 }

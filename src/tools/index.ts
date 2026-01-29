@@ -1,33 +1,26 @@
 /**
  * MCP Tools
- * 
+ *
  * Tool definitions for the cc-recommender MCP server
  */
 
 import { z } from "zod";
-import type { 
-  Recommendation, 
-  RecommendationDatabase, 
-  ScoredRecommendation 
-} from "../types/index.js";
 import { analyzeProject } from "../services/analyzer.js";
-import { 
-  recommend, 
-  search, 
-  formatRecommendations 
-} from "../services/recommender.js";
+import { formatRecommendations, recommend, search } from "../services/recommender.js";
+import type { Recommendation, RecommendationDatabase } from "../types/index.js";
 
 /**
  * Tool: recommend_skills
- * 
+ *
  * Analyzes a project and recommends suitable skills, plugins, and MCP servers
  */
 export const recommendSkillsSchema = z.object({
   project_path: z.string().describe("プロジェクトのパス"),
   description: z.string().optional().describe("何を作りたいか、何を探しているか"),
-  types: z.array(z.enum([
-    "plugin", "mcp", "skill", "workflow", "hook", "command", "agent"
-  ])).optional().describe("フィルタするタイプ"),
+  types: z
+    .array(z.enum(["plugin", "mcp", "skill", "workflow", "hook", "command", "agent"]))
+    .optional()
+    .describe("フィルタするタイプ"),
   max_results: z.number().min(1).max(50).optional().default(20).describe("最大結果数"),
 });
 
@@ -35,20 +28,20 @@ export type RecommendSkillsInput = z.infer<typeof recommendSkillsSchema>;
 
 export async function recommendSkills(
   input: RecommendSkillsInput,
-  database: RecommendationDatabase
+  database: RecommendationDatabase,
 ): Promise<RecommendSkillsResult> {
   // Analyze the project
   const projectInfo = await analyzeProject(input.project_path);
-  
+
   // Get recommendations
   const recommendations = recommend(database, projectInfo, input.description, {
     maxResults: input.max_results,
     types: input.types,
   });
-  
+
   // Format for display
   const formatted = formatRecommendations(recommendations);
-  
+
   return {
     project: {
       path: projectInfo.path,
@@ -56,7 +49,7 @@ export async function recommendSkills(
       frameworks: projectInfo.frameworks,
       dependencyCount: projectInfo.dependencies.length,
     },
-    recommendations: recommendations.map(r => ({
+    recommendations: recommendations.map((r) => ({
       name: r.item.name,
       type: r.item.type,
       description: r.item.description,
@@ -71,7 +64,7 @@ export async function recommendSkills(
   };
 }
 
-export interface RecommendSkillsResult {
+export type RecommendSkillsResult = {
   project: {
     path: string;
     languages: string[];
@@ -90,18 +83,19 @@ export interface RecommendSkillsResult {
   }>;
   formatted: string;
   totalFound: number;
-}
+};
 
 /**
  * Tool: search_skills
- * 
+ *
  * Search for skills, plugins, and MCP servers by keyword
  */
 export const searchSkillsSchema = z.object({
   query: z.string().describe("検索キーワード"),
-  types: z.array(z.enum([
-    "plugin", "mcp", "skill", "workflow", "hook", "command", "agent"
-  ])).optional().describe("フィルタするタイプ"),
+  types: z
+    .array(z.enum(["plugin", "mcp", "skill", "workflow", "hook", "command", "agent"]))
+    .optional()
+    .describe("フィルタするタイプ"),
   max_results: z.number().min(1).max(50).optional().default(20).describe("最大結果数"),
 });
 
@@ -109,16 +103,16 @@ export type SearchSkillsInput = z.infer<typeof searchSkillsSchema>;
 
 export async function searchSkills(
   input: SearchSkillsInput,
-  database: RecommendationDatabase
+  database: RecommendationDatabase,
 ): Promise<SearchSkillsResult> {
   const results = search(database, input.query, {
     maxResults: input.max_results,
     types: input.types,
   });
-  
+
   return {
     query: input.query,
-    results: results.map(r => ({
+    results: results.map((r) => ({
       name: r.item.name,
       type: r.item.type,
       description: r.item.description,
@@ -133,7 +127,7 @@ export async function searchSkills(
   };
 }
 
-export interface SearchSkillsResult {
+export type SearchSkillsResult = {
   query: string;
   results: Array<{
     name: string;
@@ -147,11 +141,11 @@ export interface SearchSkillsResult {
     category: string;
   }>;
   totalFound: number;
-}
+};
 
 /**
  * Tool: get_skill_details
- * 
+ *
  * Get detailed information about a specific skill/plugin/MCP
  */
 export const getSkillDetailsSchema = z.object({
@@ -162,17 +156,18 @@ export type GetSkillDetailsInput = z.infer<typeof getSkillDetailsSchema>;
 
 export async function getSkillDetails(
   input: GetSkillDetailsInput,
-  database: RecommendationDatabase
+  database: RecommendationDatabase,
 ): Promise<GetSkillDetailsResult | null> {
   const item = database.items.find(
-    i => i.name.toLowerCase() === input.name.toLowerCase() ||
-         i.id.toLowerCase() === input.name.toLowerCase()
+    (i) =>
+      i.name.toLowerCase() === input.name.toLowerCase() ||
+      i.id.toLowerCase() === input.name.toLowerCase(),
   );
-  
+
   if (!item) {
     return null;
   }
-  
+
   return {
     id: item.id,
     name: item.name,
@@ -188,7 +183,7 @@ export async function getSkillDetails(
   };
 }
 
-export interface GetSkillDetailsResult {
+export type GetSkillDetailsResult = {
   id: string;
   name: string;
   type: Recommendation["type"];
@@ -200,28 +195,29 @@ export interface GetSkillDetailsResult {
   install: Recommendation["install"];
   metrics: Recommendation["metrics"];
   detection: Recommendation["detection"];
-}
+};
 
 /**
  * Tool: list_categories
- * 
+ *
  * List all available categories
  */
 export async function listCategories(
-  database: RecommendationDatabase
+  database: RecommendationDatabase,
 ): Promise<ListCategoriesResult> {
   const categoryMap = new Map<string, { count: number; types: Set<string> }>();
-  
+
   for (const item of database.items) {
     const cat = item.category;
-    if (!categoryMap.has(cat)) {
-      categoryMap.set(cat, { count: 0, types: new Set() });
+    let entry = categoryMap.get(cat);
+    if (entry === undefined) {
+      entry = { count: 0, types: new Set<string>() };
+      categoryMap.set(cat, entry);
     }
-    const entry = categoryMap.get(cat)!;
     entry.count++;
     entry.types.add(item.type);
   }
-  
+
   const categories = Array.from(categoryMap.entries())
     .map(([name, data]) => ({
       name,
@@ -229,47 +225,45 @@ export async function listCategories(
       types: Array.from(data.types),
     }))
     .sort((a, b) => b.count - a.count);
-  
+
   return {
     categories,
     totalItems: database.items.length,
   };
 }
 
-export interface ListCategoriesResult {
+export type ListCategoriesResult = {
   categories: Array<{
     name: string;
     count: number;
     types: string[];
   }>;
   totalItems: number;
-}
+};
 
 /**
  * Tool: get_stats
- * 
+ *
  * Get database statistics
  */
-export async function getStats(
-  database: RecommendationDatabase
-): Promise<GetStatsResult> {
+export async function getStats(database: RecommendationDatabase): Promise<GetStatsResult> {
   const typeCount = new Map<string, number>();
   const sourceCount = new Map<string, number>();
   let officialCount = 0;
-  
+
   for (const item of database.items) {
     // Count by type
     typeCount.set(item.type, (typeCount.get(item.type) || 0) + 1);
-    
+
     // Count by source
     sourceCount.set(item.metrics.source, (sourceCount.get(item.metrics.source) || 0) + 1);
-    
+
     // Count official
     if (item.metrics.isOfficial) {
       officialCount++;
     }
   }
-  
+
   return {
     version: database.version,
     lastUpdated: database.lastUpdated,
@@ -280,11 +274,11 @@ export async function getStats(
   };
 }
 
-export interface GetStatsResult {
+export type GetStatsResult = {
   version: string;
   lastUpdated: string;
   totalItems: number;
   byType: Record<string, number>;
   bySource: Record<string, number>;
   officialCount: number;
-}
+};

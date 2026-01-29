@@ -17,7 +17,11 @@
         "dependencies": ["typescript"]
       },
       "metrics": { "source": "official", "isOfficial": true },
-      "install": { "method": "plugin", "command": "/plugin install typescript-lsp", "marketplace": "claude-plugins-official" }
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install typescript-lsp",
+        "marketplace": "claude-plugins-official"
+      }
     },
     {
       "id": "plugin-pyright-lsp",
@@ -30,7 +34,11 @@
       "tags": ["python", "lsp", "development", "pyright"],
       "detection": { "languages": ["python"], "files": ["*.py"] },
       "metrics": { "source": "official", "isOfficial": true },
-      "install": { "method": "plugin", "command": "/plugin install pyright-lsp", "marketplace": "claude-plugins-official" }
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install pyright-lsp",
+        "marketplace": "claude-plugins-official"
+      }
     },
     {
       "id": "mcp-supabase",
@@ -41,7 +49,10 @@
       "author": { "name": "supabase-community", "url": "https://github.com/supabase-community" },
       "category": "Databases",
       "tags": ["database", "supabase", "postgresql", "cloud"],
-      "detection": { "dependencies": ["@supabase/supabase-js", "supabase"], "keywords": ["supabase", "database"] },
+      "detection": {
+        "dependencies": ["@supabase/supabase-js", "supabase"],
+        "keywords": ["supabase", "database"]
+      },
       "metrics": { "source": "official", "isOfficial": true },
       "install": { "method": "mcp-add", "command": "claude mcp add supabase-mcp" }
     },
@@ -54,7 +65,11 @@
       "author": { "name": "prisma", "url": "https://github.com/prisma" },
       "category": "Databases",
       "tags": ["database", "prisma", "postgresql", "orm"],
-      "detection": { "dependencies": ["prisma", "@prisma/client"], "files": ["prisma/schema.prisma"], "keywords": ["prisma", "database"] },
+      "detection": {
+        "dependencies": ["prisma", "@prisma/client"],
+        "files": ["prisma/schema.prisma"],
+        "keywords": ["prisma", "database"]
+      },
       "metrics": { "source": "official", "isOfficial": true },
       "install": { "method": "mcp-add", "command": "claude mcp add prisma-mcp" }
     },
@@ -67,7 +82,11 @@
       "author": { "name": "Anthropic" },
       "category": "Development Tools",
       "tags": ["frontend", "design", "ui", "react", "css"],
-      "detection": { "frameworks": ["react", "nextjs", "vue"], "dependencies": ["react", "next", "vue", "tailwindcss"], "keywords": ["frontend", "ui", "design"] },
+      "detection": {
+        "frameworks": ["react", "nextjs", "vue"],
+        "dependencies": ["react", "next", "vue", "tailwindcss"],
+        "keywords": ["frontend", "ui", "design"]
+      },
       "metrics": { "source": "official", "isOfficial": true },
       "install": { "method": "plugin", "command": "/plugin install frontend-design" }
     },
@@ -80,7 +99,11 @@
       "author": { "name": "vercel", "url": "https://github.com/vercel" },
       "category": "Cloud Platforms",
       "tags": ["vercel", "deployment", "cloud", "hosting"],
-      "detection": { "files": ["vercel.json", ".vercel/*"], "frameworks": ["vercel", "nextjs"], "keywords": ["vercel", "deploy"] },
+      "detection": {
+        "files": ["vercel.json", ".vercel/*"],
+        "frameworks": ["vercel", "nextjs"],
+        "keywords": ["vercel", "deploy"]
+      },
       "metrics": { "source": "official", "isOfficial": true },
       "install": { "method": "mcp-add", "command": "claude mcp add vercel-mcp" }
     },
@@ -95,7 +118,10 @@
       "tags": ["workflow", "project-management", "planning"],
       "detection": { "keywords": ["project", "management", "planning", "workflow"] },
       "metrics": { "source": "awesome-list", "isOfficial": false },
-      "install": { "method": "manual", "command": "git clone https://github.com/Helmi/claude-simone" }
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Helmi/claude-simone"
+      }
     },
     {
       "id": "mcp-playwright",
@@ -106,7 +132,10 @@
       "author": { "name": "microsoft", "url": "https://github.com/microsoft" },
       "category": "Browser Automation",
       "tags": ["browser", "automation", "testing", "playwright"],
-      "detection": { "dependencies": ["playwright", "@playwright/test"], "keywords": ["browser", "test", "e2e", "automation"] },
+      "detection": {
+        "dependencies": ["playwright", "@playwright/test"],
+        "keywords": ["browser", "test", "e2e", "automation"]
+      },
       "metrics": { "source": "official", "isOfficial": true },
       "install": { "method": "mcp-add", "command": "claude mcp add playwright-mcp" }
     }

@@ -1,5 +1,11 @@
 # cc-recommender
 
+[![npm version](https://img.shields.io/npm/v/cc-recommender.svg)](https://www.npmjs.com/package/cc-recommender)
+[![CI](https://github.com/fujinamiyuji/cc-recommender/workflows/CI/badge.svg)](https://github.com/fujinamiyuji/cc-recommender/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)
+[![pnpm](https://img.shields.io/badge/pnpm-%3E%3D10.0.0-orange.svg)](https://pnpm.io/)
+
 > 🎯 Claude Code向けスキル/プラグイン/MCPサーバー推薦MCPサーバー
 
 Claude Codeで「何入れたらいい？」と聞くだけで、プロジェクトを分析し、最適なスキル・プラグイン・MCPサーバーを提案します。
@@ -25,9 +31,13 @@ npm install -g cc-recommender
 ```bash
 git clone https://github.com/your-username/cc-recommender.git
 cd cc-recommender
-npm install
-npm run build
+pnpm install
+pnpm run build
 ```
+
+**要件:**
+- Node.js >= 22.0.0
+- pnpm >= 10.0.0
 
 ## Claude Codeで使う
 
@@ -109,22 +119,63 @@ Claude: [search_skills ツールを使用]
 
 ## 開発
 
+### セットアップ
+
+```bash
+# 依存関係インストール
+pnpm install
+
+# Huskyのセットアップ（初回のみ）
+pnpm run prepare
+```
+
+### コード品質
+
+このプロジェクトでは **Biome** を使用してコード品質を管理しています。
+
+```bash
+# Lint + Format チェック
+pnpm run lint
+
+# 自動修正
+pnpm run lint:fix
+
+# フォーマットのみ
+pnpm run format
+
+# 型チェック
+pnpm run typecheck
+
+# すべてのチェック
+pnpm run check
+```
+
+### Git Hooks (Husky)
+
+コミット時に自動的に以下が実行されます：
+
+1. **lint-staged** - 変更されたファイルのみを Biome でチェック＆フォーマット
+2. **型チェック** - TypeScript の型エラーがないか確認
+
+コミットが失敗した場合は、エラーを修正してから再度コミットしてください。
+
+```bash
+# エラー修正後
+pnpm run lint:fix
+git add .
+git commit -m "fix: ..."
+```
+
 ### データベース更新
 
 ```bash
-npm run fetch-data
+pnpm run fetch-data
 ```
 
 ### ビルド
 
 ```bash
-npm run build
-```
-
-### 型チェック
-
-```bash
-npm run typecheck
+pnpm run build
 ```
 
 ## ディレクトリ構造
@@ -151,14 +202,6 @@ cc-recommender/
 ├── tsconfig.json
 └── README.md
 ```
-
-## ロードマップ
-
-- [ ] cc-audit連携（セキュリティスコア）
-- [ ] GitHub Actions（日次データ更新）
-- [ ] コミュニティマーケット対応
-- [ ] ユーザーフィードバック機能
-- [ ] npm公開
 
 ## ライセンス
 
