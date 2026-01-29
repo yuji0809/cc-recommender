@@ -1,87 +1,94 @@
-# 貢献ガイド
+# Contributing Guide
 
-cc-recommenderへの貢献ありがとうございます！
+Thank you for your interest in contributing to cc-recommender!
 
-## 重要なドキュメント
+## Important Documentation
 
-開発を始める前に、以下のドキュメントを必ず確認してください:
+Before you start development, please review the following documents:
 
-- **[CLAUDE.md](./CLAUDE.md)** - 開発ガイドライン、コーディング規約、アーキテクチャ原則
-- **[ARCHITECTURE.md](./docs/ARCHITECTURE.md)** - 詳細なアーキテクチャドキュメント
+- **[CLAUDE.md](./CLAUDE.md)** - Development guidelines, coding standards, architecture principles
+- **[ARCHITECTURE.md](./docs/ARCHITECTURE.md)** - Detailed architecture documentation
 
-## 開発環境のセットアップ
+## Development Setup
 
-### 前提条件
+### Prerequisites
 
 - Node.js >= 22.0.0
 - pnpm >= 10.0.0
 
-### セットアップ手順
+### Setup Steps
 
-1. リポジトリをフォーク
-2. クローン
+1. Fork the repository
+2. Clone
 
 ```bash
 git clone https://github.com/your-username/cc-recommender.git
 cd cc-recommender
 ```
 
-3. 依存関係インストール
+3. Install dependencies
 
 ```bash
 pnpm install
 ```
 
-4. ブランチ作成
+4. Create a branch
 
 ```bash
 git checkout -b feature/your-feature-name
 ```
 
-## コード品質基準
+## Code Quality Standards
 
-このプロジェクトは以下のツールで品質を管理しています：
+This project uses the following tools for code quality management:
 
 ### Biome (Linter + Formatter)
 
-- **自動フォーマット**: コード保存時に自動実行（推奨設定）
-- **厳格なルール**: OSSプロジェクトレベルの品質基準
-- **高速**: Rust製で非常に高速
+- **Auto-format**: Automatically runs on file save (recommended setup)
+- **Strict rules**: OSS project-level quality standards
+- **Fast**: Built with Rust for high performance
 
 ```bash
-# チェック
+# Check
 pnpm run lint
 
-# 自動修正
+# Auto-fix
 pnpm run lint:fix
 
-# フォーマット
+# Format only
 pnpm run format
 ```
 
 ### TypeScript
 
-- **strict mode**: 厳格な型チェック有効
-- **noUnusedLocals**: 未使用変数を許可しない
-- **noUnusedParameters**: 未使用パラメータを許可しない
+- **strict mode**: Strict type checking enabled
+- **noUnusedLocals**: Disallow unused variables
+- **noUnusedParameters**: Disallow unused parameters
 
 ```bash
-# 型チェック
+# Type check
 pnpm run typecheck
 ```
 
 ### Git Hooks (Husky)
 
-コミット前に自動実行：
+Automatically runs before commit:
 
-1. **lint-staged**: 変更されたファイルのみをチェック
-2. **型チェック**: 型エラーがないか確認
+1. **lint-staged**: Checks only changed files
+2. **Type check**: Verifies no TypeScript type errors
 
-**重要**: フックが失敗した場合、コミットは中断されます。エラーを修正してから再度コミットしてください。
+**Important**: If commit fails, fix the errors and commit again.
 
-## コミットメッセージ規約
+```bash
+# After fixing errors
+pnpm run lint:fix
+git add .
+git commit -m "fix: ..."
+```
 
-Conventional Commitsに従ってください：
+## Commit Message Convention
+
+Follow Conventional Commits:
 
 ```
 <type>(<scope>): <subject>
@@ -93,16 +100,16 @@ Conventional Commitsに従ってください：
 
 ### Type
 
-- `feat`: 新機能
-- `fix`: バグ修正
-- `docs`: ドキュメント変更
-- `style`: コードフォーマット（機能変更なし）
-- `refactor`: リファクタリング
-- `perf`: パフォーマンス改善
-- `test`: テスト追加・修正
-- `chore`: ビルド・設定変更
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code formatting (no functional changes)
+- `refactor`: Refactoring
+- `perf`: Performance improvements
+- `test`: Adding/fixing tests
+- `chore`: Build/configuration changes
 
-### 例
+### Examples
 
 ```bash
 git commit -m "feat(recommender): add support for custom scoring weights"
@@ -110,83 +117,83 @@ git commit -m "fix(analyzer): handle missing package.json gracefully"
 git commit -m "docs(readme): update installation instructions"
 ```
 
-## プルリクエスト
+## Pull Requests
 
-1. **テスト**: すべてのチェックが通ることを確認
+1. **Tests**: Ensure all checks pass
 
 ```bash
 pnpm run check
 pnpm run build
 ```
 
-2. **説明**: 変更内容を明確に記載
-   - 何を変更したか
-   - なぜ変更したか
-   - どのようにテストしたか
+2. **Description**: Clearly describe your changes
+   - What was changed
+   - Why it was changed
+   - How it was tested
 
-3. **レビュー**: フィードバックに対応
+3. **Review**: Respond to feedback
 
-## ディレクトリ構造
+## Project Structure
 
-詳細は [CLAUDE.md](./CLAUDE.md) および [ARCHITECTURE.md](./docs/ARCHITECTURE.md) を参照してください。
+See [CLAUDE.md](./CLAUDE.md) and [ARCHITECTURE.md](./docs/ARCHITECTURE.md) for details.
 
 ```
 cc-recommender/
 ├── src/
-│   ├── index.ts              # MCPサーバーエントリーポイント
-│   ├── config/               # 設定ファイル
-│   ├── repositories/         # データアクセス層
-│   ├── utils/                # 共通ユーティリティ
-│   ├── types/                # 型定義（ドメイン別）
-│   ├── schemas/              # Zodバリデーションスキーマ
-│   ├── services/             # ビジネスロジック
-│   │   ├── analyzer/         # プロジェクト分析
-│   │   ├── recommender/      # 推薦アルゴリズム
-│   │   ├── plugin-fetcher.ts # プラグインデータ取得
-│   │   ├── mcp-fetcher.ts    # MCPサーバーデータ取得
-│   │   └── skill-fetcher.ts  # スキルデータ取得
-│   ├── tools/                # MCPツール層
-│   │   └── handlers/         # 各ツールの実装
-│   └── server/               # サーバーセットアップ
+│   ├── index.ts              # MCP server entry point
+│   ├── config/               # Configuration
+│   ├── repositories/         # Data access layer
+│   ├── utils/                # Utilities
+│   ├── types/                # Type definitions
+│   ├── schemas/              # Zod validation schemas
+│   ├── services/             # Business logic
+│   │   ├── analyzer/         # Project analysis
+│   │   ├── recommender/      # Recommendation logic
+│   │   ├── plugin-fetcher.ts # Plugin data fetching
+│   │   ├── mcp-fetcher.ts    # MCP server data fetching
+│   │   └── skill-fetcher.ts  # Skill data fetching
+│   ├── tools/                # MCP tools
+│   │   └── handlers/         # Tool implementations
+│   └── server/               # Server setup
 ├── data/
-│   └── recommendations.json  # 統合データベース
+│   └── recommendations.json  # Unified database
 ├── scripts/
-│   └── fetch-data.ts         # データ更新スクリプト
-├── tests/                    # テストファイル
+│   └── fetch-data.ts         # Data fetch script
+├── tests/                    # Test files
 ├── .husky/                   # Git hooks
-├── docs/                     # 技術ドキュメント
-│   └── ARCHITECTURE.md      # アーキテクチャドキュメント
-├── CLAUDE.md                 # 開発ガイドライン（重要！）
-├── CONTRIBUTING.md           # コントリビューションガイド
-├── CHANGELOG.md              # 変更履歴
-├── biome.json               # Biome設定
-├── tsconfig.json            # TypeScript設定
-└── package.json             # プロジェクト設定
+├── docs/                     # Technical documentation
+│   └── ARCHITECTURE.md      # Architecture details
+├── CLAUDE.md                 # Development guidelines (Important!)
+├── CONTRIBUTING.md           # Contribution guide
+├── CHANGELOG.md              # Change history
+├── biome.json               # Biome configuration
+├── tsconfig.json            # TypeScript configuration
+└── package.json             # Project configuration
 ```
 
-## コーディング規約
+## Coding Standards
 
-**重要**: 詳細なコーディング規約とアーキテクチャガイドラインは [CLAUDE.md](./CLAUDE.md) を参照してください。
+**Important**: See [CLAUDE.md](./CLAUDE.md) for detailed coding standards and architecture guidelines.
 
-### 重要なルール
+### Key Rules
 
-1. **index.ts は原則禁止** - ただし `types/` と `tools/handlers/` のみ例外
-2. **type を使用** - interface は使用しない
-3. **レイヤー間の依存方向を守る** - 上位→下位のみ
-4. **単一責任の原則** - ファイルは1つの責務のみを持つ
+1. **index.ts is generally prohibited** - except for `types/` and `tools/handlers/`
+2. **Use type** - Do not use interface
+3. **Follow layer dependency direction** - Upper → Lower only
+4. **Single Responsibility Principle** - Each file should have only one responsibility
 
-### 命名規則
+### Naming Conventions
 
-- **ファイル**: kebab-case + suffix (`plugin-fetcher.service.ts`)
+- **Files**: kebab-case + suffix (`plugin-fetcher.service.ts`)
 
-## データ更新
+## Data Updates
 
-新しいデータソースを追加する場合：
+To add a new data source:
 
-1. `scripts/fetch-data.ts`にフェッチャー追加
-2. `src/types/`に型定義追加（domain-types.ts, raw-types.ts など）
-3. `src/types/index.ts`で公開APIとしてエクスポート
-4. テスト実行
+1. Add fetcher to `scripts/fetch-data.ts`
+2. Add type definitions to `src/types/` (domain-types.ts, raw-types.ts, etc.)
+3. Export as public API in `src/types/index.ts`
+4. Run tests
 
 ```bash
 pnpm run fetch-data
@@ -194,11 +201,11 @@ pnpm run build
 pnpm run check
 ```
 
-## 質問・サポート
+## Questions & Support
 
-- **Issue**: バグ報告・機能要望は[GitHub Issues](https://github.com/your-username/cc-recommender/issues)
-- **Discussion**: 質問・議論は[GitHub Discussions](https://github.com/your-username/cc-recommender/discussions)
+- **Issue**: Bug reports and feature requests via [GitHub Issues](https://github.com/yuji0809/cc-recommender/issues)
+- **Discussion**: Questions and discussions via [GitHub Discussions](https://github.com/yuji0809/cc-recommender/discussions)
 
-## ライセンス
+## License
 
-貢献することで、あなたのコードがMITライセンスでリリースされることに同意したものとみなされます。
+By contributing, you agree that your code will be released under the MIT License.
