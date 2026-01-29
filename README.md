@@ -1,47 +1,50 @@
 # cc-recommender
 
 [![npm version](https://img.shields.io/npm/v/cc-recommender.svg)](https://www.npmjs.com/package/cc-recommender)
-[![CI](https://github.com/fujinamiyuji/cc-recommender/workflows/CI/badge.svg)](https://github.com/fujinamiyuji/cc-recommender/actions)
+[![CI](https://github.com/fujinamiyuji/cc-recommender/actions/workflows/ci.yml/badge.svg)](https://github.com/fujinamiyuji/cc-recommender/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/fujinamiyuji/cc-recommender/branch/main/graph/badge.svg)](https://codecov.io/gh/fujinamiyuji/cc-recommender)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)
 [![pnpm](https://img.shields.io/badge/pnpm-%3E%3D10.0.0-orange.svg)](https://pnpm.io/)
 
-> 🎯 Claude Code向けスキル/プラグイン/MCPサーバー推薦MCPサーバー
+> 🎯 Skills, Plugins, and MCP Server Recommendation MCP Server for Claude Code
 
-Claude Codeで「何入れたらいい？」と聞くだけで、プロジェクトを分析し、最適なスキル・プラグイン・MCPサーバーを提案します。
+English | [日本語](./README.ja.md)
 
-## 特徴
+Just ask "What should I install?" in Claude Code, and it will analyze your project and recommend the best skills, plugins, and MCP servers.
 
-- 📦 **プラグイン推薦** - 公式マーケットプレイスから最適なプラグインを提案
-- 🔌 **MCPサーバー推薦** - awesome-mcp-serversから500+のMCPサーバーを検索
-- 🎯 **スキル/ワークフロー推薦** - awesome-claude-codeからスキル、フック、コマンドを提案
-- 🔍 **プロジェクト分析** - 使用言語、フレームワーク、依存関係を自動検出
-- 🏷️ **キーワード検索** - 名前やタグで検索
+## Features
 
-## インストール
+- 📦 **Plugin Recommendations** - Suggests optimal plugins from the official marketplace
+- 🔌 **MCP Server Recommendations** - Search 500+ MCP servers from awesome-mcp-servers
+- 🎯 **Skill/Workflow Recommendations** - Suggests skills, hooks, and commands from awesome-claude-code
+- 🔍 **Project Analysis** - Automatically detects languages, frameworks, and dependencies
+- 🏷️ **Keyword Search** - Search by name or tags
 
-### npm経由（推奨）
+## Installation
+
+### Via npm (Recommended)
 
 ```bash
 npm install -g cc-recommender
 ```
 
-### ローカルビルド
+### Local Build
 
 ```bash
-git clone https://github.com/your-username/cc-recommender.git
+git clone https://github.com/fujinamiyuji/cc-recommender.git
 cd cc-recommender
 pnpm install
 pnpm run build
 ```
 
-**要件:**
+**Requirements:**
 - Node.js >= 22.0.0
 - pnpm >= 10.0.0
 
-## Claude Codeで使う
+## Usage with Claude Code
 
-`~/.claude/settings.json` に追加:
+Add to `~/.claude/settings.json`:
 
 ```json
 {
@@ -54,7 +57,7 @@ pnpm run build
 }
 ```
 
-またはローカルビルドの場合:
+Or for local build:
 
 ```json
 {
@@ -67,146 +70,162 @@ pnpm run build
 }
 ```
 
-## 使い方
+## How to Use
 
-### プロジェクト分析と推薦
+### Project Analysis and Recommendations
 
 ```
-You: このプロジェクトに何を入れたらいい？
+You: What should I install for this project?
 
-Claude: [recommend_skills ツールを使用]
+Claude: [Uses recommend_skills tool]
 
-📦 プラグイン
+📦 Plugins
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. typescript-lsp (公式)
-   ├─ 用途: TypeScript の定義ジャンプ、型チェック
-   ├─ スコア: 95 ✅ 高適合
-   └─ インストール: /plugin install typescript-lsp
+1. typescript-lsp (Official)
+   ├─ Purpose: TypeScript definition jump, type checking
+   ├─ Score: 95 ✅ High Match
+   └─ Install: /plugin install typescript-lsp
 
-🔌 MCPサーバー
+🔌 MCP Servers
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 1. supabase-mcp
-   ├─ 用途: Supabase DB 操作
-   ├─ 推薦理由: @supabase/supabase-js 依存
-   └─ インストール: claude mcp add supabase-mcp
+   ├─ Purpose: Supabase DB operations
+   ├─ Reason: Depends on @supabase/supabase-js
+   └─ Install: claude mcp add supabase-mcp
 ```
 
-### キーワード検索
+### Keyword Search
 
 ```
-You: データベース関連のMCPを探して
+You: Find MCP servers related to databases
 
-Claude: [search_skills ツールを使用]
+Claude: [Uses search_skills tool]
 ```
 
-## 提供ツール
+## Available Tools
 
-| ツール | 説明 |
-|--------|------|
-| `recommend_skills` | プロジェクトを分析し、適切なスキル/プラグイン/MCPを推薦 |
-| `search_skills` | キーワードで検索 |
-| `get_skill_details` | 特定アイテムの詳細を取得 |
-| `list_categories` | カテゴリ一覧を取得 |
-| `get_stats` | データベース統計を取得 |
+| Tool | Description |
+|------|-------------|
+| `recommend_skills` | Analyzes project and recommends appropriate skills/plugins/MCPs |
+| `search_skills` | Search by keywords |
+| `get_skill_details` | Get details of a specific item |
+| `list_categories` | Get list of categories |
+| `get_stats` | Get database statistics |
 
-## データソース
+## Data Sources
 
-| ソース | 内容 |
-|--------|------|
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | 公式プラグインマーケットプレイス |
-| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | MCPサーバーのキュレーションリスト |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | スキル/ワークフロー/フックのリスト |
+| Source | Content |
+|--------|---------|
+| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Official plugin marketplace |
+| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | Curated list of MCP servers |
+| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | List of skills/workflows/hooks |
 
-## 開発
+## Development
 
-### セットアップ
+### Setup
 
 ```bash
-# 依存関係インストール
+# Install dependencies
 pnpm install
 
-# Huskyのセットアップ（初回のみ）
+# Setup Husky (first time only)
 pnpm run prepare
 ```
 
-### コード品質
+### Code Quality
 
-このプロジェクトでは **Biome** を使用してコード品質を管理しています。
+This project uses **Biome** for code quality management.
 
 ```bash
-# Lint + Format チェック
+# Lint + Format check
 pnpm run lint
 
-# 自動修正
+# Auto-fix
 pnpm run lint:fix
 
-# フォーマットのみ
+# Format only
 pnpm run format
 
-# 型チェック
+# Type check
 pnpm run typecheck
 
-# すべてのチェック
+# All checks
 pnpm run check
 ```
 
 ### Git Hooks (Husky)
 
-コミット時に自動的に以下が実行されます：
+The following runs automatically on commit:
 
-1. **lint-staged** - 変更されたファイルのみを Biome でチェック＆フォーマット
-2. **型チェック** - TypeScript の型エラーがないか確認
+1. **lint-staged** - Checks & formats only changed files with Biome
+2. **Type check** - Verifies TypeScript type errors
 
-コミットが失敗した場合は、エラーを修正してから再度コミットしてください。
+If commit fails, fix the errors and commit again:
 
 ```bash
-# エラー修正後
+# After fixing errors
 pnpm run lint:fix
 git add .
 git commit -m "fix: ..."
 ```
 
-### データベース更新
+### Update Database
 
 ```bash
 pnpm run fetch-data
 ```
 
-### ビルド
+### Testing
+
+```bash
+# Run tests
+pnpm run test
+
+# Watch mode
+pnpm run test:watch
+
+# Coverage
+pnpm run test:coverage
+```
+
+### Build
 
 ```bash
 pnpm run build
 ```
 
-## ディレクトリ構造
+## Directory Structure
 
 ```
 cc-recommender/
 ├── src/
-│   ├── index.ts              # MCPサーバーエントリーポイント
+│   ├── index.ts              # MCP server entry point
 │   ├── tools/
-│   │   └── index.ts          # ツール定義
+│   │   └── index.ts          # Tool definitions
 │   ├── services/
-│   │   ├── analyzer.ts       # プロジェクト分析
-│   │   ├── recommender.ts    # 推薦ロジック
-│   │   ├── plugin-fetcher.ts # プラグイン取得
-│   │   ├── mcp-fetcher.ts    # MCPサーバー取得
-│   │   └── skill-fetcher.ts  # スキル取得
+│   │   ├── analyzer.ts       # Project analysis
+│   │   ├── recommender.ts    # Recommendation logic
+│   │   ├── plugin-fetcher.ts # Plugin fetcher
+│   │   ├── mcp-fetcher.ts    # MCP server fetcher
+│   │   └── skill-fetcher.ts  # Skill fetcher
 │   └── types/
-│       └── index.ts          # 型定義
+│       └── index.ts          # Type definitions
 ├── data/
-│   └── recommendations.json  # 統合データベース
+│   └── recommendations.json  # Unified database
 ├── scripts/
-│   └── fetch-data.ts         # データ取得スクリプト
+│   └── fetch-data.ts         # Data fetch script
+├── tests/
+│   ├── analyzer.test.ts      # Analyzer tests
+│   └── recommender.test.ts   # Recommender tests
 ├── package.json
 ├── tsconfig.json
 └── README.md
 ```
 
-## ライセンス
+## License
 
 MIT
 
-## 作者
+## Author
 
 Yuji
