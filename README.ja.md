@@ -149,6 +149,9 @@ pnpm run format
 # 型チェック
 pnpm run typecheck
 
+# セキュリティ監査
+pnpm run audit
+
 # すべてのチェック
 pnpm run check
 ```

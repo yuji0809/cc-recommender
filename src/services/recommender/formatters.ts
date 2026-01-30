@@ -6,6 +6,7 @@
 
 import type { Recommendation } from "../../types/domain-types.js";
 import type { ScoredRecommendation } from "../../types/service-types.js";
+import { getSecurityBadge } from "../security-scanner.service.js";
 import { getScoreIndicator } from "./scoring/scorer.js";
 
 /**
@@ -81,6 +82,12 @@ export function formatRecommendations(recommendations: ScoredRecommendation[]): 
         `   ├─ 用途: ${item.description.slice(0, 60)}${item.description.length > 60 ? "..." : ""}`,
       );
       lines.push(`   ├─ スコア: ${score}${getScoreIndicator(score)}`);
+
+      // セキュリティスコア表示
+      if (item.metrics.securityScore !== undefined) {
+        const securityBadge = getSecurityBadge(item.metrics.securityScore);
+        lines.push(`   ├─ セキュリティ: ${securityBadge} (${item.metrics.securityScore}/100)`);
+      }
 
       if (reasons.length > 0) {
         lines.push(`   ├─ 推薦理由: ${reasons.join(", ")}`);

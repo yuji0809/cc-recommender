@@ -149,6 +149,9 @@ pnpm run format
 # Type check
 pnpm run typecheck
 
+# Security audit
+pnpm run audit
+
 # All checks
 pnpm run check
 ```

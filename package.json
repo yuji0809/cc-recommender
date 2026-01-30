@@ -19,7 +19,11 @@
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
     "typecheck": "tsc --noEmit",
-    "check": "pnpm run typecheck && pnpm run lint",
+    "audit": "npx @cc-audit/cc-audit check .",
+    "audit:baseline": "npx @cc-audit/cc-audit check . --save-baseline .cc-audit-baseline.json",
+    "audit:drift": "npx @cc-audit/cc-audit check . --check-drift .cc-audit-baseline.json",
+    "audit:watch": "npx @cc-audit/cc-audit check . --watch",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run audit",
     "prepare": "husky",
     "prepublishOnly": "pnpm run check && pnpm run build && pnpm run test"
   },
@@ -46,6 +50,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.13",
+    "@cc-audit/cc-audit": "^3.2.7",
     "@types/node": "^22.0.0",
     "@vitest/coverage-v8": "^4.0.18",
     "husky": "^9.1.7",

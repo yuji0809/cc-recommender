@@ -258,6 +258,18 @@ pnpm run typecheck
 # Lint（自動修正）
 pnpm run lint:fix
 
+# セキュリティ監査
+pnpm run audit
+
+# セキュリティ監査（ウォッチモード）
+pnpm run audit:watch
+
+# ベースライン作成（初回のみ）
+pnpm run audit:baseline
+
+# 変更検知（ベースラインとの差分）
+pnpm run audit:drift
+
 # テスト実行
 pnpm run test
 
@@ -267,8 +279,31 @@ pnpm run test:coverage
 # ビルド
 pnpm run build
 
-# 全チェック（型チェック + Lint）
+# 全チェック（型チェック + Lint + セキュリティ監査）
 pnpm run check
+```
+
+### セキュリティ監査の活用シーン
+
+**開発中:**
+```bash
+# リアルタイム監視（ファイル変更時に自動スキャン）
+pnpm run audit:watch
+```
+
+**リリース前:**
+```bash
+# ベースライン作成（安全な状態を記録）
+pnpm run audit:baseline
+
+# 後日、変更があった場合
+pnpm run audit:drift  # 差分を検知
+```
+
+**依存関係更新後:**
+```bash
+# 新しい脆弱性がないか確認
+pnpm run audit
 ```
 
 ### CI/CD
@@ -276,6 +311,7 @@ pnpm run check
 - すべての PR で自動的に実行される:
   - 型チェック
   - Lint
+  - セキュリティ監査
   - テスト
   - カバレッジチェック
 

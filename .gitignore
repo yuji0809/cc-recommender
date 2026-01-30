@@ -29,3 +29,6 @@ coverage/
 # Temporary
 tmp/
 temp/
+
+# cc-audit baseline
+.cc-audit-baseline.json

@@ -12,6 +12,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchMCPServers } from "../src/services/mcp-fetcher.js";
 import { fetchPlugins } from "../src/services/plugin-fetcher.js";
+import { scanRepositories } from "../src/services/security-scanner.service.js";
 import { fetchSkills } from "../src/services/skill-fetcher.js";
 import type { Recommendation, RecommendationDatabase } from "../src/types/domain-types.js";
 
@@ -66,7 +67,39 @@ async function main() {
   console.log(`   - Commands: ${deduped.filter((i) => i.type === "command").length}`);
   console.log(`   - Agents: ${deduped.filter((i) => i.type === "agent").length}`);
 
-  // 5. Create database
+  // 5. Security scanning
+  console.log("\n🔒 Security Scanning:");
+  console.log("   Scanning repositories with cc-audit...");
+
+  const reposToScan = deduped
+    .filter((item) => item.url.includes("github.com"))
+    .map((item) => ({
+      url: item.url,
+      type: getScanType(item.type),
+    }));
+
+  console.log(`   Scanning ${reposToScan.length} GitHub repositories...`);
+
+  const scanResults = await scanRepositories(reposToScan, 3);
+
+  // Update security scores
+  for (const item of deduped) {
+    const scanResult = scanResults.get(item.url);
+    if (scanResult?.success) {
+      item.metrics.securityScore = scanResult.score;
+    }
+  }
+
+  const scannedCount = deduped.filter((i) => i.metrics.securityScore !== undefined).length;
+  const avgScore =
+    deduped
+      .filter((i) => i.metrics.securityScore !== undefined)
+      .reduce((sum, i) => sum + (i.metrics.securityScore || 0), 0) / scannedCount;
+
+  console.log(`   ✅ Scanned: ${scannedCount}/${deduped.length} items`);
+  console.log(`   📊 Average security score: ${avgScore.toFixed(1)}/100`);
+
+  // 6. Create database
   const database: RecommendationDatabase = {
     version: "0.1.0",
     lastUpdated: new Date().toISOString(),
@@ -114,6 +147,15 @@ function normalizeUrl(url: string): string {
     .replace(/\/$/, "")
     .replace(/\/tree\/main.*$/, "")
     .replace(/\/blob\/main.*$/, "");
+}
+
+/**
+ * Get scan type from recommendation type
+ */
+function getScanType(type: Recommendation["type"]): "mcp" | "skill" | "plugin" {
+  if (type === "mcp") return "mcp";
+  if (type === "plugin") return "plugin";
+  return "skill"; // skill, workflow, hook, command, agent
 }
 
 // Run

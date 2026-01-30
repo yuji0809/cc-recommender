@@ -70,12 +70,24 @@ pnpm run format
 pnpm run typecheck
 ```
 
+### Security Audit (cc-audit)
+
+- **MCP server scanning**: Scans for security vulnerabilities in MCP servers
+- **100+ detection rules**: Covers exfiltration, escalation, persistence, and injection attacks
+- **CI integration**: Automatically runs during checks
+
+```bash
+# Run security audit
+pnpm run audit
+```
+
 ### Git Hooks (Husky)
 
 Automatically runs before commit:
 
 1. **lint-staged**: Checks only changed files
 2. **Type check**: Verifies no TypeScript type errors
+3. **Security audit**: Scans for security vulnerabilities
 
 **Important**: If commit fails, fix the errors and commit again.
 

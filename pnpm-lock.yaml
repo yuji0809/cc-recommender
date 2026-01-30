@@ -18,6 +18,9 @@ importers:
       '@biomejs/biome':
         specifier: ^2.3.13
         version: 2.3.13
+      '@cc-audit/cc-audit':
+        specifier: ^3.2.7
+        version: 3.2.7
       '@types/node':
         specifier: ^22.0.0
         version: 22.19.7
@@ -113,6 +116,41 @@ packages:
   '@biomejs/cli-win32-x64@2.3.13':
     resolution: {integrity: sha512-trDw2ogdM2lyav9WFQsdsfdVy1dvZALymRpgmWsvSez0BJzBjulhOT/t+wyKeh3pZWvwP3VMs1SoOKwO3wecMQ==}
     engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [win32]
+
+  '@cc-audit/cc-audit@3.2.7':
+    resolution: {integrity: sha512-9Xj21G+KbUcq4ykwgCDqeGR1PKXwO/so4+AwrntteNnmdwejq8AHTljrVaV7b3xQCORRGzPS84ag3qXVZeu/og==}
+    engines: {node: '>=16'}
+    hasBin: true
+
+  '@cc-audit/darwin-arm64@3.2.7':
+    resolution: {integrity: sha512-HKurOyzc5qhD/WmCM0U1BHsZyCU9luXlrrnyMH+KYRdct7Fa9s7mOELQGf2q0cUlp39Ixny3EvDiJv+xEo0n6A==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@cc-audit/darwin-x64@3.2.7':
+    resolution: {integrity: sha512-55bmTtYrm2QZ8z4ii4BOVbvhhI8BsmdRwZ5fqFAwAbP+clVuzimSsRQCDR+9T5W4ZP4IsjuUPEu2joIOSe1/GQ==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@cc-audit/linux-arm64@3.2.7':
+    resolution: {integrity: sha512-8lynJo731RiyxUpQYNzmCOpAVMd+5VBBMzZCvfYQWu/X3ZiRna9MDl5nd3ebB+Ed8mLbURS5PkfaG2wWnS3Iog==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@cc-audit/linux-x64-musl@3.2.7':
+    resolution: {integrity: sha512-y8COnP+bkF8OYTJHWoofDTX9xCzTANsuq5pd99/VNqRay0mDPAUwTVBFiPvxc+mJph6kaQHu5blYwFpq6a/dHg==}
+    cpu: [x64]
+    os: [linux]
+
+  '@cc-audit/linux-x64@3.2.7':
+    resolution: {integrity: sha512-nWlMl8yOswl2BSfoMFsQ2pWKxRmtX/ZR6HyWnuHA8v/C4pcSQYZCj0bpnm9hz8KibJflmFUuazME2PST7K5Pwg==}
+    cpu: [x64]
+    os: [linux]
+
+  '@cc-audit/win32-x64@3.2.7':
+    resolution: {integrity: sha512-HAX+QPRMo3RiIG0C53IR60VUnZETaGHiWNUkmAMicXgGyaBO3kc7gsZYxjBjEztX4OV1SF0ugJorfa+Dl28mCQ==}
     cpu: [x64]
     os: [win32]
 
@@ -1250,6 +1288,33 @@ snapshots:
     optional: true
 
   '@biomejs/cli-win32-x64@2.3.13':
+    optional: true
+
+  '@cc-audit/cc-audit@3.2.7':
+    optionalDependencies:
+      '@cc-audit/darwin-arm64': 3.2.7
+      '@cc-audit/darwin-x64': 3.2.7
+      '@cc-audit/linux-arm64': 3.2.7
+      '@cc-audit/linux-x64': 3.2.7
+      '@cc-audit/linux-x64-musl': 3.2.7
+      '@cc-audit/win32-x64': 3.2.7
+
+  '@cc-audit/darwin-arm64@3.2.7':
+    optional: true
+
+  '@cc-audit/darwin-x64@3.2.7':
+    optional: true
+
+  '@cc-audit/linux-arm64@3.2.7':
+    optional: true
+
+  '@cc-audit/linux-x64-musl@3.2.7':
+    optional: true
+
+  '@cc-audit/linux-x64@3.2.7':
+    optional: true
+
+  '@cc-audit/win32-x64@3.2.7':
     optional: true
 
   '@esbuild/aix-ppc64@0.27.2':
