@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0](https://github.com/yuji0809/cc-recommender/compare/v0.1.1...v0.2.0) (2026-01-30)
+
+
+### Features
+
+* add release-please for automated releases ([7ce1c22](https://github.com/yuji0809/cc-recommender/commit/7ce1c2285154d93c501f3f61bc0e48f9183eaf12))
+
+
+### Bug Fixes
+
+* remove deprecated package-name parameter from release-please ([c043385](https://github.com/yuji0809/cc-recommender/commit/c043385338885da915c956904af59eb382e5f99d))
+
 ## [Unreleased]
 
 ## [0.1.0] - 2025-01-30
