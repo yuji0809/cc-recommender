@@ -362,7 +362,7 @@ describe("Recommender Service", () => {
 
         const { score, reasons } = calculateScore(mockRecommendation, noMatchProject);
 
-        expect(score).toBe(0);
+        expect(score).toBe(1);
         expect(reasons).toHaveLength(0);
       });
 
@@ -380,7 +380,7 @@ describe("Recommender Service", () => {
 
         const { score, reasons } = calculateScore(item, mockProject);
 
-        expect(score).toBe(0);
+        expect(score).toBe(1);
         expect(reasons).toHaveLength(0);
       });
 
@@ -395,7 +395,7 @@ describe("Recommender Service", () => {
 
         const { score } = calculateScore(mockRecommendation, emptyProject);
 
-        expect(score).toBe(0);
+        expect(score).toBe(1);
       });
 
       test("should handle undefined optional fields", () => {
@@ -409,7 +409,7 @@ describe("Recommender Service", () => {
 
         const { score } = calculateScore(item, mockProject);
 
-        expect(score).toBe(0);
+        expect(score).toBe(1);
       });
 
       test("should handle security score at exact boundaries", () => {
@@ -1084,17 +1084,17 @@ describe("Recommender Service", () => {
       test("should show score indicators", () => {
         const highScore: ScoredRecommendation = {
           item: mockRecommendation,
-          score: 15,
+          score: 85,
           reasons: [],
         };
         const midScore: ScoredRecommendation = {
           item: mockRecommendation,
-          score: 7,
+          score: 60,
           reasons: [],
         };
         const lowScore: ScoredRecommendation = {
           item: mockRecommendation,
-          score: 3,
+          score: 30,
           reasons: [],
         };
 
@@ -1105,6 +1105,117 @@ describe("Recommender Service", () => {
         expect(result1).toContain("✅ 高適合");
         expect(result2).toContain("👍 適合");
         expect(result3).toContain("📝 参考");
+      });
+    });
+
+    describe("Bonus recommendations", () => {
+      test("should show bonus recommendations section when provided", () => {
+        const displayedRec: ScoredRecommendation = {
+          item: mockRecommendation,
+          score: 10,
+          reasons: ["言語: TypeScript"],
+        };
+
+        const bonusRec: ScoredRecommendation = {
+          item: {
+            ...mockRecommendation,
+            id: "bonus-plugin",
+            name: "Bonus Plugin",
+            metrics: {
+              ...mockRecommendation.metrics,
+              stars: 500,
+            },
+          },
+          score: 3,
+          reasons: [],
+        };
+
+        const result = formatRecommendations([displayedRec], [displayedRec, bonusRec]);
+
+        expect(result).toContain("🔥 人気・トレンド");
+        expect(result).toContain("Bonus Plugin");
+      });
+
+      test("should not duplicate items in bonus section", () => {
+        const rec: ScoredRecommendation = {
+          item: mockRecommendation,
+          score: 10,
+          reasons: [],
+        };
+
+        const result = formatRecommendations([rec], [rec]);
+
+        // Should only appear once (not in bonus section)
+        const occurrences = (result.match(/Test Plugin/g) || []).length;
+        expect(occurrences).toBe(1);
+      });
+
+      test("should prioritize official items in bonus section", () => {
+        const displayedRec: ScoredRecommendation = {
+          item: mockRecommendation,
+          score: 10,
+          reasons: [],
+        };
+
+        const officialBonus: ScoredRecommendation = {
+          item: {
+            ...mockRecommendation,
+            id: "official-bonus",
+            name: "Official Bonus",
+            metrics: {
+              ...mockRecommendation.metrics,
+              isOfficial: true,
+              stars: 100,
+            },
+          },
+          score: 2,
+          reasons: [],
+        };
+
+        const result = formatRecommendations([displayedRec], [displayedRec, officialBonus]);
+
+        expect(result).toContain("Official Bonus");
+        expect(result).toContain("公式推奨");
+      });
+
+      test("should show stars for popular items in bonus section", () => {
+        const displayedRec: ScoredRecommendation = {
+          item: mockRecommendation,
+          score: 10,
+          reasons: [],
+        };
+
+        const popularBonus: ScoredRecommendation = {
+          item: {
+            ...mockRecommendation,
+            id: "popular-bonus",
+            name: "Popular Bonus",
+            metrics: {
+              ...mockRecommendation.metrics,
+              stars: 250,
+            },
+          },
+          score: 2,
+          reasons: [],
+        };
+
+        const result = formatRecommendations([displayedRec], [displayedRec, popularBonus]);
+
+        expect(result).toContain("GitHub Stars: ⭐ 250");
+      });
+
+      test("should work without bonus recommendations", () => {
+        const rec: ScoredRecommendation = {
+          item: mockRecommendation,
+          score: 10,
+          reasons: [],
+        };
+
+        // No second parameter
+        const result = formatRecommendations([rec]);
+
+        expect(result).not.toContain("🔥 人気・トレンド");
+        expect(result).toContain("Test Plugin");
       });
     });
   });

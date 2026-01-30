@@ -47,8 +47,15 @@ export async function recommendSkills(
     types: input.types,
   });
 
+  // Get all recommendations (for bonus section)
+  const allRecommendations = recommend(database, projectInfo, input.description, {
+    maxResults: 100, // Get more items for bonus selection
+    minScore: 0, // Include all items even with score 0
+    types: input.types,
+  });
+
   // Format for display
-  const formatted = formatRecommendations(recommendations);
+  const formatted = formatRecommendations(recommendations, allRecommendations);
 
   return {
     project: {

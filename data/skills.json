@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-01-30T12:20:06.930Z",
+  "lastUpdated": "2026-01-30T15:29:40.779Z",
   "items": [
     {
       "id": "skill-ai-agent-ai-spy",
@@ -23,6 +23,31 @@
       },
       "install": {
         "method": "manual"
+      }
+    },
+    {
+      "id": "skill-cc-devops-skills",
+      "name": "cc-devops-skills",
+      "type": "skill",
+      "url": "https://github.com/akin-ozer/cc-devops-skills",
+      "description": "Immensely detailed set of skills for DevOps Engineers (or anyone who has to deploy code, really). Works with validations, generators, shell scripts and CLI tools to create high quality IaC code for about any platform you've ever struggled painfully to work with. Worth downloading even just as a source of documentation.",
+      "author": {
+        "name": "akin-ozer",
+        "url": "https://github.com/akin-ozer"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "apache-2.0"],
+      "detection": {
+        "keywords": ["devops", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/akin-ozer/cc-devops-skills"
       }
     },
     {

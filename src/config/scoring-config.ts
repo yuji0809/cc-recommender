@@ -26,4 +26,6 @@ export const SCORING_THRESHOLDS = {
   maxResults: 20,
   highSecurityThreshold: 80,
   lowSecurityThreshold: 50,
+  /** Expected maximum raw score for normalization (empirical value) */
+  maxRawScore: 50,
 } as const;

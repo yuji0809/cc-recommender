@@ -111,18 +111,37 @@ export function calculateScore(
     }
   }
 
-  return { score: Math.round(score * 100) / 100, reasons };
+  // Normalize score to 1-100 range
+  const normalizedScore = normalizeScore(score);
+
+  return { score: normalizedScore, reasons };
+}
+
+/**
+ * Normalize raw score to 1-100 range
+ *
+ * @param rawScore - The raw calculated score
+ * @returns Normalized score between 1 and 100
+ */
+function normalizeScore(rawScore: number): number {
+  if (rawScore <= 0) return 1;
+
+  // Convert to 1-100 scale based on expected max raw score
+  const normalized = (rawScore / SCORING_THRESHOLDS.maxRawScore) * 100;
+
+  // Clamp to 1-100 range
+  return Math.round(Math.min(100, Math.max(1, normalized)));
 }
 
 /**
  * Get score indicator emoji and text
  *
- * @param score - The calculated score
+ * @param score - The calculated score (1-100)
  * @returns Indicator string with emoji
  */
 export function getScoreIndicator(score: number): string {
-  if (score >= 10) return " ✅ 高適合";
-  if (score >= 5) return " 👍 適合";
-  if (score >= 2) return " 📝 参考";
+  if (score >= 80) return " ✅ 高適合";
+  if (score >= 50) return " 👍 適合";
+  if (score >= 20) return " 📝 参考";
   return "";
 }

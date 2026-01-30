@@ -10,6 +10,19 @@ import { getSecurityBadge } from "../security-scanner.service.js";
 import { getScoreIndicator } from "./scoring/scorer.js";
 
 /**
+ * Get score explanation
+ *
+ * @param score - The calculated score
+ * @returns Brief explanation of the score
+ */
+function getScoreExplanation(score: number): string {
+  if (score >= 10) return "プロジェクトに強く推薦";
+  if (score >= 5) return "プロジェクトに適合";
+  if (score >= 2) return "参考として有用";
+  return "低い適合度";
+}
+
+/**
  * Group recommendations by type
  *
  * @param recommendations - List of scored recommendations
@@ -32,12 +45,89 @@ export function groupByType(
 }
 
 /**
+ * Select bonus recommendations (popular/trending items)
+ *
+ * @param recommendations - List of all recommendations
+ * @param displayedIds - Set of IDs already displayed
+ * @returns 1-2 bonus recommendations
+ */
+function selectBonusRecommendations(
+  recommendations: ScoredRecommendation[],
+  displayedIds: Set<string>,
+): ScoredRecommendation[] {
+  // Filter out already displayed items
+  const candidates = recommendations.filter((rec) => !displayedIds.has(rec.item.id));
+
+  if (candidates.length === 0) return [];
+
+  // Score each candidate for "bonus worthiness"
+  const scored = candidates.map((rec) => {
+    let bonusScore = 0;
+
+    // Official items get priority
+    if (rec.item.metrics.isOfficial) bonusScore += 100;
+
+    // High star count indicates popularity
+    if (rec.item.metrics.stars) {
+      bonusScore += Math.min(rec.item.metrics.stars / 10, 50); // Cap at 50 points
+    }
+
+    // High security score indicates quality
+    if (rec.item.metrics.securityScore && rec.item.metrics.securityScore >= 80) {
+      bonusScore += 30;
+    }
+
+    // Recently updated items (within last 6 months)
+    if (rec.item.metrics.lastUpdated) {
+      const sixMonthsAgo = new Date();
+      sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+      const lastUpdated = new Date(rec.item.metrics.lastUpdated);
+      if (lastUpdated > sixMonthsAgo) {
+        bonusScore += 20;
+      }
+    }
+
+    return { rec, bonusScore };
+  });
+
+  // Sort by bonus score
+  scored.sort((a, b) => b.bonusScore - a.bonusScore);
+
+  // Return top 1-2 items
+  return scored.slice(0, 2).map((s) => s.rec);
+}
+
+/**
+ * Get bonus recommendation label
+ *
+ * @param item - The recommendation item
+ * @returns Label explaining why it's recommended
+ */
+function getBonusLabel(item: Recommendation): string {
+  if (item.metrics.isOfficial) return "公式推奨";
+  if (item.metrics.stars && item.metrics.stars >= 100) return "人気のツール";
+  if (item.metrics.securityScore && item.metrics.securityScore >= 80) return "高品質";
+
+  const sixMonthsAgo = new Date();
+  sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+  if (item.metrics.lastUpdated && new Date(item.metrics.lastUpdated) > sixMonthsAgo) {
+    return "最近話題";
+  }
+
+  return "おすすめ";
+}
+
+/**
  * Format recommendations for display
  *
  * @param recommendations - List of scored recommendations
+ * @param allRecommendations - All available recommendations for bonus section
  * @returns Formatted string for display
  */
-export function formatRecommendations(recommendations: ScoredRecommendation[]): string {
+export function formatRecommendations(
+  recommendations: ScoredRecommendation[],
+  allRecommendations?: ScoredRecommendation[],
+): string {
   if (recommendations.length === 0) {
     return "プロジェクトに適した推薦が見つかりませんでした。";
   }
@@ -67,6 +157,9 @@ export function formatRecommendations(recommendations: ScoredRecommendation[]): 
     "agent",
   ];
 
+  // Track displayed IDs
+  const displayedIds = new Set<string>();
+
   for (const type of typeOrder) {
     const items = grouped.get(type);
     if (!items || items.length === 0) continue;
@@ -76,12 +169,16 @@ export function formatRecommendations(recommendations: ScoredRecommendation[]): 
 
     for (let i = 0; i < Math.min(items.length, 5); i++) {
       const { item, score, reasons } = items[i];
+      displayedIds.add(item.id);
 
       lines.push(`${i + 1}. ${item.name}${item.metrics.isOfficial ? " (公式)" : ""}`);
       lines.push(
         `   ├─ 用途: ${item.description.slice(0, 60)}${item.description.length > 60 ? "..." : ""}`,
       );
-      lines.push(`   ├─ スコア: ${score}${getScoreIndicator(score)}`);
+
+      // スコア表示（説明付き）
+      const scoreExplanation = getScoreExplanation(score);
+      lines.push(`   ├─ スコア: ${score}${getScoreIndicator(score)} - ${scoreExplanation}`);
 
       // セキュリティスコア表示
       if (item.metrics.securityScore !== undefined) {
@@ -90,7 +187,7 @@ export function formatRecommendations(recommendations: ScoredRecommendation[]): 
       }
 
       if (reasons.length > 0) {
-        lines.push(`   ├─ 推薦理由: ${reasons.join(", ")}`);
+        lines.push(`   ├─ マッチ内容: ${reasons.join(", ")}`);
       }
 
       if (item.install.command) {
@@ -104,6 +201,38 @@ export function formatRecommendations(recommendations: ScoredRecommendation[]): 
 
     if (items.length > 5) {
       lines.push(`   ... 他 ${items.length - 5} 件`);
+    }
+  }
+
+  // Add bonus recommendations section
+  if (allRecommendations && allRecommendations.length > 0) {
+    const bonusItems = selectBonusRecommendations(allRecommendations, displayedIds);
+
+    if (bonusItems.length > 0) {
+      lines.push("\n🔥 人気・トレンド");
+      lines.push("━".repeat(40));
+
+      for (let i = 0; i < bonusItems.length; i++) {
+        const { item } = bonusItems[i];
+        const bonusLabel = getBonusLabel(item);
+
+        lines.push(`${i + 1}. ${item.name} (${bonusLabel})`);
+        lines.push(
+          `   ├─ 用途: ${item.description.slice(0, 60)}${item.description.length > 60 ? "..." : ""}`,
+        );
+
+        if (item.metrics.stars) {
+          lines.push(`   ├─ GitHub Stars: ⭐ ${item.metrics.stars}`);
+        }
+
+        if (item.install.command) {
+          lines.push(`   └─ インストール: ${item.install.command}`);
+        } else {
+          lines.push(`   └─ URL: ${item.url}`);
+        }
+
+        lines.push("");
+      }
     }
   }
 
