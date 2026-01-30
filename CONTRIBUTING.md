@@ -129,6 +129,42 @@ git commit -m "fix(analyzer): handle missing package.json gracefully"
 git commit -m "docs(readme): update installation instructions"
 ```
 
+### Versioning Rules
+
+This project uses **[release-please](https://github.com/googleapis/release-please)** for automated releases. The commit type determines how the version number is bumped:
+
+| Commit Type | Version Bump | Example |
+|-------------|--------------|---------|
+| `fix:` | **patch** | 0.1.1 → 0.1.2 |
+| `feat:` | **minor** | 0.1.1 → 0.2.0 |
+| `feat!:` or `BREAKING CHANGE:` | **major** | 0.1.1 → 1.0.0 |
+| `chore:`, `docs:`, `style:`, etc. | **none** | No version change |
+
+**Important Notes:**
+- `feat:` commits trigger a **minor** version bump (new features)
+- `fix:` commits trigger a **patch** version bump (bug fixes)
+- Breaking changes trigger a **major** version bump
+- Other types (`chore:`, `ci:`, `docs:`) do not trigger version changes
+
+**Example Scenarios:**
+```bash
+# Adds a new feature → 0.1.1 to 0.2.0
+git commit -m "feat: add new recommendation algorithm"
+
+# Fixes a bug → 0.1.1 to 0.1.2
+git commit -m "fix: resolve analyzer crash on empty files"
+
+# Internal change (no version bump)
+git commit -m "chore: update dependencies"
+
+# Breaking change → 0.1.1 to 1.0.0
+git commit -m "feat!: redesign API interface"
+# or
+git commit -m "feat: redesign API interface
+
+BREAKING CHANGE: API interface has changed"
+```
+
 ## Pull Requests
 
 1. **Tests**: Ensure all checks pass
@@ -300,45 +336,67 @@ pnpm run build
 pnpm run dev
 ```
 
-### Release Process (for maintainers)
+### Automated Release Process
 
-1. Update data to latest
+This project uses **[release-please](https://github.com/googleapis/release-please)** for fully automated releases.
 
+**How it works:**
+
+1. **Push commits to `main`** using Conventional Commits
+   ```bash
+   git commit -m "feat: add new feature"
+   git commit -m "fix: resolve bug"
+   git push origin main
+   ```
+
+2. **release-please automatically creates/updates a Release PR**
+   - Automatically determines the version based on commit types
+   - Generates CHANGELOG.md
+   - Updates package.json version
+   - PR title: `chore(main): release X.Y.Z`
+
+3. **Merge the Release PR**
+   - Review the generated CHANGELOG
+   - Merge when ready to publish
+   ```bash
+   # Or merge via GitHub UI
+   gh pr merge <PR_NUMBER> --squash
+   ```
+
+4. **Automatic GitHub Release & NPM Publish**
+   - GitHub Release is created automatically
+   - Package is published to NPM automatically
+   - No manual intervention required!
+
+**Example Workflow:**
 ```bash
-pnpm run fetch-data:full
-git add data/recommendations.json
-git commit -m "chore(data): update recommendations for v0.x.0"
+# 1. Make changes with proper commit messages
+git checkout -b feature/new-algo
+# ... make changes ...
+git commit -m "feat: implement advanced scoring algorithm"
+git push origin feature/new-algo
+
+# 2. Create and merge PR to main
+gh pr create --fill
+gh pr merge --squash
+
+# 3. release-please creates a Release PR automatically
+# 4. Review and merge the Release PR
+# 5. GitHub Release + NPM publish happens automatically!
 ```
 
-2. Run all checks
+### Manual Release (Emergency Only)
+
+If automated release fails, you can release manually:
 
 ```bash
-pnpm run check  # Type check + Lint + Security audit
-pnpm run build
-pnpm run test
-```
-
-3. Update CHANGELOG.md
-
-Add changes under the next version number.
-
-4. Version bump
-
-```bash
+# 1. Update version
 npm version patch  # or minor/major
-```
 
-5. Publish to npm
+# 2. Create GitHub release
+gh release create v0.x.x --generate-notes
 
-```bash
-npm publish
-```
-
-6. Push to GitHub
-
-```bash
-git push
-git push --tags
+# 3. NPM publish happens automatically via GitHub Actions
 ```
 
 ## Questions & Support
