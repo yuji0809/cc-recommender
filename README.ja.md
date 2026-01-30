@@ -174,7 +174,7 @@ pnpm run build
 
 ## ライセンス
 
-MIT
+[MIT](https://opensource.org/licenses/MIT)
 
 ## 作者
 

@@ -12,6 +12,7 @@ jobs:
   update-database:
     name: Update Recommendations Database
     runs-on: ubuntu-latest
+    timeout-minutes: 120 # 2時間タイムアウト（並列数10なら約60分で完了予定）
 
     steps:
       - name: Checkout code
@@ -30,10 +31,12 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Fetch latest data
+        timeout-minutes: 90 # データ取得＋スキャンのタイムアウト
         run: pnpm run fetch-data
         env:
-          # セキュリティスキャンをスキップ（時間短縮）
-          # 本番環境では有効化推奨
+          # セキュリティスキャン設定
+          # "true": スキップ（高速、テスト用）
+          # "false": 実行（推奨、差分スキャンで効率化済み）
           SKIP_SECURITY_SCAN: "false"
 
       - name: Check for changes

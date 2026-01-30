@@ -91,12 +91,12 @@ export async function scanRepository(
  * 複数のリポジトリを並列スキャン
  *
  * @param repos - スキャン対象のリポジトリ情報
- * @param concurrency - 並列実行数（デフォルト: 3）
+ * @param concurrency - 並列実行数（デフォルト: 10）
  * @returns スキャン結果のマップ
  */
 export async function scanRepositories(
   repos: Array<{ url: string; type: "mcp" | "skill" | "plugin" }>,
-  concurrency = 3,
+  concurrency = 10,
 ): Promise<Map<string, SecurityScanResult>> {
   const results = new Map<string, SecurityScanResult>();
 

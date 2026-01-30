@@ -174,7 +174,7 @@ We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
 
 ## License
 
-MIT
+[MIT](https://opensource.org/licenses/MIT)
 
 ## Author
 

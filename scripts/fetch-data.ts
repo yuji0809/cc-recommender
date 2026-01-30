@@ -7,7 +7,7 @@
  * Usage: npm run fetch-data
  */
 
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchMCPServers } from "../src/services/mcp-fetcher.js";
@@ -30,39 +30,124 @@ const MCP_SERVERS_PATH = join(DATA_DIR, "mcp-servers.json");
 const SKILLS_PATH = join(DATA_DIR, "skills.json");
 
 /**
+ * 既存のデータベースを読み込み（存在しない場合は空配列）
+ */
+async function loadExistingDatabase(
+  filePath: string,
+): Promise<{ items: Recommendation[]; lastUpdated: string } | null> {
+  try {
+    const content = await readFile(filePath, "utf-8");
+    const db = JSON.parse(content) as PluginDatabase | MCPServerDatabase | SkillDatabase;
+    return { items: db.items, lastUpdated: db.lastUpdated };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * 既存アイテムのマップを作成（URL → アイテム）
+ */
+function createItemMap(items: Recommendation[]): Map<string, Recommendation> {
+  const map = new Map<string, Recommendation>();
+  for (const item of items) {
+    const normalizedUrl = normalizeUrl(item.url);
+    map.set(normalizedUrl, item);
+  }
+  return map;
+}
+
+/**
+ * 既存のセキュリティスコアを新アイテムにコピー
+ */
+function copyExistingScores(
+  newItems: Recommendation[],
+  existingMap: Map<string, Recommendation>,
+): { unchanged: number; new: number } {
+  let unchanged = 0;
+  let newCount = 0;
+
+  for (const item of newItems) {
+    const normalizedUrl = normalizeUrl(item.url);
+    const existing = existingMap.get(normalizedUrl);
+
+    if (existing?.metrics.securityScore !== undefined) {
+      // 既存のスコアをコピー
+      item.metrics.securityScore = existing.metrics.securityScore;
+      unchanged++;
+    } else {
+      // 新規アイテム
+      newCount++;
+    }
+  }
+
+  return { unchanged, new: newCount };
+}
+
+/**
+ * スキャンが必要なアイテムをフィルタリング
+ */
+function filterItemsToScan(
+  items: Recommendation[],
+  existingMap: Map<string, Recommendation>,
+): Recommendation[] {
+  return items.filter((item) => {
+    const normalizedUrl = normalizeUrl(item.url);
+    const existing = existingMap.get(normalizedUrl);
+    // セキュリティスコアが存在しない = 新規または未スキャン
+    return existing?.metrics.securityScore === undefined;
+  });
+}
+
+/**
+ * スキャン済みアイテムの結果を元のリストにマージ
+ */
+function mergeScannedResults(allItems: Recommendation[], scannedItems: Recommendation[]): void {
+  const scannedMap = createItemMap(scannedItems);
+
+  for (const item of allItems) {
+    const normalizedUrl = normalizeUrl(item.url);
+    const scanned = scannedMap.get(normalizedUrl);
+
+    if (scanned?.metrics.securityScore !== undefined) {
+      item.metrics.securityScore = scanned.metrics.securityScore;
+    }
+  }
+}
+
+/**
  * Main function
  */
 async function main() {
   console.log("🚀 cc-recommender Data Fetcher");
   console.log("================================\n");
 
-  const allItems: Recommendation[] = [];
+  const skipSecurityScan = process.env.SKIP_SECURITY_SCAN === "true";
 
-  // 1. Fetch plugins from official marketplace
-  try {
-    const plugins = await fetchPlugins();
-    allItems.push(...plugins);
-  } catch (error) {
-    console.error("Failed to fetch plugins:", error);
-  }
+  // 既存データを読み込み
+  console.log("📂 Loading existing databases...");
+  const [existingPlugins, existingMCP, existingSkills] = await Promise.all([
+    loadExistingDatabase(PLUGINS_PATH),
+    loadExistingDatabase(MCP_SERVERS_PATH),
+    loadExistingDatabase(SKILLS_PATH),
+  ]);
 
-  // 2. Fetch MCP servers from awesome-mcp-servers
-  try {
-    const mcpServers = await fetchMCPServers();
-    allItems.push(...mcpServers);
-  } catch (error) {
-    console.error("Failed to fetch MCP servers:", error);
-  }
+  const existingPluginsMap = existingPlugins ? createItemMap(existingPlugins.items) : new Map();
+  const existingMCPMap = existingMCP ? createItemMap(existingMCP.items) : new Map();
+  const existingSkillsMap = existingSkills ? createItemMap(existingSkills.items) : new Map();
 
-  // 3. Fetch skills from awesome-claude-code
-  try {
-    const skills = await fetchSkills();
-    allItems.push(...skills);
-  } catch (error) {
-    console.error("Failed to fetch skills:", error);
-  }
+  console.log(
+    `   Loaded: ${existingPluginsMap.size} plugins, ${existingMCPMap.size} MCP, ${existingSkillsMap.size} skills\n`,
+  );
 
-  // 4. Deduplicate by URL
+  // 並列でデータ取得＆スキャン実行（既存データを渡す）
+  const [plugins, mcpServers, skills] = await Promise.all([
+    fetchAndScanPlugins(skipSecurityScan, existingPluginsMap),
+    fetchAndScanMCPServers(skipSecurityScan, existingMCPMap),
+    fetchAndScanSkills(skipSecurityScan, existingSkillsMap),
+  ]);
+
+  // 全データを結合して重複排除
+  const allItems = [...plugins, ...mcpServers, ...skills];
   const deduped = deduplicateByUrl(allItems);
 
   console.log("\n📊 Summary:");
@@ -75,48 +160,10 @@ async function main() {
   console.log(`   - Commands: ${deduped.filter((i) => i.type === "command").length}`);
   console.log(`   - Agents: ${deduped.filter((i) => i.type === "agent").length}`);
 
-  // 5. Security scanning
-  const skipSecurityScan = process.env.SKIP_SECURITY_SCAN === "true";
-
-  if (skipSecurityScan) {
-    console.log("\n🔒 Security Scanning: SKIPPED (SKIP_SECURITY_SCAN=true)");
-  } else {
-    console.log("\n🔒 Security Scanning:");
-    console.log("   Scanning repositories with cc-audit...");
-
-    const reposToScan = deduped
-      .filter((item) => item.url.includes("github.com"))
-      .map((item) => ({
-        url: item.url,
-        type: getScanType(item.type),
-      }));
-
-    console.log(`   Scanning ${reposToScan.length} GitHub repositories...`);
-
-    const scanResults = await scanRepositories(reposToScan, 3);
-
-    // Update security scores
-    for (const item of deduped) {
-      const scanResult = scanResults.get(item.url);
-      if (scanResult?.success) {
-        item.metrics.securityScore = scanResult.score;
-      }
-    }
-
-    const scannedCount = deduped.filter((i) => i.metrics.securityScore !== undefined).length;
-    const avgScore =
-      deduped
-        .filter((i) => i.metrics.securityScore !== undefined)
-        .reduce((sum, i) => sum + (i.metrics.securityScore || 0), 0) / scannedCount;
-
-    console.log(`   ✅ Scanned: ${scannedCount}/${deduped.length} items`);
-    console.log(`   📊 Average security score: ${avgScore.toFixed(1)}/100`);
-  }
-
-  // 6. Split items by type
-  const plugins = deduped.filter((i) => i.type === "plugin");
-  const mcpServers = deduped.filter((i) => i.type === "mcp");
-  const skills = deduped.filter(
+  // タイプ別に分割
+  const pluginItems = deduped.filter((i) => i.type === "plugin");
+  const mcpServerItems = deduped.filter((i) => i.type === "mcp");
+  const skillItems = deduped.filter(
     (i) =>
       i.type === "skill" ||
       i.type === "workflow" ||
@@ -125,29 +172,29 @@ async function main() {
       i.type === "agent",
   );
 
-  // 7. Create separate databases
+  // 個別データベースを作成
   const version = "0.1.0";
   const lastUpdated = new Date().toISOString();
 
   const pluginDatabase: PluginDatabase = {
     version,
     lastUpdated,
-    items: plugins,
+    items: pluginItems,
   };
 
   const mcpServerDatabase: MCPServerDatabase = {
     version,
     lastUpdated,
-    items: mcpServers,
+    items: mcpServerItems,
   };
 
   const skillDatabase: SkillDatabase = {
     version,
     lastUpdated,
-    items: skills,
+    items: skillItems,
   };
 
-  // 8. Write to separate files
+  // ファイルに書き込み
   await mkdir(DATA_DIR, { recursive: true });
 
   await Promise.all([
@@ -157,9 +204,149 @@ async function main() {
   ]);
 
   console.log("\n✅ Databases saved:");
-  console.log(`   - Plugins: ${PLUGINS_PATH} (${plugins.length} items)`);
-  console.log(`   - MCP Servers: ${MCP_SERVERS_PATH} (${mcpServers.length} items)`);
-  console.log(`   - Skills: ${SKILLS_PATH} (${skills.length} items)`);
+  console.log(`   - Plugins: ${PLUGINS_PATH} (${pluginItems.length} items)`);
+  console.log(`   - MCP Servers: ${MCP_SERVERS_PATH} (${mcpServerItems.length} items)`);
+  console.log(`   - Skills: ${SKILLS_PATH} (${skillItems.length} items)`);
+}
+
+/**
+ * プラグインを取得してスキャン
+ */
+async function fetchAndScanPlugins(
+  skipScan: boolean,
+  existingMap: Map<string, Recommendation>,
+): Promise<Recommendation[]> {
+  console.log("📦 [Plugins] Fetching from official marketplace...");
+
+  try {
+    const items = await fetchPlugins();
+    console.log(`   ✓ Fetched ${items.length} plugins`);
+
+    // 既存スコアをコピー
+    const { unchanged, new: newCount } = copyExistingScores(items, existingMap);
+    console.log(`   📊 Existing: ${unchanged}, New: ${newCount}`);
+
+    if (!skipScan && newCount > 0) {
+      // 新規アイテムのみスキャン
+      const itemsToScan = filterItemsToScan(items, existingMap);
+      await scanItems(itemsToScan, "plugin", "Plugins");
+      // スキャン結果を元のリストにマージ
+      mergeScannedResults(items, itemsToScan);
+    }
+
+    return items;
+  } catch (error) {
+    console.error("   ✗ Failed to fetch plugins:", error);
+    return [];
+  }
+}
+
+/**
+ * MCPサーバーを取得してスキャン
+ */
+async function fetchAndScanMCPServers(
+  skipScan: boolean,
+  existingMap: Map<string, Recommendation>,
+): Promise<Recommendation[]> {
+  console.log("🔌 [MCP] Fetching from awesome-mcp-servers...");
+
+  try {
+    const items = await fetchMCPServers();
+    console.log(`   ✓ Fetched ${items.length} MCP servers`);
+
+    // 既存スコアをコピー
+    const { unchanged, new: newCount } = copyExistingScores(items, existingMap);
+    console.log(`   📊 Existing: ${unchanged}, New: ${newCount}`);
+
+    if (!skipScan && newCount > 0) {
+      // 新規アイテムのみスキャン
+      const itemsToScan = filterItemsToScan(items, existingMap);
+      await scanItems(itemsToScan, "mcp", "MCP Servers");
+      // スキャン結果を元のリストにマージ
+      mergeScannedResults(items, itemsToScan);
+    }
+
+    return items;
+  } catch (error) {
+    console.error("   ✗ Failed to fetch MCP servers:", error);
+    return [];
+  }
+}
+
+/**
+ * スキルを取得してスキャン
+ */
+async function fetchAndScanSkills(
+  skipScan: boolean,
+  existingMap: Map<string, Recommendation>,
+): Promise<Recommendation[]> {
+  console.log("🎯 [Skills] Fetching from awesome-claude-code...");
+
+  try {
+    const items = await fetchSkills();
+    console.log(`   ✓ Fetched ${items.length} skills/workflows`);
+
+    // 既存スコアをコピー
+    const { unchanged, new: newCount } = copyExistingScores(items, existingMap);
+    console.log(`   📊 Existing: ${unchanged}, New: ${newCount}`);
+
+    if (!skipScan && newCount > 0) {
+      // 新規アイテムのみスキャン
+      const itemsToScan = filterItemsToScan(items, existingMap);
+      await scanItems(itemsToScan, "skill", "Skills");
+      // スキャン結果を元のリストにマージ
+      mergeScannedResults(items, itemsToScan);
+    }
+
+    return items;
+  } catch (error) {
+    console.error("   ✗ Failed to fetch skills:", error);
+    return [];
+  }
+}
+
+/**
+ * アイテムをスキャンしてセキュリティスコアを更新
+ */
+async function scanItems(
+  items: Recommendation[],
+  scanType: "mcp" | "skill" | "plugin",
+  label: string,
+): Promise<void> {
+  const reposToScan = items
+    .filter((item) => item.url.includes("github.com"))
+    .map((item) => ({
+      url: item.url,
+      type: scanType,
+    }));
+
+  if (reposToScan.length === 0) {
+    console.log(`   ⚠ No GitHub repositories to scan for ${label}`);
+    return;
+  }
+
+  console.log(`   🔒 Scanning ${reposToScan.length} repositories...`);
+
+  const scanResults = await scanRepositories(reposToScan, 10);
+
+  // セキュリティスコアを更新
+  for (const item of items) {
+    const scanResult = scanResults.get(item.url);
+    if (scanResult?.success) {
+      item.metrics.securityScore = scanResult.score;
+    }
+  }
+
+  const scannedCount = items.filter((i) => i.metrics.securityScore !== undefined).length;
+  const avgScore =
+    scannedCount > 0
+      ? items
+          .filter((i) => i.metrics.securityScore !== undefined)
+          .reduce((sum, i) => sum + (i.metrics.securityScore || 0), 0) / scannedCount
+      : 0;
+
+  console.log(`   ✅ ${label}: Scanned ${scannedCount}/${reposToScan.length} repos`);
+  console.log(`   📊 Average score: ${avgScore.toFixed(1)}/100`);
 }
 
 /**
@@ -196,15 +383,6 @@ function normalizeUrl(url: string): string {
     .replace(/\/$/, "")
     .replace(/\/tree\/main.*$/, "")
     .replace(/\/blob\/main.*$/, "");
-}
-
-/**
- * Get scan type from recommendation type
- */
-function getScanType(type: Recommendation["type"]): "mcp" | "skill" | "plugin" {
-  if (type === "mcp") return "mcp";
-  if (type === "plugin") return "plugin";
-  return "skill"; // skill, workflow, hook, command, agent
 }
 
 // Run

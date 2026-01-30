@@ -28,6 +28,12 @@ const MAX_JSON_SIZE = 10 * 1024 * 1024;
 /** 単一アイテムの最大サイズ（100KB） */
 const MAX_ITEM_SIZE = 100 * 1024;
 
+/** ETagキャッシュ（URL → ETag） */
+const etagCache = new Map<string, string>();
+
+/** データキャッシュ（URL → データ）304対応用 */
+const dataCache = new Map<string, unknown>();
+
 /**
  * リモートからレコメンデーションデータを取得
  *
@@ -108,7 +114,7 @@ async function fetchSingleFile(url: string): Promise<RecommendationDatabase | nu
 }
 
 /**
- * 型付きファイルを取得
+ * 型付きファイルを取得（ETag対応）
  */
 async function fetchTypedFile<T>(
   url: string,
@@ -119,15 +125,34 @@ async function fetchTypedFile<T>(
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
 
+    // ヘッダーを準備（ETagがあれば If-None-Match を追加）
+    const headers: Record<string, string> = {
+      "User-Agent": "cc-recommender",
+      Accept: "application/json",
+    };
+
+    const cachedEtag = etagCache.get(url);
+    if (cachedEtag) {
+      headers["If-None-Match"] = cachedEtag;
+    }
+
     const response = await fetch(url, {
       signal: controller.signal,
-      headers: {
-        "User-Agent": "cc-recommender",
-        Accept: "application/json",
-      },
+      headers,
     });
 
     clearTimeout(timeoutId);
+
+    // 304 Not Modified - キャッシュを返す
+    if (response.status === 304) {
+      console.error(`📦 Cache hit for ${url} (304 Not Modified)`);
+      const cachedData = dataCache.get(url);
+      if (cachedData && validator(cachedData)) {
+        return cachedData as T;
+      }
+      console.error(`⚠️  Cache miss - 304 but no cached data for ${url}`);
+      return null;
+    }
 
     if (!response.ok) {
       console.error(`Failed to fetch ${url}: ${response.status}`);
@@ -147,6 +172,14 @@ async function fetchTypedFile<T>(
     if (!validator(data)) {
       console.error(`⚠️  Data validation failed for ${url}`);
       return null;
+    }
+
+    // ETagを保存
+    const newEtag = response.headers.get("etag");
+    if (newEtag) {
+      etagCache.set(url, newEtag);
+      dataCache.set(url, data);
+      console.error(`💾 Cached ETag for ${url}: ${newEtag.substring(0, 12)}...`);
     }
 
     return data;
