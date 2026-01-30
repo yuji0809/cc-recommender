@@ -5,8 +5,8 @@
  * Source: https://github.com/punkpeye/awesome-mcp-servers
  */
 
-import type { Recommendation } from "../types/domain-types.js";
-import type { RawMCPEntry } from "../types/raw-types.js";
+import type { Recommendation } from "../../types/domain-types.js";
+import type { RawMCPEntry } from "../../types/raw-types.js";
 
 const README_URL = "https://raw.githubusercontent.com/punkpeye/awesome-mcp-servers/main/README.md";
 

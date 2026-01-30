@@ -10,10 +10,11 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { fetchMCPServers } from "../src/services/mcp-fetcher.js";
-import { fetchPlugins } from "../src/services/plugin-fetcher.js";
+import { fetchMCPServers } from "../src/services/fetchers/mcp-fetcher.js";
+import { fetchOfficialMCPServers } from "../src/services/fetchers/official-mcp-fetcher.js";
+import { fetchPlugins } from "../src/services/fetchers/plugin-fetcher.js";
+import { fetchSkills } from "../src/services/fetchers/skill-fetcher.js";
 import { scanRepositories } from "../src/services/security-scanner.service.js";
-import { fetchSkills } from "../src/services/skill-fetcher.js";
 import type {
   MCPServerDatabase,
   PluginDatabase,
@@ -248,11 +249,22 @@ async function fetchAndScanMCPServers(
   skipScan: boolean,
   existingMap: Map<string, Recommendation>,
 ): Promise<Recommendation[]> {
-  console.log("🔌 [MCP] Fetching from awesome-mcp-servers...");
+  console.log("🔌 [MCP] Fetching from multiple sources...");
 
   try {
-    const items = await fetchMCPServers();
-    console.log(`   ✓ Fetched ${items.length} MCP servers`);
+    // Fetch from both sources in parallel
+    const [awesomeItems, officialItems] = await Promise.all([
+      fetchMCPServers(),
+      fetchOfficialMCPServers(),
+    ]);
+
+    console.log(`   ✓ Fetched ${awesomeItems.length} from awesome-mcp-servers`);
+    console.log(`   ✓ Fetched ${officialItems.length} from official registry`);
+
+    // Combine and deduplicate (official takes precedence)
+    const allItems = [...awesomeItems, ...officialItems];
+    const items = deduplicateByUrl(allItems);
+    console.log(`   ✓ Total after deduplication: ${items.length} MCP servers`);
 
     // 既存スコアをコピー
     const { unchanged, new: newCount } = copyExistingScores(items, existingMap);

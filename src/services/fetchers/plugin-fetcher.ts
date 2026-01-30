@@ -5,8 +5,8 @@
  * Source: https://github.com/anthropics/claude-plugins-official
  */
 
-import type { Recommendation } from "../types/domain-types.js";
-import type { RawPluginEntry } from "../types/raw-types.js";
+import type { Recommendation } from "../../types/domain-types.js";
+import type { RawPluginEntry } from "../../types/raw-types.js";
 
 const MARKETPLACE_URL =
   "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/.claude-plugin/marketplace.json";
