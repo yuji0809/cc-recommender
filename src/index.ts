@@ -14,16 +14,36 @@ import { createMcpServer } from "./server/mcp-server.js";
  * Main entry point
  */
 async function main() {
-  // Load database
-  const database = await recommendationRepository.load();
-  console.error(`Loaded ${database.items.length} recommendations`);
+  try {
+    console.error("[DEBUG] Starting cc-recommender MCP server...");
 
-  // Create and start MCP server
-  await createMcpServer(database);
+    // Load database
+    const database = await recommendationRepository.load();
+    console.error(`[DEBUG] Loaded ${database.items.length} recommendations`);
+
+    // Create and start MCP server
+    console.error("[DEBUG] Creating MCP server...");
+    await createMcpServer(database);
+    console.error("[DEBUG] MCP server created and connected");
+
+    // Keep process alive
+    process.on("SIGINT", () => {
+      console.error("[DEBUG] Received SIGINT, shutting down...");
+      process.exit(0);
+    });
+
+    process.on("SIGTERM", () => {
+      console.error("[DEBUG] Received SIGTERM, shutting down...");
+      process.exit(0);
+    });
+  } catch (error) {
+    console.error("[ERROR] Failed to start server:", error);
+    throw error;
+  }
 }
 
 // Run
 main().catch((error) => {
-  console.error("Fatal error:", error);
+  console.error("[FATAL] Fatal error:", error);
   process.exit(1);
 });
