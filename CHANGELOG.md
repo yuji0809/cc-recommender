@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.2](https://github.com/yuji0809/cc-recommender/compare/v0.2.1...v0.2.2) (2026-01-30)
+
+
+### Bug Fixes
+
+* integrate npm publish into release-please workflow ([4bfdd0f](https://github.com/yuji0809/cc-recommender/commit/4bfdd0f50b670eed67d9b1bc748a49acee82e1e4))
+
 ## [0.2.1](https://github.com/yuji0809/cc-recommender/compare/v0.2.0...v0.2.1) (2026-01-30)
 
 
