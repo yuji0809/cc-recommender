@@ -45,6 +45,10 @@ pnpm run build
 
 ## Usage with Claude Code
 
+### Option 1: Using npx (Recommended)
+
+No installation required. Always uses the latest version.
+
 Add to `~/.claude/settings.json`:
 
 ```json
@@ -58,7 +62,36 @@ Add to `~/.claude/settings.json`:
 }
 ```
 
-Or for local build:
+### Option 2: Global Installation
+
+Faster startup, works offline. Requires manual updates.
+
+```bash
+npm install -g cc-recommender
+```
+
+Add to `~/.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "cc-recommender": {
+      "command": "cc-recommender"
+    }
+  }
+}
+```
+
+### Option 3: Local Build (For Development)
+
+```bash
+git clone https://github.com/yuji0809/cc-recommender.git
+cd cc-recommender
+pnpm install
+pnpm run build
+```
+
+Add to `~/.claude/settings.json`:
 
 ```json
 {
