@@ -44,11 +44,13 @@ pnpm run build
 
 ## Usage with Claude Code
 
+**For Cursor users:** Use `~/.cursor/mcp.json` instead of `~/.claude/settings.json`
+
 ### Option 1: Using npx (Recommended)
 
 No installation required. Always uses the latest version.
 
-Add to `~/.claude/settings.json`:
+Add to `~/.claude/settings.json` (or `~/.cursor/mcp.json` for Cursor):
 
 ```json
 {

@@ -44,11 +44,13 @@ pnpm run build
 
 ## Claude Codeで使う
 
+**Cursorユーザーの方へ:** `~/.claude/settings.json`の代わりに`~/.cursor/mcp.json`を使用してください
+
 ### 方法1: npx経由（推奨）
 
 インストール不要。常に最新版を使用。
 
-`~/.claude/settings.json` に追加:
+`~/.claude/settings.json`（Cursorの場合は`~/.cursor/mcp.json`）に追加:
 
 ```json
 {
