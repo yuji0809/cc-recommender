@@ -197,9 +197,12 @@ cc-recommender/
 │   ├── services/             # Business logic
 │   │   ├── analyzer/         # Project analysis
 │   │   ├── recommender/      # Recommendation logic
-│   │   ├── plugin-fetcher.ts # Plugin data fetching
-│   │   ├── mcp-fetcher.ts    # MCP server data fetching
-│   │   └── skill-fetcher.ts  # Skill data fetching
+│   │   ├── fetchers/         # Data fetching
+│   │   │   ├── plugin-fetcher.ts        # Plugin data fetching
+│   │   │   ├── mcp-fetcher.ts           # MCP server data (awesome-mcp-servers)
+│   │   │   ├── official-mcp-fetcher.ts  # Official MCP registry
+│   │   │   └── skill-fetcher.ts         # Skill data fetching
+│   │   └── repositories/     # Data access layer
 │   ├── tools/                # MCP tools
 │   │   └── handlers/         # Tool implementations
 │   └── server/               # Server setup

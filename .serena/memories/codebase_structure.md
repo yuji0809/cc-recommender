@@ -11,11 +11,15 @@ cc-recommender/
 │   ├── types/               # 型定義
 │   │   └── index.ts         # 統一スキーマ型定義（Zod + TypeScript）
 │   └── services/            # ビジネスロジック
-│       ├── analyzer.ts      # プロジェクト分析（言語・依存関係・ファイル）
-│       ├── recommender.ts   # スコア計算・推薦ロジック
-│       ├── plugin-fetcher.ts  # 公式プラグイン取得
-│       ├── mcp-fetcher.ts     # awesome-mcp-servers取得
-│       └── skill-fetcher.ts   # awesome-claude-code取得
+│       ├── analyzer/        # プロジェクト分析
+│       ├── recommender/     # 推薦・スコアリング
+│       ├── fetchers/        # データ取得
+│       │   ├── plugin-fetcher.ts      # 公式プラグイン取得
+│       │   ├── mcp-fetcher.ts         # awesome-mcp-servers取得
+│       │   ├── official-mcp-fetcher.ts # 公式MCPレジストリ取得
+│       │   └── skill-fetcher.ts       # awesome-claude-code取得
+│       ├── repositories/    # データアクセス
+│       └── security-scanner.service.ts # セキュリティスキャン
 ├── scripts/                 # ユーティリティスクリプト
 │   └── fetch-data.ts        # 全ソースからデータ集約スクリプト
 ├── data/                    # データファイル
@@ -96,18 +100,20 @@ cc-recommender/
 - フィルタリング（型、カテゴリ）
 - ソート（スコア降順）
 
-### `src/services/*-fetcher.ts`
+### `src/services/fetchers/*-fetcher.ts`
 データ取得:
-- **plugin-fetcher.ts**: `anthropics/claude-plugins-official/marketplace.json`
+- **plugin-fetcher.ts**: `anthropics/claude-plugins-official/marketplace.json` (公式マーケットプレイス)
 - **mcp-fetcher.ts**: `punkpeye/awesome-mcp-servers` (Markdownパース)
+- **official-mcp-fetcher.ts**: `registry.modelcontextprotocol.io` (公式MCPレジストリAPI)
 - **skill-fetcher.ts**: `hesreallyhim/awesome-claude-code` (CSVパース)
 
 ### `scripts/fetch-data.ts`
 データ集約スクリプト:
-1. 3つのfetcherからデータ取得
-2. URL正規化で重複排除
-3. `data/recommendations.json`に出力
-4. 統計表示
+1. 4つのfetcherからデータ取得（plugin, mcp×2, skill）
+2. URL正規化で重複排除（公式を優先）
+3. セキュリティスキャン実行
+4. 3つのJSONファイルに分割出力（plugins.json, mcp-servers.json, skills.json）
+5. 統計表示
 
 ### `data/recommendations.json`
 統合データベース:
@@ -147,9 +153,11 @@ src/index.ts
 
 scripts/fetch-data.ts
   → src/types/index.ts
-  → src/services/plugin-fetcher.ts
-  → src/services/mcp-fetcher.ts
-  → src/services/skill-fetcher.ts
+  → src/services/fetchers/plugin-fetcher.ts
+  → src/services/fetchers/mcp-fetcher.ts
+  → src/services/fetchers/official-mcp-fetcher.ts
+  → src/services/fetchers/skill-fetcher.ts
+  → src/services/security-scanner.service.ts
 ```
 
 ## ビルド成果物

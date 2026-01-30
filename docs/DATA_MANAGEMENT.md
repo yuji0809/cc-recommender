@@ -169,21 +169,29 @@ A: [cc-audit](https://github.com/anthropics/cc-audit)を使用して、各GitHub
 - **ソース**: [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)
 - **URL**: `https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/.claude-plugin/marketplace.json`
 - **フォーマット**: JSON
-- **取得方法**: `src/services/plugin-fetcher.ts`
+- **取得方法**: `src/services/fetchers/plugin-fetcher.ts`
 
-#### 2. MCPサーバー（コミュニティ）
+#### 2. MCPサーバー（公式レジストリ）
+
+- **ソース**: [Model Context Protocol Registry](https://registry.modelcontextprotocol.io)
+- **URL**: `https://registry.modelcontextprotocol.io/v0.1/servers`
+- **フォーマット**: JSON (REST API)
+- **取得方法**: `src/services/fetchers/official-mcp-fetcher.ts`
+- **特徴**: 公式登録されたMCPサーバー、ページネーション対応
+
+#### 3. MCPサーバー（コミュニティ）
 
 - **ソース**: [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
 - **URL**: `https://raw.githubusercontent.com/punkpeye/awesome-mcp-servers/main/README.md`
 - **フォーマット**: Markdown（パース必要）
-- **取得方法**: `src/services/mcp-fetcher.ts`
+- **取得方法**: `src/services/fetchers/mcp-fetcher.ts`
 
-#### 3. スキル/ワークフロー/フック（コミュニティ）
+#### 4. スキル/ワークフロー/フック（コミュニティ）
 
 - **ソース**: [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
 - **URL**: `https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/THE_RESOURCES_TABLE.csv`
 - **フォーマット**: CSV
-- **取得方法**: `src/services/skill-fetcher.ts`
+- **取得方法**: `src/services/fetchers/skill-fetcher.ts`
 
 ### 手動更新方法
 
