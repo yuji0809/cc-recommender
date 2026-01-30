@@ -41,7 +41,9 @@ export async function scanRepository(
     // cc-audit を --remote モードで実行
     // --config で現在のプロジェクトの設定ファイルを使用
     const configPath = `${process.cwd()}/.cc-audit.yaml`;
-    const command = `npx -y @cc-audit/cc-audit check --remote ${repoUrl} --type ${scanType} --config ${configPath} --format json --ci`;
+    // Escape shell arguments to prevent command injection
+    const escapedConfigPath = configPath.replace(/'/g, "'\\''");
+    const command = `npx -y @cc-audit/cc-audit check --remote ${repoUrl} --type ${scanType} --config '${escapedConfigPath}' --format json --ci`;
 
     const { stdout } = await execAsync(command, {
       timeout: 30000, // 30秒タイムアウト

@@ -23,7 +23,9 @@
  */
 export function matchGlob(filepath: string, pattern: string): boolean {
   // Convert glob pattern to regex
+  // Escape special regex characters first (including backslash)
   const regexPattern = pattern
+    .replace(/\\/g, "\\\\") // Escape backslashes first
     .replace(/\./g, "\\.")
     .replace(/\*\*/g, "{{GLOBSTAR}}")
     .replace(/\*/g, "[^/]*")

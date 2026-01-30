@@ -121,8 +121,8 @@ function parseMarkdown(markdown: string): RawMCPEntry[] {
     if (entryMatch) {
       const [, _nameOrPath, url, rest] = entryMatch;
 
-      // Skip if not a GitHub URL
-      if (!url.includes("github.com")) continue;
+      // Skip if not a GitHub URL (strict check to prevent URL spoofing)
+      if (!url.match(/^https?:\/\/(www\.)?github\.com\//)) continue;
 
       // Parse owner/repo from URL or name
       const repoMatch = url.match(/github\.com\/([^/]+)\/([^/\s#]+)/);

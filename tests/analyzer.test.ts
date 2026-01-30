@@ -1,4 +1,4 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterAll, beforeAll, describe, expect, test } from "vitest";
@@ -362,8 +362,8 @@ describe("Analyzer Service", () => {
       let tempDir: string;
 
       beforeAll(async () => {
-        tempDir = join(tmpdir(), `test-python-project-${Date.now()}`);
-        await mkdir(tempDir, { recursive: true });
+        // Use mkdtemp for secure temporary directory creation
+        tempDir = await mkdtemp(join(tmpdir(), "test-python-project-"));
 
         // Create requirements.txt
         const requirementsContent = `# Python dependencies
@@ -438,8 +438,8 @@ requests`;
       let tempDir: string;
 
       beforeAll(async () => {
-        tempDir = join(tmpdir(), `test-go-project-${Date.now()}`);
-        await mkdir(tempDir, { recursive: true });
+        // Use mkdtemp for secure temporary directory creation
+        tempDir = await mkdtemp(join(tmpdir(), "test-go-project-"));
 
         // Create go.mod
         const goModContent = `module example.com/myapp
@@ -500,8 +500,8 @@ require (
       let tempDir: string;
 
       beforeAll(async () => {
-        tempDir = join(tmpdir(), `test-multi-lang-${Date.now()}`);
-        await mkdir(tempDir, { recursive: true });
+        // Use mkdtemp for secure temporary directory creation
+        tempDir = await mkdtemp(join(tmpdir(), "test-multi-lang-"));
 
         // Create package.json
         await writeFile(
