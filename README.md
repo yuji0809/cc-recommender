@@ -137,14 +137,21 @@ This MCP server aggregates data from the following sources:
       "command": "npx",
       "args": ["-y", "cc-recommender"],
       "env": {
-        "OFFLINE_MODE": "true"
+        "CC_RECOMMENDER_OFFLINE_MODE": "true"
       }
     }
   }
 }
 ```
 
-When `OFFLINE_MODE` is enabled, only bundled data is used (no remote fetching).
+When `CC_RECOMMENDER_OFFLINE_MODE` is enabled, only bundled data is used (no remote fetching).
+
+### Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `CC_RECOMMENDER_OFFLINE_MODE` | Disable auto-updates and use only bundled data | `false` |
+| `SKIP_SECURITY_SCAN` | Skip security scanning during data fetch (for developers) | `false` |
 
 ## Development
 
@@ -167,6 +174,19 @@ pnpm run check
 # Build
 pnpm run build
 ```
+
+## Security
+
+Security is a top priority for this project. We employ multiple layers of automated security measures:
+
+- **Automated Scanning**: Dependabot, CodeQL, and custom security audits
+- **Pre-commit Protection**: Security checks run before every commit
+- **CI/CD Gates**: All PRs must pass security scans before merging
+- **License Compliance**: All dependencies are validated for approved licenses
+
+For more details, see [SECURITY.md](./SECURITY.md).
+
+To report a security vulnerability, please use [GitHub Security Advisories](https://github.com/yuji0809/cc-recommender/security/advisories).
 
 ## Contributing
 

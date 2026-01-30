@@ -137,14 +137,21 @@ Claude: [search_skills ツールを使用]
       "command": "npx",
       "args": ["-y", "cc-recommender"],
       "env": {
-        "OFFLINE_MODE": "true"
+        "CC_RECOMMENDER_OFFLINE_MODE": "true"
       }
     }
   }
 }
 ```
 
-`OFFLINE_MODE` を有効にすると、バンドル版データのみを使用します（リモート取得なし）。
+`CC_RECOMMENDER_OFFLINE_MODE` を有効にすると、バンドル版データのみを使用します（リモート取得なし）。
+
+### 環境変数
+
+| 変数 | 説明 | デフォルト |
+|------|------|-----------|
+| `CC_RECOMMENDER_OFFLINE_MODE` | 自動更新を無効化してバンドル版データのみを使用 | `false` |
+| `SKIP_SECURITY_SCAN` | データ取得時にセキュリティスキャンをスキップ（開発者向け） | `false` |
 
 ## 開発
 
@@ -167,6 +174,19 @@ pnpm run check
 # ビルド
 pnpm run build
 ```
+
+## セキュリティ
+
+このプロジェクトではセキュリティを最優先事項としており、複数の自動化されたセキュリティ対策を実施しています：
+
+- **自動スキャン**: Dependabot、CodeQL、カスタムセキュリティ監査
+- **プリコミット保護**: コミット前にセキュリティチェックを実行
+- **CI/CD ゲート**: すべての PR はセキュリティスキャンに合格する必要あり
+- **ライセンス準拠**: すべての依存関係が承認されたライセンスであることを検証
+
+詳細は [SECURITY.md](./SECURITY.md) を参照してください。
+
+セキュリティ脆弱性を報告する場合は、[GitHub Security Advisories](https://github.com/yuji0809/cc-recommender/security/advisories) をご利用ください。
 
 ## コントリビューション
 

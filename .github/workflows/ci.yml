@@ -36,6 +36,24 @@ jobs:
       - name: Security Audit
         run: pnpm run audit
 
+      - name: Dependency Vulnerability Check
+        run: |
+          echo "Checking for vulnerable dependencies..."
+          pnpm audit --audit-level=moderate || {
+            echo "⚠️  Vulnerabilities found in dependencies!"
+            echo "Please run 'pnpm audit' locally and fix the issues."
+            exit 1
+          }
+
+      - name: License Compliance Check
+        run: |
+          echo "Checking license compliance..."
+          pnpm run license:check || {
+            echo "⚠️  License compliance issues detected!"
+            echo "Run 'pnpm run license:full' to see all licenses."
+            exit 1
+          }
+
       - name: Test with Coverage
         run: pnpm run test:coverage
 

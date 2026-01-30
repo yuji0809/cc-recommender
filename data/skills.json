@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-01-30T12:06:11.982Z",
+  "lastUpdated": "2026-01-30T12:20:06.930Z",
   "items": [
     {
       "id": "skill-ai-agent-ai-spy",
@@ -42,7 +42,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -66,7 +67,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -90,7 +92,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -114,7 +117,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -138,7 +142,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -162,7 +167,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -186,7 +192,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -210,7 +217,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -234,7 +242,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -259,7 +268,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -284,7 +294,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -309,7 +320,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -334,7 +346,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -383,7 +396,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -408,7 +422,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -433,7 +448,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -458,7 +474,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -483,7 +500,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -508,7 +526,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -533,7 +552,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -558,7 +578,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -583,7 +604,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -608,7 +630,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -633,7 +656,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -658,7 +682,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -683,7 +708,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -708,7 +734,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -733,7 +760,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -758,7 +786,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -783,7 +812,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -808,7 +838,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -857,7 +888,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -882,7 +914,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -907,7 +940,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -932,7 +966,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -957,7 +992,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -982,7 +1018,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1007,7 +1044,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1032,7 +1070,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1057,7 +1096,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1082,7 +1122,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1107,7 +1148,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1132,7 +1174,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1157,7 +1200,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1182,7 +1226,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1207,7 +1252,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1232,7 +1278,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1257,7 +1304,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1282,7 +1330,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1307,7 +1356,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1332,7 +1382,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1357,7 +1408,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1382,7 +1434,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1407,7 +1460,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1432,7 +1486,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1457,7 +1512,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1482,7 +1538,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1507,7 +1564,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1532,7 +1590,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1557,7 +1616,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1582,7 +1642,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1607,7 +1668,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1632,7 +1694,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1657,7 +1720,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1682,7 +1746,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1707,7 +1772,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1732,7 +1798,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1757,7 +1824,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1782,7 +1850,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1807,7 +1876,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1832,7 +1902,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1857,7 +1928,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1882,7 +1954,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1907,7 +1980,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1932,7 +2006,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1957,7 +2032,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -1982,7 +2058,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2007,7 +2084,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2032,7 +2110,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2057,7 +2136,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2082,7 +2162,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2107,7 +2188,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2132,7 +2214,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2157,7 +2240,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2182,7 +2266,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2207,7 +2292,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2232,7 +2318,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2257,7 +2344,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2282,7 +2370,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2307,7 +2396,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2332,7 +2422,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2357,7 +2448,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2381,7 +2473,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2405,7 +2498,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2429,7 +2523,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2453,7 +2548,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2477,7 +2573,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2501,7 +2598,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2525,7 +2623,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2549,7 +2648,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2573,7 +2673,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2597,7 +2698,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2621,7 +2723,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2645,7 +2748,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2669,7 +2773,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2693,7 +2798,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2717,7 +2823,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2741,7 +2848,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2765,7 +2873,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2789,7 +2898,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2813,7 +2923,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2837,7 +2948,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2861,7 +2973,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2885,7 +2998,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2909,7 +3023,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2933,7 +3048,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -2980,7 +3096,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -3004,7 +3121,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -3028,7 +3146,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -3052,7 +3171,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -3076,7 +3196,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -3100,7 +3221,8 @@
       },
       "metrics": {
         "source": "awesome-list",
-        "isOfficial": false
+        "isOfficial": false,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",

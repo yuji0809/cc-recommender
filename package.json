@@ -25,7 +25,9 @@
     "audit:baseline": "npx @cc-audit/cc-audit check . --save-baseline .cc-audit-baseline.json",
     "audit:drift": "npx @cc-audit/cc-audit check . --check-drift .cc-audit-baseline.json",
     "audit:watch": "npx @cc-audit/cc-audit check . --watch",
-    "check": "pnpm run typecheck && pnpm run lint && pnpm run audit",
+    "license:check": "npx license-checker --summary --excludePrivatePackages --onlyAllow 'MIT;Apache-2.0;BSD-2-Clause;BSD-3-Clause;ISC;0BSD;CC0-1.0;Unlicense'",
+    "license:full": "npx license-checker --excludePrivatePackages",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run audit && pnpm run license:check",
     "prepare": "husky",
     "prepublishOnly": "pnpm run check && pnpm run build && pnpm run test"
   },
@@ -69,6 +71,9 @@
   },
   "engines": {
     "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "files": [
     "dist",

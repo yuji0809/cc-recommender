@@ -202,7 +202,7 @@ cc-recommender/
 
 ### For Maintainers
 
-See [docs/DATA_UPDATE_STRATEGY.md](./docs/DATA_UPDATE_STRATEGY.md) for the full data update strategy.
+See [docs/DATA_MANAGEMENT.md](./docs/DATA_MANAGEMENT.md) for the full data management guide.
 
 #### Update Database Manually
 

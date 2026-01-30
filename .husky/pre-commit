@@ -6,3 +6,26 @@ pnpm exec lint-staged
 
 # Run type checking
 pnpm run typecheck
+
+# Check for secrets in staged files (excluding generated data files)
+echo "🔍 Checking for secrets in staged files..."
+git diff --cached --name-only | grep -v "^data/" | while IFS= read -r file; do
+  if [ -f "$file" ]; then
+    # Check for common secret patterns
+    if grep -E "(api[_-]?key|password|secret|token|private[_-]?key|access[_-]?key)" "$file" | grep -v "test" | grep -v "example" | grep -v "^[[:space:]]*#" > /dev/null 2>&1; then
+      echo "⚠️  Warning: Potential secret found in $file"
+      echo "Please review the file before committing."
+      # Uncomment the next line to fail the commit
+      # exit 1
+    fi
+  fi
+done
+
+# Run security audit (quick check)
+echo "🔒 Running security audit..."
+pnpm run audit || {
+  echo "⚠️  Security issues detected!"
+  echo "Run 'pnpm run audit' to see details."
+  echo "To skip this check, use 'git commit --no-verify' (not recommended)"
+  exit 1
+}

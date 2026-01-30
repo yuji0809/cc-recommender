@@ -41,6 +41,40 @@ Please include the following information in your report:
 - We will work on a fix and release it as soon as possible
 - We will notify you when the vulnerability is fixed
 
+## Automated Security Measures
+
+We have implemented multiple layers of automated security measures to protect this project:
+
+### Continuous Monitoring
+
+- **Dependabot**: Automatically checks for dependency vulnerabilities and creates PRs for updates
+- **CodeQL**: Advanced semantic code analysis runs on every push and PR
+- **Security Audit**: Custom security scanner (`@cc-audit/cc-audit`) runs in CI/CD
+- **Dependency Scanning**: Checks for vulnerable dependencies with `pnpm audit`
+- **License Compliance**: Ensures all dependencies use approved licenses
+
+### Development-Time Protection
+
+- **Pre-commit Hooks**:
+  - Type checking
+  - Linting and formatting
+  - Security audit
+  - Secret detection (warns about potential secrets in code)
+- **Branch Protection**:
+  - Main branch requires PR reviews
+  - All CI checks must pass before merging
+  - Prevents direct pushes and force pushes
+
+### CI/CD Security Gates
+
+All pull requests must pass:
+- Type checking
+- Linting
+- Security audit
+- Dependency vulnerability check
+- License compliance check
+- Test coverage requirements
+
 ## Security Best Practices
 
 When using cc-recommender:

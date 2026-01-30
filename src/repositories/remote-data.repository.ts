@@ -379,5 +379,5 @@ function isValidTypedDatabase(
  */
 export function isRemoteDataEnabled(): boolean {
   // 環境変数でオフライン強制可能
-  return process.env.OFFLINE_MODE !== "true";
+  return process.env.CC_RECOMMENDER_OFFLINE_MODE !== "true";
 }
