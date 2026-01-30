@@ -10,10 +10,13 @@ export type {
   DetectionRules,
   InstallInfo,
   InstallMethod,
+  MCPServerDatabase,
   Metrics,
+  PluginDatabase,
   Recommendation,
   RecommendationDatabase,
   RecommendationType,
+  SkillDatabase,
   SourceType,
 } from "./domain-types.js";
 // Raw data types

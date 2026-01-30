@@ -103,3 +103,24 @@ export type RecommendationDatabase = {
   lastUpdated: string;
   items: Recommendation[];
 };
+
+/** プラグインデータベース */
+export type PluginDatabase = {
+  version: string;
+  lastUpdated: string;
+  items: Recommendation[];
+};
+
+/** MCPサーバーデータベース */
+export type MCPServerDatabase = {
+  version: string;
+  lastUpdated: string;
+  items: Recommendation[];
+};
+
+/** スキルデータベース */
+export type SkillDatabase = {
+  version: string;
+  lastUpdated: string;
+  items: Recommendation[];
+};

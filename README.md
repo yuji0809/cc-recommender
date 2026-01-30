@@ -5,7 +5,6 @@
 [![codecov](https://codecov.io/gh/yuji0809/cc-recommender/branch/main/graph/badge.svg)](https://codecov.io/gh/yuji0809/cc-recommender)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)
-[![pnpm](https://img.shields.io/badge/pnpm-%3E%3D10.0.0-orange.svg)](https://pnpm.io/)
 
 > 🎯 Skills, Plugins, and MCP Server Recommendation MCP Server for Claude Code
 
@@ -20,6 +19,7 @@ Just ask "What should I install?" in Claude Code, and it will analyze your proje
 - 🎯 **Skill/Workflow Recommendations** - Suggests skills, hooks, and commands from awesome-claude-code
 - 🔍 **Project Analysis** - Automatically detects languages, frameworks, and dependencies
 - 🏷️ **Keyword Search** - Search by name or tags
+- 🔄 **Auto-Update** - Always fetches the latest data from GitHub (no manual updates needed)
 
 ## Installation
 
@@ -40,7 +40,7 @@ pnpm run build
 
 **Requirements:**
 - Node.js >= 22.0.0
-- pnpm >= 10.0.0
+- pnpm >= 10.0.0 (for local build)
 
 ## Usage with Claude Code
 
@@ -114,154 +114,63 @@ Claude: [Uses search_skills tool]
 
 ## Data Sources
 
-| Source | Content |
-|--------|---------|
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Official plugin marketplace |
-| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | Curated list of MCP servers |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | List of skills/workflows/hooks |
+This MCP server aggregates data from the following sources:
+
+| Source | Content | Update Frequency |
+|--------|---------|------------------|
+| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Official plugin marketplace | Weekly |
+| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | Curated list of MCP servers | Weekly |
+| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | List of skills/workflows/hooks | Weekly |
+
+### Auto-Update Feature
+
+**How it works:**
+- The server automatically fetches the latest data from GitHub when it starts
+- Falls back to bundled data if the remote fetch fails
+- No manual updates or reinstallation required
+
+**Offline Mode** (optional):
+```json
+{
+  "mcpServers": {
+    "cc-recommender": {
+      "command": "npx",
+      "args": ["-y", "cc-recommender"],
+      "env": {
+        "OFFLINE_MODE": "true"
+      }
+    }
+  }
+}
+```
+
+When `OFFLINE_MODE` is enabled, only bundled data is used (no remote fetching).
 
 ## Development
 
-### Setup
+For development setup and contribution guidelines, see:
+- [CONTRIBUTING.md](./CONTRIBUTING.md) - Contribution guide
+- [ARCHITECTURE.md](./docs/ARCHITECTURE.md) - Architecture documentation
+
+### Quick Start for Developers
 
 ```bash
 # Install dependencies
 pnpm install
 
-# Setup Husky (first time only)
-pnpm run prepare
-```
-
-### Code Quality
-
-This project uses **Biome** for code quality management.
-
-```bash
-# Lint + Format check
-pnpm run lint
-
-# Auto-fix
-pnpm run lint:fix
-
-# Format only
-pnpm run format
-
-# Type check
-pnpm run typecheck
-
-# Security audit
-pnpm run audit
-
-# All checks
-pnpm run check
-```
-
-### Git Hooks (Husky)
-
-The following runs automatically on commit:
-
-1. **lint-staged** - Checks & formats only changed files with Biome
-2. **Type check** - Verifies TypeScript type errors
-
-If commit fails, fix the errors and commit again:
-
-```bash
-# After fixing errors
-pnpm run lint:fix
-git add .
-git commit -m "fix: ..."
-```
-
-### Update Database
-
-```bash
-pnpm run fetch-data
-```
-
-### Testing
-
-```bash
 # Run tests
 pnpm run test
 
-# Watch mode
-pnpm run test:watch
+# Type check + Lint + Security audit
+pnpm run check
 
-# Coverage
-pnpm run test:coverage
-```
-
-### Build
-
-```bash
+# Build
 pnpm run build
 ```
 
-## Project Structure
-
-```
-cc-recommender/
-├── src/
-│   ├── config/                      # Configuration
-│   │   ├── constants.ts
-│   │   ├── file-mappings.ts
-│   │   └── scoring-config.ts
-│   ├── repositories/                # Data access layer
-│   │   └── recommendation.repository.ts
-│   ├── utils/                       # Utilities
-│   │   └── glob-matcher.ts
-│   ├── types/                       # Type definitions
-│   │   ├── index.ts                # Public API
-│   │   ├── domain-types.ts
-│   │   ├── service-types.ts
-│   │   └── raw-types.ts
-│   ├── schemas/                     # Zod validation schemas
-│   │   └── tool-schemas.ts
-│   ├── services/                    # Business logic
-│   │   ├── analyzer/               # Project analysis
-│   │   │   ├── parsers/
-│   │   │   └── project-analyzer.service.ts
-│   │   ├── recommender/            # Recommendation logic
-│   │   │   ├── scoring/
-│   │   │   ├── recommendation.service.ts
-│   │   │   ├── search.service.ts
-│   │   │   └── formatters.ts
-│   │   ├── plugin-fetcher.ts
-│   │   ├── mcp-fetcher.ts
-│   │   └── skill-fetcher.ts
-│   ├── tools/                       # MCP tools
-│   │   └── handlers/
-│   │       ├── index.ts            # Public API
-│   │       ├── recommend-skills.tool.ts
-│   │       ├── search-skills.tool.ts
-│   │       ├── get-skill-details.tool.ts
-│   │       ├── list-categories.tool.ts
-│   │       └── get-stats.tool.ts
-│   ├── server/                      # Server setup
-│   │   ├── mcp-server.ts
-│   │   └── tool-registry.ts
-│   └── index.ts                     # Entry point
-├── data/
-│   └── recommendations.json         # Unified database
-├── scripts/
-│   └── fetch-data.ts                # Data fetch script
-├── tests/
-│   ├── analyzer.test.ts             # Analyzer tests
-│   └── recommender.test.ts          # Recommender tests
-├── docs/
-│   └── ARCHITECTURE.md              # Architecture details
-├── CLAUDE.md                        # Development guidelines
-├── CONTRIBUTING.md                  # Contribution guide
-└── README.md
-```
-
-See [ARCHITECTURE.md](./docs/ARCHITECTURE.md) for detailed architecture documentation.
-
 ## Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for development guidelines.
-
-For detailed architecture information, see [ARCHITECTURE.md](./docs/ARCHITECTURE.md).
+We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
 
 ## License
 

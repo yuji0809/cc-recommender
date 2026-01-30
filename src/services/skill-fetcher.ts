@@ -66,10 +66,15 @@ function parseCSV(csvText: string): RawSkillEntry[] {
 
   // Parse header
   const header = parseCSVLine(lines[0]);
-  const nameIdx = findColumnIndex(header, ["name", "resource", "title"]);
-  const urlIdx = findColumnIndex(header, ["url", "link", "github"]);
-  const authorIdx = findColumnIndex(header, ["author", "creator", "by"]);
-  const authorUrlIdx = findColumnIndex(header, ["author_url", "author url", "authorurl"]);
+  const nameIdx = findColumnIndex(header, ["display name", "name", "resource", "title"]);
+  const urlIdx = findColumnIndex(header, ["primary link", "url", "link", "github"]);
+  const authorIdx = findColumnIndex(header, ["author name", "author", "creator", "by"]);
+  const authorUrlIdx = findColumnIndex(header, [
+    "author link",
+    "author_url",
+    "author url",
+    "authorurl",
+  ]);
   const licenseIdx = findColumnIndex(header, ["license"]);
   const descIdx = findColumnIndex(header, ["description", "desc", "summary"]);
   const categoryIdx = findColumnIndex(header, ["category", "type", "section"]);

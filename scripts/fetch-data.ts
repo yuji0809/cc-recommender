@@ -14,12 +14,20 @@ import { fetchMCPServers } from "../src/services/mcp-fetcher.js";
 import { fetchPlugins } from "../src/services/plugin-fetcher.js";
 import { scanRepositories } from "../src/services/security-scanner.service.js";
 import { fetchSkills } from "../src/services/skill-fetcher.js";
-import type { Recommendation, RecommendationDatabase } from "../src/types/domain-types.js";
+import type {
+  MCPServerDatabase,
+  PluginDatabase,
+  Recommendation,
+  SkillDatabase,
+} from "../src/types/domain-types.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const OUTPUT_PATH = join(__dirname, "..", "data", "recommendations.json");
+const DATA_DIR = join(__dirname, "..", "data");
+const PLUGINS_PATH = join(DATA_DIR, "plugins.json");
+const MCP_SERVERS_PATH = join(DATA_DIR, "mcp-servers.json");
+const SKILLS_PATH = join(DATA_DIR, "skills.json");
 
 /**
  * Main function
@@ -68,49 +76,90 @@ async function main() {
   console.log(`   - Agents: ${deduped.filter((i) => i.type === "agent").length}`);
 
   // 5. Security scanning
-  console.log("\n🔒 Security Scanning:");
-  console.log("   Scanning repositories with cc-audit...");
+  const skipSecurityScan = process.env.SKIP_SECURITY_SCAN === "true";
 
-  const reposToScan = deduped
-    .filter((item) => item.url.includes("github.com"))
-    .map((item) => ({
-      url: item.url,
-      type: getScanType(item.type),
-    }));
+  if (skipSecurityScan) {
+    console.log("\n🔒 Security Scanning: SKIPPED (SKIP_SECURITY_SCAN=true)");
+  } else {
+    console.log("\n🔒 Security Scanning:");
+    console.log("   Scanning repositories with cc-audit...");
 
-  console.log(`   Scanning ${reposToScan.length} GitHub repositories...`);
+    const reposToScan = deduped
+      .filter((item) => item.url.includes("github.com"))
+      .map((item) => ({
+        url: item.url,
+        type: getScanType(item.type),
+      }));
 
-  const scanResults = await scanRepositories(reposToScan, 3);
+    console.log(`   Scanning ${reposToScan.length} GitHub repositories...`);
 
-  // Update security scores
-  for (const item of deduped) {
-    const scanResult = scanResults.get(item.url);
-    if (scanResult?.success) {
-      item.metrics.securityScore = scanResult.score;
+    const scanResults = await scanRepositories(reposToScan, 3);
+
+    // Update security scores
+    for (const item of deduped) {
+      const scanResult = scanResults.get(item.url);
+      if (scanResult?.success) {
+        item.metrics.securityScore = scanResult.score;
+      }
     }
+
+    const scannedCount = deduped.filter((i) => i.metrics.securityScore !== undefined).length;
+    const avgScore =
+      deduped
+        .filter((i) => i.metrics.securityScore !== undefined)
+        .reduce((sum, i) => sum + (i.metrics.securityScore || 0), 0) / scannedCount;
+
+    console.log(`   ✅ Scanned: ${scannedCount}/${deduped.length} items`);
+    console.log(`   📊 Average security score: ${avgScore.toFixed(1)}/100`);
   }
 
-  const scannedCount = deduped.filter((i) => i.metrics.securityScore !== undefined).length;
-  const avgScore =
-    deduped
-      .filter((i) => i.metrics.securityScore !== undefined)
-      .reduce((sum, i) => sum + (i.metrics.securityScore || 0), 0) / scannedCount;
+  // 6. Split items by type
+  const plugins = deduped.filter((i) => i.type === "plugin");
+  const mcpServers = deduped.filter((i) => i.type === "mcp");
+  const skills = deduped.filter(
+    (i) =>
+      i.type === "skill" ||
+      i.type === "workflow" ||
+      i.type === "hook" ||
+      i.type === "command" ||
+      i.type === "agent",
+  );
 
-  console.log(`   ✅ Scanned: ${scannedCount}/${deduped.length} items`);
-  console.log(`   📊 Average security score: ${avgScore.toFixed(1)}/100`);
+  // 7. Create separate databases
+  const version = "0.1.0";
+  const lastUpdated = new Date().toISOString();
 
-  // 6. Create database
-  const database: RecommendationDatabase = {
-    version: "0.1.0",
-    lastUpdated: new Date().toISOString(),
-    items: deduped,
+  const pluginDatabase: PluginDatabase = {
+    version,
+    lastUpdated,
+    items: plugins,
   };
 
-  // 6. Write to file
-  await mkdir(dirname(OUTPUT_PATH), { recursive: true });
-  await writeFile(OUTPUT_PATH, JSON.stringify(database, null, 2));
+  const mcpServerDatabase: MCPServerDatabase = {
+    version,
+    lastUpdated,
+    items: mcpServers,
+  };
 
-  console.log(`\n✅ Database saved to: ${OUTPUT_PATH}`);
+  const skillDatabase: SkillDatabase = {
+    version,
+    lastUpdated,
+    items: skills,
+  };
+
+  // 8. Write to separate files
+  await mkdir(DATA_DIR, { recursive: true });
+
+  await Promise.all([
+    writeFile(PLUGINS_PATH, JSON.stringify(pluginDatabase, null, 2)),
+    writeFile(MCP_SERVERS_PATH, JSON.stringify(mcpServerDatabase, null, 2)),
+    writeFile(SKILLS_PATH, JSON.stringify(skillDatabase, null, 2)),
+  ]);
+
+  console.log("\n✅ Databases saved:");
+  console.log(`   - Plugins: ${PLUGINS_PATH} (${plugins.length} items)`);
+  console.log(`   - MCP Servers: ${MCP_SERVERS_PATH} (${mcpServers.length} items)`);
+  console.log(`   - Skills: ${SKILLS_PATH} (${skills.length} items)`);
 }
 
 /**

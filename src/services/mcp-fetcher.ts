@@ -104,9 +104,9 @@ function parseMarkdown(markdown: string): RawMCPEntry[] {
   const lines = markdown.split("\n");
 
   for (const line of lines) {
-    // Check for category headers
+    // Check for category headers: ### 🔗 <a name="aggregators"></a>Aggregators
     const headerMatch = line.match(
-      /^###?\s+(?:🔗|🎨|📐|📂|🧬|☁️|👨‍💻|🤖|🖥️|💬|👤|🗄️|📊|🚚|🛠️|🧮|📟|💰|🎮|🧠|🗺️|🎯|🔎|🔒|🌐|🏃|🎧|🌎|🚆|🔄|🏢)?\s*(.+?)\s*(?:\[|$)/,
+      /^###?\s+(?:🔗|🎨|📐|📂|🧬|☁️|👨‍💻|🤖|🖥️|💬|👤|🗄️|📊|🚚|🛠️|🧮|📟|💰|🎮|🧠|🗺️|🎯|🔎|🔒|🌐|🏃|🎧|🌎|🚆|🔄|🏢|🚀)?\s*(?:<a[^>]*>)?(.+?)(?:<\/a>)?$/i,
     );
     if (headerMatch) {
       const potentialCategory = headerMatch[1].trim();
@@ -116,8 +116,8 @@ function parseMarkdown(markdown: string): RawMCPEntry[] {
       continue;
     }
 
-    // Parse entry lines: * [owner/repo](url) emojis - description
-    const entryMatch = line.match(/^\*\s+\[([^\]]+)\]\(([^)]+)\)\s*(.+)?$/);
+    // Parse entry lines: - [owner/repo](url) emojis - description
+    const entryMatch = line.match(/^[-*]\s+\[([^\]]+)\]\(([^)]+)\)\s*(.+)?$/);
     if (entryMatch) {
       const [, _nameOrPath, url, rest] = entryMatch;
 

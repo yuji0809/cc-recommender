@@ -14,7 +14,7 @@ const MARKETPLACE_URL =
 type MarketplaceJSON = {
   $schema: string;
   name: string;
-  author: { name: string };
+  owner: { name: string; email?: string };
   plugins: RawPluginEntry[];
 };
 
@@ -34,7 +34,7 @@ export async function fetchPlugins(): Promise<Recommendation[]> {
     const recommendations: Recommendation[] = [];
 
     for (const plugin of data.plugins) {
-      const rec = transformPlugin(plugin);
+      const rec = transformPlugin(plugin, data.owner);
       if (rec) {
         recommendations.push(rec);
       }
@@ -51,13 +51,27 @@ export async function fetchPlugins(): Promise<Recommendation[]> {
 /**
  * Transform raw plugin entry to unified Recommendation
  */
-function transformPlugin(raw: RawPluginEntry): Recommendation | null {
+function transformPlugin(
+  raw: RawPluginEntry,
+  fallbackAuthor: { name: string; email?: string },
+): Recommendation | null {
   try {
+    // Validate required fields
+    if (!raw.name || !raw.description) {
+      console.warn(
+        `   ⚠ Failed to transform plugin: ${raw.name || "unknown"} - missing required fields`,
+      );
+      return null;
+    }
+
+    // Use plugin author or fallback to marketplace owner
+    const author = raw.author || fallbackAuthor;
+
     // Determine source URL
     const sourceUrl =
       typeof raw.source === "string"
         ? `https://github.com/anthropics/claude-plugins-official/tree/main/${raw.source}`
-        : raw.source.url;
+        : raw.source?.url || `https://github.com/anthropics/claude-plugins-official`;
 
     // Determine type based on category and features
     let type: Recommendation["type"] = "plugin";
@@ -69,7 +83,7 @@ function transformPlugin(raw: RawPluginEntry): Recommendation | null {
     const detection = extractDetectionRules(raw);
 
     // Determine if official
-    const isOfficial = raw.author.name.toLowerCase().includes("anthropic");
+    const isOfficial = author.name.toLowerCase().includes("anthropic");
 
     return {
       id: `plugin-${raw.name}`,
@@ -78,11 +92,11 @@ function transformPlugin(raw: RawPluginEntry): Recommendation | null {
       url: raw.homepage || sourceUrl,
       description: raw.description,
       author: {
-        name: raw.author.name,
-        email: raw.author.email,
+        name: author.name,
+        email: author.email,
       },
-      category: raw.category,
-      tags: raw.tags || [raw.category],
+      category: raw.category || "other",
+      tags: raw.tags || [raw.category || "plugin"],
       detection,
       metrics: {
         source: isOfficial ? "official" : "community",
@@ -94,8 +108,11 @@ function transformPlugin(raw: RawPluginEntry): Recommendation | null {
         marketplace: "claude-plugins-official",
       },
     };
-  } catch {
-    console.warn(`   ⚠ Failed to transform plugin: ${raw.name}`);
+  } catch (error) {
+    console.warn(
+      `   ⚠ Failed to transform plugin: ${raw.name || "unknown"} -`,
+      error instanceof Error ? error.message : String(error),
+    );
     return null;
   }
 }

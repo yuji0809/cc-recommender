@@ -39,7 +39,9 @@ export async function scanRepository(
 ): Promise<SecurityScanResult> {
   try {
     // cc-audit を --remote モードで実行
-    const command = `npx -y @cc-audit/cc-audit check --remote ${repoUrl} --scan-type ${scanType} --format json --ci`;
+    // --config で現在のプロジェクトの設定ファイルを使用
+    const configPath = `${process.cwd()}/.cc-audit.yaml`;
+    const command = `npx -y @cc-audit/cc-audit check --remote ${repoUrl} --type ${scanType} --config ${configPath} --format json --ci`;
 
     const { stdout } = await execAsync(command, {
       timeout: 30000, // 30秒タイムアウト

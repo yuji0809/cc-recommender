@@ -5,7 +5,6 @@
 [![codecov](https://codecov.io/gh/yuji0809/cc-recommender/branch/main/graph/badge.svg)](https://codecov.io/gh/yuji0809/cc-recommender)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)
-[![pnpm](https://img.shields.io/badge/pnpm-%3E%3D10.0.0-orange.svg)](https://pnpm.io/)
 
 > 🎯 Claude Code向けスキル/プラグイン/MCPサーバー推薦MCPサーバー
 
@@ -20,6 +19,7 @@ Claude Codeで「何入れたらいい？」と聞くだけで、プロジェク
 - 🎯 **スキル/ワークフロー推薦** - awesome-claude-codeからスキル、フック、コマンドを提案
 - 🔍 **プロジェクト分析** - 使用言語、フレームワーク、依存関係を自動検出
 - 🏷️ **キーワード検索** - 名前やタグで検索
+- 🔄 **自動更新** - GitHubから常に最新データを取得（手動更新不要）
 
 ## インストール
 
@@ -40,7 +40,7 @@ pnpm run build
 
 **要件:**
 - Node.js >= 22.0.0
-- pnpm >= 10.0.0
+- pnpm >= 10.0.0（ローカルビルドの場合）
 
 ## Claude Codeで使う
 
@@ -114,154 +114,63 @@ Claude: [search_skills ツールを使用]
 
 ## データソース
 
-| ソース | 内容 |
-|--------|------|
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | 公式プラグインマーケットプレイス |
-| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | MCPサーバーのキュレーションリスト |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | スキル/ワークフロー/フックのリスト |
+このMCPサーバーは、以下のソースからデータを集約しています:
+
+| ソース | 内容 | 更新頻度 |
+|--------|------|---------|
+| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | 公式プラグインマーケットプレイス | 週次 |
+| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | MCPサーバーのキュレーションリスト | 週次 |
+| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | スキル/ワークフロー/フックのリスト | 週次 |
+
+### 自動更新機能
+
+**仕組み:**
+- サーバー起動時にGitHubから最新データを自動取得
+- リモート取得に失敗した場合はバンドル版データにフォールバック
+- 手動更新や再インストール不要
+
+**オフラインモード**（オプション）:
+```json
+{
+  "mcpServers": {
+    "cc-recommender": {
+      "command": "npx",
+      "args": ["-y", "cc-recommender"],
+      "env": {
+        "OFFLINE_MODE": "true"
+      }
+    }
+  }
+}
+```
+
+`OFFLINE_MODE` を有効にすると、バンドル版データのみを使用します（リモート取得なし）。
 
 ## 開発
 
-### セットアップ
+開発セットアップと貢献ガイドラインについては、以下を参照してください:
+- [CONTRIBUTING.md](./CONTRIBUTING.md) - 貢献ガイド
+- [ARCHITECTURE.md](./docs/ARCHITECTURE.md) - アーキテクチャドキュメント
+
+### 開発者向けクイックスタート
 
 ```bash
 # 依存関係インストール
 pnpm install
 
-# Huskyのセットアップ（初回のみ）
-pnpm run prepare
-```
-
-### コード品質
-
-このプロジェクトでは **Biome** を使用してコード品質を管理しています。
-
-```bash
-# Lint + Format チェック
-pnpm run lint
-
-# 自動修正
-pnpm run lint:fix
-
-# フォーマットのみ
-pnpm run format
-
-# 型チェック
-pnpm run typecheck
-
-# セキュリティ監査
-pnpm run audit
-
-# すべてのチェック
-pnpm run check
-```
-
-### Git Hooks (Husky)
-
-コミット時に自動的に以下が実行されます：
-
-1. **lint-staged** - 変更されたファイルのみを Biome でチェック＆フォーマット
-2. **型チェック** - TypeScript の型エラーがないか確認
-
-コミットが失敗した場合は、エラーを修正してから再度コミットしてください。
-
-```bash
-# エラー修正後
-pnpm run lint:fix
-git add .
-git commit -m "fix: ..."
-```
-
-### データベース更新
-
-```bash
-pnpm run fetch-data
-```
-
-### テスト
-
-```bash
 # テスト実行
 pnpm run test
 
-# テスト監視モード
-pnpm run test:watch
+# 型チェック + Lint + セキュリティ監査
+pnpm run check
 
-# カバレッジ
-pnpm run test:coverage
-```
-
-### ビルド
-
-```bash
+# ビルド
 pnpm run build
 ```
 
-## プロジェクト構造
-
-```
-cc-recommender/
-├── src/
-│   ├── config/                      # 設定
-│   │   ├── constants.ts
-│   │   ├── file-mappings.ts
-│   │   └── scoring-config.ts
-│   ├── repositories/                # データアクセス層
-│   │   └── recommendation.repository.ts
-│   ├── utils/                       # ユーティリティ
-│   │   └── glob-matcher.ts
-│   ├── types/                       # 型定義
-│   │   ├── index.ts                # 公開API
-│   │   ├── domain-types.ts
-│   │   ├── service-types.ts
-│   │   └── raw-types.ts
-│   ├── schemas/                     # Zodバリデーションスキーマ
-│   │   └── tool-schemas.ts
-│   ├── services/                    # ビジネスロジック
-│   │   ├── analyzer/               # プロジェクト分析
-│   │   │   ├── parsers/
-│   │   │   └── project-analyzer.service.ts
-│   │   ├── recommender/            # 推薦ロジック
-│   │   │   ├── scoring/
-│   │   │   ├── recommendation.service.ts
-│   │   │   ├── search.service.ts
-│   │   │   └── formatters.ts
-│   │   ├── plugin-fetcher.ts
-│   │   ├── mcp-fetcher.ts
-│   │   └── skill-fetcher.ts
-│   ├── tools/                       # MCPツール
-│   │   └── handlers/
-│   │       ├── index.ts            # 公開API
-│   │       ├── recommend-skills.tool.ts
-│   │       ├── search-skills.tool.ts
-│   │       ├── get-skill-details.tool.ts
-│   │       ├── list-categories.tool.ts
-│   │       └── get-stats.tool.ts
-│   ├── server/                      # サーバーセットアップ
-│   │   ├── mcp-server.ts
-│   │   └── tool-registry.ts
-│   └── index.ts                     # エントリーポイント
-├── data/
-│   └── recommendations.json         # 統合データベース
-├── scripts/
-│   └── fetch-data.ts                # データ取得スクリプト
-├── tests/
-│   ├── analyzer.test.ts             # 分析のテスト
-│   └── recommender.test.ts          # 推薦のテスト
-├── docs/
-│   └── ARCHITECTURE.md              # アーキテクチャ詳細
-├── CLAUDE.md                        # 開発ガイドライン
-├── CONTRIBUTING.md                  # コントリビューションガイド
-└── README.md
-```
-
-詳細なアーキテクチャについては [ARCHITECTURE.md](./docs/ARCHITECTURE.md) を参照してください。
-
 ## コントリビューション
 
-開発ガイドラインは [CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
-
-詳細なアーキテクチャ情報は [ARCHITECTURE.md](./docs/ARCHITECTURE.md) を参照してください。
+貢献を歓迎します！詳細は [CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
 
 ## ライセンス
 

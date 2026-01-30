@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2025-01-30
+
 ### Added
 - Initial release of cc-recommender
 - MCP server for recommending Claude Code skills, plugins, and MCP servers
@@ -21,22 +23,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) - Official plugins
   - [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - MCP servers
   - [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - Skills/workflows/hooks
+- Auto-update feature:
+  - Fetches latest data from GitHub on startup
+  - Falls back to bundled data if remote fetch fails
+  - No manual updates required
 - Code quality tools:
   - Biome for linting and formatting
   - TypeScript strict mode
+  - cc-audit for security scanning
   - Husky + lint-staged for pre-commit hooks
 - Developer experience:
   - pnpm package manager
-  - Automatic data fetching script
-  - Comprehensive documentation
-
-## [0.1.0] - 2026-01-30
-
-### Added
-- Initial project setup
-- Basic MCP server implementation
-- TypeScript configuration
-- Build and development scripts
+  - Automatic weekly data updates via GitHub Actions
+  - Comprehensive documentation (README, CONTRIBUTING, ARCHITECTURE)
 
 [Unreleased]: https://github.com/yuji0809/cc-recommender/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/yuji0809/cc-recommender/releases/tag/v0.1.0

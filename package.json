@@ -12,6 +12,8 @@
     "dev": "tsc --watch",
     "start": "node dist/index.js",
     "fetch-data": "pnpm exec tsx scripts/fetch-data.ts",
+    "fetch-data:quick": "SKIP_SECURITY_SCAN=true pnpm exec tsx scripts/fetch-data.ts",
+    "fetch-data:full": "SKIP_SECURITY_SCAN=false pnpm exec tsx scripts/fetch-data.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",

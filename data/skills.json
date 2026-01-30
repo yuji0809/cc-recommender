@@ -1,0 +1,3111 @@
+{
+  "version": "0.1.0",
+  "lastUpdated": "2026-01-30T11:52:25.865Z",
+  "items": [
+    {
+      "id": "skill-ai-agent-ai-spy",
+      "name": "AI Agent, AI Spy",
+      "type": "skill",
+      "url": "https://youtu.be/0ANECpNdt-4",
+      "description": "Members from the Signal Foundation with some really great tips and tricks on how to turn your operating system into an instrument of total surveillance, and why some companies are doing this really awesome thing. [warning: YouTube link]",
+      "author": {
+        "name": "Whittaker & Tiwari",
+        "url": "https://signalfoundation.org/"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "no license / not specified"],
+      "detection": {
+        "keywords": ["ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual"
+      }
+    },
+    {
+      "id": "skill-claude-codex-settings",
+      "name": "Claude Codex Settings",
+      "type": "skill",
+      "url": "https://github.com/fcakyon/claude-codex-settings",
+      "description": "A well-organized, well-written set of plugins covering core developer activities, such as working with common cloud platforms like GitHub, Azure, MongoDB, and popular services such as Tavily, Playwright, and more. Clear, not overly-opinionated, and compatible with a few other providers.",
+      "author": {
+        "name": "fatih akyon",
+        "url": "https://github.com/fcakyon"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "apache-2.0"],
+      "detection": {
+        "keywords": ["go", "azure", "mongodb", "git", "github"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/fcakyon/claude-codex-settings"
+      }
+    },
+    {
+      "id": "skill-claude-mountaineering-skills",
+      "name": "Claude Mountaineering Skills",
+      "type": "skill",
+      "url": "https://github.com/dreamiurg/claude-mountaineering-skills",
+      "description": "Claude Code skill that automates mountain route research for North American peaks. Aggregates data from 10+ mountaineering sources like Mountaineers.org, PeakBagger.com and SummitPost.com to generate detailed route beta reports with weather, avalanche conditions, and trip reports.",
+      "author": {
+        "name": "Dmytro Gaivoronsky",
+        "url": "https://github.com/dreamiurg"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "mit"],
+      "detection": {
+        "keywords": ["ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreamiurg/claude-mountaineering-skills"
+      }
+    },
+    {
+      "id": "skill-codex-skill",
+      "name": "Codex Skill",
+      "type": "skill",
+      "url": "https://github.com/skills-directory/skill-codex",
+      "description": "Enables users to prompt codex from claude code. Unlike the raw codex mcp server, this skill infers parameters such as model, reasoning effort, sandboxing from your prompt or asks you to specify them. It also simplifies continuing prior codex sessions so that codex can continue with the prior context.",
+      "author": {
+        "name": "klaudworks",
+        "url": "https://github.com/klaudworks"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "not_found"],
+      "detection": {
+        "keywords": ["ci"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/skills-directory/skill-codex"
+      }
+    },
+    {
+      "id": "skill-compound-engineering-plugin",
+      "name": "Compound Engineering Plugin",
+      "type": "skill",
+      "url": "https://github.com/EveryInc/compound-engineering-plugin",
+      "description": "A very pragmatic set of well-designed agents, skills, and commands, built around a discipline of turning past mistakes and errors into lessons and opportunities for future growth and improvement. Good documentation.",
+      "author": {
+        "name": "EveryInc",
+        "url": "https://github.com/EveryInc"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "mit"],
+      "detection": {
+        "keywords": ["go", "ci"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/EveryInc/compound-engineering-plugin"
+      }
+    },
+    {
+      "id": "skill-context-engineering-kit",
+      "name": "Context Engineering Kit",
+      "type": "skill",
+      "url": "https://github.com/NeoLabHQ/context-engineering-kit",
+      "description": "Hand-crafted collection of advanced context engineering techniques and patterns with minimal token footprint focused on improving agent result quality.",
+      "author": {
+        "name": "Vlad Goncharov",
+        "url": "https://github.com/LeoVS09"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "gpl-3.0"],
+      "detection": {
+        "keywords": []
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/NeoLabHQ/context-engineering-kit"
+      }
+    },
+    {
+      "id": "skill-everything-claude-code",
+      "name": "Everything Claude Code",
+      "type": "skill",
+      "url": "https://github.com/affaan-m/everything-claude-code",
+      "description": "Top-notch, well-written resources covering \"just about everything\" from core engineering domains. What's nice about this \"everything-\" store is most of the resources have significant standalone value and unlike some all-encompassing frameworks, although you can opt in to the author's own specific workflow patterns if you choose, the individual resources offer exemplary patterns in (just about) every Claude Code feature you can find (apologies to the Output Styles devotees).",
+      "author": {
+        "name": "Affaan Mustafa",
+        "url": "https://github.com/affaan-m/"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "mit"],
+      "detection": {
+        "keywords": ["ci", "auth", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/affaan-m/everything-claude-code"
+      }
+    },
+    {
+      "id": "skill-trail-of-bits-security-skills",
+      "name": "Trail of Bits Security Skills",
+      "type": "skill",
+      "url": "https://github.com/trailofbits/skills",
+      "description": "A very professional collection of over a dozen security-focused skills for code auditing and vulnerability detection. Includes skills for static analysis with CodeQL and Semgrep, variant analysis across codebases, fix verification, and differential code review.",
+      "author": {
+        "name": "Trail of Bits",
+        "url": "https://github.com/trailofbits"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "cc-by-sa-4.0"],
+      "detection": {
+        "keywords": ["security", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/trailofbits/skills"
+      }
+    },
+    {
+      "id": "skill-t-ches-claude-code-resources",
+      "name": "TÂCHES Claude Code Resources",
+      "type": "skill",
+      "url": "https://github.com/glittercowboy/taches-cc-resources",
+      "description": "A well-balanced, \"down-to-Earth\" set of sub agents, skills, and commands,  that are well-organized, easy to read, and a healthy focus on \"meta\"-skills/agents, like \"skill-auditor\", hook creation, etc. - the kind of things you can adapt to your workflow, and not the other way around.",
+      "author": {
+        "name": "TÂCHES",
+        "url": "https://github.com/glittercowboy"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "mit"],
+      "detection": {
+        "keywords": []
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/glittercowboy/taches-cc-resources"
+      }
+    },
+    {
+      "id": "skill-web-assets-generator-skill",
+      "name": "Web Assets Generator Skill",
+      "type": "skill",
+      "url": "https://github.com/alonw0/web-asset-generator",
+      "description": "Easily generate web assets from Claude Code including favicons, app icons (PWA), and social media meta images (Open Graph) for Facebook, Twitter, WhatsApp, and LinkedIn. Handles image resizing, text-to-image generation, emojis, and provides proper HTML meta tags.",
+      "author": {
+        "name": "Alon Wolenitz",
+        "url": "https://github.com/alonw0"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "mit"],
+      "detection": {
+        "keywords": ["ci", "ml"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/alonw0/web-asset-generator"
+      }
+    },
+    {
+      "id": "skill-ab-method",
+      "name": "AB Method",
+      "type": "workflow",
+      "url": "https://github.com/ayoubben18/ab-method",
+      "description": "A principled, spec-driven workflow that transforms large problems into focused, incremental missions using Claude Code's specialized sub agents. Includes slash-commands, sub agents, and specialized workflows designed for specific parts of the SDLC.",
+      "author": {
+        "name": "Ayoub Bensalah",
+        "url": "https://github.com/ayoubben18"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["ci", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ayoubben18/ab-method"
+      }
+    },
+    {
+      "id": "skill-agentic-workflow-patterns",
+      "name": "Agentic Workflow Patterns",
+      "type": "workflow",
+      "url": "https://github.com/ThibautMelen/agentic-workflow-patterns",
+      "description": "A comprehensive and well-documented collection of agentic patterns from Anthropic docs, with colorful Mermaid diagrams and code examples for each pattern. Covers Subagent Orchestration, Progressive Skills, Parallel Tool Calling, Master-Clone Architecture, Wizard Workflows, and more. Also compatible with other providers.",
+      "author": {
+        "name": "ThibautMelen",
+        "url": "https://github.com/ThibautMelen"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ThibautMelen/agentic-workflow-patterns"
+      }
+    },
+    {
+      "id": "skill-blogging-platform-instructions",
+      "name": "Blogging Platform Instructions",
+      "type": "workflow",
+      "url": "https://github.com/cloudartisan/cloudartisan.github.io/tree/main/.claude/commands",
+      "description": "Provides a well-structured set of commands for publishing and maintaining a blogging platform, including commands for creating posts, managing categories, and handling media files.",
+      "author": {
+        "name": "cloudartisan",
+        "url": "https://github.com/cloudartisan"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "cc-by-sa-4.0"],
+      "detection": {
+        "keywords": ["go", "ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudartisan/cloudartisan.github.io/tree/main/.claude/commands"
+      }
+    },
+    {
+      "id": "skill-claude-code-documentation-mirror",
+      "name": "Claude Code Documentation Mirror",
+      "type": "workflow",
+      "url": "https://github.com/ericbuess/claude-code-docs",
+      "description": "A mirror of the Anthropic &copy; PBC documentation pages for Claude Code, updated every few hours. Can come in handy when trying to stay on top of the ever-expanding feature-set of Dr. Claw D. Code, Ph.D.",
+      "author": {
+        "name": "Eric Buess",
+        "url": "https://github.com/ericbuess"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "noassertion"],
+      "detection": {
+        "keywords": ["workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ericbuess/claude-code-docs"
+      }
+    },
+    {
+      "id": "skill-claude-code-handbook",
+      "name": "Claude Code Handbook",
+      "type": "workflow",
+      "url": "https://nikiforovall.blog/claude-code-rules/",
+      "description": "Collection of best practices, tips, and techniques for Claude Code development workflows, enhanced with distributable plugins",
+      "author": {
+        "name": "nikiforovall",
+        "url": "https://github.com/nikiforovall"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual"
+      }
+    },
+    {
+      "id": "skill-claude-code-infrastructure-showcase",
+      "name": "Claude Code Infrastructure Showcase",
+      "type": "workflow",
+      "url": "https://github.com/diet103/claude-code-infrastructure-showcase",
+      "description": "A remarkably innovative approach to working with Skills, the centerpiece of which being a technique that leverages hooks to ensure that Claude intelligently selects and activates the appropriate Skill given the current context. Well-documented and adaptable to different projects and workflows.",
+      "author": {
+        "name": "diet103",
+        "url": "https://github.com/diet103"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/diet103/claude-code-infrastructure-showcase"
+      }
+    },
+    {
+      "id": "skill-claude-code-pm",
+      "name": "Claude Code PM",
+      "type": "workflow",
+      "url": "https://github.com/automazeio/ccpm",
+      "description": "Really comprehensive and feature-packed project-management workflow for Claude Code. Numerous specialized agents, slash-commands, and strong documentation.",
+      "author": {
+        "name": "Ran Aroussi",
+        "url": "https://github.com/ranaroussi"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["ci", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/automazeio/ccpm"
+      }
+    },
+    {
+      "id": "skill-claude-code-repos-index",
+      "name": "Claude Code Repos Index",
+      "type": "workflow",
+      "url": "https://github.com/danielrosehill/Claude-Code-Repos-Index",
+      "description": "This is either the work of a prolific genius, or a very clever bot (or both), although it hardly matters because the quality is so good - an index of 75+ Claude Code repositories published by the author - and I'm not talking about slop. CMS, system design, deep research, IoT, agentic workflows, server management, personal health... If you spot the lie, let me know, otherwise please check these out.",
+      "author": {
+        "name": "Daniel Rosehill",
+        "url": "https://github.com/danielrosehill"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["go", "auth", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/danielrosehill/Claude-Code-Repos-Index"
+      }
+    },
+    {
+      "id": "skill-claude-code-system-prompts",
+      "name": "Claude Code System Prompts",
+      "type": "workflow",
+      "url": "https://github.com/Piebald-AI/claude-code-system-prompts",
+      "description": "All parts of Claude Code's system prompt, including builtin tool descriptions, sub agent prompts (Plan/Explore/Task), utility prompts (CLAUDE.md, compact, Bash cmd, security review, agent creation, etc.). Updated for each Claude Code version.",
+      "author": {
+        "name": "Piebald AI",
+        "url": "https://github.com/Piebald-AI"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["security", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Piebald-AI/claude-code-system-prompts"
+      }
+    },
+    {
+      "id": "skill-claude-code-tips",
+      "name": "Claude Code Tips",
+      "type": "workflow",
+      "url": "https://github.com/ykdojo/claude-code-tips",
+      "description": "A nice variety of 35+ brief but information-dense Claude Code tips covering voice input, system prompt patching, container workflows for risky tasks, conversation cloning(!), multi-model orchestration with Gemini CLI, and plenty more. Nice demos, working scripts, a plugin, I'd say this probably has a little something for everyone.",
+      "author": {
+        "name": "ykdojo",
+        "url": "https://github.com/ykdojo"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "noassertion"],
+      "detection": {
+        "keywords": ["ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ykdojo/claude-code-tips"
+      }
+    },
+    {
+      "id": "skill-claude-codepro",
+      "name": "Claude CodePro",
+      "type": "workflow",
+      "url": "https://github.com/maxritter/claude-codepro",
+      "description": "Professional development environment for Claude Code with spec-driven workflow, TDD enforcement, cross-session memory, semantic search, quality hooks, and modular rules integration. A bit \"heavyweight\" but feature-packed and has wide coverage.",
+      "author": {
+        "name": "Max Ritter",
+        "url": "https://www.maxritter.net"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "noassertion"],
+      "detection": {
+        "keywords": ["workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/maxritter/claude-codepro"
+      }
+    },
+    {
+      "id": "skill-claude-code-docs",
+      "name": "claude-code-docs",
+      "type": "workflow",
+      "url": "https://github.com/costiash/claude-code-docs",
+      "description": "A mirror of the Anthropic&copy; PBC documentation site for Claude/Code, but with bonus features like full-text search and query-time updates - a nice companion to `claude-code-docs` for up-to-the-minute, fully-indexed information so that Claude Code can read about itself.",
+      "author": {
+        "name": "Constantin Shafranski",
+        "url": "https://github.com/costiash"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "noassertion"],
+      "detection": {
+        "keywords": ["workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/costiash/claude-code-docs"
+      }
+    },
+    {
+      "id": "skill-claudopro-directory",
+      "name": "ClaudoPro Directory",
+      "type": "workflow",
+      "url": "https://github.com/JSONbored/claudepro-directory",
+      "description": "Well-crafted, wide selection of Claude Code hooks, slash commands, subagent files, and more, covering a range of specialized tasks and workflows. Better resources than your average \"Claude-template-for-everything\" site.",
+      "author": {
+        "name": "ghost",
+        "url": "https://github.com/JSONbored"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["ci", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/JSONbored/claudepro-directory"
+      }
+    },
+    {
+      "id": "skill-context-priming",
+      "name": "Context Priming",
+      "type": "workflow",
+      "url": "https://github.com/disler/just-prompt/tree/main/.claude/commands",
+      "description": "Provides a systematic approach to priming Claude Code with comprehensive project context through specialized commands for different project scenarios and development contexts.",
+      "author": {
+        "name": "disler",
+        "url": "https://github.com/disler"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["ci", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/disler/just-prompt/tree/main/.claude/commands"
+      }
+    },
+    {
+      "id": "skill-design-review-workflow",
+      "name": "Design Review Workflow",
+      "type": "workflow",
+      "url": "https://github.com/OneRedOak/claude-code-workflows/tree/main/design-review",
+      "description": "A tailored workflow for enabling automated UI/UX design review, including specialized sub agents, slash commands, `CLAUDE.md` excerpts, and more. Covers a broad range of criteria from responsive design to accessibility.",
+      "author": {
+        "name": "Patrick Ellis",
+        "url": "https://github.com/OneRedOak"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["ci", "ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/OneRedOak/claude-code-workflows/tree/main/design-review"
+      }
+    },
+    {
+      "id": "skill-laravel-tall-stack-ai-development-starter-kit",
+      "name": "Laravel TALL Stack AI Development Starter Kit",
+      "type": "workflow",
+      "url": "https://github.com/tott/laravel-tall-claude-ai-configs",
+      "description": "Transform your Laravel TALL (Tailwind, AlpineJS, Laravel, Livewire) stack development with comprehensive Claude Code configurations that provide intelligent assistance, systematic workflows, and domain expert consultation.",
+      "author": {
+        "name": "tott",
+        "url": "https://github.com/tott"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/tott/laravel-tall-claude-ai-configs"
+      }
+    },
+    {
+      "id": "skill-learn-claude-code",
+      "name": "Learn Claude Code",
+      "type": "workflow",
+      "url": "https://github.com/shareAI-lab/learn-claude-code",
+      "description": "A really interesting analysis of how coding agents like Claude Code are designed. It attempts to break an agent down into its fundamental parts and reconstruct it with minimal code. Great learning resource. Final product is a rudimentary agent with skills, sub-agents, and a todo-list in roughly a few hundred lines of Python.",
+      "author": {
+        "name": "shareAI-Lab",
+        "url": "https://github.com/shareAI-lab/"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["python", "rest", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/shareAI-lab/learn-claude-code"
+      }
+    },
+    {
+      "id": "skill-learn-faster-kit",
+      "name": "learn-faster-kit",
+      "type": "workflow",
+      "url": "https://github.com/cheukyin175/learn-faster-kit",
+      "description": "A creative educational framework for Claude Code, inspired by the \"FASTER\" approach to self-teaching. Ships with a variety of agents, slash commands, and tools that enable Claude Code to help you progress at your own pace, employing well-established pedagogical techniques like active learning and spaced repetition.",
+      "author": {
+        "name": "Hugo Lau",
+        "url": "https://github.com/cheukyin175"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["go", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cheukyin175/learn-faster-kit"
+      }
+    },
+    {
+      "id": "skill-n8n-agent",
+      "name": "n8n_agent",
+      "type": "workflow",
+      "url": "https://github.com/kingler/n8n_agent/tree/main/.claude/commands",
+      "description": "Amazing comprehensive set of comments for code analysis, QA, design, documentation, project structure, project management, optimization, and many more.",
+      "author": {
+        "name": "kingler",
+        "url": "https://github.com/kingler"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/kingler/n8n_agent/tree/main/.claude/commands"
+      }
+    },
+    {
+      "id": "skill-project-bootstrapping-and-task-management",
+      "name": "Project Bootstrapping and Task Management",
+      "type": "workflow",
+      "url": "https://github.com/steadycursor/steadystart/tree/main/.claude/commands",
+      "description": "Provides a structured set of commands for bootstrapping and managing a new project, including meta-commands for creating and editing custom slash-commands.",
+      "author": {
+        "name": "steadycursor",
+        "url": "https://github.com/steadycursor"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/steadycursor/steadystart/tree/main/.claude/commands"
+      }
+    },
+    {
+      "id": "skill-project-management-implementation-planning-and-release",
+      "name": "Project Management, Implementation, Planning, and Release",
+      "type": "workflow",
+      "url": "https://github.com/scopecraft/command/tree/main/.claude/commands",
+      "description": "Really comprehensive set of commands for all aspects of SDLC.",
+      "author": {
+        "name": "scopecraft",
+        "url": "https://github.com/scopecraft"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/scopecraft/command/tree/main/.claude/commands"
+      }
+    },
+    {
+      "id": "skill-project-workflow-system",
+      "name": "Project Workflow System",
+      "type": "workflow",
+      "url": "https://github.com/harperreed/dotfiles/tree/master/.claude/commands",
+      "description": "A set of commands that provide a comprehensive workflow system for managing projects, including task management, code review, and deployment processes.",
+      "author": {
+        "name": "harperreed",
+        "url": "https://github.com/harperreed"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/harperreed/dotfiles/tree/master/.claude/commands"
+      }
+    },
+    {
+      "id": "skill-riper-workflow",
+      "name": "RIPER Workflow",
+      "type": "workflow",
+      "url": "https://github.com/tony/claude-code-riper-5",
+      "description": "Structured development workflow enforcing separation between Research, Innovate, Plan, Execute, and Review phases. Features consolidated subagents for context-efficiency, branch-aware memory bank, and strict mode enforcement for guided development.",
+      "author": {
+        "name": "Tony Narlock",
+        "url": "https://tony.sh"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["ci", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/tony/claude-code-riper-5"
+      }
+    },
+    {
+      "id": "skill-shipping-real-code-w-claude",
+      "name": "Shipping Real Code w/ Claude",
+      "type": "workflow",
+      "url": "https://diwank.space/field-notes-from-shipping-real-code-with-claude",
+      "description": "A detailed blog post explaining the author's process for shipping a product with Claude Code, including CLAUDE.md files and other interesting resources.",
+      "author": {
+        "name": "Diwank",
+        "url": "https://github.com/creatorrr"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["rest", "auth", "ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual"
+      }
+    },
+    {
+      "id": "skill-simone",
+      "name": "Simone",
+      "type": "workflow",
+      "url": "https://github.com/Helmi/claude-simone",
+      "description": "A broader project management workflow for Claude Code that encompasses not just a set of commands, but a system of documents, guidelines, and processes to facilitate project planning and execution.",
+      "author": {
+        "name": "Helmi",
+        "url": "https://github.com/Helmi"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["ci", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Helmi/claude-simone"
+      }
+    },
+    {
+      "id": "skill-slash-commands-megalist",
+      "name": "Slash-commands megalist",
+      "type": "workflow",
+      "url": "https://github.com/wcygan/dotfiles/tree/d8ab6b9f5a7a81007b7f5fa3025d4f83ce12cc02/claude/commands",
+      "description": "A pretty stunning list (88 at the time of this post!) of slash-commands ranging from agent orchestration, code review, project management, security, documentation, self-assessment, almost anything you can dream of.",
+      "author": {
+        "name": "wcygan",
+        "url": "https://github.com/wcygan"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["security", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/wcygan/dotfiles/tree/d8ab6b9f5a7a81007b7f5fa3025d4f83ce12cc02/claude/commands"
+      }
+    },
+    {
+      "id": "skill-ralph-for-claude-code",
+      "name": "Ralph for Claude Code",
+      "type": "workflow",
+      "url": "https://github.com/frankbria/ralph-claude-code",
+      "description": "An autonomous AI development framework that enables Claude Code to work iteratively on projects until completion. Features intelligent exit detection, rate limiting, circuit breaker patterns, and comprehensive safety guardrails to prevent infinite loops and API overuse. Built with Bash, integrated with tmux for live monitoring, and includes 75+ comprehensive tests.",
+      "author": {
+        "name": "Frank Bria",
+        "url": "https://github.com/frankbria"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["api", "test", "ci", "ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/frankbria/ralph-claude-code"
+      }
+    },
+    {
+      "id": "skill-ralph-wiggum-marketer",
+      "name": "Ralph Wiggum Marketer",
+      "type": "workflow",
+      "url": "https://github.com/muratcankoylan/ralph-wiggum-marketer",
+      "description": "A Claude Code plugin that provides an autonomous AI copywriter,  integrating the Ralph loop with customized knowledge bases for market research agents. The agents do the research, Ralph writes the copy, you stay in bed. Whether or not you practice Ralph-Driven Development (RDD), I think these projects are interesting and creative explorations of general agentic patterns.",
+      "author": {
+        "name": "Muratcan Koylan",
+        "url": "https://github.com/muratcankoylan"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["rest", "ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/muratcankoylan/ralph-wiggum-marketer"
+      }
+    },
+    {
+      "id": "skill-ralph-wiggum-plugin",
+      "name": "Ralph Wiggum Plugin",
+      "type": "workflow",
+      "url": "https://github.com/anthropics/claude-code/tree/4f18698a9ed25517861a75125b526e319bcf8354/plugins/ralph-wiggum",
+      "description": "The official Anthropic implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code.",
+      "author": {
+        "name": "Anthropic PBC",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "&copy;"],
+      "detection": {
+        "keywords": ["ci", "ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/claude-code/tree/4f18698a9ed25517861a75125b526e319bcf8354/plugins/ralph-wiggum"
+      }
+    },
+    {
+      "id": "skill-ralph-orchestrator",
+      "name": "ralph-orchestrator",
+      "type": "workflow",
+      "url": "https://github.com/mikeyobrien/ralph-orchestrator",
+      "description": "Ralph Orchestrator implements the simple but effective \"Ralph Wiggum\" technique for autonomous task completion, continuously running an AI agent against a prompt file until the task is marked as complete or limits are reached. This implementation provides a robust, well-tested, and feature-complete orchestration system for AI-driven development. Also cited in the Anthropic Ralph plugin documentation.",
+      "author": {
+        "name": "mikeyobrien",
+        "url": "https://github.com/mikeyobrien"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "mit"],
+      "detection": {
+        "keywords": ["test", "ci", "ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/mikeyobrien/ralph-orchestrator"
+      }
+    },
+    {
+      "id": "skill-the-ralph-playbook",
+      "name": "The Ralph Playbook",
+      "type": "workflow",
+      "url": "https://github.com/ClaytonFarr/ralph-playbook",
+      "description": "A remarkably detailed and comprehensive guide to the Ralph Wiggum technique, featuring well-written theoretical commentary paired with practical guidelines and advice.",
+      "author": {
+        "name": "Clayton Farr",
+        "url": "https://github.com/ClaytonFarr"
+      },
+      "category": "Workflows & Knowledge Guides",
+      "tags": ["workflows & knowledge guides", "workflow", "not_found"],
+      "detection": {
+        "keywords": ["ai", "workflow", "automation", "pipeline"],
+        "files": ["CLAUDE.md", ".claude/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ClaytonFarr/ralph-playbook"
+      }
+    },
+    {
+      "id": "skill-britfix",
+      "name": "Britfix",
+      "type": "hook",
+      "url": "https://github.com/Talieisin/britfix",
+      "description": "Claude outputs American spellings by default, which can have an impact on: professional credibility, compliance, documentation, and more. Britfix converts to British English, with a Claude Code hook for automatic conversion as files are written. Context-aware: handles code files intelligently by only converting comments and docstrings, never identifiers or string literals.",
+      "author": {
+        "name": "Talieisin",
+        "url": "https://github.com/Talieisin"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "mit"],
+      "detection": {
+        "keywords": ["hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Talieisin/britfix"
+      }
+    },
+    {
+      "id": "skill-cc-notify",
+      "name": "CC Notify",
+      "type": "hook",
+      "url": "https://github.com/dazuiba/CCNotify",
+      "description": "CCNotify provides desktop notifications for Claude Code, alerting you to input needs or task completion, with one-click jumps back to VS Code and task duration display.",
+      "author": {
+        "name": "dazuiba",
+        "url": "https://github.com/dazuiba"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "mit"],
+      "detection": {
+        "keywords": ["hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dazuiba/CCNotify"
+      }
+    },
+    {
+      "id": "skill-cchooks",
+      "name": "cchooks",
+      "type": "hook",
+      "url": "https://github.com/GowayLee/cchooks",
+      "description": "A lightweight Python SDK with a clean API and good documentation; simplifies the process of writing hooks and integrating them into your codebase, providing a nice abstraction over the JSON configuration files.",
+      "author": {
+        "name": "GowayLee",
+        "url": "https://github.com/GowayLee"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "mit"],
+      "detection": {
+        "keywords": ["python", "go", "api", "hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/GowayLee/cchooks"
+      }
+    },
+    {
+      "id": "skill-claude-code-hook-comms-hcom",
+      "name": "Claude Code Hook Comms (HCOM)",
+      "type": "hook",
+      "url": "https://github.com/aannoo/claude-hook-comms",
+      "description": "Lightweight CLI tool for real-time communication between Claude Code sub agents using hooks. Enables multi-agent collaboration with @-mention targeting, live dashboard monitoring, and zero-dependency implementation. [NOTE: At the time of posting, this resource is a little unstable - I'm sharing it anyway, because I think it's incredibly promising and creative. I hope by the time you read this, it is production-ready.]",
+      "author": {
+        "name": "aannoo",
+        "url": "https://github.com/aannoo"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "mit"],
+      "detection": {
+        "keywords": ["hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/aannoo/claude-hook-comms"
+      }
+    },
+    {
+      "id": "skill-claude-code-hooks-sdk",
+      "name": "claude-code-hooks-sdk",
+      "type": "hook",
+      "url": "https://github.com/beyondcode/claude-hooks-sdk",
+      "description": "A Laravel-inspired PHP SDK for building Claude Code hook responses with a clean, fluent API. This SDK makes it easy to create structured JSON responses for Claude Code hooks using an expressive, chainable interface.",
+      "author": {
+        "name": "beyondcode",
+        "url": "https://github.com/beyondcode"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "mit"],
+      "detection": {
+        "keywords": ["api", "ai", "hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/beyondcode/claude-hooks-sdk"
+      }
+    },
+    {
+      "id": "skill-claude-hooks",
+      "name": "claude-hooks",
+      "type": "hook",
+      "url": "https://github.com/johnlindquist/claude-hooks",
+      "description": "A TypeScript-based system for configuring and customizing Claude Code hooks with a powerful and flexible interface.",
+      "author": {
+        "name": "John Lindquist",
+        "url": "https://github.com/johnlindquist"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "mit"],
+      "detection": {
+        "keywords": ["typescript", "hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/johnlindquist/claude-hooks"
+      }
+    },
+    {
+      "id": "skill-claudio",
+      "name": "Claudio",
+      "type": "hook",
+      "url": "https://github.com/ctoth/claudio",
+      "description": "A no-frills little library that adds delightful OS-native sounds to Claude Code via simple hooks. It really sparks joy.",
+      "author": {
+        "name": "Christopher Toth",
+        "url": "https://github.com/ctoth"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "not_found"],
+      "detection": {
+        "keywords": ["hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ctoth/claudio"
+      }
+    },
+    {
+      "id": "skill-tdd-guard",
+      "name": "TDD Guard",
+      "type": "hook",
+      "url": "https://github.com/nizos/tdd-guard",
+      "description": "A hooks-driven system that monitors file operations in real-time and blocks changes that violate TDD principles.",
+      "author": {
+        "name": "Nizar Selander",
+        "url": "https://github.com/nizos"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "mit"],
+      "detection": {
+        "keywords": ["ci", "hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/nizos/tdd-guard"
+      }
+    },
+    {
+      "id": "skill-typescript-quality-hooks",
+      "name": "TypeScript Quality Hooks",
+      "type": "hook",
+      "url": "https://github.com/bartolli/claude-code-typescript-hooks",
+      "description": "Quality check hook for Node.js TypeScript projects with TypeScript compilation. ESLint auto-fixing, and Prettier formatting. Uses SHA256 config caching for < 5ms validation performance during real-time editing.",
+      "author": {
+        "name": "bartolli",
+        "url": "https://github.com/bartolli"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "mit"],
+      "detection": {
+        "keywords": ["typescript", "node", "hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/bartolli/claude-code-typescript-hooks"
+      }
+    },
+    {
+      "id": "skill-plannotator",
+      "name": "Plannotator",
+      "type": "hook",
+      "url": "https://github.com/backnotprop/plannotator",
+      "description": "Interactive plan review UI that intercepts ExitPlanMode via hooks, letting users visually annotate plans with comments, deletions, and replacements before approving or denying with detailed feedback.",
+      "author": {
+        "name": "backnotprop",
+        "url": "https://github.com/backnotprop"
+      },
+      "category": "Hooks",
+      "tags": ["hooks", "hook", "noassertion"],
+      "detection": {
+        "keywords": ["ai", "hook", "git", "pre-commit", "post-commit"],
+        "files": [".claude/hooks/*", ".husky/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/backnotprop/plannotator"
+      }
+    },
+    {
+      "id": "skill-create-hook",
+      "name": "/create-hook",
+      "type": "command",
+      "url": "https://github.com/omril321/automated-notebooklm/blob/main/.claude/commands/create-hook.md",
+      "description": "Slash command for hook creation - intelligently prompts you through the creation process with smart suggestions based on your project setup (TS, Prettier, ESLint...).",
+      "author": {
+        "name": "Omri Lavi",
+        "url": "https://github.com/omril321"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "apache-2.0"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/omril321/automated-notebooklm/blob/main/.claude/commands/create-hook.md"
+      }
+    },
+    {
+      "id": "skill-linux-desktop-slash-commands",
+      "name": "/linux-desktop-slash-commands",
+      "type": "command",
+      "url": "https://github.com/danielrosehill/Claude-Code-Linux-Desktop-Slash-Commands",
+      "description": "A library of slash commands intended specifically to facilitate common and advanced operations on Linux desktop environments (although many would also be useful on Linux servers). Command groups include hardware benchmarking, filesystem organisation, and security posture validation.",
+      "author": {
+        "name": "Daniel Rosehill",
+        "url": "https://github.com/danielrosehill"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["ci", "security", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/danielrosehill/Claude-Code-Linux-Desktop-Slash-Commands"
+      }
+    },
+    {
+      "id": "skill-analyze-issue",
+      "name": "/analyze-issue",
+      "type": "command",
+      "url": "https://github.com/jerseycheese/Narraitor/blob/feature/issue-227-ai-suggestions/.claude/commands/analyze-issue.md",
+      "description": "Fetches GitHub issue details to create comprehensive implementation specifications, analyzing requirements and planning structured approach with clear implementation steps.",
+      "author": {
+        "name": "jerseycheese",
+        "url": "https://github.com/jerseycheese"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["git", "github", "ci", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/jerseycheese/Narraitor/blob/feature/issue-227-ai-suggestions/.claude/commands/analyze-issue.md"
+      }
+    },
+    {
+      "id": "skill-bug-fix",
+      "name": "/bug-fix",
+      "type": "command",
+      "url": "https://github.com/danielscholl/mvn-mcp-server/blob/main/.claude/commands/bug-fix.md",
+      "description": "Streamlines bug fixing by creating a GitHub issue first, then a feature branch for implementing and thoroughly testing the solution before merging.",
+      "author": {
+        "name": "danielscholl",
+        "url": "https://github.com/danielscholl"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["git", "github", "test", "testing", "ml", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/danielscholl/mvn-mcp-server/blob/main/.claude/commands/bug-fix.md"
+      }
+    },
+    {
+      "id": "skill-commit",
+      "name": "/commit",
+      "type": "command",
+      "url": "https://github.com/evmts/tevm-monorepo/blob/main/.claude/commands/commit.md",
+      "description": "Creates git commits using conventional commit format with appropriate emojis, following project standards and creating descriptive messages that explain the purpose of changes.",
+      "author": {
+        "name": "evmts",
+        "url": "https://github.com/evmts"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["git", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/evmts/tevm-monorepo/blob/main/.claude/commands/commit.md"
+      }
+    },
+    {
+      "id": "skill-create-pr",
+      "name": "/create-pr",
+      "type": "command",
+      "url": "https://github.com/toyamarinyon/giselle/blob/main/.claude/commands/create-pr.md",
+      "description": "Streamlines pull request creation by handling the entire workflow: creating a new branch, committing changes, formatting modified files with Biome, and submitting the PR.",
+      "author": {
+        "name": "toyamarinyon",
+        "url": "https://github.com/toyamarinyon"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "apache-2.0"],
+      "detection": {
+        "keywords": ["ml", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/toyamarinyon/giselle/blob/main/.claude/commands/create-pr.md"
+      }
+    },
+    {
+      "id": "skill-create-pull-request",
+      "name": "/create-pull-request",
+      "type": "command",
+      "url": "https://github.com/liam-hq/liam/blob/main/.claude/commands/create-pull-request.md",
+      "description": "Provides comprehensive PR creation guidance with GitHub CLI, enforcing title conventions, following template structure, and offering concrete command examples with best practices.",
+      "author": {
+        "name": "liam-hq",
+        "url": "https://github.com/liam-hq"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "apache-2.0"],
+      "detection": {
+        "keywords": ["git", "github", "ci", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/liam-hq/liam/blob/main/.claude/commands/create-pull-request.md"
+      }
+    },
+    {
+      "id": "skill-fix-github-issue",
+      "name": "/fix-github-issue",
+      "type": "command",
+      "url": "https://github.com/jeremymailen/kotlinter-gradle/blob/master/.claude/commands/fix-github-issue.md",
+      "description": "Analyzes and fixes GitHub issues using a structured approach with GitHub CLI for issue details, implementing necessary code changes, running tests, and creating proper commit messages.",
+      "author": {
+        "name": "jeremymailen",
+        "url": "https://github.com/jeremymailen"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "apache-2.0"],
+      "detection": {
+        "keywords": ["git", "github", "test", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/jeremymailen/kotlinter-gradle/blob/master/.claude/commands/fix-github-issue.md"
+      }
+    },
+    {
+      "id": "skill-fix-issue",
+      "name": "/fix-issue",
+      "type": "command",
+      "url": "https://github.com/metabase/metabase/blob/master/.claude/commands/fix-issue.md",
+      "description": "Addresses GitHub issues by taking issue number as parameter, analyzing context, implementing solution, and testing/validating the fix for proper integration.",
+      "author": {
+        "name": "metabase",
+        "url": "https://github.com/metabase"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "noassertion"],
+      "detection": {
+        "keywords": ["git", "github", "test", "testing", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/metabase/metabase/blob/master/.claude/commands/fix-issue.md"
+      }
+    },
+    {
+      "id": "skill-fix-pr",
+      "name": "/fix-pr",
+      "type": "command",
+      "url": "https://github.com/metabase/metabase/blob/master/.claude/commands/fix-pr.md",
+      "description": "Fetches and fixes unresolved PR comments by automatically retrieving feedback, addressing reviewer concerns, making targeted code improvements, and streamlining the review process.",
+      "author": {
+        "name": "metabase",
+        "url": "https://github.com/metabase"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "noassertion"],
+      "detection": {
+        "keywords": ["ml", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/metabase/metabase/blob/master/.claude/commands/fix-pr.md"
+      }
+    },
+    {
+      "id": "skill-pr-review",
+      "name": "/pr-review",
+      "type": "command",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code/blob/923ddf1c3dba0413ecae1c6c2921a1607dc5911d/resources/slash-commands/pr-review/pr-review.md",
+      "description": "Reviews pull request changes to provide feedback, check for issues, and suggest improvements before merging into the main codebase.",
+      "author": {
+        "name": "arkavo-org",
+        "url": "https://github.com/arkavo-org"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hesreallyhim/awesome-claude-code/blob/923ddf1c3dba0413ecae1c6c2921a1607dc5911d/resources/slash-commands/pr-review/pr-review.md"
+      }
+    },
+    {
+      "id": "skill-update-branch-name",
+      "name": "/update-branch-name",
+      "type": "command",
+      "url": "https://github.com/giselles-ai/giselle/blob/main/.claude/commands/update-branch-name.md",
+      "description": "Updates branch names with proper prefixes and formats, enforcing naming conventions, supporting semantic prefixes, and managing remote branch updates.",
+      "author": {
+        "name": "giselles-ai",
+        "url": "https://github.com/giselles-ai"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "apache-2.0"],
+      "detection": {
+        "keywords": ["ci", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/giselles-ai/giselle/blob/main/.claude/commands/update-branch-name.md"
+      }
+    },
+    {
+      "id": "skill-analyze-code",
+      "name": "/analyze-code",
+      "type": "command",
+      "url": "https://github.com/Hkgstax/VALUGATOR/blob/main/.claude/commands/analyze-code.md",
+      "description": "Reviews code structure and identifies key components, mapping relationships between elements and suggesting targeted improvements for better architecture and performance.",
+      "author": {
+        "name": "Hkgstax",
+        "url": "https://github.com/Hkgstax"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Hkgstax/VALUGATOR/blob/main/.claude/commands/analyze-code.md"
+      }
+    },
+    {
+      "id": "skill-check",
+      "name": "/check",
+      "type": "command",
+      "url": "https://github.com/rygwdn/slack-tools/blob/main/.claude/commands/check.md",
+      "description": "Performs comprehensive code quality and security checks, featuring static analysis integration, security vulnerability scanning, code style enforcement, and detailed reporting.",
+      "author": {
+        "name": "rygwdn",
+        "url": "https://github.com/rygwdn"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["security", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/rygwdn/slack-tools/blob/main/.claude/commands/check.md"
+      }
+    },
+    {
+      "id": "skill-clean",
+      "name": "/clean",
+      "type": "command",
+      "url": "https://github.com/Graphlet-AI/eridu/blob/main/.claude/commands/clean.md",
+      "description": "Addresses code formatting and quality issues by fixing black formatting problems, organizing imports with isort, resolving flake8 linting issues, and correcting mypy type errors.",
+      "author": {
+        "name": "Graphlet-AI",
+        "url": "https://github.com/Graphlet-AI"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "apache-2.0"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Graphlet-AI/eridu/blob/main/.claude/commands/clean.md"
+      }
+    },
+    {
+      "id": "skill-implement-issue",
+      "name": "/implement-issue",
+      "type": "command",
+      "url": "https://github.com/cmxela/thinkube/blob/main/.claude/commands/implement-issue.md",
+      "description": "Implements GitHub issues following strict project guidelines, complete implementation checklists, variable naming conventions, testing procedures, and documentation requirements.",
+      "author": {
+        "name": "cmxela",
+        "url": "https://github.com/cmxela"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["git", "github", "test", "testing", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cmxela/thinkube/blob/main/.claude/commands/implement-issue.md"
+      }
+    },
+    {
+      "id": "skill-optimize",
+      "name": "/optimize",
+      "type": "command",
+      "url": "https://github.com/to4iki/ai-project-rules/blob/main/.claude/commands/optimize.md",
+      "description": "Analyzes code performance to identify bottlenecks, proposing concrete optimizations with implementation guidance for improved application performance.",
+      "author": {
+        "name": "to4iki",
+        "url": "https://github.com/to4iki"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/to4iki/ai-project-rules/blob/main/.claude/commands/optimize.md"
+      }
+    },
+    {
+      "id": "skill-repro-issue",
+      "name": "/repro-issue",
+      "type": "command",
+      "url": "https://github.com/rzykov/metabase/blob/master/.claude/commands/repro-issue.md",
+      "description": "Creates reproducible test cases for GitHub issues, ensuring tests fail reliably and documenting clear reproduction steps for developers.",
+      "author": {
+        "name": "rzykov",
+        "url": "https://github.com/rzykov"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "noassertion"],
+      "detection": {
+        "keywords": ["git", "github", "test", "ci", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/rzykov/metabase/blob/master/.claude/commands/repro-issue.md"
+      }
+    },
+    {
+      "id": "skill-tdd",
+      "name": "/tdd",
+      "type": "command",
+      "url": "https://github.com/zscott/pane/blob/main/.claude/commands/tdd.md",
+      "description": "Guides development using Test-Driven Development principles, enforcing Red-Green-Refactor discipline, integrating with git workflow, and managing PR creation.",
+      "author": {
+        "name": "zscott",
+        "url": "https://github.com/zscott"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["git", "test", "ci", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/zscott/pane/blob/main/.claude/commands/tdd.md"
+      }
+    },
+    {
+      "id": "skill-tdd-implement",
+      "name": "/tdd-implement",
+      "type": "command",
+      "url": "https://github.com/jerseycheese/Narraitor/blob/feature/issue-227-ai-suggestions/.claude/commands/tdd-implement.md",
+      "description": "Implements Test-Driven Development by analyzing feature requirements, creating tests first (red), implementing minimal passing code (green), and refactoring while maintaining tests.",
+      "author": {
+        "name": "jerseycheese",
+        "url": "https://github.com/jerseycheese"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["test", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/jerseycheese/Narraitor/blob/feature/issue-227-ai-suggestions/.claude/commands/tdd-implement.md"
+      }
+    },
+    {
+      "id": "skill-testing-plan-integration",
+      "name": "/testing_plan_integration",
+      "type": "command",
+      "url": "https://github.com/buster-so/buster/blob/main/api/.claude/commands/testing_plan_integration.md",
+      "description": "Creates inline Rust-style tests, suggests refactoring for testability, analyzes code challenges, and creates comprehensive test coverage for robust code.",
+      "author": {
+        "name": "buster-so",
+        "url": "https://github.com/buster-so"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "noassertion"],
+      "detection": {
+        "keywords": ["rust", "test", "testing", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/buster-so/buster/blob/main/api/.claude/commands/testing_plan_integration.md"
+      }
+    },
+    {
+      "id": "skill-context-prime",
+      "name": "/context-prime",
+      "type": "command",
+      "url": "https://github.com/elizaOS/elizaos.github.io/blob/main/.claude/commands/context-prime.md",
+      "description": "Primes Claude with comprehensive project understanding by loading repository structure, setting development context, establishing project goals, and defining collaboration parameters.",
+      "author": {
+        "name": "elizaOS",
+        "url": "https://github.com/elizaOS"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["go", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/elizaOS/elizaos.github.io/blob/main/.claude/commands/context-prime.md"
+      }
+    },
+    {
+      "id": "skill-initref",
+      "name": "/initref",
+      "type": "command",
+      "url": "https://github.com/okuvshynov/cubestat/blob/main/.claude/commands/initref.md",
+      "description": "Initializes reference documentation structure with standard doc templates, API reference setup, documentation conventions, and placeholder content generation.",
+      "author": {
+        "name": "okuvshynov",
+        "url": "https://github.com/okuvshynov"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["api", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/okuvshynov/cubestat/blob/main/.claude/commands/initref.md"
+      }
+    },
+    {
+      "id": "skill-load-llms-txt",
+      "name": "/load-llms-txt",
+      "type": "command",
+      "url": "https://github.com/ethpandaops/xatu-data/blob/master/.claude/commands/load-llms-txt.md",
+      "description": "Loads LLM configuration files to context, importing specific terminology, model configurations, and establishing baseline terminology for AI discussions.",
+      "author": {
+        "name": "ethpandaops",
+        "url": "https://github.com/ethpandaops"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["ci", "ai", "llm", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ethpandaops/xatu-data/blob/master/.claude/commands/load-llms-txt.md"
+      }
+    },
+    {
+      "id": "skill-load-coo-context",
+      "name": "/load_coo_context",
+      "type": "command",
+      "url": "https://github.com/Mjvolk3/torchcell/blob/main/.claude/commands/load_coo_context.md",
+      "description": "References specific files for sparse matrix operations, explains transform usage, compares with previous approaches, and sets data formatting context for development.",
+      "author": {
+        "name": "Mjvolk3",
+        "url": "https://github.com/Mjvolk3"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["ci", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Mjvolk3/torchcell/blob/main/.claude/commands/load_coo_context.md"
+      }
+    },
+    {
+      "id": "skill-prime",
+      "name": "/prime",
+      "type": "command",
+      "url": "https://github.com/yzyydev/AI-Engineering-Structure/blob/main/.claude/commands/prime.md",
+      "description": "Sets up initial project context by viewing directory structure and reading key files, creating standardized context with directory visualization and key documentation focus.",
+      "author": {
+        "name": "yzyydev",
+        "url": "https://github.com/yzyydev"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/yzyydev/AI-Engineering-Structure/blob/main/.claude/commands/prime.md"
+      }
+    },
+    {
+      "id": "skill-rsi",
+      "name": "/rsi",
+      "type": "command",
+      "url": "https://github.com/ddisisto/si/blob/main/.claude/commands/rsi.md",
+      "description": "Reads all commands and key project files to optimize AI-assisted development by streamlining the process, loading command context, and setting up for better development workflow.",
+      "author": {
+        "name": "ddisisto",
+        "url": "https://github.com/ddisisto"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["ai", "ml", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ddisisto/si/blob/main/.claude/commands/rsi.md"
+      }
+    },
+    {
+      "id": "skill-add-to-changelog",
+      "name": "/add-to-changelog",
+      "type": "command",
+      "url": "https://github.com/berrydev-ai/blockdoc-python/blob/main/.claude/commands/add-to-changelog.md",
+      "description": "Adds new entries to changelog files while maintaining format consistency, properly documenting changes, and following established project standards for version tracking.",
+      "author": {
+        "name": "berrydev-ai",
+        "url": "https://github.com/berrydev-ai"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/berrydev-ai/blockdoc-python/blob/main/.claude/commands/add-to-changelog.md"
+      }
+    },
+    {
+      "id": "skill-create-docs",
+      "name": "/create-docs",
+      "type": "command",
+      "url": "https://github.com/jerseycheese/Narraitor/blob/feature/issue-227-ai-suggestions/.claude/commands/create-docs.md",
+      "description": "Analyzes code structure and purpose to create comprehensive documentation detailing inputs/outputs, behavior, user interaction flows, and edge cases with error handling.",
+      "author": {
+        "name": "jerseycheese",
+        "url": "https://github.com/jerseycheese"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/jerseycheese/Narraitor/blob/feature/issue-227-ai-suggestions/.claude/commands/create-docs.md"
+      }
+    },
+    {
+      "id": "skill-docs",
+      "name": "/docs",
+      "type": "command",
+      "url": "https://github.com/slunsford/coffee-analytics/blob/main/.claude/commands/docs.md",
+      "description": "Generates comprehensive documentation that follows project structure, documenting APIs and usage patterns with consistent formatting for better user understanding.",
+      "author": {
+        "name": "slunsford",
+        "url": "https://github.com/slunsford"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["api", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/slunsford/coffee-analytics/blob/main/.claude/commands/docs.md"
+      }
+    },
+    {
+      "id": "skill-explain-issue-fix",
+      "name": "/explain-issue-fix",
+      "type": "command",
+      "url": "https://github.com/hackdays-io/toban-contribution-viewer/blob/main/.claude/commands/explain-issue-fix.md",
+      "description": "Documents solution approaches for GitHub issues, explaining technical decisions, detailing challenges overcome, and providing implementation context for better understanding.",
+      "author": {
+        "name": "hackdays-io",
+        "url": "https://github.com/hackdays-io"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["git", "github", "ci", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hackdays-io/toban-contribution-viewer/blob/main/.claude/commands/explain-issue-fix.md"
+      }
+    },
+    {
+      "id": "skill-update-docs",
+      "name": "/update-docs",
+      "type": "command",
+      "url": "https://github.com/Consiliency/Flutter-Structurizr/blob/main/.claude/commands/update-docs.md",
+      "description": "Reviews current documentation status, updates implementation progress, reviews phase documents, and maintains documentation consistency across the project.",
+      "author": {
+        "name": "Consiliency",
+        "url": "https://github.com/Consiliency"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Consiliency/Flutter-Structurizr/blob/main/.claude/commands/update-docs.md"
+      }
+    },
+    {
+      "id": "skill-build-react-app",
+      "name": "/build-react-app",
+      "type": "command",
+      "url": "https://github.com/wmjones/wyatt-personal-aws/blob/main/.claude/commands/build-react-app.md",
+      "description": "Builds React applications locally with intelligent error handling, creating specific tasks for build failures and providing appropriate server commands based on build results.",
+      "author": {
+        "name": "wmjones",
+        "url": "https://github.com/wmjones"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["react", "ci", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/wmjones/wyatt-personal-aws/blob/main/.claude/commands/build-react-app.md"
+      }
+    },
+    {
+      "id": "skill-release",
+      "name": "/release",
+      "type": "command",
+      "url": "https://github.com/kelp/webdown/blob/main/.claude/commands/release.md",
+      "description": "Manages software releases by updating changelogs, reviewing README changes, evaluating version increments, and documenting release changes for better version tracking.",
+      "author": {
+        "name": "kelp",
+        "url": "https://github.com/kelp"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/kelp/webdown/blob/main/.claude/commands/release.md"
+      }
+    },
+    {
+      "id": "skill-create-plan",
+      "name": "/create-plan",
+      "type": "command",
+      "url": "https://github.com/hesreallyhim/inkverse-fork/blob/preserve-claude-resources/.claude/commands/create-plan.md",
+      "description": "Generates comprehensive product requirement documents outlining detailed specifications, requirements, and features following standardized document structure and format.",
+      "author": {
+        "name": "taddyorg",
+        "url": "https://github.com/taddyorg"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "agpl-3.0"],
+      "detection": {
+        "keywords": ["ci", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hesreallyhim/inkverse-fork/blob/preserve-claude-resources/.claude/commands/create-plan.md"
+      }
+    },
+    {
+      "id": "skill-create-prp",
+      "name": "/create-prp",
+      "type": "command",
+      "url": "https://github.com/Wirasm/claudecode-utils/blob/main/.claude/commands/create-prp.md",
+      "description": "Creates product requirement plans by reading PRP methodology, following template structure, creating comprehensive requirements, and structuring product definitions for development.",
+      "author": {
+        "name": "Wirasm",
+        "url": "https://github.com/Wirasm"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Wirasm/claudecode-utils/blob/main/.claude/commands/create-prp.md"
+      }
+    },
+    {
+      "id": "skill-do-issue",
+      "name": "/do-issue",
+      "type": "command",
+      "url": "https://github.com/jerseycheese/Narraitor/blob/feature/issue-227-ai-suggestions/.claude/commands/do-issue.md",
+      "description": "Implements GitHub issues with manual review points, following a structured approach with issue number parameter and offering alternative automated mode for efficiency.",
+      "author": {
+        "name": "jerseycheese",
+        "url": "https://github.com/jerseycheese"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["git", "github", "ci", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/jerseycheese/Narraitor/blob/feature/issue-227-ai-suggestions/.claude/commands/do-issue.md"
+      }
+    },
+    {
+      "id": "skill-prd-generator",
+      "name": "/prd-generator",
+      "type": "command",
+      "url": "https://github.com/dredozubov/prd-generator",
+      "description": "A Claude Code plugin that generates comprehensive Product Requirements Documents (PRDs) from conversation context. Invoke `/create-prd` after discussing requirements and it produces a complete PRD with all standard sections including Executive Summary, User Stories, MVP Scope, Architecture, Success Criteria, and Implementation Phases.",
+      "author": {
+        "name": "Denis Redozubov",
+        "url": "https://github.com/dredozubov"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dredozubov/prd-generator"
+      }
+    },
+    {
+      "id": "skill-todo",
+      "name": "/todo",
+      "type": "command",
+      "url": "https://github.com/chrisleyva/todo-slash-command/blob/main/todo.md",
+      "description": "A convenient command to quickly manage project todo items without leaving the Claude Code interface, featuring due dates, sorting, task prioritization, and comprehensive todo list management.",
+      "author": {
+        "name": "chrisleyva",
+        "url": "https://github.com/chrisleyva"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/chrisleyva/todo-slash-command/blob/main/todo.md"
+      }
+    },
+    {
+      "id": "skill-act",
+      "name": "/act",
+      "type": "command",
+      "url": "https://github.com/sotayamashita/dotfiles/blob/main/.claude/commands/act.md",
+      "description": "Generates React components with proper accessibility, creating ARIA-compliant components with keyboard navigation that follow React best practices and include comprehensive accessibility testing.",
+      "author": {
+        "name": "sotayamashita",
+        "url": "https://github.com/sotayamashita"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "mit"],
+      "detection": {
+        "keywords": ["react", "test", "testing", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sotayamashita/dotfiles/blob/main/.claude/commands/act.md"
+      }
+    },
+    {
+      "id": "skill-dump",
+      "name": "/dump",
+      "type": "command",
+      "url": "https://gist.github.com/fumito-ito/77c308e0382e06a9c16b22619f8a2f83#file-dump-md",
+      "description": "Dumps the current Claude Code conversation to a markdown file in `.claude/logs/` with timestamped files that include session details and preserve full conversation history.",
+      "author": {
+        "name": "fumito-ito",
+        "url": "https://github.com/fumito-ito"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://gist.github.com/fumito-ito/77c308e0382e06a9c16b22619f8a2f83#file-dump-md"
+      }
+    },
+    {
+      "id": "skill-five",
+      "name": "/five",
+      "type": "command",
+      "url": "https://github.com/TuckerTucker/tkr-portfolio/blob/main/.claude/commands/five.md",
+      "description": "Applies the \"five whys\" methodology to perform root cause analysis, identify underlying issues, and create solution approaches for complex problems.",
+      "author": {
+        "name": "TuckerTucker",
+        "url": "https://github.com/TuckerTucker"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/TuckerTucker/tkr-portfolio/blob/main/.claude/commands/five.md"
+      }
+    },
+    {
+      "id": "skill-mermaid",
+      "name": "/mermaid",
+      "type": "command",
+      "url": "https://github.com/GaloyMoney/lana-bank/blob/main/.claude/commands/mermaid.md",
+      "description": "Generates Mermaid diagrams from SQL schema files, creating entity relationship diagrams with table properties, validating diagram compilation, and ensuring complete entity coverage.",
+      "author": {
+        "name": "GaloyMoney",
+        "url": "https://github.com/GaloyMoney"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "noassertion"],
+      "detection": {
+        "keywords": ["ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/GaloyMoney/lana-bank/blob/main/.claude/commands/mermaid.md"
+      }
+    },
+    {
+      "id": "skill-use-stepper",
+      "name": "/use-stepper",
+      "type": "command",
+      "url": "https://github.com/zuplo/docs/blob/main/.claude/commands/use-stepper.md",
+      "description": "Reformats documentation to use React Stepper component, transforming heading formats, applying proper indentation, and maintaining markdown compatibility with admonition formatting.",
+      "author": {
+        "name": "zuplo",
+        "url": "https://github.com/zuplo"
+      },
+      "category": "Slash-Commands",
+      "tags": ["slash-commands", "command", "not_found"],
+      "detection": {
+        "keywords": ["react", "ai", "command", "slash", "cli"],
+        "files": [".claude/commands/*"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/zuplo/docs/blob/main/.claude/commands/use-stepper.md"
+      }
+    },
+    {
+      "id": "skill-ai-intellij-plugin",
+      "name": "AI IntelliJ Plugin",
+      "type": "skill",
+      "url": "https://github.com/didalgolab/ai-intellij-plugin/blob/main/CLAUDE.md",
+      "description": "Provides comprehensive Gradle commands for IntelliJ plugin development with platform-specific coding patterns, detailed package structure guidelines, and clear internationalization standards.",
+      "author": {
+        "name": "didalgolab",
+        "url": "https://github.com/didalgolab"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "apache-2.0"],
+      "detection": {
+        "keywords": ["ci", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/didalgolab/ai-intellij-plugin/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-droidconkotlin",
+      "name": "DroidconKotlin",
+      "type": "skill",
+      "url": "https://github.com/touchlab/DroidconKotlin/blob/main/CLAUDE.md",
+      "description": "Delivers comprehensive Gradle commands for cross-platform Kotlin Multiplatform development with clear module structure and practical guidance for dependency injection.",
+      "author": {
+        "name": "touchlab",
+        "url": "https://github.com/touchlab"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "apache-2.0"],
+      "detection": {
+        "keywords": []
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/touchlab/DroidconKotlin/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-edsl",
+      "name": "EDSL",
+      "type": "skill",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/resources/claude.md-files/EDSL/CLAUDE.md",
+      "description": "Offers detailed build and test commands with strict code style enforcement, comprehensive testing requirements, and standardized development workflow using Black and mypy.",
+      "author": {
+        "name": "expectedparrot",
+        "url": "https://github.com/expectedparrot"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["test", "testing", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hesreallyhim/awesome-claude-code/blob/main/resources/claude.md-files/EDSL/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-hash",
+      "name": "HASH",
+      "type": "skill",
+      "url": "https://github.com/hashintel/hash/blob/main/CLAUDE.md",
+      "description": "Features comprehensive repository structure breakdown with strong emphasis on coding standards, detailed Rust documentation guidelines, and systematic PR review process.",
+      "author": {
+        "name": "hashintel",
+        "url": "https://github.com/hashintel"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "noassertion"],
+      "detection": {
+        "keywords": ["rust", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hashintel/hash/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-inkline",
+      "name": "Inkline",
+      "type": "skill",
+      "url": "https://github.com/inkline/inkline/blob/main/CLAUDE.md",
+      "description": "Structures development workflow using pnpm with emphasis on TypeScript and Vue 3 Composition API, detailed component creation process, and comprehensive testing recommendations.",
+      "author": {
+        "name": "inkline",
+        "url": "https://github.com/inkline"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "noassertion"],
+      "detection": {
+        "keywords": ["vue", "typescript", "api", "test", "testing", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/inkline/inkline/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-jsbeeb",
+      "name": "JSBeeb",
+      "type": "skill",
+      "url": "https://github.com/mattgodbolt/jsbeeb/blob/main/CLAUDE.md",
+      "description": "Provides development guide for JavaScript BBC Micro emulator with build and testing instructions, architecture documentation, and debugging workflows.",
+      "author": {
+        "name": "mattgodbolt",
+        "url": "https://github.com/mattgodbolt"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "gpl-3.0"],
+      "detection": {
+        "keywords": ["javascript", "java", "test", "testing"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/mattgodbolt/jsbeeb/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-lamoom-python",
+      "name": "Lamoom Python",
+      "type": "skill",
+      "url": "https://github.com/LamoomAI/lamoom-python/blob/main/CLAUDE.md",
+      "description": "Serves as reference for production prompt engineering library with load balancing of AI Models, API documentation, and usage patterns with examples.",
+      "author": {
+        "name": "LamoomAI",
+        "url": "https://github.com/LamoomAI"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "apache-2.0"],
+      "detection": {
+        "keywords": ["python", "api", "ci", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/LamoomAI/lamoom-python/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-langgraphjs",
+      "name": "LangGraphJS",
+      "type": "skill",
+      "url": "https://github.com/langchain-ai/langgraphjs/blob/main/CLAUDE.md",
+      "description": "Offers comprehensive build and test commands with detailed TypeScript style guidelines, layered library architecture, and monorepo structure using yarn workspaces.",
+      "author": {
+        "name": "langchain-ai",
+        "url": "https://github.com/langchain-ai"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["typescript", "test", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/langchain-ai/langgraphjs/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-metabase",
+      "name": "Metabase",
+      "type": "skill",
+      "url": "https://github.com/metabase/metabase/blob/master/CLAUDE.md",
+      "description": "Details workflow for REPL-driven development in Clojure/ClojureScript with emphasis on incremental development, testing, and step-by-step approach for feature implementation.",
+      "author": {
+        "name": "metabase",
+        "url": "https://github.com/metabase"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "noassertion"],
+      "detection": {
+        "keywords": ["test", "testing", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/metabase/metabase/blob/master/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-sg-cars-trends-backend",
+      "name": "SG Cars Trends Backend",
+      "type": "skill",
+      "url": "https://github.com/sgcarstrends/backend/blob/main/CLAUDE.md",
+      "description": "Provides comprehensive structure for TypeScript monorepo projects with detailed commands for development, testing, deployment, and AWS/Cloudflare integration.",
+      "author": {
+        "name": "sgcarstrends",
+        "url": "https://github.com/sgcarstrends"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["typescript", "aws", "test", "testing", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sgcarstrends/backend/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-spy",
+      "name": "SPy",
+      "type": "skill",
+      "url": "https://github.com/spylang/spy/blob/main/CLAUDE.md",
+      "description": "Enforces strict coding conventions with comprehensive testing guidelines, multiple code compilation options, and backend-specific test decorators for targeted filtering.",
+      "author": {
+        "name": "spylang",
+        "url": "https://github.com/spylang"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["test", "testing", "ci"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/spylang/spy/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-tpl",
+      "name": "TPL",
+      "type": "skill",
+      "url": "https://github.com/KarpelesLab/tpl/blob/master/CLAUDE.md",
+      "description": "Details Go project conventions with comprehensive error handling recommendations, table-driven testing approach guidelines, and modernization suggestions for latest Go features.",
+      "author": {
+        "name": "KarpelesLab",
+        "url": "https://github.com/KarpelesLab"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["go", "test", "testing", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/KarpelesLab/tpl/blob/master/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-avs-vibe-developer-guide",
+      "name": "AVS Vibe Developer Guide",
+      "type": "skill",
+      "url": "https://github.com/Layr-Labs/avs-vibe-developer-guide/blob/master/CLAUDE.md",
+      "description": "Structures AI-assisted EigenLayer AVS development workflow with consistent naming conventions for prompt files and established terminology standards for blockchain concepts.",
+      "author": {
+        "name": "Layr-Labs",
+        "url": "https://github.com/Layr-Labs"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Layr-Labs/avs-vibe-developer-guide/blob/master/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-comm",
+      "name": "Comm",
+      "type": "skill",
+      "url": "https://github.com/CommE2E/comm/blob/master/CLAUDE.md",
+      "description": "Serves as a development reference for E2E-encrypted messaging applications with code organization architecture, security implementation details, and testing procedures.",
+      "author": {
+        "name": "CommE2E",
+        "url": "https://github.com/CommE2E"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "bsd-3-clause"],
+      "detection": {
+        "keywords": ["test", "testing", "security", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/CommE2E/comm/blob/master/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-course-builder",
+      "name": "Course Builder",
+      "type": "skill",
+      "url": "https://github.com/badass-courses/course-builder/blob/main/CLAUDE.md",
+      "description": "Enables real-time multiplayer capabilities for collaborative course creation with diverse tech stack integration and monorepo architecture using Turborepo.",
+      "author": {
+        "name": "badass-courses",
+        "url": "https://github.com/badass-courses"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": []
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/badass-courses/course-builder/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-cursor-tools",
+      "name": "Cursor Tools",
+      "type": "skill",
+      "url": "https://github.com/eastlondoner/cursor-tools/blob/main/CLAUDE.md",
+      "description": "Creates a versatile AI command interface supporting multiple providers and models with flexible command options and browser automation through \"Stagehand\" feature.",
+      "author": {
+        "name": "eastlondoner",
+        "url": "https://github.com/eastlondoner"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/eastlondoner/cursor-tools/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-guitar",
+      "name": "Guitar",
+      "type": "skill",
+      "url": "https://github.com/soramimi/Guitar/blob/master/CLAUDE.md",
+      "description": "Serves as development guide for Guitar Git GUI Client with build commands for various platforms, code style guidelines for contributing, and project structure explanation.",
+      "author": {
+        "name": "soramimi",
+        "url": "https://github.com/soramimi"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "gpl-2.0"],
+      "detection": {
+        "keywords": ["git"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/soramimi/Guitar/blob/master/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-network-chronicles",
+      "name": "Network Chronicles",
+      "type": "skill",
+      "url": "https://github.com/Fimeg/NetworkChronicles/blob/legacy-v1/CLAUDE.md",
+      "description": "Presents detailed implementation plan for AI-driven game characters with technical specifications for LLM integration, character guidelines, and service discovery mechanics.",
+      "author": {
+        "name": "Fimeg",
+        "url": "https://github.com/Fimeg"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["ci", "ai", "llm"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Fimeg/NetworkChronicles/blob/legacy-v1/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-note-companion",
+      "name": "Note Companion",
+      "type": "skill",
+      "url": "https://github.com/different-ai/note-companion/blob/master/CLAUDE.md",
+      "description": "Provides detailed styling isolation techniques for Obsidian plugins using Tailwind with custom prefix to prevent style conflicts and practical troubleshooting steps.",
+      "author": {
+        "name": "different-ai",
+        "url": "https://github.com/different-ai"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/different-ai/note-companion/blob/master/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-pareto-mac",
+      "name": "Pareto Mac",
+      "type": "skill",
+      "url": "https://github.com/ParetoSecurity/pareto-mac/blob/main/CLAUDE.md",
+      "description": "Serves as development guide for Mac security audit tool with build instructions, contribution guidelines, testing procedures, and workflow documentation.",
+      "author": {
+        "name": "ParetoSecurity",
+        "url": "https://github.com/ParetoSecurity"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "gpl-3.0"],
+      "detection": {
+        "keywords": ["test", "testing", "security"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ParetoSecurity/pareto-mac/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-basic-memory",
+      "name": "Basic Memory",
+      "type": "skill",
+      "url": "https://github.com/basicmachines-co/basic-memory/blob/main/CLAUDE.md",
+      "description": "Presents an innovative AI-human collaboration framework with Model Context Protocol for bidirectional LLM-markdown communication and flexible knowledge structure for complex projects.",
+      "author": {
+        "name": "basicmachines-co",
+        "url": "https://github.com/basicmachines-co"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "agpl-3.0"],
+      "detection": {
+        "keywords": ["ai", "llm"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/basicmachines-co/basic-memory/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-claude-code-mcp-enhanced",
+      "name": "claude-code-mcp-enhanced",
+      "type": "skill",
+      "url": "https://github.com/grahama1970/claude-code-mcp-enhanced/blob/main/CLAUDE.md",
+      "description": "Provides detailed and emphatic instructions for Claude to follow as a coding agent, with testing guidance, code examples, and compliance checks.",
+      "author": {
+        "name": "grahama1970",
+        "url": "https://github.com/grahama1970"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "mit"],
+      "detection": {
+        "keywords": ["test", "testing", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/grahama1970/claude-code-mcp-enhanced/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-mcp-engine",
+      "name": "MCP Engine",
+      "type": "skill",
+      "url": "https://github.com/featureform/mcp-engine/blob/main/CLAUDE.md",
+      "description": "Enforces strict package management with comprehensive type checking rules, explicit PR description guidelines, and systematic approach to resolving CI failures.",
+      "author": {
+        "name": "featureform",
+        "url": "https://github.com/featureform"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "apache-2.0"],
+      "detection": {
+        "keywords": ["ci", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/featureform/mcp-engine/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-perplexity-mcp",
+      "name": "Perplexity MCP",
+      "type": "skill",
+      "url": "https://github.com/Family-IT-Guy/perplexity-mcp/blob/main/CLAUDE.md",
+      "description": "Offers clear step-by-step installation instructions with multiple configuration options, detailed troubleshooting guidance, and concise architecture overview of the MCP protocol.",
+      "author": {
+        "name": "Family-IT-Guy",
+        "url": "https://github.com/Family-IT-Guy"
+      },
+      "category": "CLAUDE.md Files",
+      "tags": ["claude.md files", "skill", "isc"],
+      "detection": {
+        "keywords": ["ci", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Family-IT-Guy/perplexity-mcp/blob/main/CLAUDE.md"
+      }
+    },
+    {
+      "id": "skill-anthropic-documentation",
+      "name": "Anthropic Documentation",
+      "type": "skill",
+      "url": "https://docs.claude.com/en/home",
+      "description": "The official documentation for Claude Code, including installation instructions, usage guidelines, API references, tutorials, examples, loads of information that I won't list individually. Like Claude Code, the documentation is frequently updated.",
+      "author": {
+        "name": "Anthropic",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Official Documentation",
+      "tags": ["official documentation", "skill", "&copy;"],
+      "detection": {
+        "keywords": ["api", "ci"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual"
+      }
+    },
+    {
+      "id": "skill-anthropic-quickstarts",
+      "name": "Anthropic Quickstarts",
+      "type": "skill",
+      "url": "https://github.com/anthropics/claude-quickstarts",
+      "description": "Offers comprehensive development guides for three distinct AI-powered demo projects with standardized workflows, strict code style guidelines, and containerization instructions.",
+      "author": {
+        "name": "Anthropic",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Official Documentation",
+      "tags": ["official documentation", "skill", "mit"],
+      "detection": {
+        "keywords": ["ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/claude-quickstarts"
+      }
+    },
+    {
+      "id": "skill-claude-code-github-actions",
+      "name": "Claude Code GitHub Actions",
+      "type": "skill",
+      "url": "https://github.com/anthropics/claude-code-action/tree/main/examples",
+      "description": "Official GitHub Actions integration for Claude Code with examples and documentation for automating AI-powered workflows in CI/CD pipelines.",
+      "author": {
+        "name": "Anthropic",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Official Documentation",
+      "tags": ["official documentation", "skill", "mit"],
+      "detection": {
+        "keywords": ["git", "github", "ci", "cd", "ai"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/claude-code-action/tree/main/examples"
+      }
+    },
+    {
+      "id": "skill-awesome-claude-code-output-styles-that-i-really-like",
+      "name": "Awesome Claude Code Output Styles (That I Really Like)",
+      "type": "skill",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code-output-styles-that-i-really-like",
+      "description": "A fun and moderately amusing collection of experimental output styles.",
+      "author": {
+        "name": "Really Him",
+        "url": "https://github.com/hesreallyhim/"
+      },
+      "category": "Output Styles",
+      "tags": ["output styles", "skill", "mit"],
+      "detection": {
+        "keywords": []
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hesreallyhim/awesome-claude-code-output-styles-that-i-really-like"
+      }
+    },
+    {
+      "id": "skill-ccoutputstyles",
+      "name": "ccoutputstyles",
+      "type": "skill",
+      "url": "https://github.com/viveknair/ccoutputstyles",
+      "description": "CLI tool and template gallery for customizing Claude Code output styles with pre-built templates. Features over 15 templates at the time of writing!",
+      "author": {
+        "name": "Vivek Nair",
+        "url": "https://github.com/viveknair"
+      },
+      "category": "Output Styles",
+      "tags": ["output styles", "skill", "mit"],
+      "detection": {
+        "keywords": []
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/viveknair/ccoutputstyles"
+      }
+    },
+    {
+      "id": "skill-claude-code-output-styles-debugging",
+      "name": "Claude Code Output Styles - Debugging",
+      "type": "skill",
+      "url": "https://github.com/JamieM0/claude-output-styles",
+      "description": "A small set of well-written output styles, specifically focused on debugging - root cause analysis, systematic, methodical debugging, encouraging a more careful approach to bug-squashing from Claude Code.",
+      "author": {
+        "name": "Jamie Matthews",
+        "url": "https://github.com/JamieM0"
+      },
+      "category": "Output Styles",
+      "tags": ["output styles", "skill", "mit"],
+      "detection": {
+        "keywords": ["ci"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/JamieM0/claude-output-styles"
+      }
+    },
+    {
+      "id": "skill-gen-alpha-slang",
+      "name": "Gen-Alpha Slang",
+      "type": "skill",
+      "url": "https://github.com/sjnims/gen-alpha-output-style",
+      "description": "This is really... different. I don't know what to say about this one. It does what it says on the tin. You might find it funny, you might want throw up. I'll just say candidly this is included strictly for its potentially comedic awesomeness.",
+      "author": {
+        "name": "Steve Nims",
+        "url": "https://github.com/sjnims"
+      },
+      "category": "Output Styles",
+      "tags": ["output styles", "skill", "mit"],
+      "detection": {
+        "keywords": []
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sjnims/gen-alpha-output-style"
+      }
+    }
+  ]
+}

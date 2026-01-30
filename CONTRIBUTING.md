@@ -200,6 +200,35 @@ cc-recommender/
 
 ## Data Updates
 
+### For Maintainers
+
+See [docs/DATA_UPDATE_STRATEGY.md](./docs/DATA_UPDATE_STRATEGY.md) for the full data update strategy.
+
+#### Update Database Manually
+
+```bash
+# Full update with security scan
+pnpm run fetch-data:full
+
+# Quick update (skip security scan - emergency only)
+pnpm run fetch-data:quick
+
+# Default (controlled by SKIP_SECURITY_SCAN env var)
+pnpm run fetch-data
+```
+
+#### Automatic Weekly Updates
+
+The database is automatically updated every Monday at 9:00 AM JST via GitHub Actions (`.github/workflows/update-data.yml`).
+
+**What happens:**
+1. Fetches latest data from all sources
+2. Runs security scan with cc-audit
+3. Creates a PR if changes detected
+4. Maintainer reviews and merges
+
+### For Contributors
+
 To add a new data source:
 
 1. Add fetcher to `scripts/fetch-data.ts`
@@ -211,6 +240,105 @@ To add a new data source:
 pnpm run fetch-data
 pnpm run build
 pnpm run check
+```
+
+## Testing
+
+### Running Tests
+
+```bash
+# Run all tests
+pnpm run test
+
+# Watch mode (re-runs on file changes)
+pnpm run test:watch
+
+# Coverage report
+pnpm run test:coverage
+```
+
+### Test Structure
+
+- `tests/analyzer.test.ts` - Project analyzer tests
+- `tests/recommender.test.ts` - Recommendation engine tests
+
+### Writing Tests
+
+- Use Vitest for testing
+- Follow the Arrange-Act-Assert pattern
+- Mock external dependencies
+- Aim for high coverage on critical paths
+
+Example:
+
+```typescript
+import { describe, expect, it } from "vitest";
+
+describe("MyService", () => {
+  it("should return expected result", () => {
+    // Arrange
+    const input = "test";
+
+    // Act
+    const result = myService.process(input);
+
+    // Assert
+    expect(result).toBe("expected");
+  });
+});
+```
+
+## Build and Release
+
+### Building
+
+```bash
+# TypeScript compilation
+pnpm run build
+
+# Watch mode (rebuilds on file changes)
+pnpm run dev
+```
+
+### Release Process (for maintainers)
+
+1. Update data to latest
+
+```bash
+pnpm run fetch-data:full
+git add data/recommendations.json
+git commit -m "chore(data): update recommendations for v0.x.0"
+```
+
+2. Run all checks
+
+```bash
+pnpm run check  # Type check + Lint + Security audit
+pnpm run build
+pnpm run test
+```
+
+3. Update CHANGELOG.md
+
+Add changes under the next version number.
+
+4. Version bump
+
+```bash
+npm version patch  # or minor/major
+```
+
+5. Publish to npm
+
+```bash
+npm publish
+```
+
+6. Push to GitHub
+
+```bash
+git push
+git push --tags
 ```
 
 ## Questions & Support
