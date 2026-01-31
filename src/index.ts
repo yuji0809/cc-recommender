@@ -15,25 +15,25 @@ import { createMcpServer } from "./server/mcp-server.js";
  */
 async function main() {
   try {
-    console.error("[DEBUG] Starting cc-recommender MCP server...");
+    console.log("[DEBUG] Starting cc-recommender MCP server...");
 
     // Load database
     const database = await recommendationRepository.load();
-    console.error(`[DEBUG] Loaded ${database.items.length} recommendations`);
+    console.log(`[DEBUG] Loaded ${database.items.length} recommendations`);
 
     // Create and start MCP server
-    console.error("[DEBUG] Creating MCP server...");
+    console.log("[DEBUG] Creating MCP server...");
     await createMcpServer(database);
-    console.error("[DEBUG] MCP server created and connected");
+    console.log("[DEBUG] MCP server created and connected");
 
     // Keep process alive
     process.on("SIGINT", () => {
-      console.error("[DEBUG] Received SIGINT, shutting down...");
+      console.log("[DEBUG] Received SIGINT, shutting down...");
       process.exit(0);
     });
 
     process.on("SIGTERM", () => {
-      console.error("[DEBUG] Received SIGTERM, shutting down...");
+      console.log("[DEBUG] Received SIGTERM, shutting down...");
       process.exit(0);
     });
   } catch (error) {

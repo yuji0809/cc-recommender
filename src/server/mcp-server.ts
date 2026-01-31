@@ -31,5 +31,5 @@ export async function createMcpServer(database: RecommendationDatabase): Promise
   const transport = new StdioServerTransport();
   await server.connect(transport);
 
-  console.error("cc-recommender MCP server started");
+  console.log("cc-recommender MCP server started");
 }

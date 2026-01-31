@@ -118,9 +118,7 @@ export async function scanRepositories(
     }
 
     // 進捗表示
-    console.error(
-      `Scanned ${Math.min(i + concurrency, repos.length)}/${repos.length} repositories`,
-    );
+    console.log(`Scanned ${Math.min(i + concurrency, repos.length)}/${repos.length} repositories`);
   }
 
   return results;

@@ -60,7 +60,7 @@ export class RecommendationRepository {
 
     // Cache expired or not available - clear it
     if (this.cache) {
-      console.error("🔄 Cache expired, refreshing data...");
+      console.log("🔄 Cache expired, refreshing data...");
       this.cache = null;
     }
 
@@ -72,7 +72,7 @@ export class RecommendationRepository {
         this.cacheTimestamp = Date.now();
         return remoteData;
       }
-      console.error("⚠️  Falling back to bundled data");
+      console.warn("⚠️  Falling back to bundled data");
     }
 
     // Fallback to bundled data (load 3 files in parallel)
@@ -92,10 +92,10 @@ export class RecommendationRepository {
 
       this.cache = database;
       this.cacheTimestamp = Date.now();
-      console.error(
+      console.log(
         `📦 Loaded ${database.items.length} recommendations from bundled data (${database.version})`,
       );
-      console.error(
+      console.log(
         `   - Plugins: ${pluginsDb.items.length}, MCP: ${mcpServersDb.items.length}, Skills: ${skillsDb.items.length}`,
       );
       return database;
