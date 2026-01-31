@@ -31,7 +31,8 @@ export function registerTools(server: McpServer, database: RecommendationDatabas
     "recommend_skills",
     {
       title: "プロジェクト推薦",
-      description: "プロジェクトを分析し、適切なスキル、プラグイン、MCPサーバーを推薦します",
+      description:
+        "プロジェクトを分析し、適切なツールを推薦します。デフォルトではプラグイン、MCPサーバー、スキル、ワークフロー、フック、コマンド、エージェントすべてのタイプを推薦します。ユーザーが特定のタイプ（例：「スキルだけ教えて」）を要求した場合のみ types パラメータで絞り込んでください。",
       inputSchema: recommendSkillsSchema.shape,
     },
     async (input) => {
@@ -54,7 +55,8 @@ export function registerTools(server: McpServer, database: RecommendationDatabas
     "search_skills",
     {
       title: "キーワード検索",
-      description: "キーワードでスキル、プラグイン、MCPサーバーを検索します",
+      description:
+        "キーワードですべてのタイプ（プラグイン、MCPサーバー、スキル、ワークフロー、フック、コマンド、エージェント）を検索します。デフォルトではすべてのタイプを検索します。ユーザーが特定のタイプのみを要求した場合のみ types パラメータで絞り込んでください。",
       inputSchema: searchSkillsSchema.shape,
     },
     async (input) => {
@@ -77,7 +79,8 @@ export function registerTools(server: McpServer, database: RecommendationDatabas
     "get_skill_details",
     {
       title: "詳細取得",
-      description: "特定のスキル、プラグイン、MCPサーバーの詳細を取得します",
+      description:
+        "特定のツール（プラグイン、MCPサーバー、スキル、ワークフロー、フック、コマンド、エージェント）の詳細情報を取得します",
       inputSchema: getSkillDetailsSchema.shape,
     },
     async (input) => {

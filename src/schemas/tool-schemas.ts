@@ -15,7 +15,9 @@ export const recommendSkillsSchema = z.object({
   types: z
     .array(z.enum(["plugin", "mcp", "skill", "workflow", "hook", "command", "agent"]))
     .optional()
-    .describe("フィルタするタイプ"),
+    .describe(
+      "フィルタするタイプ。指定しない場合はすべてのタイプ（プラグイン、MCP、スキル、ワークフロー、フック、コマンド、エージェント）を推薦します。ユーザーが特定のタイプ（例：「スキルを教えて」「MCPサーバーを教えて」）を明示的に要求した場合のみ指定してください。",
+    ),
   max_results: z.number().min(1).max(50).optional().default(20).describe("最大結果数"),
 });
 
@@ -29,7 +31,9 @@ export const searchSkillsSchema = z.object({
   types: z
     .array(z.enum(["plugin", "mcp", "skill", "workflow", "hook", "command", "agent"]))
     .optional()
-    .describe("フィルタするタイプ"),
+    .describe(
+      "フィルタするタイプ。指定しない場合はすべてのタイプを検索します。ユーザーが特定のタイプを明示的に要求した場合のみ指定してください。",
+    ),
   max_results: z.number().min(1).max(50).optional().default(20).describe("最大結果数"),
 });
 

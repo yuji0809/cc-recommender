@@ -306,6 +306,85 @@ pnpm run lint
 pnpm run lint:fix
 ```
 
+## コミット前チェック
+
+コミット前に最近の変更をTypeScriptの観点からチェックする場合は、以下の手順で実行してください：
+
+### 1. 型チェックの実行
+
+```bash
+pnpm run typecheck
+```
+
+### 2. 各ファイルのTypeScriptチェック
+
+最近変更されたファイルごとに、以下を確認してください：
+
+**型安全性:**
+- [ ] `any` を使用していないか
+- [ ] 型推論を適切に活用しているか（不要な型注釈はないか）
+- [ ] 型ガードは正しく実装されているか
+- [ ] Non-null Assertion (`!`) を避けているか
+
+**型定義:**
+- [ ] `interface` ではなく `type` を使用しているか
+- [ ] ユニオン型は適切に使用されているか
+- [ ] ジェネリクスは適切か
+- [ ] `readonly` は活用されているか
+
+**関数:**
+- [ ] 引数と戻り値の型は明示されているか
+- [ ] async 関数は `Promise<T>` 型を返しているか
+- [ ] エラーハンドリングは型安全か
+
+**Null/Undefined:**
+- [ ] Optional Chaining (`?.`) を使用しているか
+- [ ] Nullish Coalescing (`??`) を使用しているか
+- [ ] Non-null Assertion (`!`) を避けているか
+
+**プロジェクト固有:**
+- [ ] Zod でバリデーションしているか
+- [ ] `node:` プレフィックスを使用しているか
+- [ ] import文に `.js` 拡張子があるか
+
+### 3. 自動チェックの実行
+
+```bash
+# 型チェック
+pnpm run typecheck
+
+# Lint
+pnpm run lint
+
+# 自動修正
+pnpm run lint:fix
+```
+
+### 4. 問題の報告
+
+チェック結果を以下の形式で報告してください：
+
+```markdown
+## TypeScriptチェック結果
+
+### ✅ 適合項目
+- 型安全性: OK
+- 型定義: OK (type を使用)
+- 関数の型定義: OK
+
+### ⚠️ 警告
+- [ファイル名]:[行番号]: [問題の説明]
+  - 推奨: [修正方法]
+
+### ❌ エラー
+- [ファイル名]:[行番号]: [問題の説明]
+  - 修正: [具体的な修正コード]
+
+### 📊 自動チェック結果
+- typecheck: [PASS/FAIL]
+- lint: [PASS/FAIL]
+```
+
 ## 参照
 
 - [TypeScript Best Practices スキル](../skills/typescript-best-practices.md) - 詳細なガイドライン

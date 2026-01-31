@@ -23,6 +23,56 @@ function getScoreExplanation(score: number): string {
 }
 
 /**
+ * Get installation instructions for an item
+ *
+ * @param item - The recommendation item
+ * @returns Installation instructions
+ */
+function getInstallInstructions(item: Recommendation): string[] {
+  const lines: string[] = [];
+
+  // Plugin - use install command
+  if (item.type === "plugin") {
+    if (item.install.command) {
+      lines.push(`   └─ インストール: ${item.install.command}`);
+    } else {
+      lines.push(`   └─ URL: ${item.url}`);
+    }
+    return lines;
+  }
+
+  // MCP Server - use install command or URL
+  if (item.type === "mcp") {
+    if (item.install.command) {
+      lines.push(`   ├─ インストール: ${item.install.command}`);
+      lines.push(`   └─ 設定を ~/.claude/claude_desktop_config.json に追加してください`);
+    } else {
+      lines.push(`   └─ URL: ${item.url}`);
+    }
+    return lines;
+  }
+
+  // Skill/Workflow/Hook/Command/Agent - manual installation with detailed steps
+  const typePathMap: Record<string, string> = {
+    skill: ".claude/skills/",
+    workflow: ".claude/workflows/",
+    hook: ".claude/hooks/",
+    command: ".claude/commands/",
+    agent: ".claude/agents/",
+  };
+
+  const targetPath = typePathMap[item.type] || ".claude/";
+
+  lines.push(`   ├─ インストール手順:`);
+  lines.push(`   │  1. 以下のURLからファイルをダウンロード:`);
+  lines.push(`   │     ${item.url}`);
+  lines.push(`   │  2. プロジェクトの ${targetPath} に配置`);
+  lines.push(`   └─ 詳細: ${item.url}`);
+
+  return lines;
+}
+
+/**
  * Group recommendations by type
  *
  * @param recommendations - List of scored recommendations
@@ -135,15 +185,15 @@ export function formatRecommendations(
   const grouped = groupByType(recommendations);
   const lines: string[] = [];
 
-  // Type labels
+  // Type labels with descriptions
   const typeLabels: Record<Recommendation["type"], string> = {
-    plugin: "📦 プラグイン",
-    mcp: "🔌 MCPサーバー",
-    skill: "🎯 スキル",
-    workflow: "🔄 ワークフロー",
-    hook: "🪝 フック",
-    command: "⚡ コマンド",
-    agent: "🤖 エージェント",
+    plugin: "📦 プラグイン (Claude Codeの拡張機能)",
+    mcp: "🔌 MCPサーバー (外部サービス連携)",
+    skill: "🎯 スキル (再利用可能な指示セット)",
+    workflow: "🔄 ワークフロー (複数ステップの自動化)",
+    hook: "🪝 フック (イベント駆動の処理)",
+    command: "⚡ コマンド (カスタムコマンド)",
+    agent: "🤖 エージェント (専門タスク実行)",
   };
 
   // Order of types to display
@@ -164,44 +214,49 @@ export function formatRecommendations(
     const items = grouped.get(type);
     if (!items || items.length === 0) continue;
 
-    lines.push(`\n${typeLabels[type]}`);
+    // Section header with count
+    const displayCount = Math.min(items.length, 5);
+    lines.push(`\n${typeLabels[type]} (${displayCount}件のおすすめ)`);
     lines.push("━".repeat(40));
 
-    for (let i = 0; i < Math.min(items.length, 5); i++) {
+    for (let i = 0; i < displayCount; i++) {
       const { item, score, reasons } = items[i];
       displayedIds.add(item.id);
 
-      lines.push(`${i + 1}. ${item.name}${item.metrics.isOfficial ? " (公式)" : ""}`);
+      // Item name with official badge
+      const officialBadge = item.metrics.isOfficial ? " ✨ (公式)" : "";
+      lines.push(`\n${i + 1}. ${item.name}${officialBadge}`);
+
+      // Description
       lines.push(
         `   ├─ 用途: ${item.description.slice(0, 60)}${item.description.length > 60 ? "..." : ""}`,
       );
 
-      // スコア表示（説明付き）
+      // Score with explanation
       const scoreExplanation = getScoreExplanation(score);
       lines.push(`   ├─ スコア: ${score}${getScoreIndicator(score)} - ${scoreExplanation}`);
 
-      // セキュリティスコア表示
+      // Security score (if available)
       if (item.metrics.securityScore !== undefined) {
         const securityBadge = getSecurityBadge(item.metrics.securityScore);
         lines.push(`   ├─ セキュリティ: ${securityBadge} (${item.metrics.securityScore}/100)`);
       }
 
+      // Match reasons
       if (reasons.length > 0) {
         lines.push(`   ├─ マッチ内容: ${reasons.join(", ")}`);
       }
 
-      if (item.install.command) {
-        lines.push(`   └─ インストール: ${item.install.command}`);
-      } else {
-        lines.push(`   └─ URL: ${item.url}`);
-      }
-
-      lines.push("");
+      // Installation instructions
+      const installLines = getInstallInstructions(item);
+      lines.push(...installLines);
     }
 
     if (items.length > 5) {
-      lines.push(`   ... 他 ${items.length - 5} 件`);
+      lines.push(`\n   💡 他に ${items.length - 5} 件の候補があります`);
     }
+
+    lines.push("");
   }
 
   // Add bonus recommendations section
@@ -209,14 +264,14 @@ export function formatRecommendations(
     const bonusItems = selectBonusRecommendations(allRecommendations, displayedIds);
 
     if (bonusItems.length > 0) {
-      lines.push("\n🔥 人気・トレンド");
+      lines.push("\n🔥 人気・トレンド (話題のツール)");
       lines.push("━".repeat(40));
 
       for (let i = 0; i < bonusItems.length; i++) {
         const { item } = bonusItems[i];
         const bonusLabel = getBonusLabel(item);
 
-        lines.push(`${i + 1}. ${item.name} (${bonusLabel})`);
+        lines.push(`\n${i + 1}. ${item.name} (${bonusLabel})`);
         lines.push(
           `   ├─ 用途: ${item.description.slice(0, 60)}${item.description.length > 60 ? "..." : ""}`,
         );
@@ -225,13 +280,9 @@ export function formatRecommendations(
           lines.push(`   ├─ GitHub Stars: ⭐ ${item.metrics.stars}`);
         }
 
-        if (item.install.command) {
-          lines.push(`   └─ インストール: ${item.install.command}`);
-        } else {
-          lines.push(`   └─ URL: ${item.url}`);
-        }
-
-        lines.push("");
+        // Installation instructions
+        const installLines = getInstallInstructions(item);
+        lines.push(...installLines);
       }
     }
   }
