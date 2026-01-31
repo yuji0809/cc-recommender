@@ -1,8 +1,8 @@
 /**
- * Official Skill Fetcher
+ * Official Skill Fetcher (Raw Data Mode)
  *
- * Fetches skills from official organization repositories
- * Source: Various official repos (Supabase, Anthropic, etc.)
+ * Fetches skills from official organization repositories using raw.githubusercontent.com
+ * to avoid GitHub API rate limits
  */
 
 import {
@@ -11,33 +11,23 @@ import {
   SKILL_FILE_PATTERNS,
 } from "../../config/official-skills.js";
 import type { Recommendation } from "../../types/domain-types.js";
+import { isTemporaryError, retryWithBackoff } from "../../utils/retry.js";
 
-type GitHubContent = {
-  name: string;
-  path: string;
-  type: "file" | "dir";
-  download_url?: string;
-  url: string;
-};
-
-type GitHubRepo = {
+type RepoMetadata = {
   name: string;
   description: string;
-  stargazers_count: number;
-  updated_at: string;
-  html_url: string;
-  owner: {
-    login: string;
-    html_url: string;
-  };
-  topics?: string[];
+  stars: number;
+  url: string;
+  owner: string;
+  ownerUrl: string;
+  topics: string[];
 };
 
 /**
  * Fetch skills from official repositories
  */
 export async function fetchOfficialSkills(): Promise<Recommendation[]> {
-  console.log("🎯 Fetching official skills from organization repositories...");
+  console.log("🎯 Fetching official skills (using raw data to avoid API limits)...");
 
   const allSkills: Recommendation[] = [];
 
@@ -57,38 +47,91 @@ export async function fetchOfficialSkills(): Promise<Recommendation[]> {
 }
 
 /**
- * Fetch skills from a single repository
+ * Fetch skills from a single repository using raw data
  */
 async function fetchSkillsFromRepo(
   source: (typeof OFFICIAL_SKILL_SOURCES)[0],
 ): Promise<Recommendation[]> {
-  const { org, repo, url, priority } = source;
+  const { org, repo, url } = source;
 
-  // Get repository info
-  const repoInfo = await fetchRepoInfo(org, repo);
-  if (!repoInfo) {
-    throw new Error("Failed to fetch repository info");
-  }
+  // Get repository metadata from README (no API needed!)
+  const metadata = await fetchRepoMetadata(org, repo, url);
 
-  // Find skill directories
-  const skillDirs = await findSkillDirectories(org, repo);
-
-  if (skillDirs.length === 0) {
-    console.log(`     ℹ No skill directories found, checking root README`);
-    // Fallback: treat repo itself as a skill
-    return [await createSkillFromRepo(source, repoInfo, priority)];
-  }
-
-  // Parse each skill directory
+  // Try known skill directory patterns
   const skills: Recommendation[] = [];
-  for (const dir of skillDirs) {
+
+  for (const pattern of SKILL_DIRECTORY_PATTERNS) {
+    const foundSkills = await findSkillsInDirectory(org, repo, pattern, metadata, url);
+    skills.push(...foundSkills);
+  }
+
+  // If no skills found, treat repo itself as a skill
+  if (skills.length === 0) {
+    console.log(`     ℹ No skill directories found, treating repo as skill`);
+    const repoSkill = createSkillFromRepo(source, metadata);
+    skills.push(repoSkill);
+  }
+
+  return skills;
+}
+
+/**
+ * Get repository metadata from README (no API needed!)
+ */
+async function fetchRepoMetadata(
+  org: string,
+  repo: string,
+  repoUrl: string,
+): Promise<RepoMetadata> {
+  // Try to fetch README to get description
+  const readmeUrl = `https://raw.githubusercontent.com/${org}/${repo}/main/README.md`;
+  const readme = await fetchRawFile(readmeUrl);
+
+  let description = "";
+  let topics: string[] = [];
+
+  if (readme) {
+    // Extract first paragraph as description
+    description = extractDescription(readme) || "";
+    // Extract topics from badges
+    topics = extractTopicsFromReadme(readme);
+  }
+
+  return {
+    name: repo,
+    description: description || `Official skills from ${org}`,
+    stars: 0, // Will be filled by quality scoring later if needed
+    url: repoUrl,
+    owner: org,
+    ownerUrl: `https://github.com/${org}`,
+    topics,
+  };
+}
+
+/**
+ * Find skills in a directory by trying known patterns
+ */
+async function findSkillsInDirectory(
+  org: string,
+  repo: string,
+  dirPattern: string,
+  metadata: RepoMetadata,
+  repoUrl: string,
+): Promise<Recommendation[]> {
+  const skills: Recommendation[] = [];
+
+  // Try to list directory contents from README or known structure
+  const skillNames = await discoverSkillsInDirectory(org, repo, dirPattern);
+
+  for (const skillName of skillNames) {
     try {
-      const skill = await parseSkillDirectory(org, repo, dir, repoInfo, url, priority);
+      const skillPath = `${dirPattern}/${skillName}`;
+      const skill = await parseSkillFromRaw(org, repo, skillPath, metadata, repoUrl);
       if (skill) {
         skills.push(skill);
       }
-    } catch (error) {
-      console.warn(`     ⚠ Failed to parse skill directory ${dir}:`, error);
+    } catch {
+      // Skill file doesn't exist, skip
     }
   }
 
@@ -96,199 +139,128 @@ async function fetchSkillsFromRepo(
 }
 
 /**
- * Get GitHub API headers with optional authentication
+ * Discover skills by trying common names or parsing directory listing
  */
-function getGitHubHeaders(): Record<string, string> {
-  const headers: Record<string, string> = {
-    Accept: "application/vnd.github.v3+json",
-    "User-Agent": "cc-recommender",
+async function discoverSkillsInDirectory(
+  org: string,
+  repo: string,
+  dirPattern: string,
+): Promise<string[]> {
+  // For known repos, use hardcoded skill names
+  const knownSkills: Record<string, string[]> = {
+    "anthropics/skills": ["docx", "pdf", "pptx", "xlsx"],
+    "supabase/agent-skills": ["supabase-postgres-best-practices"],
   };
 
-  // Add GitHub token if available (increases rate limit from 60 to 5000 req/hour)
-  const token = process.env.GITHUB_TOKEN;
-  if (token) {
-    headers.Authorization = `Bearer ${token}`;
+  const repoKey = `${org}/${repo}`;
+  if (knownSkills[repoKey]) {
+    return knownSkills[repoKey];
   }
 
-  return headers;
-}
+  // Try to fetch a directory listing file if it exists
+  // (Some repos have a manifest or list file)
+  const listUrl = `https://raw.githubusercontent.com/${org}/${repo}/main/${dirPattern}/README.md`;
+  const listContent = await fetchRawFile(listUrl);
 
-/**
- * Get repository information from GitHub API
- */
-async function fetchRepoInfo(org: string, repo: string): Promise<GitHubRepo | null> {
-  const url = `https://api.github.com/repos/${org}/${repo}`;
-
-  try {
-    const response = await fetch(url, {
-      headers: getGitHubHeaders(),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-
-    return (await response.json()) as GitHubRepo;
-  } catch (error) {
-    console.warn(`     ⚠ Failed to fetch repo info: ${error}`);
-    return null;
-  }
-}
-
-/**
- * Find skill directories in repository
- */
-async function findSkillDirectories(org: string, repo: string): Promise<string[]> {
-  const skillDirs: string[] = [];
-
-  // Check each pattern
-  for (const pattern of SKILL_DIRECTORY_PATTERNS) {
-    const contents = await fetchDirectoryContents(org, repo, pattern);
-    if (contents && contents.length > 0) {
-      // Get subdirectories
-      const dirs = contents.filter((item) => item.type === "dir").map((item) => item.path);
-      skillDirs.push(...dirs);
+  if (listContent) {
+    // Extract skill names from markdown links or list items
+    const skillNames = extractSkillNamesFromMarkdown(listContent);
+    if (skillNames.length > 0) {
+      return skillNames;
     }
   }
 
-  return skillDirs;
+  // Fallback: return empty array
+  return [];
 }
 
 /**
- * Fetch directory contents from GitHub API
+ * Parse a skill from raw files
  */
-async function fetchDirectoryContents(
+async function parseSkillFromRaw(
   org: string,
   repo: string,
-  path: string,
-): Promise<GitHubContent[] | null> {
-  const url = `https://api.github.com/repos/${org}/${repo}/contents/${path}`;
-
-  try {
-    const response = await fetch(url, {
-      headers: getGitHubHeaders(),
-    });
-
-    if (!response.ok) {
-      return null; // Directory doesn't exist
-    }
-
-    const data = (await response.json()) as GitHubContent | GitHubContent[];
-    return Array.isArray(data) ? data : [data];
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Parse a skill directory
- */
-async function parseSkillDirectory(
-  org: string,
-  repo: string,
-  dirPath: string,
-  repoInfo: GitHubRepo,
+  skillPath: string,
+  metadata: RepoMetadata,
   repoUrl: string,
-  _priority: number,
 ): Promise<Recommendation | null> {
-  // Get directory contents
-  const contents = await fetchDirectoryContents(org, repo, dirPath);
-  if (!contents) return null;
+  // Try each skill file pattern
+  let skillContent: string | null = null;
 
-  // Find skill file
-  let skillFile: GitHubContent | null = null;
   for (const pattern of SKILL_FILE_PATTERNS) {
-    const file = contents.find((item) => item.name.toLowerCase() === pattern.toLowerCase());
-    if (file) {
-      skillFile = file;
+    const fileUrl = `https://raw.githubusercontent.com/${org}/${repo}/main/${skillPath}/${pattern}`;
+    skillContent = await fetchRawFile(fileUrl);
+    if (skillContent) {
       break;
     }
   }
 
-  if (!skillFile || !skillFile.download_url) {
+  if (!skillContent) {
     return null;
   }
 
-  // Download and parse skill file
-  const skillContent = await fetchFileContent(skillFile.download_url);
-  if (!skillContent) return null;
+  // Extract skill name from path
+  const skillName = skillPath.split("/").pop() || skillPath;
 
-  // Extract skill name from directory path
-  const skillName = dirPath.split("/").pop() || dirPath;
-
-  // Extract description from markdown (first paragraph)
-  const description = extractDescription(skillContent) || repoInfo.description;
-
-  // Detect keywords from content
+  // Extract description and keywords from content
+  const description = extractDescription(skillContent) || metadata.description;
   const keywords = extractKeywords(skillContent, skillName);
 
   return {
     id: `skill-official-${org}-${skillName}`.toLowerCase().replace(/[^a-z0-9-]/g, "-"),
     name: formatSkillName(skillName),
     type: "skill",
-    url: `${repoUrl}/tree/main/${dirPath}`,
+    url: `${repoUrl}/tree/main/${skillPath}`,
     description: description || `Official skill from ${org}`,
     author: {
       name: org,
-      url: repoInfo.owner.html_url,
+      url: metadata.ownerUrl,
     },
     category: "Agent Skills",
-    tags: ["agent skills", "skill", "official", org.toLowerCase(), ...(repoInfo.topics || [])],
+    tags: ["agent skills", "skill", "official", org.toLowerCase(), ...metadata.topics],
     detection: {
       keywords,
     },
     metrics: {
       source: "official",
       isOfficial: true,
-      stars: repoInfo.stargazers_count,
-      lastUpdated: repoInfo.updated_at,
+      stars: metadata.stars,
     },
     install: {
       method: "manual",
-      command: `git clone ${repoUrl} && cd ${repo}/${dirPath}`,
+      command: `git clone ${repoUrl} && cd ${repo}/${skillPath}`,
     },
   };
 }
 
 /**
- * Create a skill from the repository itself (when no skill dirs found)
+ * Create a skill from the repository itself
  */
-async function createSkillFromRepo(
+function createSkillFromRepo(
   source: (typeof OFFICIAL_SKILL_SOURCES)[0],
-  repoInfo: GitHubRepo,
-  _priority: number,
-): Promise<Recommendation> {
+  metadata: RepoMetadata,
+): Recommendation {
   const { org, repo, url } = source;
-
-  // Try to get README content for better description
-  const readmeUrl = `https://raw.githubusercontent.com/${org}/${repo}/main/README.md`;
-  const readmeContent = await fetchFileContent(readmeUrl);
-  const description = readmeContent
-    ? extractDescription(readmeContent) || repoInfo.description
-    : repoInfo.description;
-
-  const keywords = readmeContent ? extractKeywords(readmeContent, repo) : [repo.toLowerCase()];
 
   return {
     id: `skill-official-${org}-${repo}`.toLowerCase().replace(/[^a-z0-9-]/g, "-"),
     name: formatSkillName(repo),
     type: "skill",
     url,
-    description: description || `Official skills from ${org}`,
+    description: metadata.description,
     author: {
       name: org,
-      url: repoInfo.owner.html_url,
+      url: metadata.ownerUrl,
     },
     category: "Agent Skills",
-    tags: ["agent skills", "skill", "official", org.toLowerCase(), ...(repoInfo.topics || [])],
+    tags: ["agent skills", "skill", "official", org.toLowerCase(), ...metadata.topics],
     detection: {
-      keywords,
+      keywords: [repo.toLowerCase(), ...metadata.topics],
     },
     metrics: {
       source: "official",
       isOfficial: true,
-      stars: repoInfo.stargazers_count,
-      lastUpdated: repoInfo.updated_at,
+      stars: metadata.stars,
     },
     install: {
       method: "manual",
@@ -298,20 +270,34 @@ async function createSkillFromRepo(
 }
 
 /**
- * Fetch file content from URL
+ * Fetch raw file from GitHub (no API limit!)
  */
-async function fetchFileContent(url: string): Promise<string | null> {
+async function fetchRawFile(url: string): Promise<string | null> {
   try {
-    const response = await fetch(url);
-    if (!response.ok) return null;
-    return await response.text();
+    return await retryWithBackoff(
+      async () => {
+        const response = await fetch(url);
+        if (!response.ok) {
+          if (response.status === 404) {
+            return null; // File doesn't exist
+          }
+          throw new Error(`HTTP ${response.status}`);
+        }
+        return await response.text();
+      },
+      {
+        maxRetries: 3,
+        initialDelay: 1000,
+        shouldRetry: isTemporaryError,
+      },
+    );
   } catch {
     return null;
   }
 }
 
 /**
- * Extract description from markdown content (first paragraph)
+ * Extract description from markdown content
  */
 function extractDescription(content: string): string | null {
   // Remove frontmatter if exists
@@ -330,7 +316,7 @@ function extractDescription(content: string): string | null {
       continue;
     }
 
-    if (foundHeading && trimmed) {
+    if (foundHeading && trimmed && !trimmed.startsWith("[") && !trimmed.startsWith("!")) {
       descriptionLines.push(trimmed);
       if (descriptionLines.join(" ").length > 200) break;
     }
@@ -340,6 +326,56 @@ function extractDescription(content: string): string | null {
 
   const description = descriptionLines.join(" ").slice(0, 500);
   return description || null;
+}
+
+/**
+ * Extract topics from README badges
+ */
+function extractTopicsFromReadme(content: string): string[] {
+  const topics: string[] = [];
+  const badgeRegex = /\[!\[.*?\]\(.*?\)\]\(https:\/\/github\.com\/.*?\/topics\/([\w-]+)\)/g;
+
+  const matches = content.matchAll(badgeRegex);
+  for (const match of matches) {
+    if (match[1]) {
+      topics.push(match[1]);
+    }
+  }
+
+  return topics;
+}
+
+/**
+ * Extract skill names from markdown
+ */
+function extractSkillNamesFromMarkdown(content: string): string[] {
+  const skillNames: string[] = [];
+
+  // Match markdown links: [name](path) or - name
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const listRegex = /^[-*]\s+(.+)$/gm;
+
+  // Extract from links
+  const linkMatches = content.matchAll(linkRegex);
+  for (const match of linkMatches) {
+    if (match[2]?.includes("skills/")) {
+      const skillName = match[2].split("/").pop()?.replace(/\.md$/, "");
+      if (skillName) {
+        skillNames.push(skillName);
+      }
+    }
+  }
+
+  // Extract from list items
+  const listMatches = content.matchAll(listRegex);
+  for (const match of listMatches) {
+    const item = match[1]?.trim();
+    if (item && !item.startsWith("[")) {
+      skillNames.push(item.toLowerCase().replace(/\s+/g, "-"));
+    }
+  }
+
+  return [...new Set(skillNames)];
 }
 
 /**
@@ -398,6 +434,13 @@ function extractKeywords(content: string, skillName: string): string[] {
     "ai",
     "ml",
     "llm",
+    "docx",
+    "pdf",
+    "pptx",
+    "xlsx",
+    "excel",
+    "word",
+    "powerpoint",
   ];
 
   for (const keyword of techKeywords) {

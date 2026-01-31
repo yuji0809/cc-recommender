@@ -1,7 +1,162 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-01-31T17:35:24.284Z",
+  "lastUpdated": "2026-01-31T17:42:20.170Z",
   "items": [
+    {
+      "id": "skill-official-anthropics-docx",
+      "name": "Docx",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "typescript",
+          "javascript",
+          "python",
+          "go",
+          "java",
+          "node",
+          "api",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "docx",
+          "pdf",
+          "excel",
+          "word"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/docx"
+      }
+    },
+    {
+      "id": "skill-official-supabase-supabase-postgres-best-practices",
+      "name": "Supabase Postgres Best Practices",
+      "type": "skill",
+      "url": "https://github.com/supabase/agent-skills/tree/main/skills/supabase-postgres-best-practices",
+      "description": "Comprehensive performance optimization guide for Postgres, maintained by Supabase. Contains rules across 8 categories, prioritized by impact to guide automated query optimization and schema design.",
+      "author": {
+        "name": "supabase",
+        "url": "https://github.com/supabase"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "supabase"],
+      "detection": {
+        "keywords": [
+          "supabase",
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "go",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "best",
+          "practices"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/supabase/agent-skills && cd agent-skills/skills/supabase-postgres-best-practices"
+      }
+    },
+    {
+      "id": "skill-official-voltagent-awesome-agent-skills",
+      "name": "Awesome Agent Skills",
+      "type": "skill",
+      "url": "https://github.com/VoltAgent/awesome-agent-skills",
+      "description": "Agent Skills are folders with instructions, scripts, and resources that teach AI coding assistants specific tasks",
+      "author": {
+        "name": "VoltAgent",
+        "url": "https://github.com/VoltAgent"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "voltagent"],
+      "detection": {
+        "keywords": ["awesome-agent-skills"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/VoltAgent/awesome-agent-skills"
+      }
+    },
+    {
+      "id": "skill-official-sickn33-antigravity-awesome-skills",
+      "name": "Antigravity Awesome Skills",
+      "type": "skill",
+      "url": "https://github.com/sickn33/antigravity-awesome-skills",
+      "description": "> **The Ultimate Collection of 625+ Universal Agentic Skills for AI Coding Assistants — Claude Code, Gemini CLI, Codex CLI, Antigravity IDE, GitHub Copilot, Cursor, OpenCode**",
+      "author": {
+        "name": "sickn33",
+        "url": "https://github.com/sickn33"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sickn33"],
+      "detection": {
+        "keywords": ["antigravity-awesome-skills"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sickn33/antigravity-awesome-skills"
+      }
+    },
+    {
+      "id": "skill-official-nice-wolf-studio-claude-code-supabase-skills",
+      "name": "Claude Code Supabase Skills",
+      "type": "skill",
+      "url": "https://github.com/Nice-Wolf-Studio/claude-code-supabase-skills",
+      "description": "Comprehensive Claude Code skills that wrap the Supabase API for database operations, authentication, storage, realtime subscriptions, and edge functions.",
+      "author": {
+        "name": "Nice-Wolf-Studio",
+        "url": "https://github.com/Nice-Wolf-Studio"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "nice-wolf-studio"],
+      "detection": {
+        "keywords": ["claude-code-supabase-skills"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Nice-Wolf-Studio/claude-code-supabase-skills"
+      }
+    },
     {
       "id": "skill-ai-agent-ai-spy",
       "name": "AI Agent, AI Spy",
