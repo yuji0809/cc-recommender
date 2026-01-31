@@ -9,8 +9,16 @@ import { extname, join } from "node:path";
 import { FILE_SCAN_CONFIG, SKIP_DIRECTORIES } from "../../config/constants.js";
 import { CONFIG_FILE_MAPPINGS, EXTENSION_TO_LANGUAGE } from "../../config/file-mappings.js";
 import type { ProjectInfo } from "../../types/service-types.js";
+import { parseBuildGradle } from "./parsers/build-gradle.parser.js";
+import { parseCargoToml } from "./parsers/cargo-toml.parser.js";
+import { parseComposerJson } from "./parsers/composer-json.parser.js";
+import { parseDockerCompose } from "./parsers/docker-compose.parser.js";
+import { parseDotenv } from "./parsers/dotenv.parser.js";
+import { parseGemfile } from "./parsers/gemfile.parser.js";
 import { parseGoMod } from "./parsers/go-mod.parser.js";
 import { parsePackageJson } from "./parsers/package-json.parser.js";
+import { parsePomXml } from "./parsers/pom-xml.parser.js";
+import { parsePyprojectToml } from "./parsers/pyproject-toml.parser.js";
 import { parseRequirementsTxt } from "./parsers/requirements-txt.parser.js";
 
 /**
@@ -32,7 +40,15 @@ export async function analyzeProject(projectPath: string): Promise<ProjectInfo> 
     // Parse dependency files
     await parsePackageJson(projectPath, info);
     await parseRequirementsTxt(projectPath, info);
+    await parsePyprojectToml(projectPath, info);
     await parseGoMod(projectPath, info);
+    await parseCargoToml(projectPath, info);
+    await parseComposerJson(projectPath, info);
+    await parseGemfile(projectPath, info);
+    await parsePomXml(projectPath, info);
+    await parseBuildGradle(projectPath, info);
+    await parseDotenv(projectPath, info);
+    await parseDockerCompose(projectPath, info);
 
     // Deduplicate
     info.languages = [...new Set(info.languages)];
