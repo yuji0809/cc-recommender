@@ -5,13 +5,14 @@
  * to avoid GitHub API rate limits
  */
 
+import { ENV } from "../../../config/env.js";
 import {
   OFFICIAL_SKILL_SOURCES,
   SKILL_DIRECTORY_PATTERNS,
   SKILL_FILE_PATTERNS,
-} from "../../config/official-skills.js";
-import type { Recommendation } from "../../types/domain-types.js";
-import { isTemporaryError, retryWithBackoff } from "../../utils/retry.js";
+} from "../../../config/official-skills.js";
+import type { Recommendation } from "../../../types/domain-types.js";
+import { isTemporaryError, retryWithBackoff } from "../../../utils/retry.js";
 
 type RepoMetadata = {
   name: string;
@@ -24,16 +25,129 @@ type RepoMetadata = {
 };
 
 /**
+ * Get GitHub API headers with optional authentication
+ */
+function getGitHubHeaders(): Record<string, string> {
+  const headers: Record<string, string> = {
+    Accept: "application/vnd.github.v3+json",
+    "User-Agent": "cc-recommender",
+  };
+
+  if (ENV.GITHUB_TOKEN) {
+    headers.Authorization = `Bearer ${ENV.GITHUB_TOKEN}`;
+  }
+
+  return headers;
+}
+
+/**
+ * Auto-discover skills from GitHub repository using API
+ * Returns empty array if API fails (will fall back to knownSkills)
+ */
+async function autoDiscoverSkills(
+  org: string,
+  repo: string,
+  skillsPath: string,
+): Promise<string[]> {
+  try {
+    const url = `https://api.github.com/repos/${org}/${repo}/contents/${skillsPath}`;
+    const response = await fetch(url, {
+      headers: getGitHubHeaders(),
+    });
+
+    if (!response.ok) {
+      // API failed, will fall back to knownSkills
+      return [];
+    }
+
+    const data = (await response.json()) as Array<{
+      name: string;
+      type: string;
+    }>;
+
+    // Filter directories only
+    const skillNames = data.filter((item) => item.type === "dir").map((item) => item.name);
+
+    console.log(`   ✓ Auto-discovered ${skillNames.length} skills from ${org}/${repo}`);
+    return skillNames;
+  } catch {
+    console.log(`   ⚠ Auto-discovery failed for ${org}/${repo}, using fallback`);
+    return [];
+  }
+}
+
+/**
+ * Technology keywords for skill detection
+ */
+const TECH_KEYWORDS = [
+  "supabase",
+  "postgres",
+  "postgresql",
+  "database",
+  "sql",
+  "react",
+  "nextjs",
+  "next.js",
+  "vue",
+  "angular",
+  "svelte",
+  "typescript",
+  "javascript",
+  "python",
+  "rust",
+  "go",
+  "java",
+  "node",
+  "deno",
+  "bun",
+  "docker",
+  "kubernetes",
+  "k8s",
+  "aws",
+  "gcp",
+  "azure",
+  "mongodb",
+  "redis",
+  "git",
+  "github",
+  "gitlab",
+  "api",
+  "rest",
+  "graphql",
+  "test",
+  "testing",
+  "jest",
+  "vitest",
+  "ci",
+  "cd",
+  "devops",
+  "security",
+  "auth",
+  "authentication",
+  "ai",
+  "ml",
+  "llm",
+  "docx",
+  "pdf",
+  "pptx",
+  "xlsx",
+  "excel",
+  "word",
+  "powerpoint",
+] as const;
+
+/**
  * Fetch skills from official repositories
  */
 export async function fetchOfficialSkills(): Promise<Recommendation[]> {
-  console.log("🎯 Fetching official skills (using raw data to avoid API limits)...");
+  console.log("🎯 Fetching official skills (auto-discovery + raw data)...");
 
   const allSkills: Recommendation[] = [];
 
   for (const source of OFFICIAL_SKILL_SOURCES) {
     try {
-      console.log(`   → ${source.name} (${source.org}/${source.repo})`);
+      const mode = source.autoDiscover ? "auto-discover" : "manual";
+      console.log(`   → ${source.name} (${source.org}/${source.repo}) [${mode}]`);
       const skills = await fetchSkillsFromRepo(source);
       allSkills.push(...skills);
       console.log(`     ✓ Found ${skills.length} skills`);
@@ -47,32 +161,78 @@ export async function fetchOfficialSkills(): Promise<Recommendation[]> {
 }
 
 /**
- * Fetch skills from a single repository using raw data
+ * Fetch skills from a single repository
  */
 async function fetchSkillsFromRepo(
   source: (typeof OFFICIAL_SKILL_SOURCES)[0],
 ): Promise<Recommendation[]> {
-  const { org, repo, url } = source;
+  const { org, repo, url, autoDiscover, skillsPath, knownSkills } = source;
 
-  // Get repository metadata from README (no API needed!)
+  // Get repository metadata from README
   const metadata = await fetchRepoMetadata(org, repo, url);
-
-  // Try known skill directory patterns
   const skills: Recommendation[] = [];
 
-  for (const pattern of SKILL_DIRECTORY_PATTERNS) {
-    const foundSkills = await findSkillsInDirectory(org, repo, pattern, metadata, url);
+  // Case 1: Auto-discovery enabled with skillsPath
+  if (autoDiscover && skillsPath) {
+    const discoveredSkills = await autoDiscoverSkills(org, repo, skillsPath);
+
+    if (discoveredSkills.length > 0) {
+      // Success: Parse discovered skills
+      for (const skillName of discoveredSkills) {
+        try {
+          const skillPath = `${skillsPath}/${skillName}`;
+          const skill = await parseSkillFromRaw(org, repo, skillPath, metadata, url);
+          if (skill) {
+            skills.push(skill);
+          }
+        } catch {
+          // Skill file doesn't exist, skip
+        }
+      }
+      return skills;
+    }
+
+    // Auto-discovery failed: Use knownSkills as fallback (only once)
+    if (knownSkills && knownSkills.length > 0) {
+      console.log(`   ⚠ Auto-discovery failed, using ${knownSkills.length} known skills`);
+      for (const skillName of knownSkills) {
+        try {
+          const skillPath = `${skillsPath}/${skillName}`;
+          const skill = await parseSkillFromRaw(org, repo, skillPath, metadata, url);
+          if (skill) {
+            skills.push(skill);
+          }
+        } catch {
+          // Skill file doesn't exist, skip
+        }
+      }
+      return skills;
+    }
+  }
+
+  // Case 2: skillsPath specified without auto-discovery
+  if (skillsPath && !autoDiscover) {
+    const foundSkills = await findSkillsInDirectory(org, repo, skillsPath, metadata, url);
     skills.push(...foundSkills);
+    if (skills.length > 0) {
+      return skills;
+    }
   }
 
-  // If no skills found, treat repo itself as a skill
-  if (skills.length === 0) {
-    console.log(`     ℹ No skill directories found, treating repo as skill`);
-    const repoSkill = createSkillFromRepo(source, metadata);
-    skills.push(repoSkill);
+  // Case 3: No configuration → Try all patterns
+  if (!skillsPath && !knownSkills) {
+    for (const pattern of SKILL_DIRECTORY_PATTERNS) {
+      const foundSkills = await findSkillsInDirectory(org, repo, pattern, metadata, url);
+      skills.push(...foundSkills);
+    }
+    if (skills.length > 0) {
+      return skills;
+    }
   }
 
-  return skills;
+  // Case 4: No skills found → Return empty array
+  console.log(`     ℹ No individual skills found in repository`);
+  return [];
 }
 
 /**
@@ -120,7 +280,7 @@ async function findSkillsInDirectory(
 ): Promise<Recommendation[]> {
   const skills: Recommendation[] = [];
 
-  // Try to list directory contents from README or known structure
+  // Try to list directory contents from README
   const skillNames = await discoverSkillsInDirectory(org, repo, dirPattern);
 
   for (const skillName of skillNames) {
@@ -146,19 +306,7 @@ async function discoverSkillsInDirectory(
   repo: string,
   dirPattern: string,
 ): Promise<string[]> {
-  // For known repos, use hardcoded skill names
-  const knownSkills: Record<string, string[]> = {
-    "anthropics/skills": ["docx", "pdf", "pptx", "xlsx"],
-    "supabase/agent-skills": ["supabase-postgres-best-practices"],
-  };
-
-  const repoKey = `${org}/${repo}`;
-  if (knownSkills[repoKey]) {
-    return knownSkills[repoKey];
-  }
-
   // Try to fetch a directory listing file if it exists
-  // (Some repos have a manifest or list file)
   const listUrl = `https://raw.githubusercontent.com/${org}/${repo}/main/${dirPattern}/README.md`;
   const listContent = await fetchRawFile(listUrl);
 
@@ -170,7 +318,7 @@ async function discoverSkillsInDirectory(
     }
   }
 
-  // Fallback: return empty array
+  // No skills found
   return [];
 }
 
@@ -229,42 +377,6 @@ async function parseSkillFromRaw(
     install: {
       method: "manual",
       command: `git clone ${repoUrl} && cd ${repo}/${skillPath}`,
-    },
-  };
-}
-
-/**
- * Create a skill from the repository itself
- */
-function createSkillFromRepo(
-  source: (typeof OFFICIAL_SKILL_SOURCES)[0],
-  metadata: RepoMetadata,
-): Recommendation {
-  const { org, repo, url } = source;
-
-  return {
-    id: `skill-official-${org}-${repo}`.toLowerCase().replace(/[^a-z0-9-]/g, "-"),
-    name: formatSkillName(repo),
-    type: "skill",
-    url,
-    description: metadata.description,
-    author: {
-      name: org,
-      url: metadata.ownerUrl,
-    },
-    category: "Agent Skills",
-    tags: ["agent skills", "skill", "official", org.toLowerCase(), ...metadata.topics],
-    detection: {
-      keywords: [repo.toLowerCase(), ...metadata.topics],
-    },
-    metrics: {
-      source: "official",
-      isOfficial: true,
-      stars: metadata.stars,
-    },
-    install: {
-      method: "manual",
-      command: `git clone ${url}`,
     },
   };
 }
@@ -386,64 +498,7 @@ function extractKeywords(content: string, skillName: string): string[] {
   const text = content.toLowerCase();
 
   // Technology keywords
-  const techKeywords = [
-    "supabase",
-    "postgres",
-    "postgresql",
-    "database",
-    "sql",
-    "react",
-    "nextjs",
-    "next.js",
-    "vue",
-    "angular",
-    "svelte",
-    "typescript",
-    "javascript",
-    "python",
-    "rust",
-    "go",
-    "java",
-    "node",
-    "deno",
-    "bun",
-    "docker",
-    "kubernetes",
-    "k8s",
-    "aws",
-    "gcp",
-    "azure",
-    "mongodb",
-    "redis",
-    "git",
-    "github",
-    "gitlab",
-    "api",
-    "rest",
-    "graphql",
-    "test",
-    "testing",
-    "jest",
-    "vitest",
-    "ci",
-    "cd",
-    "devops",
-    "security",
-    "auth",
-    "authentication",
-    "ai",
-    "ml",
-    "llm",
-    "docx",
-    "pdf",
-    "pptx",
-    "xlsx",
-    "excel",
-    "word",
-    "powerpoint",
-  ];
-
-  for (const keyword of techKeywords) {
+  for (const keyword of TECH_KEYWORDS) {
     if (text.includes(keyword)) {
       keywords.push(keyword);
     }

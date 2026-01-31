@@ -5,8 +5,8 @@
  * Source: https://github.com/punkpeye/awesome-mcp-servers
  */
 
-import type { Recommendation } from "../../types/domain-types.js";
-import type { RawMCPEntry } from "../../types/raw-types.js";
+import type { Recommendation } from "../../../types/domain-types.js";
+import type { RawMCPEntry } from "../../../types/raw-types.js";
 
 const README_URL = "https://raw.githubusercontent.com/punkpeye/awesome-mcp-servers/main/README.md";
 
@@ -67,6 +67,29 @@ const CATEGORY_HEADERS = [
   "Workplace & Productivity",
   "Other Tools and Integrations",
 ];
+
+/**
+ * Category to keywords mapping
+ */
+const CATEGORY_KEYWORDS: Record<string, string[]> = {
+  Databases: ["database", "sql", "nosql", "db", "query"],
+  "Browser Automation": ["browser", "selenium", "playwright", "puppeteer", "scraping"],
+  "Cloud Platforms": ["aws", "gcp", "azure", "cloud", "kubernetes", "docker"],
+  Communication: ["slack", "discord", "email", "chat", "messaging"],
+  "Developer Tools": ["git", "github", "ci", "cd", "devops"],
+  "File Systems": ["file", "storage", "filesystem", "s3"],
+  Security: ["security", "auth", "encryption", "vulnerability"],
+  "Version Control": ["git", "github", "gitlab", "bitbucket"],
+};
+
+/**
+ * Category to dependencies mapping
+ */
+const CATEGORY_DEPENDENCIES: Record<string, string[]> = {
+  Databases: ["prisma", "@prisma/client", "mongoose", "typeorm", "pg", "mysql2", "sqlite3"],
+  "Browser Automation": ["playwright", "puppeteer", "selenium-webdriver"],
+  Communication: ["@slack/web-api", "discord.js", "nodemailer"],
+};
 
 /**
  * Fetch MCP servers from awesome-mcp-servers
@@ -256,18 +279,7 @@ function transformMCPEntry(raw: RawMCPEntry): Recommendation | null {
  * Get keywords based on category
  */
 function getCategoryKeywords(category: string): string[] {
-  const mappings: Record<string, string[]> = {
-    Databases: ["database", "sql", "nosql", "db", "query"],
-    "Browser Automation": ["browser", "selenium", "playwright", "puppeteer", "scraping"],
-    "Cloud Platforms": ["aws", "gcp", "azure", "cloud", "kubernetes", "docker"],
-    Communication: ["slack", "discord", "email", "chat", "messaging"],
-    "Developer Tools": ["git", "github", "ci", "cd", "devops"],
-    "File Systems": ["file", "storage", "filesystem", "s3"],
-    Security: ["security", "auth", "encryption", "vulnerability"],
-    "Version Control": ["git", "github", "gitlab", "bitbucket"],
-  };
-
-  for (const [cat, keywords] of Object.entries(mappings)) {
+  for (const [cat, keywords] of Object.entries(CATEGORY_KEYWORDS)) {
     if (category.toLowerCase().includes(cat.toLowerCase())) {
       return keywords;
     }
@@ -280,13 +292,7 @@ function getCategoryKeywords(category: string): string[] {
  * Get dependency hints based on category
  */
 function getCategoryDependencies(category: string): string[] {
-  const mappings: Record<string, string[]> = {
-    Databases: ["prisma", "@prisma/client", "mongoose", "typeorm", "pg", "mysql2", "sqlite3"],
-    "Browser Automation": ["playwright", "puppeteer", "selenium-webdriver"],
-    Communication: ["@slack/web-api", "discord.js", "nodemailer"],
-  };
-
-  for (const [cat, deps] of Object.entries(mappings)) {
+  for (const [cat, deps] of Object.entries(CATEGORY_DEPENDENCIES)) {
     if (category.toLowerCase().includes(cat.toLowerCase())) {
       return deps;
     }

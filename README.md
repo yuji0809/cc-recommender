@@ -1,6 +1,7 @@
 # cc-recommender
 
 [![npm version](https://img.shields.io/npm/v/cc-recommender.svg)](https://www.npmjs.com/package/cc-recommender)
+[![npm downloads](https://img.shields.io/npm/dm/cc-recommender.svg)](https://www.npmjs.com/package/cc-recommender)
 [![CI](https://github.com/yuji0809/cc-recommender/actions/workflows/ci.yml/badge.svg)](https://github.com/yuji0809/cc-recommender/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/yuji0809/cc-recommender/branch/main/graph/badge.svg)](https://codecov.io/gh/yuji0809/cc-recommender)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -20,6 +21,8 @@ Just ask "What should I install?" in Claude Code, and it will analyze your proje
 - 🔍 **Project Analysis** - Automatically detects languages, frameworks, and dependencies
 - 🏷️ **Keyword Search** - Search by name or tags
 - 🔄 **Auto-Update** - Always fetches the latest data from GitHub (no manual updates needed)
+- ⭐ **Quality Scoring** - Evaluates skills based on official status, stars, freshness, and source
+- 🤖 **Official Skills Discovery** - Automatically discovers official skills from known organizations
 
 ## Installation
 
@@ -187,9 +190,13 @@ When `CC_RECOMMENDER_OFFLINE_MODE` is enabled, only bundled data is used (no rem
 |----------|-------------|---------|
 | `CC_RECOMMENDER_OFFLINE_MODE` | Disable auto-updates and use only bundled data | `false` |
 | `GITHUB_TOKEN` | GitHub personal access token (increases API rate limit from 60 to 5000 req/hour) | Not set |
+| `GITHUB_TOPIC_SEARCH` | Enable GitHub topic search for discovering new skills | `false` |
 | `SKIP_SECURITY_SCAN` | Skip security scanning during data fetch (for developers) | `false` |
 
-**Note:** To fetch official skills from GitHub (Anthropic, Supabase, etc.), a GitHub token is recommended to avoid rate limits. Create a token at https://github.com/settings/tokens with `public_repo` scope.
+**Notes:**
+- To fetch official skills from GitHub (Anthropic, Supabase, etc.), a GitHub token is recommended to avoid rate limits. Create a token at https://github.com/settings/tokens with `public_repo` scope.
+- Set `GITHUB_TOPIC_SEARCH=true` to enable automatic skill discovery via GitHub topic search (requires GitHub token for best results).
+- **Auto-discovery**: When enabled, the system automatically discovers new official skills from known organizations (Anthropic, Supabase, Vercel, Cloudflare, etc.) with quality filtering (min 10 stars, updated within 180 days).
 
 ## Development
 

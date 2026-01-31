@@ -6,6 +6,7 @@
 
 import type { Recommendation, RecommendationDatabase } from "../../types/domain-types.js";
 import type { ProjectInfo, ScoredRecommendation } from "../../types/service-types.js";
+import { calculateQualityScore } from "./quality-scorer.js";
 import { calculateScore } from "./scoring/scorer.js";
 
 /** Options for recommend function */
@@ -43,10 +44,17 @@ export function recommend(
       continue;
     }
 
-    const { score, reasons } = calculateScore(item, project, userQuery);
+    const { score: matchScore, reasons } = calculateScore(item, project, userQuery);
 
-    if (score >= minScore) {
-      results.push({ item, score, reasons });
+    // Calculate quality score (0-100)
+    const qualityScore = calculateQualityScore(item).total;
+
+    // Combine match score and quality score
+    // Match score is primary (0-100), quality score is a bonus (0-20)
+    const finalScore = matchScore + qualityScore * 0.2;
+
+    if (finalScore >= minScore) {
+      results.push({ item, score: finalScore, reasons });
     }
   }
 

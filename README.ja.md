@@ -1,6 +1,7 @@
 # cc-recommender
 
 [![npm version](https://img.shields.io/npm/v/cc-recommender.svg)](https://www.npmjs.com/package/cc-recommender)
+[![npm downloads](https://img.shields.io/npm/dm/cc-recommender.svg)](https://www.npmjs.com/package/cc-recommender)
 [![CI](https://github.com/yuji0809/cc-recommender/actions/workflows/ci.yml/badge.svg)](https://github.com/yuji0809/cc-recommender/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/yuji0809/cc-recommender/branch/main/graph/badge.svg)](https://codecov.io/gh/yuji0809/cc-recommender)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -20,6 +21,8 @@ Claude Codeで「何入れたらいい？」と聞くだけで、プロジェク
 - 🔍 **プロジェクト分析** - 使用言語、フレームワーク、依存関係を自動検出
 - 🏷️ **キーワード検索** - 名前やタグで検索
 - 🔄 **自動更新** - GitHubから常に最新データを取得（手動更新不要）
+- ⭐ **品質スコアリング** - 公式ステータス、スター数、更新日、ソースに基づいてスキルを評価
+- 🤖 **公式スキル自動検出** - 既知の組織から公式スキルを自動的に検出
 
 ## インストール
 
@@ -187,9 +190,13 @@ Claude: [search_skills ツールを使用]
 |------|------|-----------|
 | `CC_RECOMMENDER_OFFLINE_MODE` | 自動更新を無効化してバンドル版データのみを使用 | `false` |
 | `GITHUB_TOKEN` | GitHub パーソナルアクセストークン（API レート制限を 60 → 5000 req/hour に拡大） | 未設定 |
+| `GITHUB_TOPIC_SEARCH` | 新しいスキルを自動発見するための GitHub トピック検索を有効化 | `false` |
 | `SKIP_SECURITY_SCAN` | データ取得時にセキュリティスキャンをスキップ（開発者向け） | `false` |
 
-**注意:** GitHub から公式スキル（Anthropic、Supabase など）を取得する場合、レート制限を回避するために GitHub トークンの設定を推奨します。https://github.com/settings/tokens で `public_repo` スコープのトークンを作成してください。
+**注意:**
+- GitHub から公式スキル（Anthropic、Supabase など）を取得する場合、レート制限を回避するために GitHub トークンの設定を推奨します。https://github.com/settings/tokens で `public_repo` スコープのトークンを作成してください。
+- `GITHUB_TOPIC_SEARCH=true` で GitHub トピック検索による自動スキル発見を有効化できます（最良の結果を得るには GitHub トークンが必要）。
+- **自動発見機能**: 有効化すると、既知の公式組織（Anthropic、Supabase、Vercel、Cloudflare など）から新しい公式スキルを自動的に発見します。品質フィルタリング付き（最低10スター、180日以内に更新）。
 
 ## 開発
 

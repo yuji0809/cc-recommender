@@ -5,7 +5,7 @@
  */
 
 import { describe, expect, test, vi } from "vitest";
-import { fetchOfficialMCPServers } from "../../src/services/fetchers/official-mcp-fetcher.js";
+import { fetchOfficialMCPServers } from "../../src/services/fetchers/mcp/official-mcp-fetcher.js";
 
 describe("Official MCP Fetcher", () => {
   describe("fetchOfficialMCPServers", () => {

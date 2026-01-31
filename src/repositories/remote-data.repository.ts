@@ -4,6 +4,7 @@
  * Fetches latest recommendations data from CDN/GitHub
  */
 
+import { ENV } from "../config/env.js";
 import type {
   MCPServerDatabase,
   PluginDatabase,
@@ -379,5 +380,5 @@ function isValidTypedDatabase(
  */
 export function isRemoteDataEnabled(): boolean {
   // 環境変数でオフライン強制可能
-  return process.env.CC_RECOMMENDER_OFFLINE_MODE !== "true";
+  return !ENV.CC_RECOMMENDER_OFFLINE_MODE;
 }

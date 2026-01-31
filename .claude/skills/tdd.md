@@ -52,9 +52,9 @@ test("should do something", () => {
 **テストファイルの配置:**
 ```
 tests/
-├── analyzer.test.ts
-├── recommender.test.ts
-└── fetchers.test.ts
+├── analyzer/
+├── fetchers/
+└── recommender/
 ```
 
 **テストの命名規則:**

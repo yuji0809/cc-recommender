@@ -142,7 +142,7 @@ export interface User {
 3. parse関数を実装
 4. project-analyzer.service.ts に統合
 5. file-mappings.ts にマッピング追加
-6. tests/analyzer.test.ts にテスト追加
+6. tests/analyzer/ にテスト追加
 ```
 
 **新しいツールを追加する場合:**

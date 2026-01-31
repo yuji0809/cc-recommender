@@ -5,7 +5,7 @@
  * Source: https://registry.modelcontextprotocol.io
  */
 
-import type { Recommendation } from "../../types/domain-types.js";
+import type { Recommendation } from "../../../types/domain-types.js";
 
 const REGISTRY_API = "https://registry.modelcontextprotocol.io/v0.1/servers";
 const PAGE_LIMIT = 96; // Maximum allowed by API
@@ -57,6 +57,22 @@ type RegistryResponse = {
     nextCursor?: string;
     count: number;
   };
+};
+
+/**
+ * Category inference keywords
+ */
+const CATEGORY_INFERENCE_KEYWORDS: Record<string, string[]> = {
+  database: ["database", "sql", "postgres", "mysql", "mongodb", "redis"],
+  cloud: ["aws", "azure", "gcp", "cloud", "s3", "lambda"],
+  "developer-tools": ["git", "github", "gitlab", "code", "dev"],
+  communication: ["slack", "discord", "email", "notification"],
+  search: ["search", "elasticsearch", "algolia"],
+  filesystem: ["file", "filesystem", "storage"],
+  productivity: ["notion", "calendar", "task", "todo"],
+  security: ["security", "auth", "vault", "secret"],
+  monitoring: ["monitor", "log", "metric", "observability"],
+  ai: ["ai", "llm", "model", "inference"],
 };
 
 /**
@@ -178,20 +194,7 @@ function transformRegistryEntry(entry: RegistryEntry): Recommendation | null {
 function inferCategory(name: string, description: string): string {
   const text = `${name} ${description}`.toLowerCase();
 
-  const categoryKeywords: Record<string, string[]> = {
-    database: ["database", "sql", "postgres", "mysql", "mongodb", "redis"],
-    cloud: ["aws", "azure", "gcp", "cloud", "s3", "lambda"],
-    "developer-tools": ["git", "github", "gitlab", "code", "dev"],
-    communication: ["slack", "discord", "email", "notification"],
-    search: ["search", "elasticsearch", "algolia"],
-    filesystem: ["file", "filesystem", "storage"],
-    productivity: ["notion", "calendar", "task", "todo"],
-    security: ["security", "auth", "vault", "secret"],
-    monitoring: ["monitor", "log", "metric", "observability"],
-    ai: ["ai", "llm", "model", "inference"],
-  };
-
-  for (const [category, keywords] of Object.entries(categoryKeywords)) {
+  for (const [category, keywords] of Object.entries(CATEGORY_INFERENCE_KEYWORDS)) {
     if (keywords.some((keyword) => text.includes(keyword))) {
       return category;
     }

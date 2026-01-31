@@ -151,7 +151,7 @@ export interface User {
 3. ✅ parse関数を実装
 4. ✅ `project-analyzer.service.ts` に統合
 5. ✅ `config/file-mappings.ts` にマッピング追加
-6. ✅ `tests/analyzer.test.ts` にテスト追加
+6. ✅ `tests/analyzer/` にテスト追加
 
 ### ツール追加の手順
 
@@ -216,7 +216,7 @@ Architecture Agent:
 ✅ 型定義: type を使用 - OK
 ✅ 統合: project-analyzer.service.ts に追加済み - OK
 ✅ マッピング: file-mappings.ts に追加済み - OK
-⚠️  テスト: tests/analyzer.test.ts にテストがありません
+⚠️  テスト: tests/analyzer/ にテストがありません
 
 推奨: テストを追加してください
 ```

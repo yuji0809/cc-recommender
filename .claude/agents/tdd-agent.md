@@ -88,7 +88,7 @@ skills: ["tdd"]
 User: Cargo.toml のパーサーを追加してください
 
 TDD Agent:
-1. まず tests/analyzer.test.ts にテストを追加します
+1. まず tests/analyzer/ にテストを追加します
    - Cargo.toml をパースするテスト
    - 依存関係を検出するテスト
    - フレームワークを検出するテスト

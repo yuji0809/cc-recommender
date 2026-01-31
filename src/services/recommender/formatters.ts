@@ -7,7 +7,32 @@
 import type { Recommendation } from "../../types/domain-types.js";
 import type { ScoredRecommendation } from "../../types/service-types.js";
 import { getSecurityBadge } from "../security-scanner.service.js";
+import { calculateQualityScore, getQualityBadge } from "./quality-scorer.js";
 import { getScoreIndicator } from "./scoring/scorer.js";
+
+/**
+ * Type to installation path mapping
+ */
+const TYPE_PATH_MAP: Record<string, string> = {
+  skill: ".claude/skills/",
+  workflow: ".claude/workflows/",
+  hook: ".claude/hooks/",
+  command: ".claude/commands/",
+  agent: ".claude/agents/",
+};
+
+/**
+ * Type labels with descriptions
+ */
+const TYPE_LABELS: Record<Recommendation["type"], string> = {
+  plugin: "📦 プラグイン (Claude Codeの拡張機能)",
+  mcp: "🔌 MCPサーバー (外部サービス連携)",
+  skill: "🎯 スキル (再利用可能な指示セット)",
+  workflow: "🔄 ワークフロー (複数ステップの自動化)",
+  hook: "🪝 フック (イベント駆動の処理)",
+  command: "⚡ コマンド (カスタムコマンド)",
+  agent: "🤖 エージェント (専門タスク実行)",
+};
 
 /**
  * Get score explanation
@@ -53,15 +78,7 @@ function getInstallInstructions(item: Recommendation): string[] {
   }
 
   // Skill/Workflow/Hook/Command/Agent - manual installation with detailed steps
-  const typePathMap: Record<string, string> = {
-    skill: ".claude/skills/",
-    workflow: ".claude/workflows/",
-    hook: ".claude/hooks/",
-    command: ".claude/commands/",
-    agent: ".claude/agents/",
-  };
-
-  const targetPath = typePathMap[item.type] || ".claude/";
+  const targetPath = TYPE_PATH_MAP[item.type] || ".claude/";
 
   lines.push(`   ├─ インストール手順:`);
   lines.push(`   │  1. 以下のURLからファイルをダウンロード:`);
@@ -185,17 +202,6 @@ export function formatRecommendations(
   const grouped = groupByType(recommendations);
   const lines: string[] = [];
 
-  // Type labels with descriptions
-  const typeLabels: Record<Recommendation["type"], string> = {
-    plugin: "📦 プラグイン (Claude Codeの拡張機能)",
-    mcp: "🔌 MCPサーバー (外部サービス連携)",
-    skill: "🎯 スキル (再利用可能な指示セット)",
-    workflow: "🔄 ワークフロー (複数ステップの自動化)",
-    hook: "🪝 フック (イベント駆動の処理)",
-    command: "⚡ コマンド (カスタムコマンド)",
-    agent: "🤖 エージェント (専門タスク実行)",
-  };
-
   // Order of types to display
   const typeOrder: Recommendation["type"][] = [
     "plugin",
@@ -216,16 +222,19 @@ export function formatRecommendations(
 
     // Section header with count
     const displayCount = Math.min(items.length, 5);
-    lines.push(`\n${typeLabels[type]} (${displayCount}件のおすすめ)`);
+    lines.push(`\n${TYPE_LABELS[type]} (${displayCount}件のおすすめ)`);
     lines.push("━".repeat(40));
 
     for (let i = 0; i < displayCount; i++) {
       const { item, score, reasons } = items[i];
       displayedIds.add(item.id);
 
-      // Item name with official badge
+      // Item name with official badge and quality badge
       const officialBadge = item.metrics.isOfficial ? " ✨ (公式)" : "";
-      lines.push(`\n${i + 1}. ${item.name}${officialBadge}`);
+      const qualityScore = calculateQualityScore(item).total;
+      const qualityBadge = getQualityBadge(qualityScore);
+      const qualityDisplay = qualityBadge ? ` ${qualityBadge}` : "";
+      lines.push(`\n${i + 1}. ${item.name}${officialBadge}${qualityDisplay}`);
 
       // Description
       lines.push(

@@ -5,7 +5,7 @@
  */
 
 import { describe, expect, test, vi } from "vitest";
-import { fetchPlugins } from "../../src/services/fetchers/plugin-fetcher.js";
+import { fetchPlugins } from "../../src/services/fetchers/plugins/plugin-fetcher.js";
 
 describe("Plugin Fetcher", () => {
   describe("fetchPlugins", () => {

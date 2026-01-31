@@ -304,8 +304,9 @@ pnpm run test:coverage
 
 ### Test Structure
 
-- `tests/analyzer.test.ts` - Project analyzer tests
-- `tests/recommender.test.ts` - Recommendation engine tests
+- `tests/analyzer/` - Project analyzer tests
+- `tests/fetchers/` - Fetcher tests
+- `tests/recommender/` - Recommender tests
 
 ### Writing Tests
 

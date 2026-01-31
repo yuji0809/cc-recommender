@@ -5,8 +5,8 @@
  * Source: https://github.com/anthropics/claude-plugins-official
  */
 
-import type { Recommendation } from "../../types/domain-types.js";
-import type { RawPluginEntry } from "../../types/raw-types.js";
+import type { Recommendation } from "../../../types/domain-types.js";
+import type { RawPluginEntry } from "../../../types/raw-types.js";
 
 const MARKETPLACE_URL =
   "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/.claude-plugin/marketplace.json";
@@ -16,6 +16,32 @@ type MarketplaceJSON = {
   name: string;
   owner: { name: string; email?: string };
   plugins: RawPluginEntry[];
+};
+
+/**
+ * Category-based detection mappings for plugins
+ */
+const CATEGORY_MAPPINGS: Record<string, Partial<Recommendation["detection"]>> = {
+  development: {
+    keywords: ["development", "coding", "ide"],
+  },
+  productivity: {
+    keywords: ["productivity", "workflow", "automation"],
+  },
+  database: {
+    keywords: ["database", "sql", "nosql"],
+    dependencies: ["prisma", "@prisma/client", "mongoose", "typeorm"],
+  },
+  security: {
+    keywords: ["security", "audit", "vulnerability"],
+  },
+  testing: {
+    keywords: ["testing", "test", "e2e"],
+    dependencies: ["jest", "vitest", "playwright", "cypress"],
+  },
+  deployment: {
+    keywords: ["deploy", "ci", "cd"],
+  },
 };
 
 /**
@@ -150,30 +176,7 @@ function extractDetectionRules(raw: RawPluginEntry): Recommendation["detection"]
   }
 
   // Category-based detection
-  const categoryMappings: Record<string, Partial<Recommendation["detection"]>> = {
-    development: {
-      keywords: ["development", "coding", "ide"],
-    },
-    productivity: {
-      keywords: ["productivity", "workflow", "automation"],
-    },
-    database: {
-      keywords: ["database", "sql", "nosql"],
-      dependencies: ["prisma", "@prisma/client", "mongoose", "typeorm"],
-    },
-    security: {
-      keywords: ["security", "audit", "vulnerability"],
-    },
-    testing: {
-      keywords: ["testing", "test", "e2e"],
-      dependencies: ["jest", "vitest", "playwright", "cypress"],
-    },
-    deployment: {
-      keywords: ["deploy", "ci", "cd"],
-    },
-  };
-
-  const mapping = categoryMappings[raw.category];
+  const mapping = CATEGORY_MAPPINGS[raw.category];
   if (mapping) {
     if (mapping.keywords) {
       rules.keywords = [...(rules.keywords || []), ...mapping.keywords];

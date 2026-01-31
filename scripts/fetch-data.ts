@@ -10,11 +10,13 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { fetchMCPServers } from "../src/services/fetchers/mcp-fetcher.js";
-import { fetchOfficialMCPServers } from "../src/services/fetchers/official-mcp-fetcher.js";
-import { fetchOfficialSkills } from "../src/services/fetchers/official-skill-fetcher.js";
-import { fetchPlugins } from "../src/services/fetchers/plugin-fetcher.js";
-import { fetchSkills } from "../src/services/fetchers/skill-fetcher.js";
+import { ENV } from "../src/config/env.js";
+import { fetchMCPServers } from "../src/services/fetchers/mcp/mcp-fetcher.js";
+import { fetchOfficialMCPServers } from "../src/services/fetchers/mcp/official-mcp-fetcher.js";
+import { fetchPlugins } from "../src/services/fetchers/plugins/plugin-fetcher.js";
+import { searchGitHubSkills } from "../src/services/fetchers/skills/github-topic-search.js";
+import { fetchOfficialSkills } from "../src/services/fetchers/skills/official-skill-fetcher.js";
+import { fetchSkills } from "../src/services/fetchers/skills/skill-fetcher.js";
 import { scanRepositories } from "../src/services/security-scanner.service.js";
 import type {
   MCPServerDatabase,
@@ -123,7 +125,16 @@ async function main() {
   console.log("🚀 cc-recommender Data Fetcher");
   console.log("================================\n");
 
-  const skipSecurityScan = process.env.SKIP_SECURITY_SCAN === "true";
+  const skipSecurityScan = ENV.SKIP_SECURITY_SCAN;
+  const fetchTypes = ENV.FETCH_TYPES;
+
+  // Display fetch types
+  if (fetchTypes && fetchTypes.size > 0) {
+    console.log(`📋 Fetch types: ${Array.from(fetchTypes).join(", ")}`);
+  } else {
+    console.log("📋 Fetch types: all (plugins, mcp, skills)");
+  }
+  console.log("");
 
   // 既存データを読み込み
   console.log("📂 Loading existing databases...");
@@ -141,38 +152,73 @@ async function main() {
     `   Loaded: ${existingPluginsMap.size} plugins, ${existingMCPMap.size} MCP, ${existingSkillsMap.size} skills\n`,
   );
 
-  // 並列でデータ取得＆スキャン実行（既存データを渡す）
-  const [plugins, mcpServers, skills] = await Promise.all([
-    fetchAndScanPlugins(skipSecurityScan, existingPluginsMap),
-    fetchAndScanMCPServers(skipSecurityScan, existingMCPMap),
-    fetchAndScanSkills(skipSecurityScan, existingSkillsMap),
-  ]);
+  // 条件付きでデータ取得（指定されたもののみ）
+  const shouldFetchPlugins = !fetchTypes || fetchTypes.has("plugins");
+  const shouldFetchMCP = !fetchTypes || fetchTypes.has("mcp");
+  const shouldFetchSkills = !fetchTypes || fetchTypes.has("skills");
 
-  // 全データを結合して重複排除
-  const allItems = [...plugins, ...mcpServers, ...skills];
-  const deduped = deduplicateByUrl(allItems);
+  // 並列でデータ取得＆スキャン実行（既存データを渡す）
+  const fetchPromises: Promise<Recommendation[]>[] = [];
+
+  if (shouldFetchPlugins) {
+    fetchPromises.push(fetchAndScanPlugins(skipSecurityScan, existingPluginsMap));
+  }
+  if (shouldFetchMCP) {
+    fetchPromises.push(fetchAndScanMCPServers(skipSecurityScan, existingMCPMap));
+  }
+  if (shouldFetchSkills) {
+    fetchPromises.push(fetchAndScanSkills(skipSecurityScan, existingSkillsMap));
+  }
+
+  const results = await Promise.all(fetchPromises);
+
+  // 結果を種類別に分割（部分フェッチの場合は既存データを保持）
+  let plugins: Recommendation[];
+  let mcpServers: Recommendation[];
+  let skills: Recommendation[];
+
+  let resultIndex = 0;
+  if (shouldFetchPlugins) {
+    plugins = results[resultIndex++];
+  } else {
+    // 既存データを保持
+    plugins = existingPlugins?.items || [];
+    console.log(`   ℹ Skipped plugins fetch, using ${plugins.length} existing items`);
+  }
+
+  if (shouldFetchMCP) {
+    mcpServers = results[resultIndex++];
+  } else {
+    // 既存データを保持
+    mcpServers = existingMCP?.items || [];
+    console.log(`   ℹ Skipped MCP fetch, using ${mcpServers.length} existing items`);
+  }
+
+  if (shouldFetchSkills) {
+    skills = results[resultIndex++];
+  } else {
+    // 既存データを保持
+    skills = existingSkills?.items || [];
+    console.log(`   ℹ Skipped skills fetch, using ${skills.length} existing items`);
+  }
+
+  // タイプ別に重複排除（独立して管理）
+  const pluginItems = deduplicateByUrl(plugins);
+  const mcpServerItems = deduplicateByUrl(mcpServers);
+  const skillItems = deduplicateByUrl(skills);
+
+  // 全体のサマリー
+  const totalItems = pluginItems.length + mcpServerItems.length + skillItems.length;
 
   console.log("\n📊 Summary:");
-  console.log(`   Total items: ${deduped.length}`);
-  console.log(`   - Plugins: ${deduped.filter((i) => i.type === "plugin").length}`);
-  console.log(`   - MCP servers: ${deduped.filter((i) => i.type === "mcp").length}`);
-  console.log(`   - Skills: ${deduped.filter((i) => i.type === "skill").length}`);
-  console.log(`   - Workflows: ${deduped.filter((i) => i.type === "workflow").length}`);
-  console.log(`   - Hooks: ${deduped.filter((i) => i.type === "hook").length}`);
-  console.log(`   - Commands: ${deduped.filter((i) => i.type === "command").length}`);
-  console.log(`   - Agents: ${deduped.filter((i) => i.type === "agent").length}`);
-
-  // タイプ別に分割
-  const pluginItems = deduped.filter((i) => i.type === "plugin");
-  const mcpServerItems = deduped.filter((i) => i.type === "mcp");
-  const skillItems = deduped.filter(
-    (i) =>
-      i.type === "skill" ||
-      i.type === "workflow" ||
-      i.type === "hook" ||
-      i.type === "command" ||
-      i.type === "agent",
-  );
+  console.log(`   Total items: ${totalItems}`);
+  console.log(`   - Plugins: ${pluginItems.length}`);
+  console.log(`   - MCP servers: ${mcpServerItems.length}`);
+  console.log(`   - Skills: ${skillItems.filter((i) => i.type === "skill").length}`);
+  console.log(`   - Workflows: ${skillItems.filter((i) => i.type === "workflow").length}`);
+  console.log(`   - Hooks: ${skillItems.filter((i) => i.type === "hook").length}`);
+  console.log(`   - Commands: ${skillItems.filter((i) => i.type === "command").length}`);
+  console.log(`   - Agents: ${skillItems.filter((i) => i.type === "agent").length}`);
 
   // 個別データベースを作成
   const version = "0.1.0";
@@ -297,18 +343,36 @@ async function fetchAndScanSkills(
 
   try {
     // Fetch from multiple sources in parallel
-    const [awesomeListSkills, officialSkills] = await Promise.all([
+    const [awesomeListSkills, officialSkills, githubSearchSkills] = await Promise.all([
       fetchSkills(),
       fetchOfficialSkills(),
+      searchGitHubSkills(),
     ]);
 
     console.log(`   ✓ Fetched ${awesomeListSkills.length} from awesome-claude-code`);
     console.log(`   ✓ Fetched ${officialSkills.length} from official repositories`);
+    if (githubSearchSkills.length > 0) {
+      console.log(`   ✓ Fetched ${githubSearchSkills.length} from GitHub search`);
+
+      // Report official skills discovered via GitHub search
+      const officialDiscoveries = githubSearchSkills.filter((s) => s.metrics.isOfficial);
+      if (officialDiscoveries.length > 0) {
+        console.log(`   📋 Official skills discovered via GitHub search:`);
+        for (const skill of officialDiscoveries) {
+          console.log(`      - ${skill.author.name}/${skill.name} (${skill.metrics.stars} ⭐)`);
+        }
+      }
+    }
 
     // Combine and deduplicate (official takes precedence)
-    const allSkills = [...officialSkills, ...awesomeListSkills];
+    const allSkills = [...officialSkills, ...awesomeListSkills, ...githubSearchSkills];
     const items = deduplicateByUrl(allSkills);
     console.log(`   ✓ Total after deduplication: ${items.length} skills`);
+
+    // Report on skill sources
+    const officialCount = items.filter((s) => s.metrics.isOfficial).length;
+    const communityCount = items.length - officialCount;
+    console.log(`   📊 Breakdown: ${officialCount} official, ${communityCount} community`);
 
     // 既存スコアをコピー
     const { unchanged, new: newCount } = copyExistingScores(items, existingMap);

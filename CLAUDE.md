@@ -63,10 +63,12 @@ src/
 ├── config/              # 設定ファイル（定数、マッピング）
 │   ├── constants.ts     # アプリケーション定数
 │   ├── file-mappings.ts # ファイル拡張子とフレームワークのマッピング
+│   ├── official-skills.ts # 公式スキルソース定義
 │   └── scoring-config.ts # スコアリングの重み・閾値
 │
 ├── repositories/        # データアクセス層
-│   └── recommendation.repository.ts # データベース読み込み・キャッシュ
+│   ├── recommendation.repository.ts # データベース読み込み・キャッシュ
+│   └── remote-data.repository.ts    # リモートデータ取得（CDN/GitHub）
 │
 ├── utils/              # 共通ユーティリティ
 │   └── glob-matcher.ts # Glob パターンマッチング
@@ -85,19 +87,30 @@ src/
 │   │   ├── parsers/    # 言語別パーサー
 │   │   │   ├── package-json.parser.ts
 │   │   │   ├── requirements-txt.parser.ts
-│   │   │   └── go-mod.parser.ts
+│   │   │   ├── go-mod.parser.ts
+│   │   │   └── （その他言語用パーサー）
 │   │   └── project-analyzer.service.ts # メイン分析ロジック
+│   │
+│   ├── fetchers/       # 外部データ取得
+│   │   ├── mcp/        # MCP サーバー取得
+│   │   │   ├── mcp-fetcher.ts
+│   │   │   └── official-mcp-fetcher.ts
+│   │   ├── plugins/    # プラグイン取得
+│   │   │   └── plugin-fetcher.ts
+│   │   └── skills/     # スキル取得
+│   │       ├── github-topic-search.ts # GitHub トピック検索
+│   │       ├── official-skill-fetcher.ts
+│   │       └── skill-fetcher.ts
 │   │
 │   ├── recommender/    # 推薦サービス
 │   │   ├── scoring/    # スコアリングロジック
 │   │   │   └── scorer.ts
 │   │   ├── recommendation.service.ts # メイン推薦ロジック
 │   │   ├── search.service.ts         # 検索機能
+│   │   ├── quality-scorer.ts         # 品質スコア算出
 │   │   └── formatters.ts             # 結果フォーマッター
 │   │
-│   ├── mcp-fetcher.ts   # MCP サーバー情報取得
-│   ├── plugin-fetcher.ts # プラグイン情報取得
-│   └── skill-fetcher.ts  # スキル情報取得
+│   └── security-scanner.service.ts # セキュリティスコア取得
 │
 ├── tools/              # MCP ツール層（プレゼンテーション）
 │   └── handlers/       # 各ツールの実装
@@ -215,7 +228,7 @@ src/services/analyzer/project-analyzer.service.ts
 src/config/file-mappings.ts
 
 # 4. テストを追加
-tests/analyzer.test.ts に新しい言語のテストケースを追加
+tests/analyzer/ に新しい言語のテストケースを追加
 ```
 
 ## テスト規約

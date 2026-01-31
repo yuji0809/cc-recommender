@@ -5,8 +5,8 @@
  * Source: https://github.com/hesreallyhim/awesome-claude-code
  */
 
-import type { Recommendation } from "../../types/domain-types.js";
-import type { RawSkillEntry } from "../../types/raw-types.js";
+import type { Recommendation } from "../../../types/domain-types.js";
+import type { RawSkillEntry } from "../../../types/raw-types.js";
 
 const CSV_URL =
   "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/THE_RESOURCES_TABLE.csv";
@@ -32,6 +32,33 @@ const CATEGORY_TO_TYPE: Record<string, Recommendation["type"]> = {
 };
 
 /**
+ * Category-based detection rules
+ */
+const CATEGORY_DETECTION_RULES: Record<string, Partial<Recommendation["detection"]>> = {
+  workflows: {
+    keywords: ["workflow", "automation", "pipeline"],
+    files: ["CLAUDE.md", ".claude/*"],
+  },
+  hooks: {
+    keywords: ["hook", "git", "pre-commit", "post-commit"],
+    files: [".claude/hooks/*", ".husky/*"],
+  },
+  "slash-commands": {
+    keywords: ["command", "slash", "cli"],
+    files: [".claude/commands/*"],
+  },
+  tooling: {
+    keywords: ["tool", "utility", "helper"],
+  },
+  ide: {
+    keywords: ["ide", "editor", "vscode", "vim", "emacs"],
+  },
+  orchestrators: {
+    keywords: ["orchestration", "multi-agent", "swarm"],
+  },
+};
+
+/**
  * Fetch skills from awesome-claude-code CSV
  */
 export async function fetchSkills(): Promise<Recommendation[]> {
@@ -47,7 +74,8 @@ export async function fetchSkills(): Promise<Recommendation[]> {
     const entries = parseCSV(csvText);
     const recommendations = entries
       .map(transformSkillEntry)
-      .filter((r): r is Recommendation => r !== null);
+      .filter((r): r is Recommendation => r !== null)
+      .filter((r) => r.type !== "plugin" && r.type !== "mcp"); // Exclude plugins/MCPs - they have dedicated fetchers
 
     console.log(`   ✓ Fetched ${recommendations.length} skills/workflows`);
     return recommendations;
@@ -304,31 +332,7 @@ function buildDetectionRules(raw: RawSkillEntry): Recommendation["detection"] {
 function getCategoryRules(category: string): Partial<Recommendation["detection"]> {
   const normalized = category.toLowerCase();
 
-  const mappings: Record<string, Partial<Recommendation["detection"]>> = {
-    workflows: {
-      keywords: ["workflow", "automation", "pipeline"],
-      files: ["CLAUDE.md", ".claude/*"],
-    },
-    hooks: {
-      keywords: ["hook", "git", "pre-commit", "post-commit"],
-      files: [".claude/hooks/*", ".husky/*"],
-    },
-    "slash-commands": {
-      keywords: ["command", "slash", "cli"],
-      files: [".claude/commands/*"],
-    },
-    tooling: {
-      keywords: ["tool", "utility", "helper"],
-    },
-    ide: {
-      keywords: ["ide", "editor", "vscode", "vim", "emacs"],
-    },
-    orchestrators: {
-      keywords: ["orchestration", "multi-agent", "swarm"],
-    },
-  };
-
-  for (const [cat, rules] of Object.entries(mappings)) {
+  for (const [cat, rules] of Object.entries(CATEGORY_DETECTION_RULES)) {
     if (normalized.includes(cat)) {
       return rules;
     }

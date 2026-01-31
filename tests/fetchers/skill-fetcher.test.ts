@@ -5,7 +5,7 @@
  */
 
 import { describe, expect, test, vi } from "vitest";
-import { fetchSkills } from "../../src/services/fetchers/skill-fetcher.js";
+import { fetchSkills } from "../../src/services/fetchers/skills/skill-fetcher.js";
 
 describe("Skill Fetcher", () => {
   describe("fetchSkills", () => {
