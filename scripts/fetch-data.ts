@@ -12,6 +12,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchMCPServers } from "../src/services/fetchers/mcp-fetcher.js";
 import { fetchOfficialMCPServers } from "../src/services/fetchers/official-mcp-fetcher.js";
+import { fetchOfficialSkills } from "../src/services/fetchers/official-skill-fetcher.js";
 import { fetchPlugins } from "../src/services/fetchers/plugin-fetcher.js";
 import { fetchSkills } from "../src/services/fetchers/skill-fetcher.js";
 import { scanRepositories } from "../src/services/security-scanner.service.js";
@@ -292,11 +293,22 @@ async function fetchAndScanSkills(
   skipScan: boolean,
   existingMap: Map<string, Recommendation>,
 ): Promise<Recommendation[]> {
-  console.log("🎯 [Skills] Fetching from awesome-claude-code...");
+  console.log("🎯 [Skills] Fetching from multiple sources...");
 
   try {
-    const items = await fetchSkills();
-    console.log(`   ✓ Fetched ${items.length} skills/workflows`);
+    // Fetch from multiple sources in parallel
+    const [awesomeListSkills, officialSkills] = await Promise.all([
+      fetchSkills(),
+      fetchOfficialSkills(),
+    ]);
+
+    console.log(`   ✓ Fetched ${awesomeListSkills.length} from awesome-claude-code`);
+    console.log(`   ✓ Fetched ${officialSkills.length} from official repositories`);
+
+    // Combine and deduplicate (official takes precedence)
+    const allSkills = [...officialSkills, ...awesomeListSkills];
+    const items = deduplicateByUrl(allSkills);
+    console.log(`   ✓ Total after deduplication: ${items.length} skills`);
 
     // 既存スコアをコピー
     const { unchanged, new: newCount } = copyExistingScores(items, existingMap);

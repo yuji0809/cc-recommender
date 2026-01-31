@@ -254,7 +254,13 @@ pnpm run fetch-data:quick
 
 # Default (controlled by SKIP_SECURITY_SCAN env var)
 pnpm run fetch-data
+
+# With GitHub token to avoid rate limits (recommended)
+GITHUB_TOKEN=your_token_here pnpm run fetch-data
 ```
+
+**GitHub Token Setup:**
+To fetch official skills from GitHub (Anthropic, Supabase, etc.) without hitting rate limits, create a token at https://github.com/settings/tokens with `public_repo` scope and set it as `GITHUB_TOKEN` environment variable.
 
 #### Automatic Weekly Updates
 

@@ -187,7 +187,10 @@ Claude: [search_skills ツールを使用]
 | 変数 | 説明 | デフォルト |
 |------|------|-----------|
 | `CC_RECOMMENDER_OFFLINE_MODE` | 自動更新を無効化してバンドル版データのみを使用 | `false` |
+| `GITHUB_TOKEN` | GitHub パーソナルアクセストークン（API レート制限を 60 → 5000 req/hour に拡大） | 未設定 |
 | `SKIP_SECURITY_SCAN` | データ取得時にセキュリティスキャンをスキップ（開発者向け） | `false` |
+
+**注意:** GitHub から公式スキル（Anthropic、Supabase など）を取得する場合、レート制限を回避するために GitHub トークンの設定を推奨します。https://github.com/settings/tokens で `public_repo` スコープのトークンを作成してください。
 
 ## 開発
 

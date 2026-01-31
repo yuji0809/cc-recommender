@@ -187,7 +187,10 @@ When `CC_RECOMMENDER_OFFLINE_MODE` is enabled, only bundled data is used (no rem
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `CC_RECOMMENDER_OFFLINE_MODE` | Disable auto-updates and use only bundled data | `false` |
+| `GITHUB_TOKEN` | GitHub personal access token (increases API rate limit from 60 to 5000 req/hour) | Not set |
 | `SKIP_SECURITY_SCAN` | Skip security scanning during data fetch (for developers) | `false` |
+
+**Note:** To fetch official skills from GitHub (Anthropic, Supabase, etc.), a GitHub token is recommended to avoid rate limits. Create a token at https://github.com/settings/tokens with `public_repo` scope.
 
 ## Development
 

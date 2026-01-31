@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-01-30T15:47:15.304Z",
+  "lastUpdated": "2026-01-31T17:35:24.284Z",
   "items": [
     {
       "id": "skill-ai-agent-ai-spy",
@@ -2979,31 +2979,6 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/ParetoSecurity/pareto-mac/blob/main/CLAUDE.md"
-      }
-    },
-    {
-      "id": "skill-basic-memory",
-      "name": "Basic Memory",
-      "type": "skill",
-      "url": "https://github.com/basicmachines-co/basic-memory/blob/main/CLAUDE.md",
-      "description": "Presents an innovative AI-human collaboration framework with Model Context Protocol for bidirectional LLM-markdown communication and flexible knowledge structure for complex projects.",
-      "author": {
-        "name": "basicmachines-co",
-        "url": "https://github.com/basicmachines-co"
-      },
-      "category": "CLAUDE.md Files",
-      "tags": ["claude.md files", "skill", "agpl-3.0"],
-      "detection": {
-        "keywords": ["ai", "llm"]
-      },
-      "metrics": {
-        "source": "awesome-list",
-        "isOfficial": false,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/basicmachines-co/basic-memory/blob/main/CLAUDE.md"
       }
     },
     {
