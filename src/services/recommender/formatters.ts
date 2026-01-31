@@ -12,13 +12,13 @@ import { getScoreIndicator } from "./scoring/scorer.js";
 /**
  * Get score explanation
  *
- * @param score - The calculated score
+ * @param score - The calculated score (1-100)
  * @returns Brief explanation of the score
  */
 function getScoreExplanation(score: number): string {
-  if (score >= 10) return "プロジェクトに強く推薦";
-  if (score >= 5) return "プロジェクトに適合";
-  if (score >= 2) return "参考として有用";
+  if (score >= 80) return "プロジェクトに強く推薦";
+  if (score >= 50) return "プロジェクトに適合";
+  if (score >= 20) return "参考として有用";
   return "低い適合度";
 }
 
