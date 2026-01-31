@@ -154,9 +154,9 @@ Claude: [search_skills ツールを使用]
 
 | ソース | 内容 | 更新頻度 |
 |--------|------|---------|
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | 公式プラグインマーケットプレイス | 週次 |
-| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | MCPサーバーのキュレーションリスト | 週次 |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | スキル/ワークフロー/フックのリスト | 週次 |
+| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | 公式プラグインマーケットプレイス | 日次 |
+| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | MCPサーバーのキュレーションリスト | 日次 |
+| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | スキル/ワークフロー/フックのリスト | 日次 |
 
 ### 自動更新機能
 

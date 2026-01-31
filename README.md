@@ -154,9 +154,9 @@ This MCP server aggregates data from the following sources:
 
 | Source | Content | Update Frequency |
 |--------|---------|------------------|
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Official plugin marketplace | Weekly |
-| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | Curated list of MCP servers | Weekly |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | List of skills/workflows/hooks | Weekly |
+| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Official plugin marketplace | Daily |
+| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | Curated list of MCP servers | Daily |
+| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | List of skills/workflows/hooks | Daily |
 
 ### Auto-Update Feature
 
