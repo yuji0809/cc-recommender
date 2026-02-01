@@ -27,6 +27,16 @@ export type SecurityScanResult = {
 };
 
 /**
+ * シェル引数をエスケープしてコマンドインジェクションを防ぐ
+ *
+ * @param arg - エスケープする引数
+ * @returns エスケープされた引数
+ */
+function escapeShellArg(arg: string): string {
+  return `'${arg.replace(/'/g, "'\\''")}'`;
+}
+
+/**
  * GitHubリポジトリをcc-auditでスキャン
  *
  * @param repoUrl - GitHubリポジトリURL
@@ -38,12 +48,24 @@ export async function scanRepository(
   scanType: "mcp" | "skill" | "plugin" = "mcp",
 ): Promise<SecurityScanResult> {
   try {
+    // バリデーション: repoUrl が有効な GitHub URL であることを確認
+    const urlPattern = /^https:\/\/github\.com\/[\w-]+\/[\w-]+(\/.*)?$/;
+    if (!urlPattern.test(repoUrl)) {
+      throw new Error(`Invalid GitHub repository URL: ${repoUrl}`);
+    }
+
+    // バリデーション: scanType が有効な値であることを確認
+    const validScanTypes = ["mcp", "skill", "plugin"] as const;
+    if (!validScanTypes.includes(scanType)) {
+      throw new Error(`Invalid scan type: ${scanType}`);
+    }
+
     // cc-audit を --remote モードで実行
     // --config で現在のプロジェクトの設定ファイルを使用
     const configPath = `${process.cwd()}/.cc-audit.yaml`;
-    // Escape shell arguments to prevent command injection
-    const escapedConfigPath = configPath.replace(/'/g, "'\\''");
-    const command = `npx -y @cc-audit/cc-audit check --remote ${repoUrl} --type ${scanType} --config '${escapedConfigPath}' --format json --ci`;
+
+    // コマンドインジェクション対策: すべての引数をエスケープ
+    const command = `npx -y @cc-audit/cc-audit check --remote ${escapeShellArg(repoUrl)} --type ${escapeShellArg(scanType)} --config ${escapeShellArg(configPath)} --format json --ci`;
 
     const { stdout } = await execAsync(command, {
       timeout: 30000, // 30秒タイムアウト

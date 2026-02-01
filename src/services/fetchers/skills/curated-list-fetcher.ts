@@ -287,6 +287,16 @@ async function fetchExternalSkill(
 }
 
 /**
+ * 正規表現の特殊文字をエスケープしてReDoS攻撃を防ぐ
+ *
+ * @param str - エスケープする文字列
+ * @returns エスケープされた文字列
+ */
+function escapeRegExp(str: string): string {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/**
  * Extract skill links from README content
  * Supports both full GitHub URLs and relative paths
  */
@@ -295,7 +305,8 @@ function extractSkillLinksFromReadme(content: string, section?: string): string[
 
   // If section specified, extract only that section
   if (section) {
-    const sectionRegex = new RegExp(`##\\s+${section}\\s*\\n([\\s\\S]*?)(?=\\n##|$)`, "i");
+    const escapedSection = escapeRegExp(section);
+    const sectionRegex = new RegExp(`##\\s+${escapedSection}\\s*\\n([\\s\\S]*?)(?=\\n##|$)`, "i");
     const match = content.match(sectionRegex);
     if (match?.[1]) {
       contentToParse = match[1];
