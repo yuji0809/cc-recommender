@@ -4,7 +4,7 @@ description: "baseブランチからの変更差分を元にPR descriptionを自
 tags: ["git", "pr", "automation", "github"]
 ---
 
-# PR Description 自動生成スキル
+# PR Description 自動生成
 
 このスキルは、現在のブランチと base ブランチの差分を分析し、`.github/PULL_REQUEST_TEMPLATE.md` の形式に沿った PR description を自動生成します。
 
@@ -71,7 +71,7 @@ git diff ${BASE_BRANCH}...HEAD --unified=3
 
 - **💥 Breaking change**
   - コミットメッセージに `BREAKING CHANGE` が含まれる
-  - `!` 付きのコミット（例: `feat!:`, `fix!:`）がある
+  - 感嘆符付きのコミット（例: `feat!:`, `fix!:`）がある
 
 - **📝 Documentation update**
   - `docs:` で始まるコミットがある
