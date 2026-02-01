@@ -84,9 +84,11 @@ tags: ["documentation", "markdown", "consistency", "best-practices"]
 - バグ修正時（リリース前）
 - 破壊的変更時（必須）
 
-### 5. docs/ARCHITECTURE.md
+### 5. docs/ ディレクトリの技術ドキュメント
 
-**目的:** アーキテクチャの詳細説明
+**目的:** 各種技術的な詳細説明とガイドライン
+
+#### docs/ARCHITECTURE.md
 
 **含むべき内容:**
 - システムアーキテクチャ図
@@ -99,6 +101,51 @@ tags: ["documentation", "markdown", "consistency", "best-practices"]
 - アーキテクチャ変更時
 - 新しいレイヤー追加時
 - 技術スタック変更時
+- 新しいサービス・モジュール追加時
+
+#### docs/SCORING.md
+
+**含むべき内容:**
+- スコアリングアルゴリズムの詳細
+- 各スコア要素の説明
+- 計算例とサンプル
+- 設定のカスタマイズ方法
+
+**更新タイミング:**
+- スコアリングロジック変更時
+- 新しいスコア要素追加時
+- 重み・閾値の変更時
+
+#### docs/TDD.md
+
+**含むべき内容:**
+- TDD開発サイクルの説明
+- テスト実装のベストプラクティス
+- テストコマンドの使用方法
+- 実装例とチェックリスト
+
+**更新タイミング:**
+- テスト手法追加時
+- テストコマンド変更時
+- ベストプラクティス更新時
+
+#### その他のdocs/*.md
+
+**対象:** DATA_MANAGEMENT.md, PERFORMANCE_OPTIMIZATIONS.md など
+
+**共通の更新タイミング:**
+- 関連する機能の変更時
+- 新しいベストプラクティス追加時
+- リンク切れ発見時
+
+**確認方法:**
+```bash
+# docs/ 内の全MDファイルをリスト
+find docs -name "*.md" -type f
+
+# 各ファイルの最終更新日を確認
+ls -lt docs/*.md
+```
 
 ### 6. SECURITY.md
 
@@ -118,13 +165,16 @@ tags: ["documentation", "markdown", "consistency", "best-practices"]
 ### コミット前の確認
 
 **コード変更による影響:**
-- [ ] 新しいファイル・ディレクトリが追加された → CLAUDE.md のディレクトリ構造を更新
+- [ ] 新しいファイル・ディレクトリが追加された → CLAUDE.md のディレクトリ構造、docs/ARCHITECTURE.md を更新
 - [ ] 新しい機能が追加された → README.md の Features セクションを更新
 - [ ] 新しいパーサーが追加された → README.md の対応言語リストを更新
 - [ ] 新しいツールが追加された → README.md の使用方法を更新
 - [ ] APIが変更された → README.md のサンプルコードを更新
 - [ ] アーキテクチャが変更された → docs/ARCHITECTURE.md を更新
+- [ ] スコアリングロジックが変更された → docs/SCORING.md を更新
+- [ ] テスト手法が追加された → docs/TDD.md を更新
 - [ ] 破壊的変更があった → CHANGELOG.md に BREAKING CHANGE として記載
+- [ ] docs/ に新しいMDファイルが追加された → .claude/agents/documentation-agent.md で自動チェック対象に含まれることを確認
 
 **ドキュメント間の整合性:**
 - [ ] README.md と README.ja.md の内容が同期されている

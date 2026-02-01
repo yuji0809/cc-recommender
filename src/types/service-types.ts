@@ -5,6 +5,7 @@
  */
 
 import type { Recommendation } from "./domain-types.js";
+import type { ProjectMetadata, ScoreBreakdown } from "./scoring-types.js";
 
 /** プロジェクト情報 (分析結果) */
 export type ProjectInfo = {
@@ -20,6 +21,8 @@ export type ProjectInfo = {
   frameworks: string[];
   /** プロジェクト説明 (README等から) */
   description?: string;
+  /** プロジェクトメタデータ (サイズ、種類、チーム規模等) */
+  metadata?: ProjectMetadata;
 };
 
 /** スコア付きレコメンデーション */
@@ -27,4 +30,6 @@ export type ScoredRecommendation = {
   item: Recommendation;
   score: number;
   reasons: string[];
+  /** スコアの内訳 (拡張スコアリングが有効な場合) */
+  breakdown?: ScoreBreakdown;
 };

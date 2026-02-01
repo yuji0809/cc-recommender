@@ -114,16 +114,18 @@ cc-recommender は、レイヤードアーキテクチャに基づいて設計�
 - プロジェクトディレクトリのスキャン
 - ファイルの解析
 - 言語・フレームワーク・依存関係の検出
+- プロジェクトメタデータの分析（サイズ、種類、チーム規模）
 
 **ファイル:**
 - `project-analyzer.service.ts` - メイン分析ロジック
+- `metadata-analyzer.service.ts` - メタデータ分析（プロジェクトサイズ、モノレポ検出、チーム規模推定）
 - `parsers/package-json.parser.ts` - Node.js プロジェクト解析
 - `parsers/requirements-txt.parser.ts` - Python プロジェクト解析
 - `parsers/go-mod.parser.ts` - Go プロジェクト解析
 
 **依存関係:**
-- Config (file-mappings, constants)
-- Types (service-types)
+- Config (file-mappings, constants, enhanced-scoring-config)
+- Types (service-types, scoring-types)
 
 #### 2.2 Recommender (services/recommender/)
 
@@ -136,13 +138,16 @@ cc-recommender は、レイヤードアーキテクチャに基づいて設計�
 **ファイル:**
 - `recommendation.service.ts` - メイン推薦ロジック
 - `search.service.ts` - 検索機能
-- `scoring/scorer.ts` - スコアリングアルゴリズム
+- `scoring/` - スコアリングロジック
+  - `scorer.ts` - メインスコアリングアルゴリズム
+  - `context-scorer.ts` - コンテキストスコアリング（モノレポ、サイズマッチ）
+  - `similarity-scorer.ts` - 意味的類似性スコアリング（タグ共起）
 - `quality-scorer.ts` - 品質スコア算出
 - `formatters.ts` - 結果フォーマッター
 
 **依存関係:**
-- Config (scoring-config)
-- Types (domain-types, service-types)
+- Config (scoring-config, enhanced-scoring-config)
+- Types (domain-types, service-types, scoring-types)
 - Utils (glob-matcher)
 
 #### 2.3 Data Fetchers (services/fetchers/)
@@ -200,7 +205,8 @@ cc-recommender は、レイヤードアーキテクチャに基づいて設計�
 - `constants.ts` - アプリケーション定数
 - `file-mappings.ts` - ファイル拡張子と言語/フレームワークのマッピング
 - `official-skills.ts` - 公式スキルソース定義（GitHub org/repo・自動発見条件）
-- `scoring-config.ts` - スコアリングの重み・閾値・係数
+- `scoring-config.ts` - 基本スコアリングの重み・閾値・係数
+- `enhanced-scoring-config.ts` - 拡張スコアリングの設定（コンテキスト、類似性）
 
 #### 4.2 Utils (utils/)
 
@@ -222,6 +228,7 @@ cc-recommender は、レイヤードアーキテクチャに基づいて設計�
 - `index.ts` - 型定義の公開 API（外部からはこれを使用）
 - `domain-types.ts` - ドメインモデル（Recommendation, Author, etc.）
 - `service-types.ts` - サービス層の型（ProjectInfo, ScoredRecommendation）
+- `scoring-types.ts` - スコアリング関連の型（ProjectMetadata, SimilarityMatrix, ScoreBreakdown）
 - `raw-types.ts` - 外部データの型（RawPluginEntry, RawMCPEntry, etc.）
 
 #### 4.4 Schemas (schemas/)

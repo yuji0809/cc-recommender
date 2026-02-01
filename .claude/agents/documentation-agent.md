@@ -34,13 +34,40 @@ skills: ["documentation-check"]
 - [ ] 新しいコマンドが追加された場合、ツールとコマンドセクションに記載されているか
 - [ ] 禁止事項に変更がある場合、更新されているか
 
-### 3. docs/ARCHITECTURE.md
+### 3. docs/ ディレクトリ内の全MDファイル
+
+**対象ファイル:** `docs/` ディレクトリ内のすべての `.md` ファイル
 
 **確認項目:**
+
+#### docs/ARCHITECTURE.md
 - [ ] 新しいサービス・モジュールが追加された場合、アーキテクチャ図に反映されているか
 - [ ] レイヤー構造の説明は最新か
 - [ ] データフローの説明は最新か
 - [ ] 技術スタックに変更がある場合、更新されているか
+- [ ] 新しいファイル（config, types, services）が追加された場合、対応するセクションに記載されているか
+
+#### docs/SCORING.md
+- [ ] 新しいスコアリングアルゴリズムが追加された場合、説明が追加されているか
+- [ ] スコアの計算方法が変更された場合、更新されているか
+- [ ] 新しい例が必要な場合、追加されているか
+
+#### docs/TDD.md
+- [ ] 新しいテスト手法が追加された場合、記載されているか
+- [ ] テストコマンドに変更がある場合、更新されているか
+
+#### docs/DATA_MANAGEMENT.md, docs/PERFORMANCE_OPTIMIZATIONS.md など
+- [ ] 各ドキュメントの内容が最新の実装と一致しているか
+- [ ] リンク切れがないか
+- [ ] コードサンプルが動作するか
+
+**チェック方法:**
+```bash
+# docs/ 内の全MDファイルをリスト
+find docs -name "*.md" -type f
+
+# 各ファイルを確認し、関連するコード変更と整合性をチェック
+```
 
 ### 4. CONTRIBUTING.md
 
@@ -89,9 +116,12 @@ git log --name-status --oneline -10
 ### ステップ2: コードとドキュメントの対応確認
 
 **新しいファイルが追加された場合:**
-- src/services/ に新しいサービス → CLAUDE.md のディレクトリ構造を確認
+- src/services/ に新しいサービス → CLAUDE.md のディレクトリ構造、docs/ARCHITECTURE.md を確認
 - src/tools/handlers/ に新しいツール → README.md の Features セクションを確認
 - src/services/analyzer/parsers/ に新しいパーサー → README.md の対応言語リストを確認
+- src/config/ に新しい設定ファイル → docs/ARCHITECTURE.md の Config セクションを確認
+- src/types/ に新しい型定義 → docs/ARCHITECTURE.md の Types セクションを確認
+- src/services/recommender/scoring/ に新しいスコアラー → docs/SCORING.md を確認
 
 **新しい機能が追加された場合:**
 - README.md の Features セクションに記載されているか確認

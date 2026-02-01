@@ -9,6 +9,7 @@ import { extname, join } from "node:path";
 import { FILE_SCAN_CONFIG, SKIP_DIRECTORIES } from "../../config/constants.js";
 import { CONFIG_FILE_MAPPINGS, EXTENSION_TO_LANGUAGE } from "../../config/file-mappings.js";
 import type { ProjectInfo } from "../../types/service-types.js";
+import { analyzeMetadata } from "./metadata-analyzer.service.js";
 import { parseBuildGradle } from "./parsers/build-gradle.parser.js";
 import { parseCargoToml } from "./parsers/cargo-toml.parser.js";
 import { parseComposerJson } from "./parsers/composer-json.parser.js";
@@ -54,6 +55,14 @@ export async function analyzeProject(projectPath: string): Promise<ProjectInfo> 
     info.languages = [...new Set(info.languages)];
     info.dependencies = [...new Set(info.dependencies)];
     info.frameworks = [...new Set(info.frameworks)];
+
+    // Analyze project metadata (size, kind, team scale)
+    try {
+      info.metadata = analyzeMetadata(info);
+    } catch (metadataError) {
+      console.error("Error analyzing project metadata:", metadataError);
+      // Continue without metadata (it's optional)
+    }
   } catch (error) {
     console.error("Error analyzing project:", error);
   }

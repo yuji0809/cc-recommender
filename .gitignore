@@ -32,3 +32,9 @@ temp/
 
 # cc-audit baseline
 .cc-audit-baseline.json
+
+# Local notes (not tracked)
+ROADMAP.local.md
+TODO.local.md
+NOTES.local.md
+*.local.md
