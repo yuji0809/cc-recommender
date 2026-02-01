@@ -63,7 +63,9 @@ src/
 ├── config/              # 設定ファイル（定数、マッピング）
 │   ├── constants.ts     # アプリケーション定数
 │   ├── file-mappings.ts # ファイル拡張子とフレームワークのマッピング
-│   ├── official-skills.ts # 公式スキルソース定義
+│   ├── curated-list-sources.ts # キュレーションリストソース定義
+│   ├── direct-skill-sources.ts # 直接スキルソース定義
+│   ├── env.ts           # 環境変数設定
 │   └── scoring-config.ts # スコアリングの重み・閾値
 │
 ├── repositories/        # データアクセス層
@@ -98,9 +100,13 @@ src/
 │   │   ├── plugins/    # プラグイン取得
 │   │   │   └── plugin-fetcher.ts
 │   │   └── skills/     # スキル取得
-│   │       ├── github-topic-search.ts # GitHub トピック検索
-│   │       ├── official-skill-fetcher.ts
-│   │       └── skill-fetcher.ts
+│   │       ├── common/  # 共通ユーティリティ
+│   │       │   ├── github-api.ts # GitHub API 呼び出し
+│   │       │   ├── skill-parser.ts # スキルパース処理
+│   │       │   └── types.ts # フェッチャー用の内部型
+│   │       ├── curated-list-fetcher.ts # キュレーションリスト取得
+│   │       ├── direct-skill-fetcher.ts # 直接スキル取得
+│   │       └── skill-fetcher.ts # メインフェッチャー
 │   │
 │   ├── recommender/    # 推薦サービス
 │   │   ├── scoring/    # スコアリングロジック

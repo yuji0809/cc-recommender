@@ -43,8 +43,6 @@ jobs:
           # "true": スキップ（高速、テスト用）
           # "false": 実行（推奨、差分スキャンで効率化済み）
           SKIP_SECURITY_SCAN: "false"
-          # GitHub トピック検索（公式スキルの自動発見）
-          GITHUB_TOPIC_SEARCH: "true"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check for changes

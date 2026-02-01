@@ -190,13 +190,10 @@ When `CC_RECOMMENDER_OFFLINE_MODE` is enabled, only bundled data is used (no rem
 |----------|-------------|---------|
 | `CC_RECOMMENDER_OFFLINE_MODE` | Disable auto-updates and use only bundled data | `false` |
 | `GITHUB_TOKEN` | GitHub personal access token (increases API rate limit from 60 to 5000 req/hour) | Not set |
-| `GITHUB_TOPIC_SEARCH` | Enable GitHub topic search for discovering new skills | `false` |
 | `SKIP_SECURITY_SCAN` | Skip security scanning during data fetch (for developers) | `false` |
 
 **Notes:**
-- To fetch official skills from GitHub (Anthropic, Supabase, etc.), a GitHub token is recommended to avoid rate limits. Create a token at https://github.com/settings/tokens with `public_repo` scope.
-- Set `GITHUB_TOPIC_SEARCH=true` to enable automatic skill discovery via GitHub topic search (requires GitHub token for best results).
-- **Auto-discovery**: When enabled, the system automatically discovers new official skills from known organizations (Anthropic, Supabase, Vercel, Cloudflare, etc.) with quality filtering (min 10 stars, updated within 180 days).
+- To fetch skills from GitHub repositories, a GitHub token is recommended to avoid rate limits. Create a token at https://github.com/settings/tokens with `public_repo` scope.
 
 ## Development
 

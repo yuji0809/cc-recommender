@@ -34,3 +34,11 @@ export const APP_METADATA = {
   name: "cc-recommender",
   version: "0.1.0",
 } as const;
+
+/** Security scanning configuration */
+export const SECURITY_CONFIG = {
+  /** Minimum security score (0-100) required to include an item in the database */
+  minSecurityScore: 70,
+  /** Whether to exclude items with undefined security scores */
+  excludeUnscored: false,
+} as const;

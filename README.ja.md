@@ -190,13 +190,10 @@ Claude: [search_skills ツールを使用]
 |------|------|-----------|
 | `CC_RECOMMENDER_OFFLINE_MODE` | 自動更新を無効化してバンドル版データのみを使用 | `false` |
 | `GITHUB_TOKEN` | GitHub パーソナルアクセストークン（API レート制限を 60 → 5000 req/hour に拡大） | 未設定 |
-| `GITHUB_TOPIC_SEARCH` | 新しいスキルを自動発見するための GitHub トピック検索を有効化 | `false` |
 | `SKIP_SECURITY_SCAN` | データ取得時にセキュリティスキャンをスキップ（開発者向け） | `false` |
 
 **注意:**
-- GitHub から公式スキル（Anthropic、Supabase など）を取得する場合、レート制限を回避するために GitHub トークンの設定を推奨します。https://github.com/settings/tokens で `public_repo` スコープのトークンを作成してください。
-- `GITHUB_TOPIC_SEARCH=true` で GitHub トピック検索による自動スキル発見を有効化できます（最良の結果を得るには GitHub トークンが必要）。
-- **自動発見機能**: 有効化すると、既知の公式組織（Anthropic、Supabase、Vercel、Cloudflare など）から新しい公式スキルを自動的に発見します。品質フィルタリング付き（最低10スター、180日以内に更新）。
+- GitHub リポジトリからスキルを取得する場合、レート制限を回避するために GitHub トークンの設定を推奨します。https://github.com/settings/tokens で `public_repo` スコープのトークンを作成してください。
 
 ## 開発
 

@@ -10,13 +10,13 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { SECURITY_CONFIG } from "../src/config/constants.js";
 import { ENV } from "../src/config/env.js";
 import { fetchMCPServers } from "../src/services/fetchers/mcp/mcp-fetcher.js";
 import { fetchOfficialMCPServers } from "../src/services/fetchers/mcp/official-mcp-fetcher.js";
 import { fetchPlugins } from "../src/services/fetchers/plugins/plugin-fetcher.js";
-import { searchGitHubSkills } from "../src/services/fetchers/skills/github-topic-search.js";
-import { fetchOfficialSkills } from "../src/services/fetchers/skills/official-skill-fetcher.js";
-import { fetchSkills } from "../src/services/fetchers/skills/skill-fetcher.js";
+import { fetchCuratedListSkills } from "../src/services/fetchers/skills/curated-list-fetcher.js";
+import { fetchDirectSkills } from "../src/services/fetchers/skills/direct-skill-fetcher.js";
 import { scanRepositories } from "../src/services/security-scanner.service.js";
 import type {
   MCPServerDatabase,
@@ -205,7 +205,8 @@ async function main() {
   // タイプ別に重複排除（独立して管理）
   const pluginItems = deduplicateByUrl(plugins);
   const mcpServerItems = deduplicateByUrl(mcpServers);
-  const skillItems = deduplicateByUrl(skills);
+  // Skills: No deduplication - each skill has unique path
+  const skillItems = skills;
 
   // 全体のサマリー
   const totalItems = pluginItems.length + mcpServerItems.length + skillItems.length;
@@ -282,6 +283,11 @@ async function fetchAndScanPlugins(
       mergeScannedResults(items, itemsToScan);
     }
 
+    // セキュリティフィルタリング
+    if (!skipScan) {
+      return filterBySecurityScore(items, "Plugins");
+    }
+
     return items;
   } catch (error) {
     console.error("   ✗ Failed to fetch plugins:", error);
@@ -325,6 +331,11 @@ async function fetchAndScanMCPServers(
       mergeScannedResults(items, itemsToScan);
     }
 
+    // セキュリティフィルタリング
+    if (!skipScan) {
+      return filterBySecurityScore(items, "MCP Servers");
+    }
+
     return items;
   } catch (error) {
     console.error("   ✗ Failed to fetch MCP servers:", error);
@@ -342,32 +353,18 @@ async function fetchAndScanSkills(
   console.log("🎯 [Skills] Fetching from multiple sources...");
 
   try {
-    // Fetch from multiple sources in parallel
-    const [awesomeListSkills, officialSkills, githubSearchSkills] = await Promise.all([
-      fetchSkills(),
-      fetchOfficialSkills(),
-      searchGitHubSkills(),
+    // Fetch from both direct repositories and curated lists
+    const [directSkills, curatedListSkills] = await Promise.all([
+      fetchDirectSkills(),
+      fetchCuratedListSkills(),
     ]);
 
-    console.log(`   ✓ Fetched ${awesomeListSkills.length} from awesome-claude-code`);
-    console.log(`   ✓ Fetched ${officialSkills.length} from official repositories`);
-    if (githubSearchSkills.length > 0) {
-      console.log(`   ✓ Fetched ${githubSearchSkills.length} from GitHub search`);
+    console.log(`   ✓ Fetched ${directSkills.length} from direct repositories`);
+    console.log(`   ✓ Fetched ${curatedListSkills.length} from curated lists`);
 
-      // Report official skills discovered via GitHub search
-      const officialDiscoveries = githubSearchSkills.filter((s) => s.metrics.isOfficial);
-      if (officialDiscoveries.length > 0) {
-        console.log(`   📋 Official skills discovered via GitHub search:`);
-        for (const skill of officialDiscoveries) {
-          console.log(`      - ${skill.author.name}/${skill.name} (${skill.metrics.stars} ⭐)`);
-        }
-      }
-    }
-
-    // Combine and deduplicate (official takes precedence)
-    const allSkills = [...officialSkills, ...awesomeListSkills, ...githubSearchSkills];
-    const items = deduplicateByUrl(allSkills);
-    console.log(`   ✓ Total after deduplication: ${items.length} skills`);
+    // Combine all skills (no deduplication - each skill is unique by path)
+    const items = [...directSkills, ...curatedListSkills];
+    console.log(`   ✓ Total: ${items.length} skills (no deduplication)`);
 
     // Report on skill sources
     const officialCount = items.filter((s) => s.metrics.isOfficial).length;
@@ -384,6 +381,11 @@ async function fetchAndScanSkills(
       await scanItems(itemsToScan, "skill", "Skills");
       // スキャン結果を元のリストにマージ
       mergeScannedResults(items, itemsToScan);
+    }
+
+    // セキュリティフィルタリング
+    if (!skipScan) {
+      return filterBySecurityScore(items, "Skills");
     }
 
     return items;
@@ -471,6 +473,47 @@ function normalizeUrl(url: string): string {
     .replace(/\/$/, "")
     .replace(/\/tree\/main.*$/, "")
     .replace(/\/blob\/main.*$/, "");
+}
+
+/**
+ * Filter items by security score
+ */
+function filterBySecurityScore(items: Recommendation[], label: string): Recommendation[] {
+  const beforeCount = items.length;
+  const excluded: Recommendation[] = [];
+
+  const filtered = items.filter((item) => {
+    const score = item.metrics.securityScore;
+
+    // Allow items without security scores (non-GitHub repos, etc.)
+    if (score === undefined) {
+      return !SECURITY_CONFIG.excludeUnscored;
+    }
+
+    // Filter by minimum score
+    if (score < SECURITY_CONFIG.minSecurityScore) {
+      excluded.push(item);
+      return false;
+    }
+
+    return true;
+  });
+
+  if (excluded.length > 0) {
+    console.log(
+      `   🚫 Excluded ${excluded.length} items (security score < ${SECURITY_CONFIG.minSecurityScore}):`,
+    );
+    for (const item of excluded) {
+      console.log(`      - ${item.name} (score: ${item.metrics.securityScore})`);
+    }
+  }
+
+  const afterCount = filtered.length;
+  if (beforeCount !== afterCount) {
+    console.log(`   ✓ ${label}: ${afterCount}/${beforeCount} items passed security filter`);
+  }
+
+  return filtered;
 }
 
 // Run

@@ -12,9 +12,6 @@ export type EnvConfig = {
   /** GitHub API token for authenticated requests (rate limit: 5000/hour vs 60/hour) */
   readonly GITHUB_TOKEN: string | undefined;
 
-  /** Enable GitHub topic search for community skill discovery */
-  readonly GITHUB_TOPIC_SEARCH: boolean;
-
   /** Skip security scanning during data fetch (for faster development) */
   readonly SKIP_SECURITY_SCAN: boolean;
 
@@ -52,7 +49,6 @@ function parseFetchTypes(): Set<"plugins" | "mcp" | "skills"> | undefined {
 function loadEnvConfig(): EnvConfig {
   return {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN || undefined,
-    GITHUB_TOPIC_SEARCH: process.env.GITHUB_TOPIC_SEARCH === "true",
     SKIP_SECURITY_SCAN: process.env.SKIP_SECURITY_SCAN === "true",
     CC_RECOMMENDER_OFFLINE_MODE: process.env.CC_RECOMMENDER_OFFLINE_MODE === "true",
     FETCH_TYPES: parseFetchTypes(),
