@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.2](https://github.com/yuji0809/cc-recommender/compare/v0.8.1...v0.8.2) (2026-02-01)
+
+
+### Bug Fixes
+
+* **security:** enhance command injection prevention and regex safety ([f237c72](https://github.com/yuji0809/cc-recommender/commit/f237c723b03a4ad78eb9890978dcc3fb2c5bef62))
+
 ## [0.8.1](https://github.com/yuji0809/cc-recommender/compare/v0.8.0...v0.8.1) (2026-02-01)
 
 
