@@ -199,6 +199,9 @@ watch:
 #   - "**/*.{log,tmp,bak}"       # Match files by extension
 ignore:
   patterns:
+    # Generated data (already filtered by minSecurityScore: 70 during fetch)
+    - "**/data/**"                # Recommendation databases
+
     # Build outputs
     - "**/target/**"              # Rust build artifacts
     - "**/dist/**"                # Distribution/build output

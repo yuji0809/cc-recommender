@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-01T01:14:59.526Z",
+  "lastUpdated": "2026-02-01T12:27:06.963Z",
   "items": [
     {
       "id": "mcp-1mcp-app-agent",
@@ -38991,6 +38991,32 @@
       }
     },
     {
+      "id": "official-mcp-com-atlassian-atlassian-mcp-server",
+      "name": "com.atlassian/atlassian-mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/atlassian/atlassian-mcp-server",
+      "description": "Atlassian Rovo MCP Server",
+      "author": {
+        "name": "com.atlassian"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.atlassian/atlassian-mcp-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-01-27T21:23:24.910629Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add com.atlassian/atlassian-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-com-biodnd-agent-fin",
       "name": "com.biodnd/agent-fin",
       "type": "mcp",
@@ -39195,6 +39221,32 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add com.falkordb/QueryWeaver",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-com-figma-mcp-mcp",
+      "name": "com.figma.mcp/mcp",
+      "type": "mcp",
+      "url": "https://github.com/figma/mcp-server-guide",
+      "description": "The Figma MCP server brings Figma design context directly into your AI workflow.",
+      "author": {
+        "name": "com.figma.mcp"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.figma.mcp/mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2025-10-16T17:40:56.949472Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add com.figma.mcp/mcp",
         "marketplace": "official-registry"
       }
     },
@@ -40628,6 +40680,32 @@
       }
     },
     {
+      "id": "official-mcp-dev-smartergpt-lex",
+      "name": "dev.smartergpt/lex",
+      "type": "mcp",
+      "url": "https://github.com/Guffawaffle/lex",
+      "description": "Episodic memory and architectural policy for AI agents. Frames, Atlas, and Policy.",
+      "author": {
+        "name": "dev.smartergpt"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["dev.smartergpt/lex"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T08:56:32.941006Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @smartergpt/lex-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-dev-storage-mcp",
       "name": "dev.storage/mcp",
       "type": "mcp",
@@ -41797,6 +41875,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-Combjellyshen-zotero-bridge",
+      "name": "io.github.Combjellyshen/zotero-bridge",
+      "type": "mcp",
+      "url": "https://github.com/Combjellyshen/ZoteroBridge",
+      "description": "MCP Server for Zotero SQLite Database - collection, tagging, PDF reading and more.",
+      "author": {
+        "name": "io.github.Combjellyshen"
+      },
+      "category": "database",
+      "tags": ["database", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.Combjellyshen/zotero-bridge"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T06:39:40.260609Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx zotero-bridge",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-ConnorBritain-mssql",
       "name": "io.github.ConnorBritain/mssql",
       "type": "mcp",
@@ -42547,32 +42651,6 @@
       "install": {
         "method": "mcp-add",
         "command": "npx @google-cloud/gemini-cloud-assist-mcp",
-        "marketplace": "official-registry"
-      }
-    },
-    {
-      "id": "official-mcp-io-github-Guffawaffle-lex",
-      "name": "io.github.Guffawaffle/lex",
-      "type": "mcp",
-      "url": "https://github.com/Guffawaffle/lex",
-      "description": "Episodic memory and architectural policy for AI agents. Frames, Atlas, and Policy.",
-      "author": {
-        "name": "io.github.Guffawaffle"
-      },
-      "category": "ai",
-      "tags": ["ai", "mcp", "official-registry"],
-      "detection": {
-        "keywords": ["io.github.Guffawaffle/lex"]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "lastUpdated": "2025-12-31T09:08:03.487716Z",
-        "securityScore": 100
-      },
-      "install": {
-        "method": "mcp-add",
-        "command": "npx @smartergpt/lex-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -46061,6 +46139,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-agent-polis-impact-preview",
+      "name": "io.github.agent-polis/impact-preview",
+      "type": "mcp",
+      "url": "https://github.com/agent-polis/impact-preview",
+      "description": "Impact preview for AI agents - see what changes before any action executes.",
+      "author": {
+        "name": "io.github.agent-polis"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.agent-polis/impact-preview"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T07:44:52.686908Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx impact-preview",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-agentailor-slimcontext-mcp-server",
       "name": "io.github.agentailor/slimcontext-mcp-server",
       "type": "mcp",
@@ -49289,19 +49393,19 @@
       "name": "io.github.dimitar-grigorov/mcp-file-tools",
       "type": "mcp",
       "url": "https://github.com/dimitar-grigorov/mcp-file-tools",
-      "description": "MCP server for reading/writing legacy-encoded files (CP1251, Windows-1251, etc.)",
+      "description": "Non-UTF-8 encoding: Cyrillic (CP1251, KOI8), Windows-125x, ISO-8859 with auto-detection",
       "author": {
         "name": "io.github.dimitar-grigorov"
       },
-      "category": "developer-tools",
-      "tags": ["developer-tools", "mcp", "official-registry"],
+      "category": "filesystem",
+      "tags": ["filesystem", "mcp", "official-registry"],
       "detection": {
         "keywords": ["io.github.dimitar-grigorov/mcp-file-tools"]
       },
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-30T12:27:36.809316Z",
+        "lastUpdated": "2026-02-01T09:42:55.128677Z",
         "securityScore": 100
       },
       "install": {
@@ -51979,7 +52083,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-31T08:10:10.647048Z",
+        "lastUpdated": "2026-02-01T09:36:16.79532Z",
         "securityScore": 100
       },
       "install": {
@@ -52509,6 +52613,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-jini-tw-pastemd",
+      "name": "io.github.jini-tw/pastemd",
+      "type": "mcp",
+      "url": "https://github.com/jini-tw/claude-plugin-pastemd",
+      "description": "Instant markdown sharing. Create, manage, and share documents with password protection.",
+      "author": {
+        "name": "io.github.jini-tw"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.jini-tw/pastemd"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T07:22:32.913771Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.jini-tw/pastemd",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-jkakar-cookwith-mcp",
       "name": "io.github.jkakar/cookwith-mcp",
       "type": "mcp",
@@ -53029,6 +53159,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-jztan-pdf-mcp",
+      "name": "io.github.jztan/pdf-mcp",
+      "type": "mcp",
+      "url": "https://github.com/jztan/pdf-mcp",
+      "description": "Production-ready MCP server for PDF processing with intelligent caching.",
+      "author": {
+        "name": "io.github.jztan"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.jztan/pdf-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T02:55:15.389013Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx pdf-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-jztan-redmine-mcp-server",
       "name": "io.github.jztan/redmine-mcp-server",
       "type": "mcp",
@@ -53279,12 +53435,12 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-30T23:39:47.801446Z",
+        "lastUpdated": "2026-02-01T06:34:50.682403Z",
         "securityScore": 100
       },
       "install": {
         "method": "mcp-add",
-        "command": "npx @somebeach/a2abench-mcp",
+        "command": "npx @khalidsaidi/a2abench-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -57101,7 +57257,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-30T17:13:29.759998Z",
+        "lastUpdated": "2026-02-01T11:16:31.304552Z",
         "securityScore": 100
       },
       "install": {
@@ -60559,7 +60715,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-31T13:24:47.28178Z",
+        "lastUpdated": "2026-02-01T09:18:37.717668Z",
         "securityScore": 100
       },
       "install": {
@@ -61079,7 +61235,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-27T03:43:59.784586Z",
+        "lastUpdated": "2026-02-01T10:02:43.783221Z",
         "securityScore": 100
       },
       "install": {
