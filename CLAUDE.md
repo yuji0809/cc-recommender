@@ -214,6 +214,123 @@ export interface User {
 }
 ```
 
+## TDD (Test-Driven Development) 開発手法
+
+### 基本原則
+
+**新機能の実装は必ずTDDで行う**
+
+```
+1. 🔴 Red:   失敗するテストを先に書く
+2. 🟢 Green: テストを通す最小限のコードを書く
+3. 🔵 Refactor: コードをリファクタリング
+```
+
+### TDD実践フロー
+
+#### Step 1: Red（テストを先に書く）
+
+```bash
+# テストファイルを作成
+tests/services/new-feature.test.ts
+
+# ウォッチモードで開発
+pnpm run test:watch
+```
+
+```typescript
+// tests/services/new-feature.test.ts
+import { describe, expect, it } from "vitest";
+import { newFeature } from "../../src/services/new-feature.js";
+
+describe("newFeature", () => {
+  it("should handle basic case", () => {
+    const result = newFeature("input");
+    expect(result).toBe("expected");
+  });
+
+  it("should handle edge case", () => {
+    const result = newFeature("");
+    expect(result).toBe("");
+  });
+});
+```
+
+**確認:** テストが失敗すること（関数がまだ存在しない）
+
+#### Step 2: Green（最小限の実装）
+
+```typescript
+// src/services/new-feature.ts
+export function newFeature(input: string): string {
+  return input; // 最小限の実装
+}
+```
+
+**確認:** テストが通ること
+
+#### Step 3: Refactor（リファクタリング）
+
+```typescript
+// src/services/new-feature.ts
+export function newFeature(input: string): string {
+  // より良い実装にリファクタリング
+  if (!input) return "";
+  return processInput(input);
+}
+
+function processInput(input: string): string {
+  // 処理を分割して読みやすく
+  return input.trim().toLowerCase();
+}
+```
+
+**確認:** テストが全て通ること
+
+### テストの構造化
+
+```typescript
+describe("Feature Name", () => {
+  describe("Normal Cases", () => {
+    it("should handle typical input");
+    it("should handle multiple items");
+  });
+
+  describe("Edge Cases", () => {
+    it("should handle empty input");
+    it("should handle single item");
+  });
+
+  describe("Error Cases", () => {
+    it("should handle invalid input gracefully");
+  });
+});
+```
+
+### TDDチェックリスト
+
+新機能実装時に必ず確認：
+
+- [ ] **テストを先に書いた**
+  - [ ] 正常系のテストケース
+  - [ ] エッジケースのテストケース
+  - [ ] テストが失敗することを確認
+- [ ] **最小限の実装でテストを通した**
+  - [ ] 過剰な実装をしていない
+  - [ ] テストが全て通る
+- [ ] **リファクタリングした**
+  - [ ] コードが読みやすい
+  - [ ] 重複が排除されている
+  - [ ] テストが全て通る（再確認）
+- [ ] **品質チェック**
+  - [ ] `pnpm run typecheck` が通る
+  - [ ] `pnpm run lint` が通る
+  - [ ] カバレッジが適切
+
+### 詳細ガイド
+
+TDDの詳細な実践方法は [docs/TDD.md](./docs/TDD.md) を参照してください。
+
 ## 新機能追加ガイドライン
 
 ### 1. 新しいツールを追加する場合

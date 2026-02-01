@@ -4,10 +4,13 @@
  * Main service for generating recommendations based on project analysis
  */
 
+import { ENHANCED_SCORING_FLAGS } from "../../config/enhanced-scoring-config.js";
 import type { Recommendation, RecommendationDatabase } from "../../types/domain-types.js";
+import type { SimilarityMatrix } from "../../types/scoring-types.js";
 import type { ProjectInfo, ScoredRecommendation } from "../../types/service-types.js";
 import { calculateQualityScore } from "./quality-scorer.js";
 import { calculateScore } from "./scoring/scorer.js";
+import { buildSimilarityMatrix } from "./scoring/similarity-scorer.js";
 
 /** Options for recommend function */
 export type RecommendOptions = {
@@ -36,6 +39,12 @@ export function recommend(
 ): ScoredRecommendation[] {
   const { maxResults = 20, minScore = 1, types } = options;
 
+  // Build similarity matrix once (if feature is enabled)
+  let similarityMatrix: SimilarityMatrix | undefined;
+  if (ENHANCED_SCORING_FLAGS.enableSimilarityScoring) {
+    similarityMatrix = buildSimilarityMatrix(database);
+  }
+
   const results: ScoredRecommendation[] = [];
 
   for (const item of database.items) {
@@ -44,7 +53,11 @@ export function recommend(
       continue;
     }
 
-    const { score: matchScore, reasons } = calculateScore(item, project, userQuery);
+    const {
+      score: matchScore,
+      reasons,
+      breakdown,
+    } = calculateScore(item, project, userQuery, { similarityMatrix });
 
     // Calculate quality score (0-100)
     const qualityScore = calculateQualityScore(item).total;
@@ -54,7 +67,18 @@ export function recommend(
     const finalScore = matchScore + qualityScore * 0.2;
 
     if (finalScore >= minScore) {
-      results.push({ item, score: finalScore, reasons });
+      results.push({
+        item,
+        score: finalScore,
+        reasons,
+        breakdown: breakdown
+          ? {
+              ...breakdown,
+              qualityScore: qualityScore * 0.2,
+              finalScore,
+            }
+          : undefined,
+      });
     }
   }
 
