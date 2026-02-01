@@ -440,5 +440,154 @@ describe("Scorer", () => {
         expect(score).toBeGreaterThanOrEqual(0);
       });
     });
+
+    describe("Enhanced Scoring Integration", () => {
+      test("should include context score when metadata is provided", () => {
+        const projectWithMetadata: ProjectInfo = {
+          ...mockProject,
+          metadata: {
+            size: "medium",
+            kind: "application",
+            estimatedTeamSize: 5,
+            fileCount: 300,
+            languageCount: 2,
+          },
+        };
+
+        const { score, breakdown } = calculateScore(mockRecommendation, projectWithMetadata);
+
+        expect(score).toBeGreaterThan(0);
+        expect(breakdown).toBeDefined();
+        expect(breakdown?.baseScore).toBeGreaterThan(0);
+        expect(breakdown?.contextScore).toBeGreaterThanOrEqual(0);
+      });
+
+      test("should add monorepo bonus for monorepo projects", () => {
+        const monorepoProject: ProjectInfo = {
+          ...mockProject,
+          metadata: {
+            size: "large",
+            kind: "monorepo",
+            estimatedTeamSize: 10,
+            workspaceCount: 5,
+            fileCount: 1500,
+            languageCount: 3,
+          },
+        };
+
+        const monorepoTool: Recommendation = {
+          ...mockRecommendation,
+          tags: ["monorepo", "turborepo", "typescript"],
+        };
+
+        const { score, reasons, breakdown } = calculateScore(monorepoTool, monorepoProject);
+
+        expect(score).toBeGreaterThan(0);
+        expect(breakdown?.contextScore).toBeGreaterThan(0);
+        expect(reasons.some((r) => r.includes("モノレポ"))).toBe(true);
+      });
+
+      test("should include similarity score when matrix is provided", () => {
+        const projectWithMetadata: ProjectInfo = {
+          ...mockProject,
+          metadata: {
+            size: "medium",
+            kind: "application",
+            estimatedTeamSize: 5,
+            fileCount: 300,
+            languageCount: 2,
+          },
+        };
+
+        const similarityMatrix = {
+          cooccurrence: new Map([
+            ["react", new Map([["testing", 5]])],
+            ["testing", new Map([["react", 5]])],
+          ]),
+          tagCounts: new Map([
+            ["react", 10],
+            ["testing", 8],
+          ]),
+        };
+
+        const { score, breakdown } = calculateScore(
+          mockRecommendation,
+          projectWithMetadata,
+          undefined,
+          { similarityMatrix },
+        );
+
+        expect(score).toBeGreaterThan(0);
+        expect(breakdown).toBeDefined();
+        expect(breakdown?.similarityScore).toBeGreaterThanOrEqual(0);
+      });
+
+      test("should work without metadata (backward compatibility)", () => {
+        const projectWithoutMetadata: ProjectInfo = {
+          path: "/test",
+          languages: ["typescript"],
+          frameworks: [],
+          dependencies: [],
+          files: [],
+          // No metadata field
+        };
+
+        const { score, breakdown } = calculateScore(mockRecommendation, projectWithoutMetadata);
+
+        expect(score).toBeGreaterThanOrEqual(0);
+        expect(breakdown).toBeDefined();
+        expect(breakdown?.contextScore).toBe(0);
+        expect(breakdown?.similarityScore).toBe(0);
+      });
+
+      test("should combine all scoring components", () => {
+        const fullProject: ProjectInfo = {
+          ...mockProject,
+          metadata: {
+            size: "large",
+            kind: "monorepo",
+            estimatedTeamSize: 15,
+            workspaceCount: 8,
+            fileCount: 2000,
+            languageCount: 3,
+          },
+        };
+
+        const fullRecommendation: Recommendation = {
+          ...mockRecommendation,
+          tags: ["monorepo", "typescript", "testing"],
+          metrics: {
+            ...mockRecommendation.metrics,
+            isOfficial: true,
+            securityScore: 90,
+          },
+        };
+
+        const similarityMatrix = {
+          cooccurrence: new Map([
+            ["typescript", new Map([["testing", 10]])],
+            ["testing", new Map([["typescript", 10]])],
+          ]),
+          tagCounts: new Map([
+            ["typescript", 20],
+            ["testing", 15],
+          ]),
+        };
+
+        const { score, breakdown, reasons } = calculateScore(
+          fullRecommendation,
+          fullProject,
+          "testing tools",
+          { similarityMatrix },
+        );
+
+        expect(score).toBeGreaterThan(0);
+        expect(breakdown).toBeDefined();
+        expect(breakdown?.baseScore).toBeGreaterThan(0);
+        expect(breakdown?.contextScore).toBeGreaterThan(0);
+        expect(breakdown?.similarityScore).toBeGreaterThan(0);
+        expect(reasons.length).toBeGreaterThan(0);
+      });
+    });
   });
 });
