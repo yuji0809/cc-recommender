@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0](https://github.com/yuji0809/cc-recommender/compare/v0.7.0...v0.8.0) (2026-02-01)
+
+
+### Features
+
+* enhance skill fetching and security filtering ([99745c2](https://github.com/yuji0809/cc-recommender/commit/99745c2391628607af2e5e87e0ceacfdf953cafb))
+
 ## [Unreleased]
 
 ### Added
