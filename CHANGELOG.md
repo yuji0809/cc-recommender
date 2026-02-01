@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.0](https://github.com/yuji0809/cc-recommender/compare/v0.8.2...v0.9.0) (2026-02-01)
+
+
+### Features
+
+* update scoring algorithm ([#22](https://github.com/yuji0809/cc-recommender/issues/22)) ([803818c](https://github.com/yuji0809/cc-recommender/commit/803818cc7fa54907ca94ebf023863804d8f08008))
+
 ## [0.8.2](https://github.com/yuji0809/cc-recommender/compare/v0.8.1...v0.8.2) (2026-02-01)
 
 
