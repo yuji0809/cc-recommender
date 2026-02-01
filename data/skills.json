@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-01-31T17:42:20.170Z",
+  "lastUpdated": "2026-02-01T01:14:59.526Z",
   "items": [
     {
       "id": "skill-official-anthropics-docx",
@@ -37,7 +37,8 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "stars": 0
+        "stars": 0,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -75,7 +76,8 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "stars": 0
+        "stars": 0,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -100,7 +102,8 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "stars": 0
+        "stars": 0,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -125,7 +128,8 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "stars": 0
+        "stars": 0,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
@@ -150,7 +154,8 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "stars": 0
+        "stars": 0,
+        "securityScore": 100
       },
       "install": {
         "method": "manual",
