@@ -134,6 +134,36 @@ src/
 └── index.ts            # エントリーポイント（最小限）
 ```
 
+### Claude Code 拡張機能ディレクトリ
+
+```
+.claude/
+├── agents/              # カスタムエージェント定義
+│   ├── architecture-agent.md   # アーキテクチャチェック
+│   ├── security-agent.md       # セキュリティチェック
+│   ├── typescript-agent.md     # TypeScript ベストプラクティス
+│   └── documentation-agent.md  # ドキュメント整合性チェック
+│
+├── commands/            # カスタムコマンド
+│   └── pre-commit-check.md    # コミット前の包括的チェック
+│
+└── skills/              # カスタムスキル
+    ├── documentation-check.md  # ドキュメントチェックスキル
+    ├── architecture-check.md   # アーキテクチャチェックスキル
+    ├── security-check.md       # セキュリティチェックスキル
+    ├── typescript-check.md     # TypeScript チェックスキル
+    └── tdd.md                  # TDD スキル
+```
+
+**各エージェントの役割:**
+- **Architecture Agent**: プロジェクトのアーキテクチャと設計思想を確認し、一貫性を保つ
+- **Security Agent**: セキュリティベストプラクティスを確認し、脆弱性を検出
+- **TypeScript Agent**: TypeScript のベストプラクティスに従ってコードをレビュー
+- **Documentation Agent**: ドキュメントとコードの整合性を確認
+
+**カスタムコマンド:**
+- `/pre-commit-check`: コミット前に4つのエージェント（Architecture, Security, TypeScript, Documentation）を並列実行し、包括的なコード品質チェックを実施
+
 ## ファイル命名規則
 
 ### パターン

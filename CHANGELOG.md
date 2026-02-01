@@ -22,47 +22,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- OpenAI skills support (.curated and .experimental subdirectories)
-- Obra superpowers skills support
-- Direct skill source configuration separated from curated list sources
-- Automatic skill repository structure detection
-- VoltAgent repository exclusion to prevent false positives
 - Documentation Agent for checking MD file consistency with code
 - Pre-commit check command (`/pre-commit-check`) for comprehensive code review before commits
-- Quality scoring system for skills based on multiple metrics:
-  - Official status (0-40 points)
-  - Stars count (0-30 points, logarithmic scale)
-  - Freshness (0-20 points, based on last updated date)
-  - Source priority (0-10 points)
-  - Quality badges (⭐, ⭐⭐, ⭐⭐⭐) in recommendation output
-- Official skills support from GitHub repositories (Anthropic, Supabase, Vercel, etc.)
-- GitHub topic search for automatic skill discovery from community (requires GITHUB_TOKEN)
-- Retry utility with exponential backoff for handling API rate limits
-- Environment variable centralization via `src/config/env.ts` for better maintainability
 - New agents: Documentation Agent, TDD Agent, Architecture Agent, Security Agent, TypeScript Agent
 - New skills: documentation-check, architecture-check, security-check, typescript-check, tdd
 - New commands: pre-commit-check
+- Command injection protection in security scanner with shell argument escaping
+- ReDoS (Regular Expression Denial of Service) protection in curated list fetcher
 
 ### Changed
-- SKILL_FILE_PATTERNS now prioritizes `SKILL.md` (uppercase) over lowercase variants
-- Split skill sources into direct repositories and curated lists for better organization
-- Improved skill validation with repository structure checks
-- Replace `console.error` with `console.log` for consistent logging across the codebase
-- Update score thresholds in `getScoreExplanation` function to use 1-100 scale
-- Use raw GitHub data (raw.githubusercontent.com) to avoid API rate limits
-- Reorganize fetchers into subdirectories by type (mcp/, plugins/, skills/)
-- Update frequency changed from weekly to daily for plugin marketplace, MCP servers, and skills list
-- Use `ENV` config instead of direct `process.env` access for better testability and type safety
-- Move module-level constants outside functions for improved performance
-- Update `.cc-audit.yaml` to treat MW-072 (Burp Suite) as warning instead of error
+- Exclude `data/` directory from cc-audit scans (generated content already filtered by minSecurityScore: 70)
+- Husky v10 compatibility: removed incompatible pre-commit hook lines
 
 ### Fixed
-- OpenAI experimental skills now correctly fetched (codex-readiness-*, create-plan, gitlab-address-comments)
-- Obra skills discovery now working with flat directory structure
-- VoltAgent awesome-agent-skills no longer incorrectly detected as a skill itself
-- Security scanning now succeeds for all repositories (31/31)
-- Improved error handling in data fetching services
-- Better retry logic for GitHub API rate limits and temporary failures
+- Command injection vulnerability in `security-scanner.service.ts` (added input validation and escapeShellArg)
+- ReDoS vulnerability in `curated-list-fetcher.ts` (added escapeRegExp for dynamic regex patterns)
 
 ## [0.7.0](https://github.com/yuji0809/cc-recommender/compare/v0.6.1...v0.7.0) (2026-01-31)
 
