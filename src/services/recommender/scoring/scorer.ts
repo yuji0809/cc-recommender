@@ -4,14 +4,17 @@
  * Calculates match scores for recommendations based on project information
  */
 
+import { ENHANCED_SCORING_FLAGS } from "../../../config/enhanced-scoring-config.js";
 import {
   SCORING_MULTIPLIERS,
   SCORING_THRESHOLDS,
   SCORING_WEIGHTS,
 } from "../../../config/scoring-config.js";
 import type { Recommendation } from "../../../types/domain-types.js";
+import type { ScoreBreakdown } from "../../../types/scoring-types.js";
 import type { ProjectInfo } from "../../../types/service-types.js";
 import { matchGlob } from "../../../utils/glob-matcher.js";
+import { calculateContextScore } from "./context-scorer.js";
 
 /**
  * Calculate match score for a recommendation item
@@ -19,13 +22,13 @@ import { matchGlob } from "../../../utils/glob-matcher.js";
  * @param item - The recommendation item to score
  * @param project - The project information to match against
  * @param userQuery - Optional user search query
- * @returns Score and reasons for the match
+ * @returns Score, reasons, and optional breakdown
  */
 export function calculateScore(
   item: Recommendation,
   project: ProjectInfo,
   userQuery?: string,
-): { score: number; reasons: string[] } {
+): { score: number; reasons: string[]; breakdown?: ScoreBreakdown } {
   let score = 0;
   const reasons: string[] = [];
 
@@ -111,10 +114,39 @@ export function calculateScore(
     }
   }
 
-  // Normalize score to 1-100 range
-  const normalizedScore = normalizeScore(score);
+  // Store base score (before context scoring)
+  const baseScore = score;
 
-  return { score: normalizedScore, reasons };
+  // 7. Context scoring (project size, monorepo, team scale)
+  let contextScore = 0;
+  const contextReasons: string[] = [];
+
+  if (ENHANCED_SCORING_FLAGS.enableContextScoring && project.metadata) {
+    const context = calculateContextScore(item, project.metadata);
+    contextScore = context.score;
+    contextReasons.push(...context.reasons);
+  }
+
+  // Combine scores
+  const totalRawScore = score + contextScore;
+
+  // Normalize score to 1-100 range
+  const normalizedScore = normalizeScore(totalRawScore);
+
+  // Build breakdown
+  const breakdown: ScoreBreakdown = {
+    baseScore,
+    contextScore,
+    similarityScore: 0, // Will be added in Phase 3
+    qualityScore: 0, // Will be set by recommendation.service
+    finalScore: normalizedScore,
+  };
+
+  return {
+    score: normalizedScore,
+    reasons: [...reasons, ...contextReasons],
+    breakdown,
+  };
 }
 
 /**
