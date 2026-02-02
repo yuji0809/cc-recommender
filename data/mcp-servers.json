@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-01T12:27:06.963Z",
+  "lastUpdated": "2026-02-02T01:01:33.159Z",
   "items": [
     {
       "id": "mcp-1mcp-app-agent",
@@ -5509,7 +5509,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-23T14:36:55.742514Z",
+        "lastUpdated": "2026-02-01T17:50:21.642983Z",
         "securityScore": 100
       },
       "install": {
@@ -15101,7 +15101,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-26T12:58:23.458328Z",
+        "lastUpdated": "2026-02-01T19:59:38.604266Z",
         "securityScore": 100
       },
       "install": {
@@ -18775,6 +18775,32 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add wsb-analyst-mcp"
+      }
+    },
+    {
+      "id": "mcp-fernikolic-clawdentials",
+      "name": "clawdentials",
+      "type": "mcp",
+      "url": "https://github.com/fernikolic/clawdentials",
+      "description": "Trust layer for AI agent commerce — escrow-protected payments, verifiable reputation scores, and Nostr identity (NIP-05) for agents. Supports USDC, USDT, and BTC (Cashu).",
+      "author": {
+        "name": "fernikolic",
+        "url": "https://github.com/fernikolic"
+      },
+      "category": "</a>Finance & Fintech",
+      "tags": ["</a>finance & fintech", "typescript", "cloud"],
+      "detection": {
+        "keywords": ["</a>finance & fintech"],
+        "languages": ["typescript"]
+      },
+      "metrics": {
+        "source": "awesome-list",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add clawdentials"
       }
     },
     {
@@ -38523,6 +38549,31 @@
       }
     },
     {
+      "id": "official-mcp-ai-specproof-specproof-mcp",
+      "name": "ai.specproof/specproof-mcp",
+      "type": "mcp",
+      "url": "https://github.com/ibouazizi/specproof.git",
+      "description": "SpecProof: Search standards specs with MCP-ready precision.",
+      "author": {
+        "name": "ai.specproof"
+      },
+      "category": "search",
+      "tags": ["search", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["ai.specproof/specproof-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T20:43:12.895842Z"
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add ai.specproof/specproof-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-ai-toolprint-hypertool-mcp",
       "name": "ai.toolprint/hypertool-mcp",
       "type": "mcp",
@@ -39017,6 +39068,31 @@
       }
     },
     {
+      "id": "official-mcp-com-attrove-mcp",
+      "name": "com.attrove/mcp",
+      "type": "mcp",
+      "url": "https://github.com/attrove/attrove-js.git",
+      "description": "Query your users' Gmail, Slack, and Calendar with AI — Plaid for productivity apps",
+      "author": {
+        "name": "com.attrove"
+      },
+      "category": "communication",
+      "tags": ["communication", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.attrove/mcp", "slack"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T20:48:30.688325Z"
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @attrove/mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-com-biodnd-agent-fin",
       "name": "com.biodnd/agent-fin",
       "type": "mcp",
@@ -39422,7 +39498,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-31T13:17:33.18499Z",
+        "lastUpdated": "2026-02-02T00:16:58.744844Z",
         "securityScore": 100
       },
       "install": {
@@ -41741,6 +41817,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx code-auditor-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-CSCSoftware-aidex",
+      "name": "io.github.CSCSoftware/aidex",
+      "type": "mcp",
+      "url": "https://github.com/CSCSoftware/AiDex",
+      "description": "Persistent code indexing for AI assistants. 50x less context than grep. 11 languages.",
+      "author": {
+        "name": "io.github.CSCSoftware"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.CSCSoftware/aidex"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T16:28:52.39666Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx aidex-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -45389,7 +45491,7 @@
       "name": "io.github.TocharianOU/elasticsearch",
       "type": "mcp",
       "url": "https://github.com/TocharianOU/elasticsearch-mcp",
-      "description": "Elasticsearch MCP Server with multi-version support (ES 5.x-9.x) for security analysis and threats.",
+      "description": "Elasticsearch MCP Server with multi-version support (ES 5.x-9.x) and comprehensive API access",
       "author": {
         "name": "io.github.TocharianOU"
       },
@@ -45401,7 +45503,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-23T04:41:08.571499Z",
+        "lastUpdated": "2026-02-02T00:25:16.862973Z",
         "securityScore": 100
       },
       "install": {
@@ -45427,7 +45529,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-23T05:13:39.029608Z",
+        "lastUpdated": "2026-02-02T00:29:48.889873Z",
         "securityScore": 100
       },
       "install": {
@@ -45801,6 +45903,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-YimingYAN-fivetran-mcp",
+      "name": "io.github.YimingYAN/fivetran-mcp",
+      "type": "mcp",
+      "url": "https://github.com/YimingYAN/fivetran-mcp",
+      "description": "MCP server for Fivetran API - manage syncs, check status, and control data pipelines",
+      "author": {
+        "name": "io.github.YimingYAN"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.YimingYAN/fivetran-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T17:34:33.740952Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx fivetran-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-YinTokey-mcp-hackernews",
       "name": "io.github.YinTokey/mcp_hackernews",
       "type": "mcp",
@@ -45895,7 +46023,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2025-12-19T11:06:51.53583Z",
+        "lastUpdated": "2026-02-01T15:24:25.070137Z",
         "securityScore": 100
       },
       "install": {
@@ -49155,6 +49283,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-davegomez-fizzy",
+      "name": "io.github.davegomez/fizzy",
+      "type": "mcp",
+      "url": "https://github.com/davegomez/fizzy-mcp",
+      "description": "MCP server for Fizzy task management",
+      "author": {
+        "name": "io.github.davegomez"
+      },
+      "category": "productivity",
+      "tags": ["productivity", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.davegomez/fizzy"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T19:51:06.849973Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @silky/fizzy-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-dba-i-mssql-dba",
       "name": "io.github.dba-i/mssql-dba",
       "type": "mcp",
@@ -49393,19 +49547,19 @@
       "name": "io.github.dimitar-grigorov/mcp-file-tools",
       "type": "mcp",
       "url": "https://github.com/dimitar-grigorov/mcp-file-tools",
-      "description": "Non-UTF-8 encoding: Cyrillic (CP1251, KOI8), Windows-125x, ISO-8859 with auto-detection",
+      "description": "Non-UTF-8/Unicode encoding: CP1251, CP1252, KOI8-R, ISO-8859 with auto-detection",
       "author": {
         "name": "io.github.dimitar-grigorov"
       },
-      "category": "filesystem",
-      "tags": ["filesystem", "mcp", "official-registry"],
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
       "detection": {
         "keywords": ["io.github.dimitar-grigorov/mcp-file-tools"]
       },
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-01T09:42:55.128677Z",
+        "lastUpdated": "2026-02-01T15:22:16.241319Z",
         "securityScore": 100
       },
       "install": {
@@ -49931,6 +50085,32 @@
       "install": {
         "method": "mcp-add",
         "command": "uvx mcp-server-12306",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-drhelius-geargrafx",
+      "name": "io.github.drhelius/geargrafx",
+      "type": "mcp",
+      "url": "https://github.com/drhelius/geargrafx",
+      "description": "MCP server for Geargrafx PC Engine / TurboGrafx-16 emulator",
+      "author": {
+        "name": "io.github.drhelius"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.drhelius/geargrafx"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T19:05:18.082707Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.drhelius/geargrafx",
         "marketplace": "official-registry"
       }
     },
@@ -51937,6 +52117,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-husain-zaidi-ros-mcp",
+      "name": "io.github.husain-zaidi/ros-mcp",
+      "type": "mcp",
+      "url": "https://github.com/husain-zaidi/ROS-MCP",
+      "description": "MCP for ROS 2 monitoring, debugging, and managing nodes, topics, services, and TF2 frames.",
+      "author": {
+        "name": "io.github.husain-zaidi"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.husain-zaidi/ros-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T17:59:17.031781Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx ros-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-hyperpolymath-poly-db-mcp",
       "name": "io.github.hyperpolymath/poly-db-mcp",
       "type": "mcp",
@@ -52083,7 +52289,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-01T09:36:16.79532Z",
+        "lastUpdated": "2026-02-01T21:43:35.561814Z",
         "securityScore": 100
       },
       "install": {
@@ -53435,7 +53641,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-01T06:34:50.682403Z",
+        "lastUpdated": "2026-02-01T20:54:31.677324Z",
         "securityScore": 100
       },
       "install": {
@@ -53747,7 +53953,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-25T19:42:52.8361Z",
+        "lastUpdated": "2026-02-01T21:44:26.559063Z",
         "securityScore": 100
       },
       "install": {
@@ -54793,6 +54999,31 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add io.github.meloncafe/chromadb-remote-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-meysam81-parse-dmarc",
+      "name": "io.github.meysam81/parse-dmarc",
+      "type": "mcp",
+      "url": "https://github.com/meysam81/parse-dmarc.git",
+      "description": "Lightweight DMARC parser: auto-fetch email reports, visualize compliance in a single all-in-one app",
+      "author": {
+        "name": "io.github.meysam81"
+      },
+      "category": "communication",
+      "tags": ["communication", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.meysam81/parse-dmarc"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T16:19:40.077081Z"
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.meysam81/parse-dmarc",
         "marketplace": "official-registry"
       }
     },
@@ -56175,6 +56406,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-nunolima-gitlab-docs-mcp",
+      "name": "io.github.nunolima/gitlab-docs-mcp",
+      "type": "mcp",
+      "url": "https://github.com/nunolima/gitlab-docs-mcp",
+      "description": "Searchable access to GitLab documentation from multiple repositories with full-text search.",
+      "author": {
+        "name": "io.github.nunolima"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.nunolima/gitlab-docs-mcp", "gitlab"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T14:47:44.602913Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.nunolima/gitlab-docs-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-oabolade-figma-mcp-server-actor",
       "name": "io.github.oabolade/figma_mcp_server_actor",
       "type": "mcp",
@@ -56613,6 +56870,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx bolor-brain-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-pinchwork-pinchwork-mcp",
+      "name": "io.github.pinchwork/pinchwork-mcp",
+      "type": "mcp",
+      "url": "https://github.com/anneschuth/pinchwork",
+      "description": "MCP server for Pinchwork - an agent-to-agent task marketplace with credits-based economy",
+      "author": {
+        "name": "io.github.pinchwork"
+      },
+      "category": "productivity",
+      "tags": ["productivity", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.pinchwork/pinchwork-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T15:59:40.69346Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.pinchwork/pinchwork-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -61865,6 +62148,32 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add travel.kismet/mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-uk-co-propbar-research",
+      "name": "uk.co.propbar/research",
+      "type": "mcp",
+      "url": "https://github.com/Propbar/mcp",
+      "description": "UK property research tools - crime stats, schools, demographics, valuations for AI.",
+      "author": {
+        "name": "uk.co.propbar"
+      },
+      "category": "search",
+      "tags": ["search", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["uk.co.propbar/research"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-01T15:06:57.415205Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add uk.co.propbar/research",
         "marketplace": "official-registry"
       }
     },
