@@ -19,8 +19,8 @@ importers:
         specifier: ^2.3.13
         version: 2.3.13
       '@cc-audit/cc-audit':
-        specifier: ^3.2.7
-        version: 3.2.7
+        specifier: ^3.2.14
+        version: 3.2.14
       '@types/node':
         specifier: ^25.2.0
         version: 25.2.0
@@ -119,38 +119,38 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cc-audit/cc-audit@3.2.7':
-    resolution: {integrity: sha512-9Xj21G+KbUcq4ykwgCDqeGR1PKXwO/so4+AwrntteNnmdwejq8AHTljrVaV7b3xQCORRGzPS84ag3qXVZeu/og==}
+  '@cc-audit/cc-audit@3.2.14':
+    resolution: {integrity: sha512-8qTbsIbe5f5OwmaD32qln6O/GXOq3MuALXeOW3rGYXyyDd0AMWWBohqtbrkHnB35151VSUq+tekAVarpQSrNSg==}
     engines: {node: '>=16'}
     hasBin: true
 
-  '@cc-audit/darwin-arm64@3.2.7':
-    resolution: {integrity: sha512-HKurOyzc5qhD/WmCM0U1BHsZyCU9luXlrrnyMH+KYRdct7Fa9s7mOELQGf2q0cUlp39Ixny3EvDiJv+xEo0n6A==}
+  '@cc-audit/darwin-arm64@3.2.14':
+    resolution: {integrity: sha512-kfFY5MEfNJXg4IIX8s6qWugwLpXS+ZvANQy3uDmrLB6bYWQZGRjCgsllH7iI3E6HtInZ//5K2yBhsnh9+c/0nA==}
     cpu: [arm64]
     os: [darwin]
 
-  '@cc-audit/darwin-x64@3.2.7':
-    resolution: {integrity: sha512-55bmTtYrm2QZ8z4ii4BOVbvhhI8BsmdRwZ5fqFAwAbP+clVuzimSsRQCDR+9T5W4ZP4IsjuUPEu2joIOSe1/GQ==}
+  '@cc-audit/darwin-x64@3.2.14':
+    resolution: {integrity: sha512-2+dmLMftKAWMpqRZFyFdtmDv0lfuvAuuFRxZhUXykOm4R4tXg+zL4H9h6i40xSnSCi9VlqKti+mUkKR4sYUjpQ==}
     cpu: [x64]
     os: [darwin]
 
-  '@cc-audit/linux-arm64@3.2.7':
-    resolution: {integrity: sha512-8lynJo731RiyxUpQYNzmCOpAVMd+5VBBMzZCvfYQWu/X3ZiRna9MDl5nd3ebB+Ed8mLbURS5PkfaG2wWnS3Iog==}
+  '@cc-audit/linux-arm64@3.2.14':
+    resolution: {integrity: sha512-D5huok+nMdNo1RJGjbUjNNDC42gsx+ITJsFAnLc7VtmSwqEvIIaT3qSAXx/t2pv0BfdANPMWcDPQT+RAMjaMZg==}
     cpu: [arm64]
     os: [linux]
 
-  '@cc-audit/linux-x64-musl@3.2.7':
-    resolution: {integrity: sha512-y8COnP+bkF8OYTJHWoofDTX9xCzTANsuq5pd99/VNqRay0mDPAUwTVBFiPvxc+mJph6kaQHu5blYwFpq6a/dHg==}
+  '@cc-audit/linux-x64-musl@3.2.14':
+    resolution: {integrity: sha512-cocLJJai5AguqvoFSkj/lgI4n7kw3x1Ej+VGLo25Imk5C1ffnL7FN43qqkyrEOzQgJ4I24aL3eN71Lbvr59uAQ==}
     cpu: [x64]
     os: [linux]
 
-  '@cc-audit/linux-x64@3.2.7':
-    resolution: {integrity: sha512-nWlMl8yOswl2BSfoMFsQ2pWKxRmtX/ZR6HyWnuHA8v/C4pcSQYZCj0bpnm9hz8KibJflmFUuazME2PST7K5Pwg==}
+  '@cc-audit/linux-x64@3.2.14':
+    resolution: {integrity: sha512-I0spOei9GLiIq7jIjgQLEOCs5M/K56J2zFKe72bz8dcaPpu1vkW9FFdFcFj4EFA133xG5R61XQ1tzURn3AmdSw==}
     cpu: [x64]
     os: [linux]
 
-  '@cc-audit/win32-x64@3.2.7':
-    resolution: {integrity: sha512-HAX+QPRMo3RiIG0C53IR60VUnZETaGHiWNUkmAMicXgGyaBO3kc7gsZYxjBjEztX4OV1SF0ugJorfa+Dl28mCQ==}
+  '@cc-audit/win32-x64@3.2.14':
+    resolution: {integrity: sha512-APg+zfLx7/bze3U67H9LF+Lls/7yyyht+jmjHA1G5KfqRUSQL/4lEw8aSSTSMVmDAJfn3oguHf95fO+90QVCKw==}
     cpu: [x64]
     os: [win32]
 
@@ -1290,31 +1290,31 @@ snapshots:
   '@biomejs/cli-win32-x64@2.3.13':
     optional: true
 
-  '@cc-audit/cc-audit@3.2.7':
+  '@cc-audit/cc-audit@3.2.14':
     optionalDependencies:
-      '@cc-audit/darwin-arm64': 3.2.7
-      '@cc-audit/darwin-x64': 3.2.7
-      '@cc-audit/linux-arm64': 3.2.7
-      '@cc-audit/linux-x64': 3.2.7
-      '@cc-audit/linux-x64-musl': 3.2.7
-      '@cc-audit/win32-x64': 3.2.7
+      '@cc-audit/darwin-arm64': 3.2.14
+      '@cc-audit/darwin-x64': 3.2.14
+      '@cc-audit/linux-arm64': 3.2.14
+      '@cc-audit/linux-x64': 3.2.14
+      '@cc-audit/linux-x64-musl': 3.2.14
+      '@cc-audit/win32-x64': 3.2.14
 
-  '@cc-audit/darwin-arm64@3.2.7':
+  '@cc-audit/darwin-arm64@3.2.14':
     optional: true
 
-  '@cc-audit/darwin-x64@3.2.7':
+  '@cc-audit/darwin-x64@3.2.14':
     optional: true
 
-  '@cc-audit/linux-arm64@3.2.7':
+  '@cc-audit/linux-arm64@3.2.14':
     optional: true
 
-  '@cc-audit/linux-x64-musl@3.2.7':
+  '@cc-audit/linux-x64-musl@3.2.14':
     optional: true
 
-  '@cc-audit/linux-x64@3.2.7':
+  '@cc-audit/linux-x64@3.2.14':
     optional: true
 
-  '@cc-audit/win32-x64@3.2.7':
+  '@cc-audit/win32-x64@3.2.14':
     optional: true
 
   '@esbuild/aix-ppc64@0.27.2':
