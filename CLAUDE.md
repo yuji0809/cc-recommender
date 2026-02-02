@@ -139,20 +139,23 @@ src/
 ```
 .claude/
 ├── agents/              # カスタムエージェント定義
-│   ├── architecture-agent.md   # アーキテクチャチェック
-│   ├── security-agent.md       # セキュリティチェック
-│   ├── typescript-agent.md     # TypeScript ベストプラクティス
-│   └── documentation-agent.md  # ドキュメント整合性チェック
+│   ├── architecture-agent.md        # アーキテクチャチェック
+│   ├── security-agent.md            # セキュリティチェック
+│   ├── typescript-agent.md          # TypeScript ベストプラクティス
+│   ├── documentation-agent.md       # ドキュメント整合性チェック
+│   └── dependabot-review-agent.md   # Dependabot PRレビュー
 │
 ├── commands/            # カスタムコマンド
-│   └── pre-commit-check.md    # コミット前の包括的チェック
+│   ├── pre-commit-check.md    # コミット前の包括的チェック
+│   └── dependabot-review.md   # Dependabot PRの分析・レビュー
 │
 └── skills/              # カスタムスキル
     ├── documentation-check.md  # ドキュメントチェックスキル
     ├── architecture-check.md   # アーキテクチャチェックスキル
     ├── security-check.md       # セキュリティチェックスキル
     ├── typescript-check.md     # TypeScript チェックスキル
-    └── tdd.md                  # TDD スキル
+    ├── tdd.md                  # TDD スキル
+    └── dependabot-review.md    # Dependabot PRレビュースキル
 ```
 
 **各エージェントの役割:**
@@ -160,9 +163,11 @@ src/
 - **Security Agent**: セキュリティベストプラクティスを確認し、脆弱性を検出
 - **TypeScript Agent**: TypeScript のベストプラクティスに従ってコードをレビュー
 - **Documentation Agent**: ドキュメントとコードの整合性を確認
+- **Dependabot Review Agent**: Dependabot PRを分析し、リスク評価とレビューコメントを投稿
 
 **カスタムコマンド:**
 - `/pre-commit-check`: コミット前に4つのエージェント（Architecture, Security, TypeScript, Documentation）を並列実行し、包括的なコード品質チェックを実施
+- `/dependabot-review`: Dependabot PRを分析してリスク評価・レビューコメントを投稿（PR番号指定可、未指定時は全Dependabot PRを並列分析）
 
 ## ファイル命名規則
 
