@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-02T01:01:33.159Z",
+  "lastUpdated": "2026-02-03T01:01:54.511Z",
   "items": [
     {
       "id": "skill-official-vercel-labs-composition-patterns",
@@ -19725,6 +19725,7 @@
           "java",
           "api",
           "test",
+          "testing",
           "ci",
           "auth",
           "ai",
@@ -23329,6 +23330,32 @@
       }
     },
     {
+      "id": "skill-official-sanjay3290-manus",
+      "name": "Manus",
+      "type": "skill",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres/tree/main/skills/manus",
+      "description": "Manus is an autonomous AI agent that handles complex tasks asynchronously. Particularly strong at **deep research** with parallel processing, web browsing, and generating comprehensive reports with data visualizations.",
+      "author": {
+        "name": "sanjay3290",
+        "url": "https://github.com/sanjay3290"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sanjay3290"],
+      "detection": {
+        "keywords": ["go", "api", "ci", "ai", "pdf", "manus"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres && cd ai-skills/skills/manus"
+      }
+    },
+    {
       "id": "skill-official-sanjay3290-outline",
       "name": "Outline",
       "type": "skill",
@@ -23698,6 +23725,32 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research && cd ai-skills/skills/jules"
+      }
+    },
+    {
+      "id": "skill-official-sanjay3290-manus",
+      "name": "Manus",
+      "type": "skill",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research/tree/main/skills/manus",
+      "description": "Manus is an autonomous AI agent that handles complex tasks asynchronously. Particularly strong at **deep research** with parallel processing, web browsing, and generating comprehensive reports with data visualizations.",
+      "author": {
+        "name": "sanjay3290",
+        "url": "https://github.com/sanjay3290"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sanjay3290"],
+      "detection": {
+        "keywords": ["go", "api", "ci", "ai", "pdf", "manus"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research && cd ai-skills/skills/manus"
       }
     },
     {
@@ -38296,6 +38349,32 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen && cd ai-skills/skills/jules"
+      }
+    },
+    {
+      "id": "skill-official-sanjay3290-manus",
+      "name": "Manus",
+      "type": "skill",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen/tree/main/skills/manus",
+      "description": "Manus is an autonomous AI agent that handles complex tasks asynchronously. Particularly strong at **deep research** with parallel processing, web browsing, and generating comprehensive reports with data visualizations.",
+      "author": {
+        "name": "sanjay3290",
+        "url": "https://github.com/sanjay3290"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sanjay3290"],
+      "detection": {
+        "keywords": ["go", "api", "ci", "ai", "pdf", "manus"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen && cd ai-skills/skills/manus"
       }
     },
     {
