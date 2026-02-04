@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-03T01:01:54.511Z",
+  "lastUpdated": "2026-02-04T00:56:41.735Z",
   "items": [
     {
       "id": "skill-official-vercel-labs-composition-patterns",
@@ -1223,562 +1223,6 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/lackeyjb/playwright-skill && cd playwright-skill/skills/playwright-skill"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-algorithmic-art",
-      "name": "Algorithmic Art",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
-      "description": "To begin, create an ALGORITHMIC PHILOSOPHY (not static images or templates) that will be interpreted through: - Computational processes, emergent behavior, mathematical beauty - Seeded randomness, noise fields, organic systems",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": [
-          "javascript",
-          "rust",
-          "go",
-          "java",
-          "node",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "word",
-          "algorithmic",
-          "art"
-        ]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/algorithmic-art"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-brand-guidelines",
-      "name": "Brand Guidelines",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
-      "description": "To access Anthropic's official brand identity and style resources, use this skill.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": ["python", "rest", "ci", "ai", "pptx", "word", "brand", "guidelines"]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/brand-guidelines"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-canvas-design",
-      "name": "Canvas Design",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
-      "description": "To begin, create a VISUAL PHILOSOPHY (not layouts or templates) that will be interpreted through: - Form, space, color, composition - Images, graphics, shapes, patterns - Minimal text as visual accent",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": ["go", "bun", "git", "rest", "ci", "ai", "pdf", "word", "canvas", "design"]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/canvas-design"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-doc-coauthoring",
-      "name": "Doc Coauthoring",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
-      "description": "This skill provides a structured workflow for guiding users through collaborative document creation. Act as an active guide, walking users through three stages: Context Gathering, Refinement & Structure, and Reader Testing.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": [
-          "rust",
-          "go",
-          "rest",
-          "test",
-          "testing",
-          "ci",
-          "auth",
-          "ai",
-          "doc",
-          "coauthoring"
-        ]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/doc-coauthoring"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-docx",
-      "name": "Docx",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": [
-          "typescript",
-          "javascript",
-          "python",
-          "go",
-          "java",
-          "node",
-          "api",
-          "test",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "docx",
-          "pdf",
-          "excel",
-          "word"
-        ]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/docx"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-frontend-design",
-      "name": "Frontend Design",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
-      "description": "Before coding, understand the context and commit to a BOLD aesthetic direction: - **Purpose**: What problem does this interface solve? Who uses it? - **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc. There are so many flavors to choose from. Use these for inspiration but design one that is true to the aesthetic directio",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": ["react", "vue", "go", "rest", "ci", "ai", "ml", "frontend", "design"]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/frontend-design"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-internal-comms",
-      "name": "Internal Comms",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
-      "description": "To write internal communications, use this skill for: - 3P updates (Progress, Plans, Problems) - Company newsletters - FAQ responses - Status reports - Leadership updates - Project updates - Incident reports",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": ["ci", "word", "internal", "comms"]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/internal-comms"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-mcp-builder",
-      "name": "Mcp Builder",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
-      "description": "Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": [
-          "typescript",
-          "python",
-          "go",
-          "node",
-          "git",
-          "github",
-          "api",
-          "test",
-          "testing",
-          "ci",
-          "security",
-          "auth",
-          "authentication",
-          "ai",
-          "ml",
-          "llm",
-          "mcp",
-          "builder"
-        ]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/mcp-builder"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-pdf",
-      "name": "Pdf",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": [
-          "javascript",
-          "python",
-          "java",
-          "aws",
-          "ci",
-          "auth",
-          "ai",
-          "pdf",
-          "xlsx",
-          "excel",
-          "word"
-        ]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/pdf"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-pptx",
-      "name": "Pptx",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/pptx"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-skill-creator",
-      "name": "Skill Creator",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
-      "description": "This skill provides guidance for creating effective skills.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": [
-          "database",
-          "react",
-          "python",
-          "go",
-          "bun",
-          "aws",
-          "gcp",
-          "azure",
-          "api",
-          "test",
-          "testing",
-          "ci",
-          "ai",
-          "ml",
-          "docx",
-          "pdf",
-          "pptx",
-          "word",
-          "powerpoint",
-          "skill",
-          "creator"
-        ]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/skill-creator"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-slack-gif-creator",
-      "name": "Slack Gif Creator",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
-      "description": "A toolkit providing utilities and knowledge for creating animated GIFs optimized for Slack.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": ["python", "go", "rest", "ci", "ai", "slack", "gif", "creator"]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/slack-gif-creator"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-theme-factory",
-      "name": "Theme Factory",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
-      "description": "This skill provides a curated collection of professional font and color themes themes, each with carefully selected color palettes and font pairings. Once a theme is chosen, it can be applied to any artifact.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": ["go", "rest", "ci", "ai", "ml", "pdf", "theme", "factory"]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/theme-factory"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-web-artifacts-builder",
-      "name": "Web Artifacts Builder",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
-      "description": "To build powerful frontend claude.ai artifacts, follow these steps: 1. Initialize the frontend repo using `scripts/init-artifact.sh` 2. Develop your artifact by editing the generated code 3. Bundle all code into a single HTML file using `scripts/bundle-artifact.sh`",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": [
-          "react",
-          "typescript",
-          "javascript",
-          "java",
-          "node",
-          "bun",
-          "test",
-          "testing",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "web",
-          "artifacts",
-          "builder"
-        ]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/web-artifacts-builder"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-webapp-testing",
-      "name": "Webapp Testing",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
-      "description": "To test local web applications, write native Python Playwright scripts.",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": [
-          "python",
-          "go",
-          "bun",
-          "api",
-          "test",
-          "testing",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "webapp"
-        ]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/webapp-testing"
-      }
-    },
-    {
-      "id": "skill-official-anthropics-xlsx",
-      "name": "Xlsx",
-      "type": "skill",
-      "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
-      "author": {
-        "name": "anthropics",
-        "url": "https://github.com/anthropics"
-      },
-      "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "anthropics"],
-      "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
-      },
-      "metrics": {
-        "source": "official",
-        "isOfficial": true,
-        "stars": 0,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "manual",
-        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/xlsx"
       }
     },
     {
@@ -12184,7 +11628,7 @@
       "name": "Agents Sdk",
       "type": "skill",
       "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/agents-sdk",
-      "description": "Build persistent, stateful AI agents on Cloudflare Workers using the `agents` npm package.",
+      "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
         "url": "https://github.com/cloudflare"
@@ -12196,10 +11640,10 @@
           "sql",
           "react",
           "typescript",
-          "javascript",
-          "java",
+          "git",
+          "github",
           "api",
-          "ci",
+          "test",
           "ai",
           "agents",
           "sdk"
@@ -12457,7 +11901,7 @@
       "name": "Agents Sdk",
       "type": "skill",
       "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/agents-sdk",
-      "description": "Build persistent, stateful AI agents on Cloudflare Workers using the `agents` npm package.",
+      "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
         "url": "https://github.com/cloudflare"
@@ -12469,10 +11913,10 @@
           "sql",
           "react",
           "typescript",
-          "javascript",
-          "java",
+          "git",
+          "github",
           "api",
-          "ci",
+          "test",
           "ai",
           "agents",
           "sdk"
@@ -12730,7 +12174,7 @@
       "name": "Agents Sdk",
       "type": "skill",
       "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/agents-sdk",
-      "description": "Build persistent, stateful AI agents on Cloudflare Workers using the `agents` npm package.",
+      "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
         "url": "https://github.com/cloudflare"
@@ -12742,10 +12186,10 @@
           "sql",
           "react",
           "typescript",
-          "javascript",
-          "java",
+          "git",
+          "github",
           "api",
-          "ci",
+          "test",
           "ai",
           "agents",
           "sdk"
@@ -13003,7 +12447,7 @@
       "name": "Agents Sdk",
       "type": "skill",
       "url": "https://github.com/cloudflare/skills/tree/main/commands/tree/main/skills/agents-sdk",
-      "description": "Build persistent, stateful AI agents on Cloudflare Workers using the `agents` npm package.",
+      "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
         "url": "https://github.com/cloudflare"
@@ -13015,10 +12459,10 @@
           "sql",
           "react",
           "typescript",
-          "javascript",
-          "java",
+          "git",
+          "github",
           "api",
-          "ci",
+          "test",
           "ai",
           "agents",
           "sdk"
@@ -13276,7 +12720,7 @@
       "name": "Agents Sdk",
       "type": "skill",
       "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/agents-sdk",
-      "description": "Build persistent, stateful AI agents on Cloudflare Workers using the `agents` npm package.",
+      "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
         "url": "https://github.com/cloudflare"
@@ -13288,10 +12732,10 @@
           "sql",
           "react",
           "typescript",
-          "javascript",
-          "java",
+          "git",
+          "github",
           "api",
-          "ci",
+          "test",
           "ai",
           "agents",
           "sdk"
@@ -13549,7 +12993,7 @@
       "name": "Agents Sdk",
       "type": "skill",
       "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/agents-sdk",
-      "description": "Build persistent, stateful AI agents on Cloudflare Workers using the `agents` npm package.",
+      "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
         "url": "https://github.com/cloudflare"
@@ -13561,10 +13005,10 @@
           "sql",
           "react",
           "typescript",
-          "javascript",
-          "java",
+          "git",
+          "github",
           "api",
-          "ci",
+          "test",
           "ai",
           "agents",
           "sdk"
@@ -13822,7 +13266,7 @@
       "name": "Agents Sdk",
       "type": "skill",
       "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/agents-sdk",
-      "description": "Build persistent, stateful AI agents on Cloudflare Workers using the `agents` npm package.",
+      "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
         "url": "https://github.com/cloudflare"
@@ -13834,10 +13278,10 @@
           "sql",
           "react",
           "typescript",
-          "javascript",
-          "java",
+          "git",
+          "github",
           "api",
-          "ci",
+          "test",
           "ai",
           "agents",
           "sdk"
@@ -14218,6 +13662,84 @@
       }
     },
     {
+      "id": "skill-official-google-labs-code-remotion",
+      "name": "Remotion",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/design-md/tree/main/skills/remotion",
+      "description": "You are a video production specialist focused on creating engaging walkthrough videos from app designs. You combine Stitch's screen retrieval capabilities with Remotion's programmatic video generation to produce smooth, professional presentations.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "git",
+          "github",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "remotion"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/design-md && cd stitch-skills/skills/remotion"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-shadcn-ui",
+      "name": "Shadcn Ui",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/design-md/tree/main/skills/shadcn-ui",
+      "description": "You are a frontend engineer specialized in building applications with shadcn/ui—a collection of beautifully designed, accessible, and customizable components built with Radix UI or Base UI and Tailwind CSS. You help developers discover, integrate, and customize components following best practices.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "next.js",
+          "typescript",
+          "go",
+          "node",
+          "bun",
+          "test",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "shadcn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/design-md && cd stitch-skills/skills/shadcn-ui"
+      }
+    },
+    {
       "id": "skill-official-google-labs-code-stitch-loop",
       "name": "Stitch Loop",
       "type": "skill",
@@ -14329,6 +13851,84 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/react-components && cd stitch-skills/skills/react-components"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-remotion",
+      "name": "Remotion",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/react-components/tree/main/skills/remotion",
+      "description": "You are a video production specialist focused on creating engaging walkthrough videos from app designs. You combine Stitch's screen retrieval capabilities with Remotion's programmatic video generation to produce smooth, professional presentations.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "git",
+          "github",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "remotion"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/react-components && cd stitch-skills/skills/remotion"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-shadcn-ui",
+      "name": "Shadcn Ui",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/react-components/tree/main/skills/shadcn-ui",
+      "description": "You are a frontend engineer specialized in building applications with shadcn/ui—a collection of beautifully designed, accessible, and customizable components built with Radix UI or Base UI and Tailwind CSS. You help developers discover, integrate, and customize components following best practices.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "next.js",
+          "typescript",
+          "go",
+          "node",
+          "bun",
+          "test",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "shadcn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/react-components && cd stitch-skills/skills/shadcn-ui"
       }
     },
     {
@@ -16932,7 +16532,7 @@
       "name": "Upgrade Stripe",
       "type": "skill",
       "url": "https://github.com/stripe/ai/tree/main/skills/stripe-best-practices/tree/main/skills/upgrade-stripe",
-      "description": "This skill covers upgrading Stripe API versions, server-side SDKs, Stripe.js, and mobile SDKs.",
+      "description": "Skills from stripe/ai",
       "author": {
         "name": "stripe",
         "url": "https://github.com/stripe"
@@ -16940,23 +16540,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "stripe"],
       "detection": {
-        "keywords": [
-          "database",
-          "react",
-          "javascript",
-          "python",
-          "go",
-          "java",
-          "node",
-          "api",
-          "test",
-          "testing",
-          "ci",
-          "ai",
-          "ml",
-          "upgrade",
-          "stripe"
-        ]
+        "keywords": ["go", "api", "test", "ci", "ai", "upgrade", "stripe"]
       },
       "metrics": {
         "source": "official",
@@ -17000,7 +16584,7 @@
       "name": "Upgrade Stripe",
       "type": "skill",
       "url": "https://github.com/stripe/ai/tree/main/skills/upgrade-stripe/tree/main/skills/upgrade-stripe",
-      "description": "This skill covers upgrading Stripe API versions, server-side SDKs, Stripe.js, and mobile SDKs.",
+      "description": "Skills from stripe/ai",
       "author": {
         "name": "stripe",
         "url": "https://github.com/stripe"
@@ -17008,23 +16592,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "stripe"],
       "detection": {
-        "keywords": [
-          "database",
-          "react",
-          "javascript",
-          "python",
-          "go",
-          "java",
-          "node",
-          "api",
-          "test",
-          "testing",
-          "ci",
-          "ai",
-          "ml",
-          "upgrade",
-          "stripe"
-        ]
+        "keywords": ["go", "api", "test", "ci", "ai", "upgrade", "stripe"]
       },
       "metrics": {
         "source": "official",
@@ -18390,6 +17958,84 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dmmulroy/cloudflare-skill/tree/main/skill/cloudflare && cd cloudflare-skill/skills/cloudflare"
+      }
+    },
+    {
+      "id": "skill-official-hashicorp-agent-skills",
+      "name": "Agent Skills",
+      "type": "skill",
+      "url": "https://github.com/hashicorp/agent-skills/tree/main/terraform/code-generation",
+      "description": "A collection of Agent skills and Claude Code plugins for HashiCorp products.",
+      "author": {
+        "name": "hashicorp",
+        "url": "https://github.com/hashicorp"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "hashicorp"],
+      "detection": {
+        "keywords": ["aws", "azure", "git", "github", "test", "ci", "ai", "llm", "agent", "skills"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hashicorp/agent-skills/tree/main/terraform/code-generation"
+      }
+    },
+    {
+      "id": "skill-official-hashicorp-agent-skills",
+      "name": "Agent Skills",
+      "type": "skill",
+      "url": "https://github.com/hashicorp/agent-skills/tree/main/terraform/module-generation",
+      "description": "A collection of Agent skills and Claude Code plugins for HashiCorp products.",
+      "author": {
+        "name": "hashicorp",
+        "url": "https://github.com/hashicorp"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "hashicorp"],
+      "detection": {
+        "keywords": ["aws", "azure", "git", "github", "test", "ci", "ai", "llm", "agent", "skills"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hashicorp/agent-skills/tree/main/terraform/module-generation"
+      }
+    },
+    {
+      "id": "skill-official-hashicorp-agent-skills",
+      "name": "Agent Skills",
+      "type": "skill",
+      "url": "https://github.com/hashicorp/agent-skills/tree/main/terraform/provider-development",
+      "description": "A collection of Agent skills and Claude Code plugins for HashiCorp products.",
+      "author": {
+        "name": "hashicorp",
+        "url": "https://github.com/hashicorp"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "hashicorp"],
+      "detection": {
+        "keywords": ["aws", "azure", "git", "github", "test", "ci", "ai", "llm", "agent", "skills"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hashicorp/agent-skills/tree/main/terraform/provider-development"
       }
     },
     {
@@ -24004,6 +23650,242 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/ibelick/ui-skills && cd ui-skills/skills/fixing-motion-performance"
+      }
+    },
+    {
+      "id": "skill-official-ehmo-android",
+      "name": "Android",
+      "type": "skill",
+      "url": "https://github.com/ehmo/platform-design-skills/tree/main/skills/android",
+      "description": "Enable dynamic color derived from the user's wallpaper. Dynamic color is the default on Android 12+ and should be the primary theming strategy.",
+      "author": {
+        "name": "ehmo",
+        "url": "https://github.com/ehmo"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "ehmo"],
+      "detection": {
+        "keywords": [
+          "go",
+          "bun",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "cd",
+          "auth",
+          "ai",
+          "ml",
+          "llm",
+          "android"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ehmo/platform-design-skills && cd platform-design-skills/skills/android"
+      }
+    },
+    {
+      "id": "skill-official-ehmo-ios",
+      "name": "Ios",
+      "type": "skill",
+      "url": "https://github.com/ehmo/platform-design-skills/tree/main/skills/ios",
+      "description": "Comprehensive rules derived from Apple's Human Interface Guidelines. Apply these when building, reviewing, or refactoring any iPhone app interface.",
+      "author": {
+        "name": "ehmo",
+        "url": "https://github.com/ehmo"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "ehmo"],
+      "detection": {
+        "keywords": ["go", "rest", "test", "ci", "auth", "authentication", "ai", "ios"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ehmo/platform-design-skills && cd platform-design-skills/skills/ios"
+      }
+    },
+    {
+      "id": "skill-official-ehmo-ipados",
+      "name": "Ipados",
+      "type": "skill",
+      "url": "https://github.com/ehmo/platform-design-skills/tree/main/skills/ipados",
+      "description": "Comprehensive rules for building iPad-native apps following Apple's Human Interface Guidelines. iPad is not a big iPhone -- it demands adaptive layouts, multitasking support, pointer interactions, keyboard shortcuts, and inter-app drag and drop. These rules extend iOS patterns for the larger, more capable canvas.",
+      "author": {
+        "name": "ehmo",
+        "url": "https://github.com/ehmo"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "ehmo"],
+      "detection": {
+        "keywords": ["go", "redis", "rest", "test", "ci", "auth", "ai", "ml", "ipados"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ehmo/platform-design-skills && cd platform-design-skills/skills/ipados"
+      }
+    },
+    {
+      "id": "skill-official-ehmo-macos",
+      "name": "Macos",
+      "type": "skill",
+      "url": "https://github.com/ehmo/platform-design-skills/tree/main/skills/macos",
+      "description": "Mac apps serve power users who expect deep keyboard control, persistent menu bars, resizable multi-window layouts, and tight system integration. These guidelines codify Apple's HIG into actionable rules with SwiftUI and AppKit examples.",
+      "author": {
+        "name": "ehmo",
+        "url": "https://github.com/ehmo"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "ehmo"],
+      "detection": {
+        "keywords": ["go", "node", "api", "rest", "test", "ci", "auth", "ai", "macos"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ehmo/platform-design-skills && cd platform-design-skills/skills/macos"
+      }
+    },
+    {
+      "id": "skill-official-ehmo-tvos",
+      "name": "Tvos",
+      "type": "skill",
+      "url": "https://github.com/ehmo/platform-design-skills/tree/main/skills/tvos",
+      "description": "Apple TV is a living room device driven entirely by focus-based navigation and the Siri Remote. There is no pointer, no touch screen, and no mouse. Every design decision must account for the 10-foot viewing distance, the simplicity of the remote, and the lean-back nature of TV consumption.",
+      "author": {
+        "name": "ehmo",
+        "url": "https://github.com/ehmo"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "ehmo"],
+      "detection": {
+        "keywords": ["go", "rest", "ci", "auth", "ai", "tvos"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ehmo/platform-design-skills && cd platform-design-skills/skills/tvos"
+      }
+    },
+    {
+      "id": "skill-official-ehmo-visionos",
+      "name": "Visionos",
+      "type": "skill",
+      "url": "https://github.com/ehmo/platform-design-skills/tree/main/skills/visionos",
+      "description": "Comprehensive design rules for Apple Vision Pro based on Apple Human Interface Guidelines. These rules ensure spatial computing apps are comfortable, intuitive, and consistent with platform conventions.",
+      "author": {
+        "name": "ehmo",
+        "url": "https://github.com/ehmo"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "ehmo"],
+      "detection": {
+        "keywords": ["react", "rust", "go", "git", "rest", "ci", "auth", "ai", "visionos"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ehmo/platform-design-skills && cd platform-design-skills/skills/visionos"
+      }
+    },
+    {
+      "id": "skill-official-ehmo-watchos",
+      "name": "Watchos",
+      "type": "skill",
+      "url": "https://github.com/ehmo/platform-design-skills/tree/main/skills/watchos",
+      "description": "Apple Watch is a personal, glanceable device worn on the wrist. Interactions are measured in seconds, not minutes. Every design decision must prioritize speed of comprehension and brevity of interaction.",
+      "author": {
+        "name": "ehmo",
+        "url": "https://github.com/ehmo"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "ehmo"],
+      "detection": {
+        "keywords": ["angular", "rust", "go", "git", "test", "ci", "auth", "ai", "ml", "watchos"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ehmo/platform-design-skills && cd platform-design-skills/skills/watchos"
+      }
+    },
+    {
+      "id": "skill-official-ehmo-web",
+      "name": "Web",
+      "type": "skill",
+      "url": "https://github.com/ehmo/platform-design-skills/tree/main/skills/web",
+      "description": "Framework-agnostic rules for accessible, performant, responsive web interfaces. Based on WCAG 2.2, MDN Web Docs, and modern web platform APIs.",
+      "author": {
+        "name": "ehmo",
+        "url": "https://github.com/ehmo"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "ehmo"],
+      "detection": {
+        "keywords": [
+          "javascript",
+          "go",
+          "java",
+          "bun",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "cd",
+          "auth",
+          "ai",
+          "ml",
+          "word",
+          "web"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ehmo/platform-design-skills && cd platform-design-skills/skills/web"
       }
     },
     {
@@ -33801,6 +33683,32 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/efremidze/swift-patterns-skill/tree/main/swift-patterns"
+      }
+    },
+    {
+      "id": "skill-official-joannis-claude-skills",
+      "name": "Claude Skills",
+      "type": "skill",
+      "url": "https://github.com/Joannis/claude-skills",
+      "description": "A collection of Claude skills for guidance on Swift (Server) development, along with a linting tool that enforces best practices.",
+      "author": {
+        "name": "Joannis",
+        "url": "https://github.com/Joannis"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "joannis"],
+      "detection": {
+        "keywords": ["react", "ci", "ai", "llm", "claude", "skills"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/Joannis/claude-skills"
       }
     },
     {
