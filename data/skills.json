@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-04T00:56:41.735Z",
+  "lastUpdated": "2026-02-07T00:57:26.063Z",
   "items": [
     {
       "id": "skill-official-vercel-labs-composition-patterns",
@@ -255,7 +255,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -264,21 +264,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -395,7 +393,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -411,6 +409,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -433,7 +432,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -441,24 +440,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -656,7 +638,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -664,7 +646,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -1359,7 +1356,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/docx/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -1368,21 +1365,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -1499,7 +1494,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/docx/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -1515,6 +1510,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -1537,7 +1533,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/docx/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -1545,24 +1541,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -1760,7 +1739,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/docx/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -1768,7 +1747,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -1915,7 +1909,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -1924,21 +1918,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -2055,7 +2047,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -2071,6 +2063,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -2093,7 +2086,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -2101,24 +2094,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -2316,7 +2292,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -2324,7 +2300,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -2471,7 +2462,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pptx/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -2480,21 +2471,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -2611,7 +2600,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pptx/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -2627,6 +2616,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -2649,7 +2639,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pptx/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -2657,24 +2647,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -2872,7 +2845,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pptx/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -2880,7 +2853,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -3027,7 +3015,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -3036,21 +3024,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -3167,7 +3153,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -3183,6 +3169,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -3205,7 +3192,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -3213,24 +3200,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -3428,7 +3398,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -3436,7 +3406,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -3583,7 +3568,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pdf/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -3592,21 +3577,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -3723,7 +3706,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pdf/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -3739,6 +3722,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -3761,7 +3745,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pdf/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -3769,24 +3753,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -3984,7 +3951,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/pdf/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -3992,7 +3959,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -4139,7 +4121,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -4148,21 +4130,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -4279,7 +4259,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -4295,6 +4275,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -4317,7 +4298,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -4325,24 +4306,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -4540,7 +4504,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -4548,7 +4512,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -4695,7 +4674,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -4704,21 +4683,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -4835,7 +4812,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -4851,6 +4828,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -4873,7 +4851,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -4881,24 +4859,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -5096,7 +5057,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -5104,7 +5065,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -5251,7 +5227,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -5260,21 +5236,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -5391,7 +5365,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -5407,6 +5381,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -5429,7 +5404,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -5437,24 +5412,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -5652,7 +5610,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -5660,7 +5618,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -5807,7 +5780,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -5816,21 +5789,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -5947,7 +5918,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -5963,6 +5934,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -5985,7 +5957,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -5993,24 +5965,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -6208,7 +6163,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -6216,7 +6171,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -6363,7 +6333,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -6372,21 +6342,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -6503,7 +6471,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -6519,6 +6487,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -6541,7 +6510,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -6549,24 +6518,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -6764,7 +6716,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -6772,7 +6724,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -6919,7 +6886,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -6928,21 +6895,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -7059,7 +7024,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -7075,6 +7040,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -7097,7 +7063,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -7105,24 +7071,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -7320,7 +7269,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -7328,7 +7277,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -7475,7 +7439,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -7484,21 +7448,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -7615,7 +7577,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -7631,6 +7593,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -7653,7 +7616,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -7661,24 +7624,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -7876,7 +7822,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -7884,7 +7830,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -8031,7 +7992,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -8040,21 +8001,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -8171,7 +8130,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -8187,6 +8146,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -8209,7 +8169,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -8217,24 +8177,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -8432,7 +8375,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -8440,7 +8383,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -8587,7 +8545,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -8596,21 +8554,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -8727,7 +8683,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -8743,6 +8699,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -8765,7 +8722,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -8773,24 +8730,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -8988,7 +8928,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -8996,7 +8936,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -9143,7 +9098,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -9152,21 +9107,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -9283,7 +9236,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -9299,6 +9252,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -9321,7 +9275,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -9329,24 +9283,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -9544,7 +9481,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -9552,7 +9489,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -9699,7 +9651,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -9708,21 +9660,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -9839,7 +9789,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -9855,6 +9805,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -9877,7 +9828,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -9885,24 +9836,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -10100,7 +10034,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -10108,7 +10042,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -10255,7 +10204,7 @@
       "name": "Docx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/template/tree/main/skills/docx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "A .docx file is a ZIP archive containing XML files.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -10264,21 +10213,19 @@
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
         "keywords": [
-          "typescript",
           "javascript",
           "python",
           "go",
           "java",
-          "node",
-          "api",
-          "test",
+          "git",
+          "rest",
           "ci",
           "cd",
+          "auth",
           "ai",
           "ml",
           "docx",
           "pdf",
-          "excel",
           "word"
         ]
       },
@@ -10395,7 +10342,7 @@
       "name": "Pdf",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/template/tree/main/skills/pdf",
-      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -10411,6 +10358,7 @@
           "ci",
           "auth",
           "ai",
+          "ml",
           "pdf",
           "xlsx",
           "excel",
@@ -10433,7 +10381,7 @@
       "name": "Pptx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/template/tree/main/skills/pptx",
-      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -10441,24 +10389,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": [
-          "react",
-          "angular",
-          "javascript",
-          "python",
-          "rust",
-          "go",
-          "java",
-          "api",
-          "rest",
-          "ci",
-          "cd",
-          "ai",
-          "ml",
-          "pdf",
-          "pptx",
-          "powerpoint"
-        ]
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
       },
       "metrics": {
         "source": "official",
@@ -10656,7 +10587,7 @@
       "name": "Xlsx",
       "type": "skill",
       "url": "https://github.com/anthropics/skills/tree/main/template/tree/main/skills/xlsx",
-      "description": "- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
       "author": {
         "name": "anthropics",
         "url": "https://github.com/anthropics"
@@ -10664,7 +10595,22 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "anthropics"],
       "detection": {
-        "keywords": ["python", "go", "deno", "test", "testing", "ci", "ai", "xlsx", "excel"]
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -11806,6 +11752,7 @@
         "keywords": [
           "sql",
           "typescript",
+          "api",
           "test",
           "testing",
           "vitest",
@@ -11825,6 +11772,51 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/durable-objects"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-sandbox-sdk",
+      "name": "Sandbox Sdk",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/sandbox-sdk",
+      "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "sql",
+          "typescript",
+          "javascript",
+          "python",
+          "rust",
+          "java",
+          "node",
+          "docker",
+          "git",
+          "github",
+          "api",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "llm",
+          "sandbox",
+          "sdk"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/sandbox-sdk"
       }
     },
     {
@@ -12079,6 +12071,7 @@
         "keywords": [
           "sql",
           "typescript",
+          "api",
           "test",
           "testing",
           "vitest",
@@ -12098,6 +12091,51 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/durable-objects"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-sandbox-sdk",
+      "name": "Sandbox Sdk",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/sandbox-sdk",
+      "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "sql",
+          "typescript",
+          "javascript",
+          "python",
+          "rust",
+          "java",
+          "node",
+          "docker",
+          "git",
+          "github",
+          "api",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "llm",
+          "sandbox",
+          "sdk"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/sandbox-sdk"
       }
     },
     {
@@ -12352,6 +12390,7 @@
         "keywords": [
           "sql",
           "typescript",
+          "api",
           "test",
           "testing",
           "vitest",
@@ -12371,6 +12410,51 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/durable-objects"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-sandbox-sdk",
+      "name": "Sandbox Sdk",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/sandbox-sdk",
+      "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "sql",
+          "typescript",
+          "javascript",
+          "python",
+          "rust",
+          "java",
+          "node",
+          "docker",
+          "git",
+          "github",
+          "api",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "llm",
+          "sandbox",
+          "sdk"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/sandbox-sdk"
       }
     },
     {
@@ -12625,6 +12709,7 @@
         "keywords": [
           "sql",
           "typescript",
+          "api",
           "test",
           "testing",
           "vitest",
@@ -12644,6 +12729,51 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/cloudflare/skills/tree/main/commands && cd skills/skills/durable-objects"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-sandbox-sdk",
+      "name": "Sandbox Sdk",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/commands/tree/main/skills/sandbox-sdk",
+      "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "sql",
+          "typescript",
+          "javascript",
+          "python",
+          "rust",
+          "java",
+          "node",
+          "docker",
+          "git",
+          "github",
+          "api",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "llm",
+          "sandbox",
+          "sdk"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/commands && cd skills/skills/sandbox-sdk"
       }
     },
     {
@@ -12898,6 +13028,7 @@
         "keywords": [
           "sql",
           "typescript",
+          "api",
           "test",
           "testing",
           "vitest",
@@ -12917,6 +13048,51 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/durable-objects"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-sandbox-sdk",
+      "name": "Sandbox Sdk",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/sandbox-sdk",
+      "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "sql",
+          "typescript",
+          "javascript",
+          "python",
+          "rust",
+          "java",
+          "node",
+          "docker",
+          "git",
+          "github",
+          "api",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "llm",
+          "sandbox",
+          "sdk"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/sandbox-sdk"
       }
     },
     {
@@ -13171,6 +13347,7 @@
         "keywords": [
           "sql",
           "typescript",
+          "api",
           "test",
           "testing",
           "vitest",
@@ -13190,6 +13367,51 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/durable-objects"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-sandbox-sdk",
+      "name": "Sandbox Sdk",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/sandbox-sdk",
+      "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "sql",
+          "typescript",
+          "javascript",
+          "python",
+          "rust",
+          "java",
+          "node",
+          "docker",
+          "git",
+          "github",
+          "api",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "llm",
+          "sandbox",
+          "sdk"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/sandbox-sdk"
       }
     },
     {
@@ -13444,6 +13666,7 @@
         "keywords": [
           "sql",
           "typescript",
+          "api",
           "test",
           "testing",
           "vitest",
@@ -13463,6 +13686,51 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/durable-objects"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-sandbox-sdk",
+      "name": "Sandbox Sdk",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/sandbox-sdk",
+      "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "sql",
+          "typescript",
+          "javascript",
+          "python",
+          "rust",
+          "java",
+          "node",
+          "docker",
+          "git",
+          "github",
+          "api",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "llm",
+          "sandbox",
+          "sdk"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/sandbox-sdk"
       }
     },
     {
@@ -13769,6 +14037,198 @@
       "id": "skill-official-google-labs-code-design-md",
       "name": "Design Md",
       "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt/tree/main/skills/design-md",
+      "description": "You are an expert Design Systems Lead. Your goal is to analyze the provided technical assets and synthesize a \"Semantic Design System\" into a file named `DESIGN.md`.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["go", "ci", "ai", "ml", "design"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt && cd stitch-skills/skills/design-md"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-enhance-prompt",
+      "name": "Enhance Prompt",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt/tree/main/skills/enhance-prompt",
+      "description": "You are a **Stitch Prompt Engineer**. Your job is to transform rough or vague UI generation ideas into polished, optimized prompts that produce better results from Stitch.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["rust", "go", "bun", "test", "ci", "ai", "word", "enhance", "prompt"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt && cd stitch-skills/skills/enhance-prompt"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-react-components",
+      "name": "React Components",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt/tree/main/skills/react-components",
+      "description": "You are a frontend engineer focused on transforming designs into clean React code. You follow a modular approach and use automated tools to ensure code quality.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "ci",
+          "security",
+          "ai",
+          "ml",
+          "components"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt && cd stitch-skills/skills/react-components"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-remotion",
+      "name": "Remotion",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt/tree/main/skills/remotion",
+      "description": "You are a video production specialist focused on creating engaging walkthrough videos from app designs. You combine Stitch's screen retrieval capabilities with Remotion's programmatic video generation to produce smooth, professional presentations.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "git",
+          "github",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "remotion"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt && cd stitch-skills/skills/remotion"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-shadcn-ui",
+      "name": "Shadcn Ui",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt/tree/main/skills/shadcn-ui",
+      "description": "You are a frontend engineer specialized in building applications with shadcn/ui—a collection of beautifully designed, accessible, and customizable components built with Radix UI or Base UI and Tailwind CSS. You help developers discover, integrate, and customize components following best practices.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "next.js",
+          "typescript",
+          "go",
+          "node",
+          "bun",
+          "test",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "shadcn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt && cd stitch-skills/skills/shadcn-ui"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-stitch-loop",
+      "name": "Stitch Loop",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt/tree/main/skills/stitch-loop",
+      "description": "You are an **autonomous frontend builder** participating in an iterative site-building loop. Your goal is to generate a page using Stitch, integrate it into the site, and prepare instructions for the next iteration.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["go", "git", "github", "api", "ci", "cd", "ai", "ml", "stitch", "loop"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt && cd stitch-skills/skills/stitch-loop"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-design-md",
+      "name": "Design Md",
+      "type": "skill",
       "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/react-components/tree/main/skills/design-md",
       "description": "You are an expert Design Systems Lead. Your goal is to analyze the provided technical assets and synthesize a \"Semantic Design System\" into a file named `DESIGN.md`.",
       "author": {
@@ -13955,6 +14415,582 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/react-components && cd stitch-skills/skills/stitch-loop"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-design-md",
+      "name": "Design Md",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion/tree/main/skills/design-md",
+      "description": "You are an expert Design Systems Lead. Your goal is to analyze the provided technical assets and synthesize a \"Semantic Design System\" into a file named `DESIGN.md`.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["go", "ci", "ai", "ml", "design"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion && cd stitch-skills/skills/design-md"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-enhance-prompt",
+      "name": "Enhance Prompt",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion/tree/main/skills/enhance-prompt",
+      "description": "You are a **Stitch Prompt Engineer**. Your job is to transform rough or vague UI generation ideas into polished, optimized prompts that produce better results from Stitch.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["rust", "go", "bun", "test", "ci", "ai", "word", "enhance", "prompt"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion && cd stitch-skills/skills/enhance-prompt"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-react-components",
+      "name": "React Components",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion/tree/main/skills/react-components",
+      "description": "You are a frontend engineer focused on transforming designs into clean React code. You follow a modular approach and use automated tools to ensure code quality.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "ci",
+          "security",
+          "ai",
+          "ml",
+          "components"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion && cd stitch-skills/skills/react-components"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-remotion",
+      "name": "Remotion",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion/tree/main/skills/remotion",
+      "description": "You are a video production specialist focused on creating engaging walkthrough videos from app designs. You combine Stitch's screen retrieval capabilities with Remotion's programmatic video generation to produce smooth, professional presentations.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "git",
+          "github",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "remotion"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion && cd stitch-skills/skills/remotion"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-shadcn-ui",
+      "name": "Shadcn Ui",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion/tree/main/skills/shadcn-ui",
+      "description": "You are a frontend engineer specialized in building applications with shadcn/ui—a collection of beautifully designed, accessible, and customizable components built with Radix UI or Base UI and Tailwind CSS. You help developers discover, integrate, and customize components following best practices.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "next.js",
+          "typescript",
+          "go",
+          "node",
+          "bun",
+          "test",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "shadcn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion && cd stitch-skills/skills/shadcn-ui"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-stitch-loop",
+      "name": "Stitch Loop",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion/tree/main/skills/stitch-loop",
+      "description": "You are an **autonomous frontend builder** participating in an iterative site-building loop. Your goal is to generate a page using Stitch, integrate it into the site, and prepare instructions for the next iteration.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["go", "git", "github", "api", "ci", "cd", "ai", "ml", "stitch", "loop"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/remotion && cd stitch-skills/skills/stitch-loop"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-design-md",
+      "name": "Design Md",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui/tree/main/skills/design-md",
+      "description": "You are an expert Design Systems Lead. Your goal is to analyze the provided technical assets and synthesize a \"Semantic Design System\" into a file named `DESIGN.md`.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["go", "ci", "ai", "ml", "design"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui && cd stitch-skills/skills/design-md"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-enhance-prompt",
+      "name": "Enhance Prompt",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui/tree/main/skills/enhance-prompt",
+      "description": "You are a **Stitch Prompt Engineer**. Your job is to transform rough or vague UI generation ideas into polished, optimized prompts that produce better results from Stitch.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["rust", "go", "bun", "test", "ci", "ai", "word", "enhance", "prompt"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui && cd stitch-skills/skills/enhance-prompt"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-react-components",
+      "name": "React Components",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui/tree/main/skills/react-components",
+      "description": "You are a frontend engineer focused on transforming designs into clean React code. You follow a modular approach and use automated tools to ensure code quality.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "ci",
+          "security",
+          "ai",
+          "ml",
+          "components"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui && cd stitch-skills/skills/react-components"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-remotion",
+      "name": "Remotion",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui/tree/main/skills/remotion",
+      "description": "You are a video production specialist focused on creating engaging walkthrough videos from app designs. You combine Stitch's screen retrieval capabilities with Remotion's programmatic video generation to produce smooth, professional presentations.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "git",
+          "github",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "remotion"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui && cd stitch-skills/skills/remotion"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-shadcn-ui",
+      "name": "Shadcn Ui",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui/tree/main/skills/shadcn-ui",
+      "description": "You are a frontend engineer specialized in building applications with shadcn/ui—a collection of beautifully designed, accessible, and customizable components built with Radix UI or Base UI and Tailwind CSS. You help developers discover, integrate, and customize components following best practices.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "next.js",
+          "typescript",
+          "go",
+          "node",
+          "bun",
+          "test",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "shadcn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui && cd stitch-skills/skills/shadcn-ui"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-stitch-loop",
+      "name": "Stitch Loop",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui/tree/main/skills/stitch-loop",
+      "description": "You are an **autonomous frontend builder** participating in an iterative site-building loop. Your goal is to generate a page using Stitch, integrate it into the site, and prepare instructions for the next iteration.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["go", "git", "github", "api", "ci", "cd", "ai", "ml", "stitch", "loop"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/shadcn-ui && cd stitch-skills/skills/stitch-loop"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-design-md",
+      "name": "Design Md",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop/tree/main/skills/design-md",
+      "description": "You are an expert Design Systems Lead. Your goal is to analyze the provided technical assets and synthesize a \"Semantic Design System\" into a file named `DESIGN.md`.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["go", "ci", "ai", "ml", "design"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop && cd stitch-skills/skills/design-md"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-enhance-prompt",
+      "name": "Enhance Prompt",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop/tree/main/skills/enhance-prompt",
+      "description": "You are a **Stitch Prompt Engineer**. Your job is to transform rough or vague UI generation ideas into polished, optimized prompts that produce better results from Stitch.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["rust", "go", "bun", "test", "ci", "ai", "word", "enhance", "prompt"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop && cd stitch-skills/skills/enhance-prompt"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-react-components",
+      "name": "React Components",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop/tree/main/skills/react-components",
+      "description": "You are a frontend engineer focused on transforming designs into clean React code. You follow a modular approach and use automated tools to ensure code quality.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "ci",
+          "security",
+          "ai",
+          "ml",
+          "components"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop && cd stitch-skills/skills/react-components"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-remotion",
+      "name": "Remotion",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop/tree/main/skills/remotion",
+      "description": "You are a video production specialist focused on creating engaging walkthrough videos from app designs. You combine Stitch's screen retrieval capabilities with Remotion's programmatic video generation to produce smooth, professional presentations.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "go",
+          "node",
+          "git",
+          "github",
+          "test",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "remotion"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop && cd stitch-skills/skills/remotion"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-shadcn-ui",
+      "name": "Shadcn Ui",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop/tree/main/skills/shadcn-ui",
+      "description": "You are a frontend engineer specialized in building applications with shadcn/ui—a collection of beautifully designed, accessible, and customizable components built with Radix UI or Base UI and Tailwind CSS. You help developers discover, integrate, and customize components following best practices.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": [
+          "react",
+          "next.js",
+          "typescript",
+          "go",
+          "node",
+          "bun",
+          "test",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "shadcn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop && cd stitch-skills/skills/shadcn-ui"
+      }
+    },
+    {
+      "id": "skill-official-google-labs-code-stitch-loop",
+      "name": "Stitch Loop",
+      "type": "skill",
+      "url": "https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop/tree/main/skills/stitch-loop",
+      "description": "You are an **autonomous frontend builder** participating in an iterative site-building loop. Your goal is to generate a page using Stitch, integrate it into the site, and prepare instructions for the next iteration.",
+      "author": {
+        "name": "google-labs-code",
+        "url": "https://github.com/google-labs-code"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-labs-code"],
+      "detection": {
+        "keywords": ["go", "git", "github", "api", "ci", "cd", "ai", "ml", "stitch", "loop"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-labs-code/stitch-skills/tree/main/skills/stitch-loop && cd stitch-skills/skills/stitch-loop"
       }
     },
     {
@@ -19311,6 +20347,52 @@
       }
     },
     {
+      "id": "skill-official-pspdfkit-labs-nutrient-agent-skill",
+      "name": "Nutrient Agent Skill",
+      "type": "skill",
+      "url": "https://github.com/PSPDFKit-labs/nutrient-agent-skill",
+      "description": "<p align=\"center\"> <a href=\"https://www.nutrient.io/api/\"><img src=\"https://img.shields.io/badge/Nutrient-DWS%20API-blue\" alt=\"Nutrient DWS API\"></a> <a href=\"https://www.npmjs.com/package/@nutrient-sdk/dws-mcp-server\"><img src=\"https://img.shields.io/npm/v/@nutrient-sdk/dws-mcp-server\" alt=\"npm version\"></a>",
+      "author": {
+        "name": "PSPDFKit-labs",
+        "url": "https://github.com/PSPDFKit-labs"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "pspdfkit-labs"],
+      "detection": {
+        "keywords": [
+          "rust",
+          "go",
+          "git",
+          "github",
+          "api",
+          "test",
+          "testing",
+          "ci",
+          "security",
+          "ai",
+          "ml",
+          "docx",
+          "pdf",
+          "pptx",
+          "xlsx",
+          "excel",
+          "nutrient",
+          "agent",
+          "skill"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/PSPDFKit-labs/nutrient-agent-skill"
+      }
+    },
+    {
       "id": "skill-official-op7418-nanobanana-ppt-skills",
       "name": "NanoBanana PPT Skills",
       "type": "skill",
@@ -22546,20 +23628,16 @@
           "database",
           "python",
           "go",
-          "redis",
           "git",
           "github",
           "api",
-          "rest",
           "test",
-          "testing",
           "ci",
           "security",
           "auth",
           "ai",
           "ml",
           "excel",
-          "word",
           "rootly",
           "mcp",
           "server"
@@ -22593,20 +23671,16 @@
           "database",
           "python",
           "go",
-          "redis",
           "git",
           "github",
           "api",
-          "rest",
           "test",
-          "testing",
           "ci",
           "security",
           "auth",
           "ai",
           "ml",
           "excel",
-          "word",
           "rootly",
           "mcp",
           "server"
