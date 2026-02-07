@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-04T00:56:41.735Z",
+  "lastUpdated": "2026-02-07T00:57:26.063Z",
   "items": [
     {
       "id": "plugin-typescript-lsp",
@@ -366,6 +366,56 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install coderabbit",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-sonatype-guide",
+      "name": "sonatype-guide",
+      "type": "plugin",
+      "url": "https://github.com/sonatype/sonatype-guide-claude-plugin.git",
+      "description": "Sonatype Guide MCP server for software supply chain intelligence and dependency security. Analyze dependencies for vulnerabilities, get secure version recommendations, and check component quality metrics.",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "security",
+      "tags": ["security"],
+      "detection": {
+        "keywords": ["security", "security", "audit", "vulnerability"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install sonatype-guide",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-firecrawl",
+      "name": "firecrawl",
+      "type": "plugin",
+      "url": "https://github.com/firecrawl/firecrawl-claude-plugin.git",
+      "description": "Web scraping and crawling powered by Firecrawl. Turn any website into clean, LLM-ready markdown or structured data. Scrape single pages, crawl entire sites, search the web, and extract structured information. Includes an AI agent for autonomous multi-source data gathering - just describe what you need and it finds, navigates, and extracts automatically.",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install firecrawl",
         "marketplace": "claude-plugins-official"
       }
     }

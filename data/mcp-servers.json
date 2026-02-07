@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-04T00:56:41.735Z",
+  "lastUpdated": "2026-02-07T00:57:26.063Z",
   "items": [
     {
       "id": "mcp-1mcp-app-agent",
@@ -11691,7 +11691,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-28T02:17:32.703925Z",
+        "lastUpdated": "2026-02-06T02:05:36.263Z",
         "securityScore": 100
       },
       "install": {
@@ -15101,7 +15101,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T22:05:43.648084Z",
+        "lastUpdated": "2026-02-04T07:20:56.95963Z",
         "securityScore": 100
       },
       "install": {
@@ -22384,29 +22384,29 @@
       }
     },
     {
-      "id": "mcp-HatmanStack-RAGStack-Lambda",
-      "name": "RAGStack-Lambda",
+      "id": "official-mcp-io-github-HatmanStack-ragstack",
+      "name": "io.github.HatmanStack/ragstack",
       "type": "mcp",
-      "url": "https://github.com/HatmanStack/RAGStack-Lambda/tree/main/src/ragstack-mcp",
-      "description": "MCP server for RAGStack serverless knowledge bases. Search, chat with AI-generated answers, upload documents/media, scrape websites, and analyze metadata through an AWS-powered RAG pipeline (Lambda, Bedrock, S3, DynamoDB).",
+      "url": "https://github.com/HatmanStack/RAGStack-Lambda",
+      "description": "Search, chat, upload, and scrape a serverless RAGStack knowledge base on AWS.",
       "author": {
-        "name": "HatmanStack",
-        "url": "https://github.com/HatmanStack"
+        "name": "io.github.HatmanStack"
       },
-      "category": "</a>Knowledge & Memory",
-      "tags": ["</a>knowledge & memory", "python", "cloud", "macos", "windows", "linux"],
+      "category": "cloud",
+      "tags": ["cloud", "mcp", "official-registry"],
       "detection": {
-        "keywords": ["</a>knowledge & memory"],
-        "languages": ["python"]
+        "keywords": ["io.github.HatmanStack/ragstack", "aws"]
       },
       "metrics": {
-        "source": "awesome-list",
-        "isOfficial": false,
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T20:00:44.57456Z",
         "securityScore": 100
       },
       "install": {
         "method": "mcp-add",
-        "command": "claude mcp add RAGStack-Lambda"
+        "command": "uvx ragstack-mcp",
+        "marketplace": "official-registry"
       }
     },
     {
@@ -22946,7 +22946,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-24T04:58:03.491079Z",
+        "lastUpdated": "2026-02-04T22:11:02.425162Z",
         "securityScore": 100
       },
       "install": {
@@ -34623,6 +34623,32 @@
       }
     },
     {
+      "id": "official-mcp-ai-com-mcp-skills-search",
+      "name": "ai.com.mcp/skills-search",
+      "type": "mcp",
+      "url": "https://github.com/agentskills/agentskills",
+      "description": "Search and discover Agent Skills from the skills.sh registry. Powered by HAPI MCP server.",
+      "author": {
+        "name": "ai.com.mcp"
+      },
+      "category": "search",
+      "tags": ["search", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["ai.com.mcp/skills-search"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T12:46:39.858109Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add ai.com.mcp/skills-search",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-ai-explorium-mcp-explorium",
       "name": "ai.explorium/mcp-explorium",
       "type": "mcp",
@@ -39032,7 +39058,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-02T05:19:14.457193Z",
+        "lastUpdated": "2026-02-05T23:18:44.025306Z",
         "securityScore": 100
       },
       "install": {
@@ -39187,7 +39213,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T12:46:46.244284Z",
+        "lastUpdated": "2026-02-06T13:06:53.272312Z",
         "securityScore": 100
       },
       "install": {
@@ -39482,6 +39508,32 @@
       }
     },
     {
+      "id": "official-mcp-com-gitscrum-mcp",
+      "name": "com.gitscrum/mcp",
+      "type": "mcp",
+      "url": "https://github.com/gitscrum-core/mcp-server",
+      "description": "MCP server for GitScrum — manage tasks, sprints, time tracking, and client workflows via AI",
+      "author": {
+        "name": "com.gitscrum"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.gitscrum/mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T21:24:23.772408Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @gitscrum-studio/mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-com-glean-mcp",
       "name": "com.glean/mcp",
       "type": "mcp",
@@ -39524,7 +39576,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-02T17:01:24.658514Z",
+        "lastUpdated": "2026-02-05T18:24:50.541105Z",
         "securityScore": 100
       },
       "install": {
@@ -39560,6 +39612,32 @@
       }
     },
     {
+      "id": "official-mcp-com-homevisto-mcp-server",
+      "name": "com.homevisto/mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/tbrajkovic/HomeVisto",
+      "description": "Browse property verification missions. Connect with Scouts for GPS-verified tours.",
+      "author": {
+        "name": "com.homevisto"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.homevisto/mcp-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T10:47:13.256421Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add com.homevisto/mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-com-joelverhagen-mcp-Knapcode-SampleMcpServer",
       "name": "com.joelverhagen.mcp/Knapcode.SampleMcpServer",
       "type": "mcp",
@@ -39582,6 +39660,32 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add com.joelverhagen.mcp/Knapcode.SampleMcpServer",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-com-joinnod-mcp",
+      "name": "com.joinnod/mcp",
+      "type": "mcp",
+      "url": "https://github.com/yoannarz/nod-mcp",
+      "description": "Professional network for AI agents. Discover and connect with professionals.",
+      "author": {
+        "name": "com.joinnod"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.joinnod/mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T08:30:13.2395Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add com.joinnod/mcp",
         "marketplace": "official-registry"
       }
     },
@@ -39716,6 +39820,32 @@
       }
     },
     {
+      "id": "official-mcp-com-linkbreakers-mcp",
+      "name": "com.linkbreakers/mcp",
+      "type": "mcp",
+      "url": "https://github.com/linkbreakers-com/api",
+      "description": "QR-driven customer-journey platform for tracked QR codes, short links, and analytics.",
+      "author": {
+        "name": "com.linkbreakers"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.linkbreakers/mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T23:58:35.436114Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add com.linkbreakers/mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-com-linklyhq-linkly",
       "name": "com.linklyhq/linkly",
       "type": "mcp",
@@ -39738,6 +39868,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx linkly-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-com-medrecpro-drug-label-server",
+      "name": "com.medrecpro/drug-label-server",
+      "type": "mcp",
+      "url": "https://github.com/chriserikbarnes/MedRecPro",
+      "description": "Search and export FDA drug labels by brand name, generic ingredient, or UNII code.",
+      "author": {
+        "name": "com.medrecpro"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.medrecpro/drug-label-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T19:57:17.438944Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add com.medrecpro/drug-label-server",
         "marketplace": "official-registry"
       }
     },
@@ -39768,6 +39924,32 @@
       }
     },
     {
+      "id": "official-mcp-com-microsoft-esrp-esrp-oss-mcp-test",
+      "name": "com.microsoft.esrp/esrp-oss-mcp-test",
+      "type": "mcp",
+      "url": "https://github.com/sravanism/esrp-oss-mcp-server",
+      "description": "The ESRP OSS MCP server exposes tools to discover & validate trusted Microsoft OSS Packages.",
+      "author": {
+        "name": "com.microsoft.esrp"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.microsoft.esrp/esrp-oss-mcp-test"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T13:18:33.052322Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx esrp-oss-mcp-test",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-com-microsoft-azure",
       "name": "com.microsoft/azure",
       "type": "mcp",
@@ -39784,7 +39966,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-30T02:31:17.876146Z",
+        "lastUpdated": "2026-02-04T02:13:34.683562Z",
         "securityScore": 100
       },
       "install": {
@@ -39950,6 +40132,32 @@
       }
     },
     {
+      "id": "official-mcp-com-nullpath-marketplace",
+      "name": "com.nullpath/marketplace",
+      "type": "mcp",
+      "url": "https://github.com/tgaeta/nullpath",
+      "description": "Discover and hire AI agents with micropayments. Search, check reputation, get pricing.",
+      "author": {
+        "name": "com.nullpath"
+      },
+      "category": "search",
+      "tags": ["search", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["com.nullpath/marketplace"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T21:44:28.580026Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add com.nullpath/marketplace",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-com-onkernel-kernel-mcp-server",
       "name": "com.onkernel/kernel-mcp-server",
       "type": "mcp",
@@ -40018,7 +40226,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-09T14:53:04.557455Z",
+        "lastUpdated": "2026-02-06T14:45:23.503554Z",
         "securityScore": 100
       },
       "install": {
@@ -41353,6 +41561,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-Airpote-avalanche-docs",
+      "name": "io.github.Airpote/avalanche-docs",
+      "type": "mcp",
+      "url": "https://github.com/Airpote/avalanche-mcp-vscode",
+      "description": "Search and retrieve Avalanche blockchain documentation for building on AVAX.",
+      "author": {
+        "name": "io.github.Airpote"
+      },
+      "category": "search",
+      "tags": ["search", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.Airpote/avalanche-docs"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T14:07:41.199988Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.Airpote/avalanche-docs",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-Akkshay10-MCPClientMock",
       "name": "io.github.Akkshay10/MCPClientMock",
       "type": "mcp",
@@ -41479,6 +41713,32 @@
       "install": {
         "method": "mcp-add",
         "command": "uvx semantic-frame",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-AnimaApp-anima",
+      "name": "io.github.AnimaApp/anima",
+      "type": "mcp",
+      "url": "https://github.com/AnimaApp/mcp-server-guide",
+      "description": "Connect AI coding agents to Anima Playground, Figma, and your design system.",
+      "author": {
+        "name": "io.github.AnimaApp"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.AnimaApp/anima"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T13:10:54.14271Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.AnimaApp/anima",
         "marketplace": "official-registry"
       }
     },
@@ -41873,6 +42133,31 @@
       }
     },
     {
+      "id": "official-mcp-io-github-CakeRepository-1password",
+      "name": "io.github.CakeRepository/1password",
+      "type": "mcp",
+      "url": "https://github.com/CakeRepository/1Password-MCP.git",
+      "description": "MCP server for 1Password service accounts — tools and resources for vaults and credentials",
+      "author": {
+        "name": "io.github.CakeRepository"
+      },
+      "category": "security",
+      "tags": ["security", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.CakeRepository/1password"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T23:19:12.469197Z"
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @takescake/1password-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-ChengJiale150-jupyter-mcp-server",
       "name": "io.github.ChengJiale150/jupyter-mcp-server",
       "type": "mcp",
@@ -41941,7 +42226,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-30T10:06:30.016555Z",
+        "lastUpdated": "2026-02-04T10:07:48.984563Z",
         "securityScore": 100
       },
       "install": {
@@ -42155,6 +42440,32 @@
       "install": {
         "method": "mcp-add",
         "command": "uvx windows_mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-Custodia-Admin-pagebolt",
+      "name": "io.github.Custodia-Admin/pagebolt",
+      "type": "mcp",
+      "url": "https://github.com/Custodia-Admin/pagebolt-mcp",
+      "description": "Take screenshots, generate PDFs, and create OG images from your AI assistant.",
+      "author": {
+        "name": "io.github.Custodia-Admin"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.Custodia-Admin/pagebolt"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T08:34:22.574757Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx pagebolt-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -43423,12 +43734,38 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-04T00:16:20.394965Z",
+        "lastUpdated": "2026-02-05T23:51:55.590128Z",
         "securityScore": 100
       },
       "install": {
         "method": "mcp-add",
         "command": "uvx fedramp-20x-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-KevinRabun-GDPRShiftLeftMCP",
+      "name": "io.github.KevinRabun/GDPRShiftLeftMCP",
+      "type": "mcp",
+      "url": "https://github.com/KevinRabun/GDPRShiftLeftMCP",
+      "description": "GDPR compliance MCP server - article lookup, DPIA, ROPA, DSR, IaC analysis, Bicep templates.",
+      "author": {
+        "name": "io.github.KevinRabun"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.KevinRabun/GDPRShiftLeftMCP"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T21:12:08.93919Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx gdpr-shift-left-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -43589,6 +43926,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-LGDiMaggio-mcp-server-mcsa",
+      "name": "io.github.LGDiMaggio/mcp-server-mcsa",
+      "type": "mcp",
+      "url": "https://github.com/LGDiMaggio/mcp-motor-current-signature-analysis",
+      "description": "MCP server for Motor Current Signature Analysis — fault detection in electric motors",
+      "author": {
+        "name": "io.github.LGDiMaggio"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.LGDiMaggio/mcp-server-mcsa"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T12:02:51.677167Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx mcp-server-mcsa",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-Libres-coder-parseflow",
       "name": "io.github.Libres-coder/parseflow",
       "type": "mcp",
@@ -43689,6 +44052,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx mcp-comfy-ui-builder",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-MIt9-silpo-mcp",
+      "name": "io.github.MIt9/silpo-mcp",
+      "type": "mcp",
+      "url": "https://github.com/MIt9/silpo-mcp",
+      "description": "MCP server for Silpo online supermarket: products, cart, delivery, recipes.",
+      "author": {
+        "name": "io.github.MIt9"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.MIt9/silpo-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T05:35:53.781497Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx silpo-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -44001,6 +44390,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx mobai-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-MrCartographer-cartography-mcp-server",
+      "name": "io.github.MrCartographer/cartography-mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/MrCartographer/cartography",
+      "description": "Human-curated crypto market intelligence with x402 payments. Weekly signals and analysis.",
+      "author": {
+        "name": "io.github.MrCartographer"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.MrCartographer/cartography-mcp-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T23:26:32.152601Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx cartography-mcp-server",
         "marketplace": "official-registry"
       }
     },
@@ -44645,7 +45060,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T20:19:35.482589Z",
+        "lastUpdated": "2026-02-06T09:28:05.161414Z",
         "securityScore": 100
       },
       "install": {
@@ -44677,6 +45092,32 @@
       "install": {
         "method": "mcp-add",
         "command": "uvx pdf4vllm-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-Qiskit-qiskit-code-assistant-mcp-server",
+      "name": "io.github.Qiskit/qiskit-code-assistant-mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/Qiskit/mcp-servers",
+      "description": "MCP server for the Qiskit Code Assistant intelligent code completion",
+      "author": {
+        "name": "io.github.Qiskit"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.Qiskit/qiskit-code-assistant-mcp-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T16:28:07.582076Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx qiskit-code-assistant-mcp-server",
         "marketplace": "official-registry"
       }
     },
@@ -45165,7 +45606,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-28T19:11:25.763485Z",
+        "lastUpdated": "2026-02-06T15:00:22.62062Z",
         "securityScore": 100
       },
       "install": {
@@ -45851,6 +46292,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-TheMemeBanker-nory-mcp-server",
+      "name": "io.github.TheMemeBanker/nory-mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/TheMemeBanker/nory-mcp-server",
+      "description": "Give any AI agent instant payment capabilities via x402 protocol on Solana",
+      "author": {
+        "name": "io.github.TheMemeBanker"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.TheMemeBanker/nory-mcp-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T22:41:12.120866Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx nory-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-TocharianOU-elasticsearch",
       "name": "io.github.TocharianOU/elasticsearch",
       "type": "mcp",
@@ -46049,7 +46516,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-28T01:52:36.27672Z",
+        "lastUpdated": "2026-02-05T17:35:00.991419Z",
         "securityScore": 100
       },
       "install": {
@@ -46133,6 +46600,32 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add io.github.Vonage/vonage-documentation-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-VouchlyAI-pincer",
+      "name": "io.github.VouchlyAI/pincer",
+      "type": "mcp",
+      "url": "https://github.com/VouchlyAI/Pincer-MCP",
+      "description": "Secure grip for your agent's secrets - security-hardened MCP gateway with proxy token architecture",
+      "author": {
+        "name": "io.github.VouchlyAI"
+      },
+      "category": "security",
+      "tags": ["security", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.VouchlyAI/pincer"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T10:44:49.608951Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx pincer-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -46579,6 +47072,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-addozhang-nexus",
+      "name": "io.github.addozhang/nexus",
+      "type": "mcp",
+      "url": "https://github.com/addozhang/nexus-mcp-server",
+      "description": "Query Sonatype Nexus Repository (OSS/Pro) for Maven, Python, and Docker artifacts",
+      "author": {
+        "name": "io.github.addozhang"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.addozhang/nexus"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T07:05:39.10318Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx nexus-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-adelpro-quran-search-engine-mcp",
       "name": "io.github.adelpro/quran-search-engine-mcp",
       "type": "mcp",
@@ -46761,6 +47280,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-ajaxhe-lexiang-mcp-server",
+      "name": "io.github.ajaxhe/lexiang-mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/tencent-lexiang/lexiang-mcp-server",
+      "description": "DEPRECATED: Please use io.github.tencent-lexiang/lexiang-mcp-server instead.",
+      "author": {
+        "name": "io.github.ajaxhe"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.ajaxhe/lexiang-mcp-server", "github"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T08:36:21.564169Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.ajaxhe/lexiang-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-akougkas-zulipchat",
       "name": "io.github.akougkas/zulipchat",
       "type": "mcp",
@@ -46787,6 +47332,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-akshaykylas94-kylas-crm",
+      "name": "io.github.akshaykylas94/kylas-crm",
+      "type": "mcp",
+      "url": "https://github.com/akshaykylas94/MCP",
+      "description": "MCP server for Kylas CRM: create, search, and manage leads. Requires KYLAS_API_KEY.",
+      "author": {
+        "name": "io.github.akshaykylas94"
+      },
+      "category": "search",
+      "tags": ["search", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.akshaykylas94/kylas-crm"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T05:40:16.396504Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx kylas-crm-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-alex-feel-mcp-context-server",
       "name": "io.github.alex-feel/mcp-context-server",
       "type": "mcp",
@@ -46803,7 +47374,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-25T21:59:24.696955Z",
+        "lastUpdated": "2026-02-06T17:06:36.642561Z",
         "securityScore": 100
       },
       "install": {
@@ -46985,7 +47556,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-13T23:17:03.323999Z",
+        "lastUpdated": "2026-02-05T09:27:38.72091Z",
         "securityScore": 100
       },
       "install": {
@@ -48285,7 +48856,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T11:06:44.902294Z",
+        "lastUpdated": "2026-02-06T18:24:03.262538Z",
         "securityScore": 100
       },
       "install": {
@@ -48351,7 +48922,7 @@
       "name": "io.github.beycom/onetool-mcp",
       "type": "mcp",
       "url": "https://github.com/beycom/onetool-mcp",
-      "description": "🧿One MCP, unlimited tools. Execute Python code with access to curated tool packs.",
+      "description": "🧿 One MCP for developers. 100+ tools. Brave, Gemini, Excel, Files, DB, Version Check & DevTools.",
       "author": {
         "name": "io.github.beycom"
       },
@@ -48363,7 +48934,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T12:56:46.382026Z",
+        "lastUpdated": "2026-02-05T07:49:33.952238Z",
         "securityScore": 100
       },
       "install": {
@@ -48863,6 +49434,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx statecli-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-chenxiaofie-memory-mcp",
+      "name": "io.github.chenxiaofie/memory-mcp",
+      "type": "mcp",
+      "url": "https://github.com/chenxiaofie/memory-mcp",
+      "description": "情景+实体记忆 MCP 服务，为 Claude Code 提供持久化记忆能力",
+      "author": {
+        "name": "io.github.chenxiaofie"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.chenxiaofie/memory-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T08:14:40.155244Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx chenxiaofie-memory-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -49767,7 +50364,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-18T05:21:41.347931Z",
+        "lastUpdated": "2026-02-06T14:05:04.429824Z",
         "securityScore": 100
       },
       "install": {
@@ -50079,7 +50676,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T10:06:51.052018Z",
+        "lastUpdated": "2026-02-06T10:14:19.636335Z",
         "securityScore": 100
       },
       "install": {
@@ -50625,7 +51222,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-02T23:21:56.654841Z",
+        "lastUpdated": "2026-02-06T13:10:41.945934Z",
         "securityScore": 100
       },
       "install": {
@@ -50735,6 +51332,58 @@
       "install": {
         "method": "mcp-add",
         "command": "uvx eansearch-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-easingthemes-aem-mcp-server",
+      "name": "io.github.easingthemes/aem-mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/easingthemes/aem-mcp-server",
+      "description": "AEM MCP server. Chat with your AEM instance for content, component, and asset operations.",
+      "author": {
+        "name": "io.github.easingthemes"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.easingthemes/aem-mcp-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T13:41:33.633887Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx aem-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-easingthemes-moltbook-mcp",
+      "name": "io.github.easingthemes/moltbook-mcp",
+      "type": "mcp",
+      "url": "https://github.com/easingthemes/moltbook-http-mcp",
+      "description": "Moltbook MCP server: post, comment, upvote, DMs, communities. API key auth.",
+      "author": {
+        "name": "io.github.easingthemes"
+      },
+      "category": "security",
+      "tags": ["security", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.easingthemes/moltbook-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T13:24:00.969498Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx moltbook-http-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -50943,6 +51592,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx @elsahafy/ux-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-emcd-nb-mcp-server",
+      "name": "io.github.emcd/nb-mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/emcd/nb-mcp-server",
+      "description": "MCP server wrapping the nb CLI for LLM-friendly note-taking",
+      "author": {
+        "name": "io.github.emcd"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.emcd/nb-mcp-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T01:02:55.228818Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.emcd/nb-mcp-server",
         "marketplace": "official-registry"
       }
     },
@@ -51821,7 +52496,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-31T09:13:50.079046Z",
+        "lastUpdated": "2026-02-06T11:49:36.115258Z",
         "securityScore": 100
       },
       "install": {
@@ -51873,7 +52548,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-22T09:25:39.746224Z",
+        "lastUpdated": "2026-02-05T12:36:57.229063Z",
         "securityScore": 100
       },
       "install": {
@@ -52055,7 +52730,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-05T16:06:03.936525Z",
+        "lastUpdated": "2026-02-05T10:42:49.442246Z",
         "securityScore": 100
       },
       "install": {
@@ -52143,6 +52818,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-gurvinder-dhillon-powerbi-mcp",
+      "name": "io.github.gurvinder-dhillon/powerbi-mcp",
+      "type": "mcp",
+      "url": "https://github.com/gurvinder-dhillon/powerbi-mcp",
+      "description": "PowerBI REST API integration. Query workspaces, datasets, and execute DAX queries via MCP.",
+      "author": {
+        "name": "io.github.gurvinder-dhillon"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.gurvinder-dhillon/powerbi-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T06:54:58.364947Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx powerbi-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-gwhthompson-grist-mcp-server",
       "name": "io.github.gwhthompson/grist-mcp-server",
       "type": "mcp",
@@ -52217,6 +52918,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx @hellocoop/admin-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-hellosg-coderegistry",
+      "name": "io.github.hellosg/coderegistry",
+      "type": "mcp",
+      "url": "https://github.com/The-Code-Registry/mcp-server",
+      "description": "Enterprise code intelligence for M&A, security audits, and tech debt. Hosted server with 200k free.",
+      "author": {
+        "name": "io.github.hellosg"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.hellosg/coderegistry"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T16:13:40.752013Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.hellosg/coderegistry",
         "marketplace": "official-registry"
       }
     },
@@ -52893,6 +53620,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx financial-modeling-prep-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-img-src-io-mcp",
+      "name": "io.github.img-src-io/mcp",
+      "type": "mcp",
+      "url": "https://github.com/img-src-io/mcp",
+      "description": "MCP server for img-src.io Image CDN - upload, transform, and deliver images through AI assistants",
+      "author": {
+        "name": "io.github.img-src-io"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.img-src-io/mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T21:00:56.267937Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @img-src/mcp-server",
         "marketplace": "official-registry"
       }
     },
@@ -53849,7 +54602,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-31T20:23:02.127297Z",
+        "lastUpdated": "2026-02-04T21:30:43.647581Z",
         "securityScore": 100
       },
       "install": {
@@ -54005,7 +54758,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-23T16:30:35.223213Z",
+        "lastUpdated": "2026-02-05T22:27:01.779658Z",
         "securityScore": 100
       },
       "install": {
@@ -54343,12 +55096,38 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T07:57:37.973171Z",
+        "lastUpdated": "2026-02-05T02:50:17.257705Z",
         "securityScore": 100
       },
       "install": {
         "method": "mcp-add",
         "command": "npx @khalidsaidi/a2abench-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-kiki830621-che-ical-mcp",
+      "name": "io.github.kiki830621/che-ical-mcp",
+      "type": "mcp",
+      "url": "https://github.com/kiki830621/che-ical-mcp",
+      "description": "macOS Calendar & Reminders MCP server (24 tools). Native Swift EventKit, iCloud/Google/Exchange.",
+      "author": {
+        "name": "io.github.kiki830621"
+      },
+      "category": "cloud",
+      "tags": ["cloud", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.kiki830621/che-ical-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T03:18:41.171322Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.kiki830621/che-ical-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -54401,6 +55180,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx @mcp-z/mcp-pdf",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-kobuta23-cabin-flights",
+      "name": "io.github.kobuta23/cabin-flights",
+      "type": "mcp",
+      "url": "https://github.com/yolo-maxi/cabin",
+      "description": "Search and book real flights with USDC on Base. 500+ airlines, crypto-native payments.",
+      "author": {
+        "name": "io.github.kobuta23"
+      },
+      "category": "search",
+      "tags": ["search", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.kobuta23/cabin-flights"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T18:24:02.893893Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx cabin-flights",
         "marketplace": "official-registry"
       }
     },
@@ -54583,6 +55388,32 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add io.github.kuhumcst/dannet",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-kylastech-kylas-crm",
+      "name": "io.github.kylastech/kylas-crm",
+      "type": "mcp",
+      "url": "https://github.com/kylastech/kylas-crm-mcp-server",
+      "description": "MCP server for Kylas CRM: create, search, and manage leads. Requires KYLAS_API_KEY.",
+      "author": {
+        "name": "io.github.kylastech"
+      },
+      "category": "search",
+      "tags": ["search", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.kylastech/kylas-crm"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T11:00:15.54882Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx kylas-crm-mcp-server",
         "marketplace": "official-registry"
       }
     },
@@ -54899,6 +55730,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-lightningfaucet-lightning-wallet-mcp",
+      "name": "io.github.lightningfaucet/lightning-wallet-mcp",
+      "type": "mcp",
+      "url": "https://github.com/lightningfaucet/lightning-wallet-mcp",
+      "description": "Give AI agents a Bitcoin wallet with Lightning Network payments and L402 support.",
+      "author": {
+        "name": "io.github.lightningfaucet"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.lightningfaucet/lightning-wallet-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T00:52:27.638374Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx lightning-wallet-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-lignertys-reddit-insights-mcp",
       "name": "io.github.lignertys/reddit-insights-mcp",
       "type": "mcp",
@@ -55025,6 +55882,32 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add io.github.lio1204/what2watch-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-llmsresearch-paperbanana",
+      "name": "io.github.llmsresearch/paperbanana",
+      "type": "mcp",
+      "url": "https://github.com/llmsresearch/paperbanana",
+      "description": "Generate academic diagrams and statistical plots from text using multi-agent AI.",
+      "author": {
+        "name": "io.github.llmsresearch"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.llmsresearch/paperbanana"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T02:23:45.160661Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx paperbanana",
         "marketplace": "official-registry"
       }
     },
@@ -55305,7 +56188,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-27T22:34:56.332469Z",
+        "lastUpdated": "2026-02-05T14:13:16.388334Z",
         "securityScore": 100
       },
       "install": {
@@ -55523,6 +56406,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-markusvankempen-maximo-mcp-server",
+      "name": "io.github.markusvankempen/maximo-mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/markusvankempen/maximo-mcp-ai-integration-options",
+      "description": "Connect AI assistants directly to IBM Maximo for API discovery and OSLC data querying.",
+      "author": {
+        "name": "io.github.markusvankempen"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.markusvankempen/maximo-mcp-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T18:13:43.788803Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx maximo-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-marlenezw-publish-mcp-server",
       "name": "io.github.marlenezw/publish-mcp-server",
       "type": "mcp",
@@ -55591,7 +56500,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T04:15:46.855428Z",
+        "lastUpdated": "2026-02-06T15:33:49.809666Z",
         "securityScore": 100
       },
       "install": {
@@ -55968,7 +56877,7 @@
       "name": "io.github.michaeljmoody/courseforge",
       "type": "mcp",
       "url": "https://github.com/michaeljmoody/caring-courseforge",
-      "description": "AI-powered e-learning course builder with 61 tools and 17 domain-specialist skills.",
+      "description": "AI-powered LMS course builder: 89 tools, 17 skills, SCORM/xAPI export, agentic UI",
       "author": {
         "name": "io.github.michaeljmoody"
       },
@@ -55980,7 +56889,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T05:05:22.38236Z",
+        "lastUpdated": "2026-02-04T19:38:30.472799Z",
         "securityScore": 100
       },
       "install": {
@@ -56032,12 +56941,64 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-14T17:51:21.134474Z",
+        "lastUpdated": "2026-02-04T18:28:25.546246Z",
         "securityScore": 100
       },
       "install": {
         "method": "mcp-add",
         "command": "npx kubeview-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-mims-harvard-tooluniverse",
+      "name": "io.github.mims-harvard/tooluniverse",
+      "type": "mcp",
+      "url": "https://github.com/mims-harvard/ToolUniverse",
+      "description": "1000+ scientific tools for AI scientists: life science, reserach, literature, and more.",
+      "author": {
+        "name": "io.github.mims-harvard"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.mims-harvard/tooluniverse"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T22:47:58.8181Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx tooluniverse",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-mintlineai-mintline-mcp",
+      "name": "io.github.mintlineai/mintline-mcp",
+      "type": "mcp",
+      "url": "https://github.com/mintlineai/mintline-mcp",
+      "description": "Connect AI assistants to your Mintline receipts, transactions, and spending analytics.",
+      "author": {
+        "name": "io.github.mintlineai"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.mintlineai/mintline-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T12:14:51.528608Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @mintline/mcp",
         "marketplace": "official-registry"
       }
     },
@@ -56328,6 +57289,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-mybolide-mcp-probe-kit",
+      "name": "io.github.mybolide/mcp-probe-kit",
+      "type": "mcp",
+      "url": "https://github.com/mybolide/mcp-probe-kit",
+      "description": "AI-Powered Development Toolkit with 21 tools for code quality, project management, and UI/UX design.",
+      "author": {
+        "name": "io.github.mybolide"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.mybolide/mcp-probe-kit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T04:31:24.49793Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx mcp-probe-kit",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-mypracticaltools-reddit-mcp-server",
       "name": "io.github.mypracticaltools/reddit-mcp-server",
       "type": "mcp",
@@ -56532,6 +57519,31 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add io.github.netdata/mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-neverinfamous-db-mcp",
+      "name": "io.github.neverinfamous/db-mcp",
+      "type": "mcp",
+      "url": "https://github.com/neverinfamous/db-mcp.git",
+      "description": "SQLite MCP server with OAuth 2.1, HTTP/SSE, 122 tools, and smart tool filtering",
+      "author": {
+        "name": "io.github.neverinfamous"
+      },
+      "category": "database",
+      "tags": ["database", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.neverinfamous/db-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T13:13:15.733084Z"
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx db-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -57186,6 +58198,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-nkpar-coda",
+      "name": "io.github.nkpar/coda",
+      "type": "mcp",
+      "url": "https://github.com/nkpar/coda-mcp",
+      "description": "Interact with Coda.io documents, tables, and rows via the Coda API",
+      "author": {
+        "name": "io.github.nkpar"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.nkpar/coda"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T19:09:42.607415Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.nkpar/coda",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-noahgift-pmcp",
       "name": "io.github.noahgift/pmcp",
       "type": "mcp",
@@ -57260,6 +58298,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx nx-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-nuance-dev-rival",
+      "name": "io.github.nuance-dev/rival",
+      "type": "mcp",
+      "url": "https://github.com/nuance-dev/rival-mcp",
+      "description": "Query AI model benchmarks, pricing, and comparisons from rival.tips",
+      "author": {
+        "name": "io.github.nuance-dev"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.nuance-dev/rival"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T20:36:12.253269Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx rival-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -57390,6 +58454,32 @@
       "install": {
         "method": "mcp-add",
         "command": "uvx stats-compass-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-oozoofrog-baepsae",
+      "name": "io.github.oozoofrog/baepsae",
+      "type": "mcp",
+      "url": "https://github.com/oozoofrog/mcp-baepsae",
+      "description": "Local MCP server for iOS Simulator and macOS app automation with a native Swift bridge",
+      "author": {
+        "name": "io.github.oozoofrog"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.oozoofrog/baepsae"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T23:54:44.971016Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx mcp-baepsae",
         "marketplace": "official-registry"
       }
     },
@@ -57598,6 +58688,32 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add io.github.panbanda/omen",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-paulbreuler-limps",
+      "name": "io.github.paulbreuler/limps",
+      "type": "mcp",
+      "url": "https://github.com/paulbreuler/limps",
+      "description": "MCP planning server for AI agents — plan management, full-text search, and task lifecycle",
+      "author": {
+        "name": "io.github.paulbreuler"
+      },
+      "category": "search",
+      "tags": ["search", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.paulbreuler/limps"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T21:41:22.693624Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @sudosandwich/limps",
         "marketplace": "official-registry"
       }
     },
@@ -58152,19 +59268,19 @@
       "name": "io.github.pubnub/mcp-server",
       "type": "mcp",
       "url": "https://github.com/pubnub/pubnub-mcp-server",
-      "description": "PubNub MCP for Real-time messaging. API Access and SDK documentation.",
+      "description": "PubNub Model Context Protocol MCP Server for Cursor and Claude",
       "author": {
         "name": "io.github.pubnub"
       },
-      "category": "other",
-      "tags": ["other", "mcp", "official-registry"],
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
       "detection": {
         "keywords": ["io.github.pubnub/mcp-server"]
       },
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2025-12-17T02:31:23.276991Z",
+        "lastUpdated": "2026-02-04T15:10:52.579877Z",
         "securityScore": 100
       },
       "install": {
@@ -58330,6 +59446,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-rcgalbo-aichat",
+      "name": "io.github.rcgalbo/aichat",
+      "type": "mcp",
+      "url": "https://github.com/Wayy-Research/aichat-mcp",
+      "description": "Inter-agent communication for multi-agent Claude Code workflows.",
+      "author": {
+        "name": "io.github.rcgalbo"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.rcgalbo/aichat"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T19:59:18.025249Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx aichat-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-remoprinz-swiss-health-mcp",
       "name": "io.github.remoprinz/swiss-health-mcp",
       "type": "mcp",
@@ -58450,7 +59592,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-03T17:49:25.66319Z",
+        "lastUpdated": "2026-02-06T09:42:05.705791Z",
         "securityScore": 100
       },
       "install": {
@@ -58612,6 +59754,32 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add io.github.rogiervdbrnk/mcp-real-estate-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-ronitjadhav-geoservercloud-mcp",
+      "name": "io.github.ronitjadhav/geoservercloud-mcp",
+      "type": "mcp",
+      "url": "https://github.com/ronitjadhav/geoservercloud-mcp",
+      "description": "MCP server for managing GeoServer workspaces, datastores, layers, and styles",
+      "author": {
+        "name": "io.github.ronitjadhav"
+      },
+      "category": "cloud",
+      "tags": ["cloud", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.ronitjadhav/geoservercloud-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T15:45:54.169645Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "uvx geoservercloud-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -58996,7 +60164,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-02T15:58:02.089903Z",
+        "lastUpdated": "2026-02-04T21:19:41.579084Z",
         "securityScore": 100
       },
       "install": {
@@ -59386,7 +60554,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-14T14:14:18.708466Z",
+        "lastUpdated": "2026-02-04T22:12:01.928358Z",
         "securityScore": 100
       },
       "install": {
@@ -59412,7 +60580,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-14T14:23:38.702942Z",
+        "lastUpdated": "2026-02-04T22:12:50.939581Z",
         "securityScore": 100
       },
       "install": {
@@ -59652,6 +60820,32 @@
       "install": {
         "method": "mcp-add",
         "command": "npx @simplifierag/simplifier-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-sinewaveai-agent-security-scanner-mcp",
+      "name": "io.github.sinewaveai/agent-security-scanner-mcp",
+      "type": "mcp",
+      "url": "https://github.com/sinewaveai/agent-security-scanner-mcp",
+      "description": "Security layer for AI agents: blocks prompt injection, detects fake packages, scans vulnerabilities.",
+      "author": {
+        "name": "io.github.sinewaveai"
+      },
+      "category": "security",
+      "tags": ["security", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.sinewaveai/agent-security-scanner-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T17:46:29.662562Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx agent-security-scanner-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -60140,7 +61334,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-02T11:23:48.007483Z",
+        "lastUpdated": "2026-02-06T16:13:25.017827Z",
         "securityScore": 100
       },
       "install": {
@@ -60644,6 +61838,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-teabagkim-interview-mode",
+      "name": "io.github.teabagkim/interview-mode",
+      "type": "mcp",
+      "url": "https://github.com/teabagkim/claude-interview-mode",
+      "description": "Structured interviewer for Claude Code — probing questions, decision tracking, evolving checkpoints.",
+      "author": {
+        "name": "io.github.teabagkim"
+      },
+      "category": "developer-tools",
+      "tags": ["developer-tools", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.teabagkim/interview-mode"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T09:27:28.341516Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx claude-interview-mode",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-team-telnyx-telnyx",
       "name": "io.github.team-telnyx/telnyx",
       "type": "mcp",
@@ -61024,7 +62244,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-02T04:28:40.58997Z",
+        "lastUpdated": "2026-02-04T20:59:31.630844Z",
         "securityScore": 100
       },
       "install": {
@@ -62220,12 +63440,38 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-27T22:51:01.488611Z",
+        "lastUpdated": "2026-02-06T14:57:46.656673Z",
         "securityScore": 100
       },
       "install": {
         "method": "mcp-add",
         "command": "npx it-tools-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-wspringer-math-svg-mcp",
+      "name": "io.github.wspringer/math-svg-mcp",
+      "type": "mcp",
+      "url": "https://github.com/wspringer/math-svg-mcp",
+      "description": "Convert LaTeX math expressions to crisp, scalable SVG images",
+      "author": {
+        "name": "io.github.wspringer"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.wspringer/math-svg-mcp"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T09:18:08.113742Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx math-svg-mcp",
         "marketplace": "official-registry"
       }
     },
@@ -62516,6 +63762,32 @@
       }
     },
     {
+      "id": "official-mcp-io-github-yotsuda-markdown-pointer",
+      "name": "io.github.yotsuda/markdown-pointer",
+      "type": "mcp",
+      "url": "https://github.com/yotsuda/MarkdownPointer",
+      "description": "Markdown viewer for AI-assisted document review. Click any element to copy file path + line number.",
+      "author": {
+        "name": "io.github.yotsuda"
+      },
+      "category": "filesystem",
+      "tags": ["filesystem", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.yotsuda/markdown-pointer"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T14:40:39.420773Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add io.github.yotsuda/markdown-pointer",
+        "marketplace": "official-registry"
+      }
+    },
+    {
       "id": "official-mcp-io-github-youdotcom-oss-mcp",
       "name": "io.github.youdotcom-oss/mcp",
       "type": "mcp",
@@ -62532,7 +63804,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-02-01T10:02:43.783221Z",
+        "lastUpdated": "2026-02-05T20:16:25.545516Z",
         "securityScore": 100
       },
       "install": {
@@ -62564,6 +63836,58 @@
       "install": {
         "method": "mcp-add",
         "command": "uvx db-connect-mcp",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-yuv24793-custom-mcp-server",
+      "name": "io.github.yuv24793/custom-mcp-server",
+      "type": "mcp",
+      "url": "https://github.com/yuv24793/custom-mcp-server",
+      "description": "An MCP server that provides custom functionality.",
+      "author": {
+        "name": "io.github.yuv24793"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.yuv24793/custom-mcp-server"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-05T10:28:36.538989Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @yuv24793/custom-mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-io-github-yuv24793-weather",
+      "name": "io.github.yuv24793/weather",
+      "type": "mcp",
+      "url": "https://github.com/yuv24793/mcp-weather-server",
+      "description": "An MCP server that provides weather information.",
+      "author": {
+        "name": "io.github.yuv24793"
+      },
+      "category": "other",
+      "tags": ["other", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["io.github.yuv24793/weather"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-04T19:47:26.226643Z",
+        "securityScore": 100
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "npx @yuv24793/mcp-weather-server",
         "marketplace": "official-registry"
       }
     },
@@ -62792,7 +64116,7 @@
       "metrics": {
         "source": "official",
         "isOfficial": true,
-        "lastUpdated": "2026-01-27T00:32:29.040465Z",
+        "lastUpdated": "2026-02-06T07:49:41.529626Z",
         "securityScore": 100
       },
       "install": {
@@ -63084,6 +64408,31 @@
       "install": {
         "method": "mcp-add",
         "command": "claude mcp add io.wordlift/mcp-server",
+        "marketplace": "official-registry"
+      }
+    },
+    {
+      "id": "official-mcp-me-in-context-portfolio",
+      "name": "me.in-context/portfolio",
+      "type": "mcp",
+      "url": "https://github.com/TMILLS333/in-context.me",
+      "description": "AI-native portfolio inside Claude conversations. Interactive UI with work, services, and contact.",
+      "author": {
+        "name": "me.in-context"
+      },
+      "category": "ai",
+      "tags": ["ai", "mcp", "official-registry"],
+      "detection": {
+        "keywords": ["me.in-context/portfolio"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "lastUpdated": "2026-02-06T04:16:39.370584Z"
+      },
+      "install": {
+        "method": "mcp-add",
+        "command": "claude mcp add me.in-context/portfolio",
         "marketplace": "official-registry"
       }
     },
