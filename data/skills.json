@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-07T00:57:26.063Z",
+  "lastUpdated": "2026-02-08T01:15:17.793Z",
   "items": [
     {
       "id": "skill-official-vercel-labs-composition-patterns",
@@ -31528,12 +31528,12 @@
       "tags": ["agent skills", "skill", "official", "fvadicamo"],
       "detection": {
         "keywords": [
-          "python",
-          "go",
+          "bun",
           "git",
           "github",
           "api",
           "test",
+          "testing",
           "ci",
           "ai",
           "ml",
@@ -31559,7 +31559,7 @@
       "name": "Git Commit",
       "type": "skill",
       "url": "https://github.com/fvadicamo/dev-agent-skills/tree/main/skills/git-commit",
-      "description": "Creates git commits following Conventional Commits format with proper type, scope, and subject.",
+      "description": "Creates git commits following Conventional Commits format.",
       "author": {
         "name": "fvadicamo",
         "url": "https://github.com/fvadicamo"
@@ -31567,23 +31567,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "fvadicamo"],
       "detection": {
-        "keywords": [
-          "javascript",
-          "go",
-          "java",
-          "node",
-          "git",
-          "github",
-          "api",
-          "test",
-          "ci",
-          "cd",
-          "security",
-          "auth",
-          "authentication",
-          "ai",
-          "commit"
-        ]
+        "keywords": ["go", "git", "api", "ci", "security", "auth", "ai", "commit"]
       },
       "metrics": {
         "source": "official",
@@ -31609,18 +31593,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "fvadicamo"],
       "detection": {
-        "keywords": [
-          "python",
-          "git",
-          "github",
-          "test",
-          "ci",
-          "cd",
-          "security",
-          "auth",
-          "ai",
-          "creation"
-        ]
+        "keywords": ["aws", "git", "github", "test", "ci", "cd", "security", "ai", "creation"]
       },
       "metrics": {
         "source": "official",
@@ -31646,7 +31619,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "fvadicamo"],
       "detection": {
-        "keywords": ["python", "git", "github", "api", "test", "ci", "ai", "merge"]
+        "keywords": ["git", "github", "api", "test", "ci", "ai", "merge"]
       },
       "metrics": {
         "source": "official",
@@ -31672,19 +31645,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "fvadicamo"],
       "detection": {
-        "keywords": [
-          "python",
-          "git",
-          "github",
-          "api",
-          "test",
-          "ci",
-          "security",
-          "auth",
-          "ai",
-          "word",
-          "review"
-        ]
+        "keywords": ["git", "github", "api", "test", "ci", "security", "ai", "word", "review"]
       },
       "metrics": {
         "source": "official",
@@ -31782,6 +31743,43 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/alinaqi/claude-bootstrap && cd claude-bootstrap/skills/aeo-optimization"
+      }
+    },
+    {
+      "id": "skill-official-alinaqi-agent-teams",
+      "name": "Agent Teams",
+      "type": "skill",
+      "url": "https://github.com/alinaqi/claude-bootstrap/tree/main/skills/agent-teams",
+      "description": "*Load with: base.md + code-review.md + security.md + session-management.md*",
+      "author": {
+        "name": "alinaqi",
+        "url": "https://github.com/alinaqi"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "alinaqi"],
+      "detection": {
+        "keywords": [
+          "typescript",
+          "rust",
+          "git",
+          "test",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "agent",
+          "teams"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/alinaqi/claude-bootstrap && cd claude-bootstrap/skills/agent-teams"
       }
     },
     {
