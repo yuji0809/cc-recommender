@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-08T01:15:17.793Z",
+  "lastUpdated": "2026-02-14T01:01:28.567Z",
   "items": [
     {
       "id": "skill-official-vercel-labs-composition-patterns",
@@ -11573,7 +11573,7 @@
       "id": "skill-official-cloudflare-agents-sdk",
       "name": "Agents Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/agents-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk/tree/main/skills/agents-sdk",
       "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
@@ -11603,14 +11603,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/agents-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/agents-sdk && cd skills/skills/agents-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-building-ai-agent-on-cloudflare",
       "name": "Building Ai Agent On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/building-ai-agent-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk/tree/main/skills/building-ai-agent-on-cloudflare",
       "description": "Creates AI-powered agents using Cloudflare's Agents SDK with persistent state, real-time communication, and tool integration.",
       "author": {
         "name": "cloudflare",
@@ -11646,14 +11646,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/building-ai-agent-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/agents-sdk && cd skills/skills/building-ai-agent-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-building-mcp-server-on-cloudflare",
       "name": "Building Mcp Server On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/building-mcp-server-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk/tree/main/skills/building-mcp-server-on-cloudflare",
       "description": "Creates production-ready Model Context Protocol servers on Cloudflare Workers with tools, authentication, and deployment.",
       "author": {
         "name": "cloudflare",
@@ -11693,14 +11693,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/building-mcp-server-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/agents-sdk && cd skills/skills/building-mcp-server-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-cloudflare",
       "name": "Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk/tree/main/skills/cloudflare",
       "description": "Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.",
       "author": {
         "name": "cloudflare",
@@ -11733,14 +11733,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/agents-sdk && cd skills/skills/cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-durable-objects",
       "name": "Durable Objects",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/durable-objects",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk/tree/main/skills/durable-objects",
       "description": "Build stateful, coordinated applications on Cloudflare's edge using Durable Objects.",
       "author": {
         "name": "cloudflare",
@@ -11771,14 +11771,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/durable-objects"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/agents-sdk && cd skills/skills/durable-objects"
       }
     },
     {
       "id": "skill-official-cloudflare-sandbox-sdk",
       "name": "Sandbox Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/sandbox-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk/tree/main/skills/sandbox-sdk",
       "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
       "author": {
         "name": "cloudflare",
@@ -11816,14 +11816,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/sandbox-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/agents-sdk && cd skills/skills/sandbox-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-web-perf",
       "name": "Web Perf",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/web-perf",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk/tree/main/skills/web-perf",
       "description": "Audit web page performance using Chrome DevTools MCP tools. This skill focuses on Core Web Vitals, network optimization, and high-level accessibility gaps.",
       "author": {
         "name": "cloudflare",
@@ -11842,14 +11842,55 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/web-perf"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/agents-sdk && cd skills/skills/web-perf"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-workers-best-practices",
+      "name": "Workers Best Practices",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk/tree/main/skills/workers-best-practices",
+      "description": "Fetch the **latest** versions before writing or reviewing Workers code. Do not rely on baked-in knowledge for API signatures, config fields, or binding shapes.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "sql",
+          "node",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "workers",
+          "best",
+          "practices"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/agents-sdk && cd skills/skills/workers-best-practices"
       }
     },
     {
       "id": "skill-official-cloudflare-wrangler",
       "name": "Wrangler",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/agents-sdk/tree/main/skills/wrangler",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk/tree/main/skills/wrangler",
       "description": "Deploy, develop, and manage Cloudflare Workers and associated resources.",
       "author": {
         "name": "cloudflare",
@@ -11885,14 +11926,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/agents-sdk && cd skills/skills/wrangler"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/agents-sdk && cd skills/skills/wrangler"
       }
     },
     {
       "id": "skill-official-cloudflare-agents-sdk",
       "name": "Agents Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/agents-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare/tree/main/skills/agents-sdk",
       "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
@@ -11922,14 +11963,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/agents-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare && cd skills/skills/agents-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-building-ai-agent-on-cloudflare",
       "name": "Building Ai Agent On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/building-ai-agent-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare/tree/main/skills/building-ai-agent-on-cloudflare",
       "description": "Creates AI-powered agents using Cloudflare's Agents SDK with persistent state, real-time communication, and tool integration.",
       "author": {
         "name": "cloudflare",
@@ -11965,14 +12006,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/building-ai-agent-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare && cd skills/skills/building-ai-agent-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-building-mcp-server-on-cloudflare",
       "name": "Building Mcp Server On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/building-mcp-server-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare/tree/main/skills/building-mcp-server-on-cloudflare",
       "description": "Creates production-ready Model Context Protocol servers on Cloudflare Workers with tools, authentication, and deployment.",
       "author": {
         "name": "cloudflare",
@@ -12012,14 +12053,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/building-mcp-server-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare && cd skills/skills/building-mcp-server-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-cloudflare",
       "name": "Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare/tree/main/skills/cloudflare",
       "description": "Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.",
       "author": {
         "name": "cloudflare",
@@ -12052,14 +12093,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare && cd skills/skills/cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-durable-objects",
       "name": "Durable Objects",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/durable-objects",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare/tree/main/skills/durable-objects",
       "description": "Build stateful, coordinated applications on Cloudflare's edge using Durable Objects.",
       "author": {
         "name": "cloudflare",
@@ -12090,14 +12131,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/durable-objects"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare && cd skills/skills/durable-objects"
       }
     },
     {
       "id": "skill-official-cloudflare-sandbox-sdk",
       "name": "Sandbox Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/sandbox-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare/tree/main/skills/sandbox-sdk",
       "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
       "author": {
         "name": "cloudflare",
@@ -12135,14 +12176,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/sandbox-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare && cd skills/skills/sandbox-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-web-perf",
       "name": "Web Perf",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/web-perf",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare/tree/main/skills/web-perf",
       "description": "Audit web page performance using Chrome DevTools MCP tools. This skill focuses on Core Web Vitals, network optimization, and high-level accessibility gaps.",
       "author": {
         "name": "cloudflare",
@@ -12161,14 +12202,55 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/web-perf"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare && cd skills/skills/web-perf"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-workers-best-practices",
+      "name": "Workers Best Practices",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare/tree/main/skills/workers-best-practices",
+      "description": "Fetch the **latest** versions before writing or reviewing Workers code. Do not rely on baked-in knowledge for API signatures, config fields, or binding shapes.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "sql",
+          "node",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "workers",
+          "best",
+          "practices"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare && cd skills/skills/workers-best-practices"
       }
     },
     {
       "id": "skill-official-cloudflare-wrangler",
       "name": "Wrangler",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare/tree/main/skills/wrangler",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare/tree/main/skills/wrangler",
       "description": "Deploy, develop, and manage Cloudflare Workers and associated resources.",
       "author": {
         "name": "cloudflare",
@@ -12204,14 +12286,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-ai-agent-on-cloudflare && cd skills/skills/wrangler"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-ai-agent-on-cloudflare && cd skills/skills/wrangler"
       }
     },
     {
       "id": "skill-official-cloudflare-agents-sdk",
       "name": "Agents Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/agents-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare/tree/main/skills/agents-sdk",
       "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
@@ -12241,14 +12323,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/agents-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare && cd skills/skills/agents-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-building-ai-agent-on-cloudflare",
       "name": "Building Ai Agent On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/building-ai-agent-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare/tree/main/skills/building-ai-agent-on-cloudflare",
       "description": "Creates AI-powered agents using Cloudflare's Agents SDK with persistent state, real-time communication, and tool integration.",
       "author": {
         "name": "cloudflare",
@@ -12284,14 +12366,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/building-ai-agent-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare && cd skills/skills/building-ai-agent-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-building-mcp-server-on-cloudflare",
       "name": "Building Mcp Server On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/building-mcp-server-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare/tree/main/skills/building-mcp-server-on-cloudflare",
       "description": "Creates production-ready Model Context Protocol servers on Cloudflare Workers with tools, authentication, and deployment.",
       "author": {
         "name": "cloudflare",
@@ -12331,14 +12413,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/building-mcp-server-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare && cd skills/skills/building-mcp-server-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-cloudflare",
       "name": "Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare/tree/main/skills/cloudflare",
       "description": "Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.",
       "author": {
         "name": "cloudflare",
@@ -12371,14 +12453,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare && cd skills/skills/cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-durable-objects",
       "name": "Durable Objects",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/durable-objects",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare/tree/main/skills/durable-objects",
       "description": "Build stateful, coordinated applications on Cloudflare's edge using Durable Objects.",
       "author": {
         "name": "cloudflare",
@@ -12409,14 +12491,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/durable-objects"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare && cd skills/skills/durable-objects"
       }
     },
     {
       "id": "skill-official-cloudflare-sandbox-sdk",
       "name": "Sandbox Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/sandbox-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare/tree/main/skills/sandbox-sdk",
       "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
       "author": {
         "name": "cloudflare",
@@ -12454,14 +12536,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/sandbox-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare && cd skills/skills/sandbox-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-web-perf",
       "name": "Web Perf",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/web-perf",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare/tree/main/skills/web-perf",
       "description": "Audit web page performance using Chrome DevTools MCP tools. This skill focuses on Core Web Vitals, network optimization, and high-level accessibility gaps.",
       "author": {
         "name": "cloudflare",
@@ -12480,14 +12562,55 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/web-perf"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare && cd skills/skills/web-perf"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-workers-best-practices",
+      "name": "Workers Best Practices",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare/tree/main/skills/workers-best-practices",
+      "description": "Fetch the **latest** versions before writing or reviewing Workers code. Do not rely on baked-in knowledge for API signatures, config fields, or binding shapes.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "sql",
+          "node",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "workers",
+          "best",
+          "practices"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare && cd skills/skills/workers-best-practices"
       }
     },
     {
       "id": "skill-official-cloudflare-wrangler",
       "name": "Wrangler",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare/tree/main/skills/wrangler",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare/tree/main/skills/wrangler",
       "description": "Deploy, develop, and manage Cloudflare Workers and associated resources.",
       "author": {
         "name": "cloudflare",
@@ -12523,7 +12646,7 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/building-mcp-server-on-cloudflare && cd skills/skills/wrangler"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/building-mcp-server-on-cloudflare && cd skills/skills/wrangler"
       }
     },
     {
@@ -12803,6 +12926,47 @@
       }
     },
     {
+      "id": "skill-official-cloudflare-workers-best-practices",
+      "name": "Workers Best Practices",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/commands/tree/main/skills/workers-best-practices",
+      "description": "Fetch the **latest** versions before writing or reviewing Workers code. Do not rely on baked-in knowledge for API signatures, config fields, or binding shapes.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "sql",
+          "node",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "workers",
+          "best",
+          "practices"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/commands && cd skills/skills/workers-best-practices"
+      }
+    },
+    {
       "id": "skill-official-cloudflare-wrangler",
       "name": "Wrangler",
       "type": "skill",
@@ -12849,7 +13013,7 @@
       "id": "skill-official-cloudflare-agents-sdk",
       "name": "Agents Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/agents-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects/tree/main/skills/agents-sdk",
       "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
@@ -12879,14 +13043,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/agents-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/durable-objects && cd skills/skills/agents-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-building-ai-agent-on-cloudflare",
       "name": "Building Ai Agent On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/building-ai-agent-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects/tree/main/skills/building-ai-agent-on-cloudflare",
       "description": "Creates AI-powered agents using Cloudflare's Agents SDK with persistent state, real-time communication, and tool integration.",
       "author": {
         "name": "cloudflare",
@@ -12922,14 +13086,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/building-ai-agent-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/durable-objects && cd skills/skills/building-ai-agent-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-building-mcp-server-on-cloudflare",
       "name": "Building Mcp Server On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/building-mcp-server-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects/tree/main/skills/building-mcp-server-on-cloudflare",
       "description": "Creates production-ready Model Context Protocol servers on Cloudflare Workers with tools, authentication, and deployment.",
       "author": {
         "name": "cloudflare",
@@ -12969,14 +13133,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/building-mcp-server-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/durable-objects && cd skills/skills/building-mcp-server-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-cloudflare",
       "name": "Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects/tree/main/skills/cloudflare",
       "description": "Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.",
       "author": {
         "name": "cloudflare",
@@ -13009,14 +13173,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/durable-objects && cd skills/skills/cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-durable-objects",
       "name": "Durable Objects",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/durable-objects",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects/tree/main/skills/durable-objects",
       "description": "Build stateful, coordinated applications on Cloudflare's edge using Durable Objects.",
       "author": {
         "name": "cloudflare",
@@ -13047,14 +13211,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/durable-objects"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/durable-objects && cd skills/skills/durable-objects"
       }
     },
     {
       "id": "skill-official-cloudflare-sandbox-sdk",
       "name": "Sandbox Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/sandbox-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects/tree/main/skills/sandbox-sdk",
       "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
       "author": {
         "name": "cloudflare",
@@ -13092,14 +13256,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/sandbox-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/durable-objects && cd skills/skills/sandbox-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-web-perf",
       "name": "Web Perf",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/web-perf",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects/tree/main/skills/web-perf",
       "description": "Audit web page performance using Chrome DevTools MCP tools. This skill focuses on Core Web Vitals, network optimization, and high-level accessibility gaps.",
       "author": {
         "name": "cloudflare",
@@ -13118,14 +13282,55 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/web-perf"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/durable-objects && cd skills/skills/web-perf"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-workers-best-practices",
+      "name": "Workers Best Practices",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects/tree/main/skills/workers-best-practices",
+      "description": "Fetch the **latest** versions before writing or reviewing Workers code. Do not rely on baked-in knowledge for API signatures, config fields, or binding shapes.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "sql",
+          "node",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "workers",
+          "best",
+          "practices"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/durable-objects && cd skills/skills/workers-best-practices"
       }
     },
     {
       "id": "skill-official-cloudflare-wrangler",
       "name": "Wrangler",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/durable-objects/tree/main/skills/wrangler",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects/tree/main/skills/wrangler",
       "description": "Deploy, develop, and manage Cloudflare Workers and associated resources.",
       "author": {
         "name": "cloudflare",
@@ -13161,14 +13366,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/durable-objects && cd skills/skills/wrangler"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/durable-objects && cd skills/skills/wrangler"
       }
     },
     {
       "id": "skill-official-cloudflare-agents-sdk",
       "name": "Agents Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/agents-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/web-perf/tree/main/skills/agents-sdk",
       "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
@@ -13198,14 +13403,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/agents-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/web-perf && cd skills/skills/agents-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-building-ai-agent-on-cloudflare",
       "name": "Building Ai Agent On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/building-ai-agent-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/web-perf/tree/main/skills/building-ai-agent-on-cloudflare",
       "description": "Creates AI-powered agents using Cloudflare's Agents SDK with persistent state, real-time communication, and tool integration.",
       "author": {
         "name": "cloudflare",
@@ -13241,14 +13446,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/building-ai-agent-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/web-perf && cd skills/skills/building-ai-agent-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-building-mcp-server-on-cloudflare",
       "name": "Building Mcp Server On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/building-mcp-server-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/web-perf/tree/main/skills/building-mcp-server-on-cloudflare",
       "description": "Creates production-ready Model Context Protocol servers on Cloudflare Workers with tools, authentication, and deployment.",
       "author": {
         "name": "cloudflare",
@@ -13288,14 +13493,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/building-mcp-server-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/web-perf && cd skills/skills/building-mcp-server-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-cloudflare",
       "name": "Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/web-perf/tree/main/skills/cloudflare",
       "description": "Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.",
       "author": {
         "name": "cloudflare",
@@ -13328,14 +13533,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/web-perf && cd skills/skills/cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-durable-objects",
       "name": "Durable Objects",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/durable-objects",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/web-perf/tree/main/skills/durable-objects",
       "description": "Build stateful, coordinated applications on Cloudflare's edge using Durable Objects.",
       "author": {
         "name": "cloudflare",
@@ -13366,14 +13571,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/durable-objects"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/web-perf && cd skills/skills/durable-objects"
       }
     },
     {
       "id": "skill-official-cloudflare-sandbox-sdk",
       "name": "Sandbox Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/sandbox-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/web-perf/tree/main/skills/sandbox-sdk",
       "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
       "author": {
         "name": "cloudflare",
@@ -13411,14 +13616,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/sandbox-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/web-perf && cd skills/skills/sandbox-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-web-perf",
       "name": "Web Perf",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/web-perf",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/web-perf/tree/main/skills/web-perf",
       "description": "Audit web page performance using Chrome DevTools MCP tools. This skill focuses on Core Web Vitals, network optimization, and high-level accessibility gaps.",
       "author": {
         "name": "cloudflare",
@@ -13437,14 +13642,55 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/web-perf"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/web-perf && cd skills/skills/web-perf"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-workers-best-practices",
+      "name": "Workers Best Practices",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/web-perf/tree/main/skills/workers-best-practices",
+      "description": "Fetch the **latest** versions before writing or reviewing Workers code. Do not rely on baked-in knowledge for API signatures, config fields, or binding shapes.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "sql",
+          "node",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "workers",
+          "best",
+          "practices"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/web-perf && cd skills/skills/workers-best-practices"
       }
     },
     {
       "id": "skill-official-cloudflare-wrangler",
       "name": "Wrangler",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/web-perf/tree/main/skills/wrangler",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/web-perf/tree/main/skills/wrangler",
       "description": "Deploy, develop, and manage Cloudflare Workers and associated resources.",
       "author": {
         "name": "cloudflare",
@@ -13480,14 +13726,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/web-perf && cd skills/skills/wrangler"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/web-perf && cd skills/skills/wrangler"
       }
     },
     {
       "id": "skill-official-cloudflare-agents-sdk",
       "name": "Agents Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/agents-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/wrangler/tree/main/skills/agents-sdk",
       "description": "**STOP.** Your knowledge of the Agents SDK may be outdated. Prefer retrieval over pre-training for any Agents SDK task.",
       "author": {
         "name": "cloudflare",
@@ -13517,14 +13763,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/agents-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/wrangler && cd skills/skills/agents-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-building-ai-agent-on-cloudflare",
       "name": "Building Ai Agent On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/building-ai-agent-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/wrangler/tree/main/skills/building-ai-agent-on-cloudflare",
       "description": "Creates AI-powered agents using Cloudflare's Agents SDK with persistent state, real-time communication, and tool integration.",
       "author": {
         "name": "cloudflare",
@@ -13560,14 +13806,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/building-ai-agent-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/wrangler && cd skills/skills/building-ai-agent-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-building-mcp-server-on-cloudflare",
       "name": "Building Mcp Server On Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/building-mcp-server-on-cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/wrangler/tree/main/skills/building-mcp-server-on-cloudflare",
       "description": "Creates production-ready Model Context Protocol servers on Cloudflare Workers with tools, authentication, and deployment.",
       "author": {
         "name": "cloudflare",
@@ -13607,14 +13853,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/building-mcp-server-on-cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/wrangler && cd skills/skills/building-mcp-server-on-cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-cloudflare",
       "name": "Cloudflare",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/cloudflare",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/wrangler/tree/main/skills/cloudflare",
       "description": "Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.",
       "author": {
         "name": "cloudflare",
@@ -13647,14 +13893,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/cloudflare"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/wrangler && cd skills/skills/cloudflare"
       }
     },
     {
       "id": "skill-official-cloudflare-durable-objects",
       "name": "Durable Objects",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/durable-objects",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/wrangler/tree/main/skills/durable-objects",
       "description": "Build stateful, coordinated applications on Cloudflare's edge using Durable Objects.",
       "author": {
         "name": "cloudflare",
@@ -13685,14 +13931,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/durable-objects"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/wrangler && cd skills/skills/durable-objects"
       }
     },
     {
       "id": "skill-official-cloudflare-sandbox-sdk",
       "name": "Sandbox Sdk",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/sandbox-sdk",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/wrangler/tree/main/skills/sandbox-sdk",
       "description": "Build secure, isolated code execution environments on Cloudflare Workers.",
       "author": {
         "name": "cloudflare",
@@ -13730,14 +13976,14 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/sandbox-sdk"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/wrangler && cd skills/skills/sandbox-sdk"
       }
     },
     {
       "id": "skill-official-cloudflare-web-perf",
       "name": "Web Perf",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/web-perf",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/wrangler/tree/main/skills/web-perf",
       "description": "Audit web page performance using Chrome DevTools MCP tools. This skill focuses on Core Web Vitals, network optimization, and high-level accessibility gaps.",
       "author": {
         "name": "cloudflare",
@@ -13756,14 +14002,55 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/web-perf"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/wrangler && cd skills/skills/web-perf"
+      }
+    },
+    {
+      "id": "skill-official-cloudflare-workers-best-practices",
+      "name": "Workers Best Practices",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/wrangler/tree/main/skills/workers-best-practices",
+      "description": "Fetch the **latest** versions before writing or reviewing Workers code. Do not rely on baked-in knowledge for API signatures, config fields, or binding shapes.",
+      "author": {
+        "name": "cloudflare",
+        "url": "https://github.com/cloudflare"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "cloudflare"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "sql",
+          "node",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "workers",
+          "best",
+          "practices"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/wrangler && cd skills/skills/workers-best-practices"
       }
     },
     {
       "id": "skill-official-cloudflare-wrangler",
       "name": "Wrangler",
       "type": "skill",
-      "url": "https://github.com/cloudflare/skills/tree/main/wrangler/tree/main/skills/wrangler",
+      "url": "https://github.com/cloudflare/skills/tree/main/skills/wrangler/tree/main/skills/wrangler",
       "description": "Deploy, develop, and manage Cloudflare Workers and associated resources.",
       "author": {
         "name": "cloudflare",
@@ -13799,7 +14086,7 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/cloudflare/skills/tree/main/wrangler && cd skills/skills/wrangler"
+        "command": "git clone https://github.com/cloudflare/skills/tree/main/skills/wrangler && cd skills/skills/wrangler"
       }
     },
     {
@@ -13839,6 +14126,47 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/supabase/agent-skills/tree/main/skills/supabase-postgres-best-practices && cd agent-skills/skills/supabase-postgres-best-practices"
+      }
+    },
+    {
+      "id": "skill-official-google-gemini-gemini-api-dev",
+      "name": "Gemini Api Dev",
+      "type": "skill",
+      "url": "https://github.com/google-gemini/gemini-skills/tree/main/skills/gemini-api-dev",
+      "description": "The Gemini API provides access to Google's most advanced AI models. Key capabilities include: - **Text generation** - Chat, completion, summarization - **Multimodal understanding** - Process images, audio, video, and documents",
+      "author": {
+        "name": "google-gemini",
+        "url": "https://github.com/google-gemini"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "google-gemini"],
+      "detection": {
+        "keywords": [
+          "typescript",
+          "javascript",
+          "python",
+          "go",
+          "java",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "ai",
+          "ml",
+          "llm",
+          "gemini",
+          "dev"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/google-gemini/gemini-skills && cd gemini-skills/skills/gemini-api-dev"
       }
     },
     {
@@ -17568,7 +17896,7 @@
       "name": "Upgrade Stripe",
       "type": "skill",
       "url": "https://github.com/stripe/ai/tree/main/skills/stripe-best-practices/tree/main/skills/upgrade-stripe",
-      "description": "Skills from stripe/ai",
+      "description": "This guide covers upgrading Stripe API versions, server-side SDKs, Stripe.js, and mobile SDKs.",
       "author": {
         "name": "stripe",
         "url": "https://github.com/stripe"
@@ -17576,7 +17904,23 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "stripe"],
       "detection": {
-        "keywords": ["go", "api", "test", "ci", "ai", "upgrade", "stripe"]
+        "keywords": [
+          "database",
+          "react",
+          "javascript",
+          "python",
+          "go",
+          "java",
+          "node",
+          "api",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "upgrade",
+          "stripe"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -17620,7 +17964,7 @@
       "name": "Upgrade Stripe",
       "type": "skill",
       "url": "https://github.com/stripe/ai/tree/main/skills/upgrade-stripe/tree/main/skills/upgrade-stripe",
-      "description": "Skills from stripe/ai",
+      "description": "This guide covers upgrading Stripe API versions, server-side SDKs, Stripe.js, and mobile SDKs.",
       "author": {
         "name": "stripe",
         "url": "https://github.com/stripe"
@@ -17628,7 +17972,23 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "stripe"],
       "detection": {
-        "keywords": ["go", "api", "test", "ci", "ai", "upgrade", "stripe"]
+        "keywords": [
+          "database",
+          "react",
+          "javascript",
+          "python",
+          "go",
+          "java",
+          "node",
+          "api",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "upgrade",
+          "stripe"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -17657,6 +18017,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -17668,6 +18030,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -17698,6 +18061,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -17709,6 +18074,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -17739,6 +18105,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -17750,6 +18118,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -17780,6 +18149,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -17791,6 +18162,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -17821,6 +18193,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -17832,6 +18206,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -17862,6 +18237,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -17873,6 +18250,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -17903,6 +18281,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -17914,6 +18294,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -17944,6 +18325,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -17955,6 +18338,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -17985,6 +18369,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -17996,6 +18382,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18026,6 +18413,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18037,6 +18426,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18067,6 +18457,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18078,6 +18470,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18108,6 +18501,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18119,6 +18514,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18149,6 +18545,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18160,6 +18558,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18190,6 +18589,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18201,6 +18602,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18231,6 +18633,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18242,6 +18646,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18272,6 +18677,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18283,6 +18690,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18313,6 +18721,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18324,6 +18734,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18354,6 +18765,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18365,6 +18778,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18395,6 +18809,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18406,6 +18822,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18436,6 +18853,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18447,6 +18866,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18477,6 +18897,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18488,6 +18910,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18518,6 +18941,8 @@
         "keywords": [
           "python",
           "rust",
+          "go",
+          "kubernetes",
           "git",
           "github",
           "api",
@@ -18529,6 +18954,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "skills"
         ]
       },
@@ -18892,7 +19318,7 @@
       "name": "Tinybird Best Practices",
       "type": "skill",
       "url": "https://github.com/tinybirdco/tinybird-agent-skills/tree/main/skills/tinybird-best-practices/tree/main/skills/tinybird-best-practices",
-      "description": "Reusable guidance extracted from Tinybird Code (the Tinybird CLI coding agent). Use this skill when working in Tinybird projects, editing datafiles, running build/deploy flows, exploring data, or managing tests/secrets.",
+      "description": "Guidance for Tinybird file formats, SQL rules, optimization patterns, and data modeling. Use this skill when creating or editing Tinybird datafiles.",
       "author": {
         "name": "tinybirdco",
         "url": "https://github.com/tinybirdco"
@@ -18900,7 +19326,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "tinybirdco"],
       "detection": {
-        "keywords": ["sql", "test", "ci", "tinybird", "best", "practices"]
+        "keywords": ["sql", "test", "tinybird", "best", "practices"]
       },
       "metrics": {
         "source": "official",
@@ -18911,6 +19337,58 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/tinybirdco/tinybird-agent-skills/tree/main/skills/tinybird-best-practices && cd tinybird-agent-skills/skills/tinybird-best-practices"
+      }
+    },
+    {
+      "id": "skill-official-tinybirdco-tinybird-cli-guidelines",
+      "name": "Tinybird Cli Guidelines",
+      "type": "skill",
+      "url": "https://github.com/tinybirdco/tinybird-agent-skills/tree/main/skills/tinybird-best-practices/tree/main/skills/tinybird-cli-guidelines",
+      "description": "Guidance for using the Tinybird CLI (tb) for local development, deployments, data operations, and workspace management.",
+      "author": {
+        "name": "tinybirdco",
+        "url": "https://github.com/tinybirdco"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "tinybirdco"],
+      "detection": {
+        "keywords": ["test", "ci", "tinybird", "cli", "guidelines"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/tinybirdco/tinybird-agent-skills/tree/main/skills/tinybird-best-practices && cd tinybird-agent-skills/skills/tinybird-cli-guidelines"
+      }
+    },
+    {
+      "id": "skill-official-tinybirdco-tinybird-typescript-sdk-guidelines",
+      "name": "Tinybird Typescript Sdk Guidelines",
+      "type": "skill",
+      "url": "https://github.com/tinybirdco/tinybird-agent-skills/tree/main/skills/tinybird-best-practices/tree/main/skills/tinybird-typescript-sdk-guidelines",
+      "description": "Guidance for using the `@tinybirdco/sdk` package to define Tinybird resources in TypeScript with complete type inference.",
+      "author": {
+        "name": "tinybirdco",
+        "url": "https://github.com/tinybirdco"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "tinybirdco"],
+      "detection": {
+        "keywords": ["typescript", "api", "ai", "tinybird", "sdk", "guidelines"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/tinybirdco/tinybird-agent-skills/tree/main/skills/tinybird-best-practices && cd tinybird-agent-skills/skills/tinybird-typescript-sdk-guidelines"
       }
     },
     {
@@ -18929,8 +19407,13 @@
         "keywords": [
           "postgres",
           "database",
+          "nextjs",
+          "next.js",
           "typescript",
+          "javascript",
           "python",
+          "go",
+          "java",
           "api",
           "rest",
           "ci",
@@ -18957,7 +19440,7 @@
       "id": "skill-official-dmmulroy-cloudflare",
       "name": "Cloudflare",
       "type": "skill",
-      "url": "https://github.com/dmmulroy/cloudflare-skill/tree/main/skill/cloudflare/tree/main/skills/cloudflare",
+      "url": "https://github.com/dmmulroy/cloudflare-skill/tree/main/skills/cloudflare/tree/main/skills/cloudflare",
       "description": "Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.",
       "author": {
         "name": "dmmulroy",
@@ -18993,7 +19476,45 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/dmmulroy/cloudflare-skill/tree/main/skill/cloudflare && cd cloudflare-skill/skills/cloudflare"
+        "command": "git clone https://github.com/dmmulroy/cloudflare-skill/tree/main/skills/cloudflare && cd cloudflare-skill/skills/cloudflare"
+      }
+    },
+    {
+      "id": "skill-official-clickhouse-clickhouse-best-practices",
+      "name": "Clickhouse Best Practices",
+      "type": "skill",
+      "url": "https://github.com/ClickHouse/agent-skills/tree/main/skills/clickhouse-best-practices",
+      "description": "Comprehensive guidance for ClickHouse covering schema design, query optimization, and data ingestion. Contains 28 rules across 3 main categories (schema, query, insert), prioritized by impact.",
+      "author": {
+        "name": "ClickHouse",
+        "url": "https://github.com/ClickHouse"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "clickhouse"],
+      "detection": {
+        "keywords": [
+          "database",
+          "go",
+          "deno",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "llm",
+          "clickhouse",
+          "best",
+          "practices"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ClickHouse/agent-skills && cd agent-skills/skills/clickhouse-best-practices"
       }
     },
     {
@@ -19554,6 +20075,1224 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/remotion-dev/skills/tree/main/skills/remotion && cd skills/skills/remotion"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-docs-transloadit-robots",
+      "name": "Docs Transloadit Robots",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transloadit/tree/main/skills/docs-transloadit-robots",
+      "description": "```bash npx -y @transloadit/node docs robots list --search import --limit 10 -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["go", "node", "docs", "transloadit", "robots"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transloadit && cd skills/skills/docs-transloadit-robots"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "name": "Integrate Asset Delivery With Transloadit Smartcdn In Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transloadit/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_SMARTCDN_WORKSPACE`, `TRANSLOADIT_SMARTCDN_TEMPLATE`, `TRANSLOADIT_SMARTCDN_INPUT`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "node",
+          "git",
+          "github",
+          "api",
+          "test",
+          "cd",
+          "auth",
+          "ai",
+          "integrate",
+          "asset",
+          "delivery",
+          "with",
+          "transloadit",
+          "smartcdn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transloadit && cd skills/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "name": "Integrate Uppy Transloadit S3 Uploading To Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transloadit/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_TEMPLATE_ID` (recommended once you create a template)",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "go",
+          "node",
+          "aws",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "auth",
+          "ai",
+          "ml",
+          "integrate",
+          "uppy",
+          "transloadit",
+          "uploading"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transloadit && cd skills/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-encode-hls-video-with-transloadit",
+      "name": "Transform Encode Hls Video With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transloadit/tree/main/skills/transform-encode-hls-video-with-transloadit",
+      "description": "```bash npx -y @transloadit/node assemblies create \\ --template builtin/encode-hls-video@latest \\ -i ./input.mp4 \\ -o ./out/ \\ -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "node",
+          "test",
+          "ai",
+          "transform",
+          "encode",
+          "hls",
+          "video",
+          "with",
+          "transloadit"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transloadit && cd skills/skills/transform-encode-hls-video-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-generate-image-with-transloadit",
+      "name": "Transform Generate Image With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transloadit/tree/main/skills/transform-generate-image-with-transloadit",
+      "description": "Do not use `--watch` for inputless templates.",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["node", "test", "ai", "transform", "generate", "image", "with", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transloadit && cd skills/skills/transform-generate-image-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transloadit",
+      "name": "Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transloadit/tree/main/skills/transloadit",
+      "description": "1. Need reference (robot params/examples, no API calls): `docs-transloadit-robots` 2. Need a one-off transform (download outputs locally): `transform-*` 3. Need an end-to-end code integration (real app integration steps): `integrate-*`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["nextjs", "node", "api", "test", "ci", "cd", "ai", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transloadit && cd skills/skills/transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-docs-transloadit-robots",
+      "name": "Docs Transloadit Robots",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots/tree/main/skills/docs-transloadit-robots",
+      "description": "```bash npx -y @transloadit/node docs robots list --search import --limit 10 -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["go", "node", "docs", "transloadit", "robots"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots && cd skills/skills/docs-transloadit-robots"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "name": "Integrate Asset Delivery With Transloadit Smartcdn In Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_SMARTCDN_WORKSPACE`, `TRANSLOADIT_SMARTCDN_TEMPLATE`, `TRANSLOADIT_SMARTCDN_INPUT`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "node",
+          "git",
+          "github",
+          "api",
+          "test",
+          "cd",
+          "auth",
+          "ai",
+          "integrate",
+          "asset",
+          "delivery",
+          "with",
+          "transloadit",
+          "smartcdn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots && cd skills/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "name": "Integrate Uppy Transloadit S3 Uploading To Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_TEMPLATE_ID` (recommended once you create a template)",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "go",
+          "node",
+          "aws",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "auth",
+          "ai",
+          "ml",
+          "integrate",
+          "uppy",
+          "transloadit",
+          "uploading"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots && cd skills/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-encode-hls-video-with-transloadit",
+      "name": "Transform Encode Hls Video With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots/tree/main/skills/transform-encode-hls-video-with-transloadit",
+      "description": "```bash npx -y @transloadit/node assemblies create \\ --template builtin/encode-hls-video@latest \\ -i ./input.mp4 \\ -o ./out/ \\ -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "node",
+          "test",
+          "ai",
+          "transform",
+          "encode",
+          "hls",
+          "video",
+          "with",
+          "transloadit"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots && cd skills/skills/transform-encode-hls-video-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-generate-image-with-transloadit",
+      "name": "Transform Generate Image With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots/tree/main/skills/transform-generate-image-with-transloadit",
+      "description": "Do not use `--watch` for inputless templates.",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["node", "test", "ai", "transform", "generate", "image", "with", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots && cd skills/skills/transform-generate-image-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transloadit",
+      "name": "Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots/tree/main/skills/transloadit",
+      "description": "1. Need reference (robot params/examples, no API calls): `docs-transloadit-robots` 2. Need a one-off transform (download outputs locally): `transform-*` 3. Need an end-to-end code integration (real app integration steps): `integrate-*`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["nextjs", "node", "api", "test", "ci", "cd", "ai", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/docs-transloadit-robots && cd skills/skills/transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-docs-transloadit-robots",
+      "name": "Docs Transloadit Robots",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit/tree/main/skills/docs-transloadit-robots",
+      "description": "```bash npx -y @transloadit/node docs robots list --search import --limit 10 -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["go", "node", "docs", "transloadit", "robots"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit && cd skills/skills/docs-transloadit-robots"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "name": "Integrate Asset Delivery With Transloadit Smartcdn In Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_SMARTCDN_WORKSPACE`, `TRANSLOADIT_SMARTCDN_TEMPLATE`, `TRANSLOADIT_SMARTCDN_INPUT`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "node",
+          "git",
+          "github",
+          "api",
+          "test",
+          "cd",
+          "auth",
+          "ai",
+          "integrate",
+          "asset",
+          "delivery",
+          "with",
+          "transloadit",
+          "smartcdn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit && cd skills/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "name": "Integrate Uppy Transloadit S3 Uploading To Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_TEMPLATE_ID` (recommended once you create a template)",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "go",
+          "node",
+          "aws",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "auth",
+          "ai",
+          "ml",
+          "integrate",
+          "uppy",
+          "transloadit",
+          "uploading"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit && cd skills/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-encode-hls-video-with-transloadit",
+      "name": "Transform Encode Hls Video With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit/tree/main/skills/transform-encode-hls-video-with-transloadit",
+      "description": "```bash npx -y @transloadit/node assemblies create \\ --template builtin/encode-hls-video@latest \\ -i ./input.mp4 \\ -o ./out/ \\ -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "node",
+          "test",
+          "ai",
+          "transform",
+          "encode",
+          "hls",
+          "video",
+          "with",
+          "transloadit"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit && cd skills/skills/transform-encode-hls-video-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-generate-image-with-transloadit",
+      "name": "Transform Generate Image With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit/tree/main/skills/transform-generate-image-with-transloadit",
+      "description": "Do not use `--watch` for inputless templates.",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["node", "test", "ai", "transform", "generate", "image", "with", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit && cd skills/skills/transform-generate-image-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transloadit",
+      "name": "Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit/tree/main/skills/transloadit",
+      "description": "1. Need reference (robot params/examples, no API calls): `docs-transloadit-robots` 2. Need a one-off transform (download outputs locally): `transform-*` 3. Need an end-to-end code integration (real app integration steps): `integrate-*`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["nextjs", "node", "api", "test", "ci", "cd", "ai", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-generate-image-with-transloadit && cd skills/skills/transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-docs-transloadit-robots",
+      "name": "Docs Transloadit Robots",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit/tree/main/skills/docs-transloadit-robots",
+      "description": "```bash npx -y @transloadit/node docs robots list --search import --limit 10 -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["go", "node", "docs", "transloadit", "robots"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit && cd skills/skills/docs-transloadit-robots"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "name": "Integrate Asset Delivery With Transloadit Smartcdn In Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_SMARTCDN_WORKSPACE`, `TRANSLOADIT_SMARTCDN_TEMPLATE`, `TRANSLOADIT_SMARTCDN_INPUT`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "node",
+          "git",
+          "github",
+          "api",
+          "test",
+          "cd",
+          "auth",
+          "ai",
+          "integrate",
+          "asset",
+          "delivery",
+          "with",
+          "transloadit",
+          "smartcdn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit && cd skills/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "name": "Integrate Uppy Transloadit S3 Uploading To Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_TEMPLATE_ID` (recommended once you create a template)",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "go",
+          "node",
+          "aws",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "auth",
+          "ai",
+          "ml",
+          "integrate",
+          "uppy",
+          "transloadit",
+          "uploading"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit && cd skills/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-encode-hls-video-with-transloadit",
+      "name": "Transform Encode Hls Video With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit/tree/main/skills/transform-encode-hls-video-with-transloadit",
+      "description": "```bash npx -y @transloadit/node assemblies create \\ --template builtin/encode-hls-video@latest \\ -i ./input.mp4 \\ -o ./out/ \\ -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "node",
+          "test",
+          "ai",
+          "transform",
+          "encode",
+          "hls",
+          "video",
+          "with",
+          "transloadit"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit && cd skills/skills/transform-encode-hls-video-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-generate-image-with-transloadit",
+      "name": "Transform Generate Image With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit/tree/main/skills/transform-generate-image-with-transloadit",
+      "description": "Do not use `--watch` for inputless templates.",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["node", "test", "ai", "transform", "generate", "image", "with", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit && cd skills/skills/transform-generate-image-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transloadit",
+      "name": "Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit/tree/main/skills/transloadit",
+      "description": "1. Need reference (robot params/examples, no API calls): `docs-transloadit-robots` 2. Need a one-off transform (download outputs locally): `transform-*` 3. Need an end-to-end code integration (real app integration steps): `integrate-*`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["nextjs", "node", "api", "test", "ci", "cd", "ai", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/transform-encode-hls-video-with-transloadit && cd skills/skills/transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-docs-transloadit-robots",
+      "name": "Docs Transloadit Robots",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs/tree/main/skills/docs-transloadit-robots",
+      "description": "```bash npx -y @transloadit/node docs robots list --search import --limit 10 -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["go", "node", "docs", "transloadit", "robots"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs && cd skills/skills/docs-transloadit-robots"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "name": "Integrate Asset Delivery With Transloadit Smartcdn In Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_SMARTCDN_WORKSPACE`, `TRANSLOADIT_SMARTCDN_TEMPLATE`, `TRANSLOADIT_SMARTCDN_INPUT`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "node",
+          "git",
+          "github",
+          "api",
+          "test",
+          "cd",
+          "auth",
+          "ai",
+          "integrate",
+          "asset",
+          "delivery",
+          "with",
+          "transloadit",
+          "smartcdn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs && cd skills/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "name": "Integrate Uppy Transloadit S3 Uploading To Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_TEMPLATE_ID` (recommended once you create a template)",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "go",
+          "node",
+          "aws",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "auth",
+          "ai",
+          "ml",
+          "integrate",
+          "uppy",
+          "transloadit",
+          "uploading"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs && cd skills/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-encode-hls-video-with-transloadit",
+      "name": "Transform Encode Hls Video With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs/tree/main/skills/transform-encode-hls-video-with-transloadit",
+      "description": "```bash npx -y @transloadit/node assemblies create \\ --template builtin/encode-hls-video@latest \\ -i ./input.mp4 \\ -o ./out/ \\ -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "node",
+          "test",
+          "ai",
+          "transform",
+          "encode",
+          "hls",
+          "video",
+          "with",
+          "transloadit"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs && cd skills/skills/transform-encode-hls-video-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-generate-image-with-transloadit",
+      "name": "Transform Generate Image With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs/tree/main/skills/transform-generate-image-with-transloadit",
+      "description": "Do not use `--watch` for inputless templates.",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["node", "test", "ai", "transform", "generate", "image", "with", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs && cd skills/skills/transform-generate-image-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transloadit",
+      "name": "Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs/tree/main/skills/transloadit",
+      "description": "1. Need reference (robot params/examples, no API calls): `docs-transloadit-robots` 2. Need a one-off transform (download outputs locally): `transform-*` 3. Need an end-to-end code integration (real app integration steps): `integrate-*`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["nextjs", "node", "api", "test", "ci", "cd", "ai", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs && cd skills/skills/transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-docs-transloadit-robots",
+      "name": "Docs Transloadit Robots",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs/tree/main/skills/docs-transloadit-robots",
+      "description": "```bash npx -y @transloadit/node docs robots list --search import --limit 10 -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["go", "node", "docs", "transloadit", "robots"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs && cd skills/skills/docs-transloadit-robots"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "name": "Integrate Asset Delivery With Transloadit Smartcdn In Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_SMARTCDN_WORKSPACE`, `TRANSLOADIT_SMARTCDN_TEMPLATE`, `TRANSLOADIT_SMARTCDN_INPUT`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "node",
+          "git",
+          "github",
+          "api",
+          "test",
+          "cd",
+          "auth",
+          "ai",
+          "integrate",
+          "asset",
+          "delivery",
+          "with",
+          "transloadit",
+          "smartcdn"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs && cd skills/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "name": "Integrate Uppy Transloadit S3 Uploading To Nextjs",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs/tree/main/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs",
+      "description": "- Required env (server-only): `TRANSLOADIT_KEY`, `TRANSLOADIT_SECRET` - Optional env: `TRANSLOADIT_TEMPLATE_ID` (recommended once you create a template)",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "next.js",
+          "go",
+          "node",
+          "aws",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "auth",
+          "ai",
+          "ml",
+          "integrate",
+          "uppy",
+          "transloadit",
+          "uploading"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs && cd skills/skills/integrate-uppy-transloadit-s3-uploading-to-nextjs"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-encode-hls-video-with-transloadit",
+      "name": "Transform Encode Hls Video With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs/tree/main/skills/transform-encode-hls-video-with-transloadit",
+      "description": "```bash npx -y @transloadit/node assemblies create \\ --template builtin/encode-hls-video@latest \\ -i ./input.mp4 \\ -o ./out/ \\ -j ```",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": [
+          "node",
+          "test",
+          "ai",
+          "transform",
+          "encode",
+          "hls",
+          "video",
+          "with",
+          "transloadit"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs && cd skills/skills/transform-encode-hls-video-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transform-generate-image-with-transloadit",
+      "name": "Transform Generate Image With Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs/tree/main/skills/transform-generate-image-with-transloadit",
+      "description": "Do not use `--watch` for inputless templates.",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["node", "test", "ai", "transform", "generate", "image", "with", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs && cd skills/skills/transform-generate-image-with-transloadit"
+      }
+    },
+    {
+      "id": "skill-official-transloadit-transloadit",
+      "name": "Transloadit",
+      "type": "skill",
+      "url": "https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs/tree/main/skills/transloadit",
+      "description": "1. Need reference (robot params/examples, no API calls): `docs-transloadit-robots` 2. Need a one-off transform (download outputs locally): `transform-*` 3. Need an end-to-end code integration (real app integration steps): `integrate-*`",
+      "author": {
+        "name": "transloadit",
+        "url": "https://github.com/transloadit"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "transloadit"],
+      "detection": {
+        "keywords": ["nextjs", "node", "api", "test", "ci", "cd", "ai", "transloadit"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs && cd skills/skills/transloadit"
       }
     },
     {
@@ -23517,6 +25256,96 @@
       }
     },
     {
+      "id": "skill-official-hanfang-claude-memory-skill",
+      "name": "Claude Memory Skill",
+      "type": "skill",
+      "url": "https://github.com/hanfang/claude-memory-skill",
+      "description": "``` ╔══●══●══●══════════════════════════════════════════════╗ ║                                                       ║ ║  > tree ~/.claude/memory                              ║ ║                                                       ║",
+      "author": {
+        "name": "hanfang",
+        "url": "https://github.com/hanfang"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "hanfang"],
+      "detection": {
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "test",
+          "ci",
+          "cd",
+          "auth",
+          "ai",
+          "claude",
+          "memory",
+          "skill"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/hanfang/claude-memory-skill"
+      }
+    },
+    {
+      "id": "skill-official-kreuzberg-dev-kreuzberg",
+      "name": "Kreuzberg",
+      "type": "skill",
+      "url": "https://github.com/kreuzberg-dev/kreuzberg/tree/main/skills/kreuzberg/tree/main/skills/kreuzberg",
+      "description": "Kreuzberg is a high-performance document intelligence library with a Rust core and native bindings for Python, Node.js/TypeScript, Ruby, Go, Java, C#, PHP, and Elixir. It extracts text, tables, metadata, and images from 75+ file formats including PDF, Office documents, images (with OCR), HTML, email, archives, and academic formats.",
+      "author": {
+        "name": "kreuzberg-dev",
+        "url": "https://github.com/kreuzberg-dev"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "kreuzberg-dev"],
+      "detection": {
+        "keywords": [
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "docker",
+          "git",
+          "github",
+          "api",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "ml",
+          "docx",
+          "pdf",
+          "pptx",
+          "xlsx",
+          "word",
+          "kreuzberg"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/kreuzberg-dev/kreuzberg/tree/main/skills/kreuzberg && cd kreuzberg/skills/kreuzberg"
+      }
+    },
+    {
       "id": "skill-official-shpigford-skills",
       "name": "Skills",
       "type": "skill",
@@ -23767,6 +25596,32 @@
       }
     },
     {
+      "id": "skill-official-sanjay3290-elevenlabs",
+      "name": "Elevenlabs",
+      "type": "skill",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres/tree/main/skills/elevenlabs",
+      "description": "This skill converts text and documents into high-quality audio using ElevenLabs TTS API. It supports two modes: single-voice narration and two-host conversational podcast generation.",
+      "author": {
+        "name": "sanjay3290",
+        "url": "https://github.com/sanjay3290"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sanjay3290"],
+      "detection": {
+        "keywords": ["react", "python", "api", "rest", "ci", "ai", "docx", "pdf", "elevenlabs"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres && cd ai-skills/skills/elevenlabs"
+      }
+    },
+    {
       "id": "skill-official-sanjay3290-gmail",
       "name": "Gmail",
       "type": "skill",
@@ -23841,7 +25696,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "sanjay3290"],
       "detection": {
-        "keywords": ["python", "go", "api", "auth", "authentication", "ai", "google", "chat"]
+        "keywords": ["python", "go", "api", "auth", "authentication", "ai", "pdf", "google", "chat"]
       },
       "metrics": {
         "source": "official",
@@ -23885,7 +25740,7 @@
       "name": "Google Drive",
       "type": "skill",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres/tree/main/skills/google-drive",
-      "description": "Lightweight Google Drive integration with standalone OAuth authentication. No MCP server required.",
+      "description": "Lightweight Google Drive integration with standalone OAuth authentication. No MCP server required. Full read/write access.",
       "author": {
         "name": "sanjay3290",
         "url": "https://github.com/sanjay3290"
@@ -23922,7 +25777,7 @@
       "name": "Google Sheets",
       "type": "skill",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres/tree/main/skills/google-sheets",
-      "description": "Lightweight Google Sheets integration with standalone OAuth authentication. No MCP server required. Read-only access.",
+      "description": "Lightweight Google Sheets integration with standalone OAuth authentication. No MCP server required. Full read/write access.",
       "author": {
         "name": "sanjay3290",
         "url": "https://github.com/sanjay3290"
@@ -23958,7 +25813,7 @@
       "name": "Google Slides",
       "type": "skill",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres/tree/main/skills/google-slides",
-      "description": "Lightweight Google Slides integration with standalone OAuth authentication. No MCP server required.",
+      "description": "Lightweight Google Slides integration with standalone OAuth authentication. No MCP server required. Full read/write access.",
       "author": {
         "name": "sanjay3290",
         "url": "https://github.com/sanjay3290"
@@ -23966,7 +25821,17 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "sanjay3290"],
       "detection": {
-        "keywords": ["python", "go", "api", "auth", "authentication", "ai", "google", "slides"]
+        "keywords": [
+          "python",
+          "go",
+          "api",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "google",
+          "slides"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -24076,6 +25941,32 @@
       }
     },
     {
+      "id": "skill-official-sanjay3290-notebooklm",
+      "name": "Notebooklm",
+      "type": "skill",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres/tree/main/skills/notebooklm",
+      "description": "Query NotebookLM notebooks and manage notebooks/sources via Playwright browser automation.",
+      "author": {
+        "name": "sanjay3290",
+        "url": "https://github.com/sanjay3290"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sanjay3290"],
+      "detection": {
+        "keywords": ["python", "go", "auth", "ai", "ml", "notebooklm"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres && cd ai-skills/skills/notebooklm"
+      }
+    },
+    {
       "id": "skill-official-sanjay3290-outline",
       "name": "Outline",
       "type": "skill",
@@ -24165,6 +26056,32 @@
       }
     },
     {
+      "id": "skill-official-sanjay3290-elevenlabs",
+      "name": "Elevenlabs",
+      "type": "skill",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research/tree/main/skills/elevenlabs",
+      "description": "This skill converts text and documents into high-quality audio using ElevenLabs TTS API. It supports two modes: single-voice narration and two-host conversational podcast generation.",
+      "author": {
+        "name": "sanjay3290",
+        "url": "https://github.com/sanjay3290"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sanjay3290"],
+      "detection": {
+        "keywords": ["react", "python", "api", "rest", "ci", "ai", "docx", "pdf", "elevenlabs"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research && cd ai-skills/skills/elevenlabs"
+      }
+    },
+    {
       "id": "skill-official-sanjay3290-gmail",
       "name": "Gmail",
       "type": "skill",
@@ -24239,7 +26156,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "sanjay3290"],
       "detection": {
-        "keywords": ["python", "go", "api", "auth", "authentication", "ai", "google", "chat"]
+        "keywords": ["python", "go", "api", "auth", "authentication", "ai", "pdf", "google", "chat"]
       },
       "metrics": {
         "source": "official",
@@ -24283,7 +26200,7 @@
       "name": "Google Drive",
       "type": "skill",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research/tree/main/skills/google-drive",
-      "description": "Lightweight Google Drive integration with standalone OAuth authentication. No MCP server required.",
+      "description": "Lightweight Google Drive integration with standalone OAuth authentication. No MCP server required. Full read/write access.",
       "author": {
         "name": "sanjay3290",
         "url": "https://github.com/sanjay3290"
@@ -24320,7 +26237,7 @@
       "name": "Google Sheets",
       "type": "skill",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research/tree/main/skills/google-sheets",
-      "description": "Lightweight Google Sheets integration with standalone OAuth authentication. No MCP server required. Read-only access.",
+      "description": "Lightweight Google Sheets integration with standalone OAuth authentication. No MCP server required. Full read/write access.",
       "author": {
         "name": "sanjay3290",
         "url": "https://github.com/sanjay3290"
@@ -24356,7 +26273,7 @@
       "name": "Google Slides",
       "type": "skill",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research/tree/main/skills/google-slides",
-      "description": "Lightweight Google Slides integration with standalone OAuth authentication. No MCP server required.",
+      "description": "Lightweight Google Slides integration with standalone OAuth authentication. No MCP server required. Full read/write access.",
       "author": {
         "name": "sanjay3290",
         "url": "https://github.com/sanjay3290"
@@ -24364,7 +26281,17 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "sanjay3290"],
       "detection": {
-        "keywords": ["python", "go", "api", "auth", "authentication", "ai", "google", "slides"]
+        "keywords": [
+          "python",
+          "go",
+          "api",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "google",
+          "slides"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -24471,6 +26398,32 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research && cd ai-skills/skills/manus"
+      }
+    },
+    {
+      "id": "skill-official-sanjay3290-notebooklm",
+      "name": "Notebooklm",
+      "type": "skill",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research/tree/main/skills/notebooklm",
+      "description": "Query NotebookLM notebooks and manage notebooks/sources via Playwright browser automation.",
+      "author": {
+        "name": "sanjay3290",
+        "url": "https://github.com/sanjay3290"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sanjay3290"],
+      "detection": {
+        "keywords": ["python", "go", "auth", "ai", "ml", "notebooklm"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research && cd ai-skills/skills/notebooklm"
       }
     },
     {
@@ -39049,6 +41002,32 @@
       }
     },
     {
+      "id": "skill-official-sanjay3290-elevenlabs",
+      "name": "Elevenlabs",
+      "type": "skill",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen/tree/main/skills/elevenlabs",
+      "description": "This skill converts text and documents into high-quality audio using ElevenLabs TTS API. It supports two modes: single-voice narration and two-host conversational podcast generation.",
+      "author": {
+        "name": "sanjay3290",
+        "url": "https://github.com/sanjay3290"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sanjay3290"],
+      "detection": {
+        "keywords": ["react", "python", "api", "rest", "ci", "ai", "docx", "pdf", "elevenlabs"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen && cd ai-skills/skills/elevenlabs"
+      }
+    },
+    {
       "id": "skill-official-sanjay3290-gmail",
       "name": "Gmail",
       "type": "skill",
@@ -39123,7 +41102,7 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "sanjay3290"],
       "detection": {
-        "keywords": ["python", "go", "api", "auth", "authentication", "ai", "google", "chat"]
+        "keywords": ["python", "go", "api", "auth", "authentication", "ai", "pdf", "google", "chat"]
       },
       "metrics": {
         "source": "official",
@@ -39167,7 +41146,7 @@
       "name": "Google Drive",
       "type": "skill",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen/tree/main/skills/google-drive",
-      "description": "Lightweight Google Drive integration with standalone OAuth authentication. No MCP server required.",
+      "description": "Lightweight Google Drive integration with standalone OAuth authentication. No MCP server required. Full read/write access.",
       "author": {
         "name": "sanjay3290",
         "url": "https://github.com/sanjay3290"
@@ -39204,7 +41183,7 @@
       "name": "Google Sheets",
       "type": "skill",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen/tree/main/skills/google-sheets",
-      "description": "Lightweight Google Sheets integration with standalone OAuth authentication. No MCP server required. Read-only access.",
+      "description": "Lightweight Google Sheets integration with standalone OAuth authentication. No MCP server required. Full read/write access.",
       "author": {
         "name": "sanjay3290",
         "url": "https://github.com/sanjay3290"
@@ -39240,7 +41219,7 @@
       "name": "Google Slides",
       "type": "skill",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen/tree/main/skills/google-slides",
-      "description": "Lightweight Google Slides integration with standalone OAuth authentication. No MCP server required.",
+      "description": "Lightweight Google Slides integration with standalone OAuth authentication. No MCP server required. Full read/write access.",
       "author": {
         "name": "sanjay3290",
         "url": "https://github.com/sanjay3290"
@@ -39248,7 +41227,17 @@
       "category": "Agent Skills",
       "tags": ["agent skills", "skill", "official", "sanjay3290"],
       "detection": {
-        "keywords": ["python", "go", "api", "auth", "authentication", "ai", "google", "slides"]
+        "keywords": [
+          "python",
+          "go",
+          "api",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "google",
+          "slides"
+        ]
       },
       "metrics": {
         "source": "official",
@@ -39355,6 +41344,32 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen && cd ai-skills/skills/manus"
+      }
+    },
+    {
+      "id": "skill-official-sanjay3290-notebooklm",
+      "name": "Notebooklm",
+      "type": "skill",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen/tree/main/skills/notebooklm",
+      "description": "Query NotebookLM notebooks and manage notebooks/sources via Playwright browser automation.",
+      "author": {
+        "name": "sanjay3290",
+        "url": "https://github.com/sanjay3290"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "sanjay3290"],
+      "detection": {
+        "keywords": ["python", "go", "auth", "ai", "ml", "notebooklm"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen && cd ai-skills/skills/notebooklm"
       }
     },
     {
@@ -39913,7 +41928,6 @@
           "test",
           "testing",
           "ci",
-          "cd",
           "ai",
           "ml",
           "llm",
@@ -42099,6 +44113,7 @@
           "python",
           "go",
           "java",
+          "node",
           "bun",
           "docker",
           "aws",
@@ -42133,6 +44148,559 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/yusufkaraaslan/Skill_Seekers"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-algorithmic-art",
+      "name": "Algorithmic Art",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+      "description": "To begin, create an ALGORITHMIC PHILOSOPHY (not static images or templates) that will be interpreted through: - Computational processes, emergent behavior, mathematical beauty - Seeded randomness, noise fields, organic systems",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "javascript",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "rest",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "word",
+          "algorithmic",
+          "art"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/algorithmic-art"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-brand-guidelines",
+      "name": "Brand Guidelines",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+      "description": "To access Anthropic's official brand identity and style resources, use this skill.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": ["python", "rest", "ci", "ai", "pptx", "word", "brand", "guidelines"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/brand-guidelines"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-canvas-design",
+      "name": "Canvas Design",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+      "description": "To begin, create a VISUAL PHILOSOPHY (not layouts or templates) that will be interpreted through: - Form, space, color, composition - Images, graphics, shapes, patterns - Minimal text as visual accent",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": ["go", "bun", "git", "rest", "ci", "ai", "pdf", "word", "canvas", "design"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/canvas-design"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-doc-coauthoring",
+      "name": "Doc Coauthoring",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+      "description": "This skill provides a structured workflow for guiding users through collaborative document creation. Act as an active guide, walking users through three stages: Context Gathering, Refinement & Structure, and Reader Testing.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "rust",
+          "go",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "auth",
+          "ai",
+          "doc",
+          "coauthoring"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/doc-coauthoring"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-docx",
+      "name": "Docx",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+      "description": "A .docx file is a ZIP archive containing XML files.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "javascript",
+          "python",
+          "go",
+          "java",
+          "git",
+          "rest",
+          "ci",
+          "cd",
+          "auth",
+          "ai",
+          "ml",
+          "docx",
+          "pdf",
+          "word"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/docx"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-frontend-design",
+      "name": "Frontend Design",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+      "description": "Before coding, understand the context and commit to a BOLD aesthetic direction: - **Purpose**: What problem does this interface solve? Who uses it? - **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc. There are so many flavors to choose from. Use these for inspiration but design one that is true to the aesthetic directio",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": ["react", "vue", "go", "rest", "ci", "ai", "ml", "frontend", "design"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/frontend-design"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-internal-comms",
+      "name": "Internal Comms",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+      "description": "To write internal communications, use this skill for: - 3P updates (Progress, Plans, Problems) - Company newsletters - FAQ responses - Status reports - Leadership updates - Project updates - Incident reports",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": ["ci", "word", "internal", "comms"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/internal-comms"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-mcp-builder",
+      "name": "Mcp Builder",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+      "description": "Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "typescript",
+          "python",
+          "go",
+          "node",
+          "git",
+          "github",
+          "api",
+          "test",
+          "testing",
+          "ci",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "mcp",
+          "builder"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/mcp-builder"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-pdf",
+      "name": "Pdf",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "javascript",
+          "python",
+          "java",
+          "aws",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "pdf",
+          "xlsx",
+          "excel",
+          "word"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/pdf"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-pptx",
+      "name": "Pptx",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+      "description": "| Task | Guide | |------|-------| | Read/analyze content | `python -m markitdown presentation.pptx` | | Edit or create from template | Read [editing.md](editing.md) | | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": ["python", "rust", "go", "rest", "ci", "ai", "ml", "llm", "pdf", "pptx", "word"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/pptx"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-skill-creator",
+      "name": "Skill Creator",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+      "description": "This skill provides guidance for creating effective skills.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "database",
+          "react",
+          "python",
+          "go",
+          "bun",
+          "aws",
+          "gcp",
+          "azure",
+          "api",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "docx",
+          "pdf",
+          "pptx",
+          "word",
+          "powerpoint",
+          "skill",
+          "creator"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/skill-creator"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-slack-gif-creator",
+      "name": "Slack Gif Creator",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+      "description": "A toolkit providing utilities and knowledge for creating animated GIFs optimized for Slack.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": ["python", "go", "rest", "ci", "ai", "slack", "gif", "creator"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/slack-gif-creator"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-theme-factory",
+      "name": "Theme Factory",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+      "description": "This skill provides a curated collection of professional font and color themes themes, each with carefully selected color palettes and font pairings. Once a theme is chosen, it can be applied to any artifact.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": ["go", "rest", "ci", "ai", "ml", "pdf", "theme", "factory"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/theme-factory"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-web-artifacts-builder",
+      "name": "Web Artifacts Builder",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+      "description": "To build powerful frontend claude.ai artifacts, follow these steps: 1. Initialize the frontend repo using `scripts/init-artifact.sh` 2. Develop your artifact by editing the generated code 3. Bundle all code into a single HTML file using `scripts/bundle-artifact.sh`",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "react",
+          "typescript",
+          "javascript",
+          "java",
+          "node",
+          "bun",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "web",
+          "artifacts",
+          "builder"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/web-artifacts-builder"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-webapp-testing",
+      "name": "Webapp Testing",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+      "description": "To test local web applications, write native Python Playwright scripts.",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "bun",
+          "api",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "ai",
+          "ml",
+          "webapp"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/webapp-testing"
+      }
+    },
+    {
+      "id": "skill-official-anthropics-xlsx",
+      "name": "Xlsx",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+      "description": "- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user",
+      "author": {
+        "name": "anthropics",
+        "url": "https://github.com/anthropics"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "anthropics"],
+      "detection": {
+        "keywords": [
+          "database",
+          "python",
+          "go",
+          "deno",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "ai",
+          "ml",
+          "xlsx",
+          "excel",
+          "word"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/anthropics/skills && cd skills/skills/xlsx"
       }
     }
   ]
