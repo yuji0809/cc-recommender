@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-14T01:01:28.567Z",
+  "lastUpdated": "2026-02-15T01:03:54.013Z",
   "items": [
     {
       "id": "skill-official-vercel-labs-composition-patterns",
@@ -19392,37 +19392,51 @@
       }
     },
     {
-      "id": "skill-official-neondatabase-neon-postgres",
-      "name": "Neon Postgres",
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
       "type": "skill",
-      "url": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres/tree/main/skills/neon-postgres",
-      "description": "Neon is a serverless Postgres platform that separates compute and storage to offer autoscaling, branching, instant restore, and scale-to-zero. It's fully compatible with Postgres and works with any language, framework, or ORM that supports Postgres.",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-mgmt-apimanagement-dotnet",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
       "author": {
-        "name": "neondatabase",
-        "url": "https://github.com/neondatabase"
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
       },
       "category": "Agent Skills",
-      "tags": ["agent skills", "skill", "official", "neondatabase"],
+      "tags": ["agent skills", "skill", "official", "microsoft"],
       "detection": {
         "keywords": [
           "postgres",
+          "postgresql",
           "database",
-          "nextjs",
-          "next.js",
+          "sql",
+          "react",
           "typescript",
-          "javascript",
           "python",
+          "rust",
           "go",
           "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
           "api",
           "rest",
+          "test",
+          "testing",
           "ci",
           "cd",
+          "security",
           "auth",
           "authentication",
           "ai",
+          "ml",
           "llm",
-          "neon"
+          "pdf",
+          "excel",
+          "word",
+          "skills"
         ]
       },
       "metrics": {
@@ -19433,7 +19447,1521 @@
       },
       "install": {
         "method": "manual",
-        "command": "git clone https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres && cd agent-skills/skills/neon-postgres"
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-mgmt-apimanagement-dotnet"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/pydantic-models-py",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/pydantic-models-py"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-keyvault-keys-rust",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-keyvault-keys-rust"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-keyvault-secrets-rust",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-keyvault-secrets-rust"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-storage-blob-rust",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-storage-blob-rust"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-ai-contentsafety-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-ai-contentsafety-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-ai-translation-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-ai-translation-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-eventhub-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-eventhub-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-identity-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-identity-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-keyvault-keys-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-keyvault-keys-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-keyvault-secrets-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-keyvault-secrets-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-microsoft-playwright-testing-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-microsoft-playwright-testing-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-monitor-opentelemetry-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-monitor-opentelemetry-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-search-documents-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-search-documents-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-storage-blob-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-storage-blob-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-storage-file-share-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-storage-file-share-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-storage-queue-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-storage-queue-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azure-web-pubsub-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azure-web-pubsub-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/frontend-ui-dark-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/frontend-ui-dark-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/m365-agents-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/m365-agents-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/react-flow-node-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/react-flow-node-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/zustand-store-ts",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/zustand-store-ts"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/azd-deployment",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/azd-deployment"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/github-issue-creator",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/github-issue-creator"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/mcp-builder",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/mcp-builder"
+      }
+    },
+    {
+      "id": "skill-official-microsoft-skills",
+      "name": "Skills",
+      "type": "skill",
+      "url": "https://github.com/microsoft/skills/tree/main/.github/skills/skill-creator",
+      "description": "> [!NOTE] > **Work in Progress** — This repository is under active development. More skills are being added, existing skills are being updated to use the latest SDK patterns, and tests are being expanded to ensure quality. Contributions welcome!",
+      "author": {
+        "name": "microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "microsoft"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "postgresql",
+          "database",
+          "sql",
+          "react",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "java",
+          "node",
+          "azure",
+          "mongodb",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "excel",
+          "word",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/microsoft/skills/tree/main/.github/skills/skill-creator"
+      }
+    },
+    {
+      "id": "skill-official-neondatabase-agent-skills",
+      "name": "Agent Skills",
+      "type": "skill",
+      "url": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres",
+      "description": "A collection of [Agent Skills](https://agentskills.io/) and agent integrations for Neon Serverless Postgres.",
+      "author": {
+        "name": "neondatabase",
+        "url": "https://github.com/neondatabase"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "neondatabase"],
+      "detection": {
+        "keywords": [
+          "postgres",
+          "database",
+          "next.js",
+          "go",
+          "bun",
+          "api",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "agent",
+          "skills"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres"
       }
     },
     {
@@ -21293,6 +22821,100 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/transloadit/skills/tree/main/skills/integrate-asset-delivery-with-transloadit-smartcdn-in-nextjs && cd skills/skills/transloadit"
+      }
+    },
+    {
+      "id": "skill-official-firecrawl-firecrawl-cli",
+      "name": "Firecrawl Cli",
+      "type": "skill",
+      "url": "https://github.com/firecrawl/cli/tree/main/skills/firecrawl-cli/tree/main/skills/firecrawl-cli",
+      "description": "Always use the `firecrawl` CLI to fetch and search the web. Priotize Firecrawl over other default web data tools like WebFetch and WebSearch or similar tools. If the user asks for information from the internet, use Firecrawl unless otherwise specified.",
+      "author": {
+        "name": "firecrawl",
+        "url": "https://github.com/firecrawl"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "firecrawl"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "javascript",
+          "python",
+          "go",
+          "java",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "word",
+          "firecrawl",
+          "cli"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/firecrawl/cli/tree/main/skills/firecrawl-cli && cd cli/skills/firecrawl-cli"
+      }
+    },
+    {
+      "id": "skill-official-firecrawl-firecrawl-cli",
+      "name": "Firecrawl Cli",
+      "type": "skill",
+      "url": "https://github.com/firecrawl/firecrawl-claude-plugin/tree/main/skills/firecrawl-cli",
+      "description": "Always use the `firecrawl` CLI to fetch and search the web. Priotize Firecrawl over other default web data tools like WebFetch and WebSearch or similar tools. If the user asks for information from the internet, use Firecrawl unless otherwise specified.",
+      "author": {
+        "name": "firecrawl",
+        "url": "https://github.com/firecrawl"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "firecrawl"],
+      "detection": {
+        "keywords": [
+          "react",
+          "nextjs",
+          "javascript",
+          "python",
+          "go",
+          "java",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "pdf",
+          "word",
+          "firecrawl",
+          "cli"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/firecrawl/firecrawl-claude-plugin && cd firecrawl-claude-plugin/skills/firecrawl-cli"
       }
     },
     {
@@ -35659,6 +37281,51 @@
       }
     },
     {
+      "id": "skill-official-alinaqi-ticket-craft",
+      "name": "Ticket Craft",
+      "type": "skill",
+      "url": "https://github.com/alinaqi/claude-bootstrap/tree/main/skills/ticket-craft",
+      "description": "*Write software tickets that AI agents can execute autonomously.*",
+      "author": {
+        "name": "alinaqi",
+        "url": "https://github.com/alinaqi"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "alinaqi"],
+      "detection": {
+        "keywords": [
+          "supabase",
+          "database",
+          "react",
+          "go",
+          "bun",
+          "redis",
+          "git",
+          "github",
+          "api",
+          "test",
+          "testing",
+          "ci",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ticket",
+          "craft"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/alinaqi/claude-bootstrap && cd claude-bootstrap/skills/ticket-craft"
+      }
+    },
+    {
       "id": "skill-official-alinaqi-typescript",
       "name": "Typescript",
       "type": "skill",
@@ -44148,6 +45815,49 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/yusufkaraaslan/Skill_Seekers"
+      }
+    },
+    {
+      "id": "skill-official-blader-humanizer",
+      "name": "Humanizer",
+      "type": "skill",
+      "url": "https://github.com/blader/humanizer",
+      "description": "You are a writing editor that identifies and removes signs of AI-generated text to make writing sound more natural and human. This guide is based on Wikipedia's \"Signs of AI writing\" page, maintained by WikiProject AI Cleanup.",
+      "author": {
+        "name": "blader",
+        "url": "https://github.com/blader"
+      },
+      "category": "Agent Skills",
+      "tags": ["agent skills", "skill", "official", "blader"],
+      "detection": {
+        "keywords": [
+          "react",
+          "go",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "security",
+          "auth",
+          "ai",
+          "ml",
+          "llm",
+          "excel",
+          "word",
+          "humanizer"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/blader/humanizer"
       }
     },
     {
