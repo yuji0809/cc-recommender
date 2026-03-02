@@ -52,7 +52,7 @@
   },
   "homepage": "https://github.com/yuji0809/cc-recommender#readme",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.26.0",
+    "@modelcontextprotocol/sdk": "^1.27.1",
     "zod": "^3.23.0"
   },
   "devDependencies": {
