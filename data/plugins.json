@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-02-15T01:03:54.013Z",
+  "lastUpdated": "2026-03-02T01:04:47.366Z",
   "items": [
     {
       "id": "plugin-typescript-lsp",
@@ -157,6 +157,32 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install sentry",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-slack",
+      "name": "slack",
+      "type": "plugin",
+      "url": "https://github.com/slackapi/slack-mcp-plugin/tree/main",
+      "description": "Slack workspace integration. Search messages, access channels, read threads, and stay connected with your team's communications while coding. Find relevant discussions and context quickly.",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install slack",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -416,6 +442,56 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install firecrawl",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-qodo-skills",
+      "name": "qodo-skills",
+      "type": "plugin",
+      "url": "https://github.com/qodo-ai/qodo-skills.git",
+      "description": "Qodo Skills provides a curated library of reusable AI agent capabilities that extend Claude's functionality for software development workflows. Each skill is designed to integrate seamlessly into your development process, enabling tasks like code quality checks, automated testing, security scanning, and compliance validation. Skills operate across your entire SDLC—from IDE to CI/CD—ensuring consistent standards and catching issues early.",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install qodo-skills",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-semgrep",
+      "name": "semgrep",
+      "type": "plugin",
+      "url": "https://github.com/semgrep/mcp-marketplace.git",
+      "description": "Semgrep catches security vulnerabilities in real-time and guides Claude to write secure code from the start.",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "security",
+      "tags": ["security"],
+      "detection": {
+        "keywords": ["security", "security", "audit", "vulnerability"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install semgrep",
         "marketplace": "claude-plugins-official"
       }
     }
