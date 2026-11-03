@@ -111,27 +111,50 @@ export async function scanRepository(
   }
 }
 
+/** scanRepositories のオプション */
+export type ScanRepositoriesOptions = {
+  /** この時刻（epoch ms）を過ぎたら新しい batch を始めない */
+  deadline?: number;
+  /** 現在時刻の取得（テスト用） */
+  now?: () => number;
+  /** 1 件をスキャンする関数（テスト用） */
+  scan?: (repoUrl: string, scanType: "mcp" | "skill" | "plugin") => Promise<SecurityScanResult>;
+};
+
 /**
  * 複数のリポジトリを並列スキャン
  *
+ * deadline を過ぎると残りはスキャンせずに返す。スキャンしなかったリポジトリは
+ * 結果のマップに含まれない（呼び出し側ではスコアなしのまま残り、次回スキャンされる）。
+ *
  * @param repos - スキャン対象のリポジトリ情報
  * @param concurrency - 並列実行数（デフォルト: 10）
+ * @param options - 期限などのオプション
  * @returns スキャン結果のマップ
  */
 export async function scanRepositories(
   repos: Array<{ url: string; type: "mcp" | "skill" | "plugin" }>,
   concurrency = 10,
+  options: ScanRepositoriesOptions = {},
 ): Promise<Map<string, SecurityScanResult>> {
+  const { deadline, now = Date.now, scan = scanRepository } = options;
   const results = new Map<string, SecurityScanResult>();
 
   // 並列実行数を制限しながらスキャン
   for (let i = 0; i < repos.length; i += concurrency) {
+    if (deadline !== undefined && now() >= deadline) {
+      console.log(
+        `Scan time limit reached: scanned ${i}/${repos.length} repositories. The rest will be scanned in a later run.`,
+      );
+      break;
+    }
+
     const batch = repos.slice(i, i + concurrency);
 
     const batchResults = await Promise.all(
       batch.map(async (repo) => ({
         url: repo.url,
-        result: await scanRepository(repo.url, repo.type),
+        result: await scan(repo.url, repo.type),
       })),
     );
 

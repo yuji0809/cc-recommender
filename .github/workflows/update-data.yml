@@ -35,14 +35,31 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # 未マージのデータ更新 PR があれば、そのデータを増分スキャンの基準にする。
+      # main のデータだけを基準にすると、PR がマージされない間は同じアイテムを毎回
+      # スキャンし直すことになり、実行時間が伸び続ける
+      # （2026-05-30 以降、90 分のタイムアウトで失敗し続けた原因）。
+      - name: Reuse data from the pending update branch
+        run: |
+          if git fetch --depth=1 origin update-recommendations-data; then
+            git checkout FETCH_HEAD -- data/
+            git reset --quiet -- data/
+            echo "Using data/ from update-recommendations-data as the scan baseline"
+          else
+            echo "No pending update branch; using data/ from main"
+          fi
+
       - name: Fetch latest data
         timeout-minutes: 90 # データ取得＋スキャンのタイムアウト
         run: pnpm run fetch-data
         env:
           # セキュリティスキャン設定
           # "true": スキップ（高速、テスト用）
-          # "false": 実行（推奨、差分スキャンで効率化済み）
+          # "false": 実行（差分スキャン）
           SKIP_SECURITY_SCAN: "false"
+          # 開始から 70 分を過ぎたら新しいスキャンを始めない。
+          # 残りはスコアなしのまま残し、次回の実行でスキャンする。
+          SECURITY_SCAN_TIME_LIMIT_MINUTES: "70"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check for changes
