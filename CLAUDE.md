@@ -73,7 +73,9 @@ src/
 │   └── remote-data.repository.ts    # リモートデータ取得（CDN/GitHub）
 │
 ├── utils/              # 共通ユーティリティ
-│   └── glob-matcher.ts # Glob パターンマッチング
+│   ├── glob-matcher.ts # Glob パターンマッチング
+│   ├── github-url.ts   # GitHub URL 判定（ホスト名の厳密一致）
+│   └── retry.ts        # 指数バックオフ付きリトライ
 │
 ├── types/              # 型定義（ドメイン別に分割）
 │   ├── index.ts        # 型定義の公開 API

@@ -216,6 +216,8 @@ cc-recommender は、レイヤードアーキテクチャに基づいて設計�
 
 **ファイル:**
 - `glob-matcher.ts` - Glob パターンマッチング
+- `github-url.ts` - GitHub URL 判定（URL パースによるホスト名の厳密一致）
+- `retry.ts` - 指数バックオフ付きリトライ
 
 #### 4.3 Types (types/)
 
