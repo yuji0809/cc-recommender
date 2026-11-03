@@ -47,6 +47,7 @@ describe("fetchRemoteData", () => {
     vi.spyOn(console, "log").mockImplementation(() => {});
     vi.spyOn(console, "warn").mockImplementation(() => {});
     vi.spyOn(console, "error").mockImplementation(() => {});
+    vi.spyOn(process.stderr, "write").mockImplementation(() => true);
   });
 
   afterEach(() => {
@@ -83,6 +84,16 @@ describe("fetchRemoteData", () => {
       await vi.advanceTimersByTimeAsync(10_000);
 
       await expect(promise).resolves.not.toBeNull();
+    });
+  });
+
+  describe("Logging", () => {
+    it("should not write to stdout, which is the MCP stdio channel", async () => {
+      fetchMock.mockResolvedValue(jsonResponse("application/json"));
+
+      await fetchRemoteData(nextUrl());
+
+      expect(console.log).not.toHaveBeenCalled();
     });
   });
 

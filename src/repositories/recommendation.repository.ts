@@ -13,6 +13,7 @@ import type {
   RecommendationDatabase,
   SkillDatabase,
 } from "../types/domain-types.js";
+import { logger } from "../utils/logger.js";
 import { fetchRemoteData, isRemoteDataEnabled } from "./remote-data.repository.js";
 
 /**
@@ -60,7 +61,7 @@ export class RecommendationRepository {
 
     // Cache expired or not available - clear it
     if (this.cache) {
-      console.log("🔄 Cache expired, refreshing data...");
+      logger.info("🔄 Cache expired, refreshing data...");
       this.cache = null;
     }
 
@@ -72,7 +73,7 @@ export class RecommendationRepository {
         this.cacheTimestamp = Date.now();
         return remoteData;
       }
-      console.warn("⚠️  Falling back to bundled data");
+      logger.warn("⚠️  Falling back to bundled data");
     }
 
     // Fallback to bundled data (load 3 files in parallel)
@@ -92,15 +93,15 @@ export class RecommendationRepository {
 
       this.cache = database;
       this.cacheTimestamp = Date.now();
-      console.log(
+      logger.info(
         `📦 Loaded ${database.items.length} recommendations from bundled data (${database.version})`,
       );
-      console.log(
+      logger.info(
         `   - Plugins: ${pluginsDb.items.length}, MCP: ${mcpServersDb.items.length}, Skills: ${skillsDb.items.length}`,
       );
       return database;
     } catch (error) {
-      console.error("Failed to load database:", error);
+      logger.error("Failed to load database:", error);
       // Return empty database
       const emptyDatabase: RecommendationDatabase = {
         version: "0.0.0",
