@@ -86,6 +86,54 @@ describe("fetchRemoteData", () => {
     });
   });
 
+  describe("Size Limits", () => {
+    const makeDatabase = (count: number, padding = 0) => ({
+      ...validDatabase,
+      items: Array.from({ length: count }, (_, i) => ({
+        id: `plugin-${i}`,
+        name: `Plugin ${i}`,
+        type: "plugin",
+        ...(padding > 0 ? { description: "x".repeat(padding) } : {}),
+      })),
+    });
+
+    it("should accept more than 10,000 items", async () => {
+      fetchMock.mockResolvedValue(jsonResponse("text/plain", makeDatabase(10_001)));
+
+      const result = await fetchRemoteData(nextUrl());
+
+      expect(result?.items).toHaveLength(10_001);
+    });
+
+    it("should reject more than 50,000 items", async () => {
+      fetchMock.mockResolvedValue(jsonResponse("text/plain", makeDatabase(50_001)));
+
+      await expect(fetchRemoteData(nextUrl())).resolves.toBeNull();
+    });
+
+    it("should accept JSON larger than 10MB", async () => {
+      // 200 items x 60KB = 約 12MB（1アイテム 100KB 未満）
+      fetchMock.mockResolvedValue(jsonResponse("text/plain", makeDatabase(200, 60 * 1024)));
+
+      const result = await fetchRemoteData(nextUrl());
+
+      expect(result?.items).toHaveLength(200);
+    });
+
+    it("should reject JSON larger than 50MB", async () => {
+      // 600 items x 90KB = 約 53MB（1アイテム 100KB 未満）
+      fetchMock.mockResolvedValue(jsonResponse("text/plain", makeDatabase(600, 90 * 1024)));
+
+      await expect(fetchRemoteData(nextUrl())).resolves.toBeNull();
+    });
+
+    it("should still reject a single item larger than 100KB", async () => {
+      fetchMock.mockResolvedValue(jsonResponse("text/plain", makeDatabase(1, 101 * 1024)));
+
+      await expect(fetchRemoteData(nextUrl())).resolves.toBeNull();
+    });
+  });
+
   describe("Error Cases", () => {
     it("should reject responses with an unexpected content-type", async () => {
       fetchMock.mockResolvedValue(jsonResponse("text/html; charset=utf-8"));

@@ -32,8 +32,15 @@ const FETCH_TIMEOUT = 15_000;
 /** 許可する Content-Type（raw.githubusercontent.com は text/plain で返す） */
 const ALLOWED_CONTENT_TYPES = ["application/json", "text/plain"];
 
-/** JSON全体の最大サイズ（10MB） */
-const MAX_JSON_SIZE = 10 * 1024 * 1024;
+/**
+ * JSON全体の最大サイズ（50MB）
+ *
+ * 2026-05 時点で skills.json が約 9MB あり、データの増加に追従できるよう余裕を持たせる
+ */
+const MAX_JSON_SIZE = 50 * 1024 * 1024;
+
+/** 1ファイルあたりの最大アイテム数（2026-05 時点で最大 9,429 件） */
+const MAX_ITEMS = 50_000;
 
 /** 単一アイテムの最大サイズ（100KB） */
 const MAX_ITEM_SIZE = 100 * 1024;
@@ -239,7 +246,7 @@ function isValidDatabase(data: unknown): data is RecommendationDatabase {
   }
 
   // アイテム数チェック（異常に多い場合は拒否）
-  if (db.items.length > 10000) {
+  if (db.items.length > MAX_ITEMS) {
     console.warn("⚠️  Suspicious: Too many items");
     return false;
   }
@@ -338,7 +345,7 @@ function isValidTypedDatabase(
   }
 
   // アイテム数チェック
-  if (db.items.length > 10000) {
+  if (db.items.length > MAX_ITEMS) {
     console.warn("⚠️  Suspicious: Too many items");
     return false;
   }
