@@ -20,8 +20,17 @@ const DEFAULT_PLUGINS_URL = `${REMOTE_BASE_URL}/plugins.json`;
 const DEFAULT_MCP_SERVERS_URL = `${REMOTE_BASE_URL}/mcp-servers.json`;
 const DEFAULT_SKILLS_URL = `${REMOTE_BASE_URL}/skills.json`;
 
-/** タイムアウト時間（ミリ秒） */
-const FETCH_TIMEOUT = 5000;
+/**
+ * タイムアウト時間（ミリ秒）
+ *
+ * レスポンス本文のダウンロード完了までを含む。mcp-servers.json は約 2.3MB あり、
+ * 低速回線では 5 秒では足りないため 15 秒とする。起動時にこの取得を待つため、
+ * MCP クライアントの起動タイムアウトを超えない範囲に抑えている。
+ */
+const FETCH_TIMEOUT = 15_000;
+
+/** 許可する Content-Type（raw.githubusercontent.com は text/plain で返す） */
+const ALLOWED_CONTENT_TYPES = ["application/json", "text/plain"];
 
 /** JSON全体の最大サイズ（10MB） */
 const MAX_JSON_SIZE = 10 * 1024 * 1024;
@@ -121,11 +130,11 @@ async function fetchTypedFile<T>(
   url: string,
   validator: (data: unknown) => data is T,
 ): Promise<T | null> {
-  try {
-    // タイムアウト付きfetch
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
+  // タイムアウト付きfetch（本文のダウンロード完了までを対象にする）
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
 
+  try {
     // ヘッダーを準備（ETagがあれば If-None-Match を追加）
     const headers: Record<string, string> = {
       "User-Agent": "cc-recommender",
@@ -141,8 +150,6 @@ async function fetchTypedFile<T>(
       signal: controller.signal,
       headers,
     });
-
-    clearTimeout(timeoutId);
 
     // 304 Not Modified - キャッシュを返す
     if (response.status === 304) {
@@ -162,7 +169,7 @@ async function fetchTypedFile<T>(
 
     // Content-Type 検証
     const contentType = response.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
+    if (!contentType || !ALLOWED_CONTENT_TYPES.some((type) => contentType.includes(type))) {
       console.warn(`⚠️  Invalid content-type for ${url}: ${contentType}`);
       return null;
     }
@@ -187,12 +194,14 @@ async function fetchTypedFile<T>(
   } catch (error) {
     if (error instanceof Error) {
       if (error.name === "AbortError") {
-        console.error(`Fetch timeout for ${url} (5s)`);
+        console.error(`Fetch timeout for ${url} (${FETCH_TIMEOUT / 1000}s)`);
       } else {
         console.error(`Failed to fetch ${url}: ${error.message}`);
       }
     }
     return null;
+  } finally {
+    clearTimeout(timeoutId);
   }
 }
 
