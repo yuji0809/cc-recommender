@@ -7,53 +7,25 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)
 
-> 🎯 Skills, Plugins, and MCP Server Recommendation MCP Server for Claude Code
-
 English | [日本語](./README.ja.md)
 
-Just ask "What should I install?" in Claude Code, and it will analyze your project and recommend the best skills, plugins, and MCP servers.
+An MCP server that suggests Claude Code plugins, MCP servers, and skills for the project you are working on.
 
-## Features
+Ask Claude Code something like "What should I install for this project?". cc-recommender reads the project's manifest files, works out the languages, frameworks, and dependencies in use, and returns matching entries from a database of about 19,000 plugins, MCP servers, and skills (as of November 2026).
 
-- 📦 **Plugin Recommendations** - Suggests optimal plugins from the official marketplace
-- 🔌 **MCP Server Recommendations** - Search MCP servers from awesome-mcp-servers
-- 🎯 **Skill/Workflow Recommendations** - Suggests skills, hooks, and commands from awesome-claude-code
-- 🔍 **Project Analysis** - Automatically detects languages, frameworks, and dependencies
-- 🏷️ **Keyword Search** - Search by name or tags
-- 🔄 **Auto-Update** - Always fetches the latest data from GitHub (no manual updates needed)
-- ⭐ **Quality Scoring** - Evaluates skills based on official status, stars, freshness, and source
-- 🤖 **Official Skills Discovery** - Automatically discovers official skills from known organizations
+## Setup
 
-## Installation
+Requires Node.js 22 or later.
 
-### Via npm (Recommended)
+### Claude Code
 
 ```bash
-npm install -g cc-recommender
+claude mcp add --scope user cc-recommender -- npx -y cc-recommender
 ```
 
-### Local Build
+`--scope user` makes the server available in all your projects. Run `claude mcp list` to check that it is connected.
 
-```bash
-git clone https://github.com/yuji0809/cc-recommender.git
-cd cc-recommender
-pnpm install
-pnpm run build
-```
-
-**Requirements:**
-- Node.js >= 22.0.0
-- pnpm >= 10.0.0 (for local build)
-
-## Usage with Claude Code
-
-**For Cursor users:** Use `~/.cursor/mcp.json` instead of `~/.claude/settings.json`
-
-### Option 1: Using npx (Recommended)
-
-No installation required. Always uses the latest version.
-
-Add to `~/.claude/settings.json` (or `~/.cursor/mcp.json` for Cursor):
+To share the setting with a team, add it to `.mcp.json` in the project root instead:
 
 ```json
 {
@@ -66,178 +38,83 @@ Add to `~/.claude/settings.json` (or `~/.cursor/mcp.json` for Cursor):
 }
 ```
 
-### Option 2: Global Installation
+### Cursor and other MCP clients
 
-Faster startup, works offline. Requires manual updates.
+Use the same `mcpServers` entry in the client's MCP configuration file (`~/.cursor/mcp.json` for Cursor).
+
+### Global install
+
+If you would rather not go through `npx` on every start:
 
 ```bash
 npm install -g cc-recommender
+claude mcp add --scope user cc-recommender -- cc-recommender
 ```
 
-Add to `~/.claude/settings.json`:
+Update it with `npm update -g cc-recommender`.
 
-```json
-{
-  "mcpServers": {
-    "cc-recommender": {
-      "command": "cc-recommender"
-    }
-  }
-}
+## Usage
+
+Ask in plain language. Claude picks the tool.
+
+- "What should I install for this project?"
+- "Find MCP servers for PostgreSQL."
+- "Recommend only skills for testing this repository."
+- "Tell me more about playwright-skill."
+
+| Tool | What it does | Parameters |
+|------|--------------|------------|
+| `recommend_skills` | Analyzes a project and recommends items for it | `project_path` (required), `description`, `types`, `max_results` (1-50, default 20) |
+| `search_skills` | Keyword search across all items | `query` (required), `types`, `max_results` |
+| `get_skill_details` | Shows the details of one item | `name` (required) |
+| `list_categories` | Lists the categories | none |
+| `get_stats` | Shows database statistics | none |
+
+`types` narrows the results to any of `plugin`, `mcp`, `skill`, `workflow`, `hook`, `command`, and `agent`.
+
+The project analysis looks at `package.json`, `requirements.txt`, `pyproject.toml`, `go.mod`, `Cargo.toml`, `composer.json`, `Gemfile`, `pom.xml`, `build.gradle`, `docker-compose.yml`, and `.env` files, plus framework config files (Next.js, Nuxt, Vite, Prisma, and others) and file extensions.
+
+## Data
+
+| Type | Sources |
+|------|---------|
+| Plugins | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
+| MCP servers | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers), [Official MCP Registry](https://registry.modelcontextprotocol.io) |
+| Skills | [anthropics/skills](https://github.com/anthropics/skills), [openai/skills](https://github.com/openai/skills), [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills), [supabase/agent-skills](https://github.com/supabase/agent-skills), [obra/superpowers](https://github.com/obra/superpowers), [lackeyjb/playwright-skill](https://github.com/lackeyjb/playwright-skill), and the lists [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) and [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) |
+
+A GitHub Actions workflow rebuilds the database every day and opens a pull request with the result.
+
+When the server starts, it downloads the latest database from this repository. If the download fails or the data does not pass validation, it uses the copy bundled with the npm package, so it also works offline. To always use the bundled copy, set `CC_RECOMMENDER_OFFLINE_MODE`:
+
+```bash
+claude mcp add --scope user cc-recommender -e CC_RECOMMENDER_OFFLINE_MODE=true -- npx -y cc-recommender
 ```
 
-### Option 3: Local Build (For Development)
+| Environment variable | Description | Default |
+|----------------------|-------------|---------|
+| `CC_RECOMMENDER_OFFLINE_MODE` | Skip the remote download and use only the bundled data | `false` |
+
+## Development
+
+You need pnpm 10.
 
 ```bash
 git clone https://github.com/yuji0809/cc-recommender.git
 cd cc-recommender
 pnpm install
 pnpm run build
-```
-
-Add to `~/.claude/settings.json`:
-
-```json
-{
-  "mcpServers": {
-    "cc-recommender": {
-      "command": "node",
-      "args": ["/path/to/cc-recommender/dist/index.js"]
-    }
-  }
-}
-```
-
-## How to Use
-
-### Project Analysis and Recommendations
-
-```
-You: What should I install for this project?
-
-Claude: [Uses recommend_skills tool]
-
-📦 Plugins
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. typescript-lsp (Official)
-   ├─ Purpose: TypeScript definition jump, type checking
-   ├─ Score: 95 ✅ High Match
-   └─ Install: /plugin install typescript-lsp
-
-🔌 MCP Servers
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. supabase-mcp
-   ├─ Purpose: Supabase DB operations
-   ├─ Reason: Depends on @supabase/supabase-js
-   └─ Install: claude mcp add supabase-mcp
-```
-
-### Keyword Search
-
-```
-You: Find MCP servers related to databases
-
-Claude: [Uses search_skills tool]
-```
-
-## Available Tools
-
-| Tool | Description |
-|------|-------------|
-| `recommend_skills` | Analyzes project and recommends appropriate skills/plugins/MCPs |
-| `search_skills` | Search by keywords |
-| `get_skill_details` | Get details of a specific item |
-| `list_categories` | Get list of categories |
-| `get_stats` | Get database statistics |
-
-## Data Sources
-
-This MCP server aggregates data from the following sources:
-
-| Source | Content | Update Frequency |
-|--------|---------|------------------|
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Official plugin marketplace | Daily |
-| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | Curated list of MCP servers | Daily |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | List of skills/workflows/hooks | Daily |
-
-### Auto-Update Feature
-
-**How it works:**
-- The server automatically fetches the latest data from GitHub when it starts
-- Falls back to bundled data if the remote fetch fails
-- No manual updates or reinstallation required
-
-**Offline Mode** (optional):
-```json
-{
-  "mcpServers": {
-    "cc-recommender": {
-      "command": "npx",
-      "args": ["-y", "cc-recommender"],
-      "env": {
-        "CC_RECOMMENDER_OFFLINE_MODE": "true"
-      }
-    }
-  }
-}
-```
-
-When `CC_RECOMMENDER_OFFLINE_MODE` is enabled, only bundled data is used (no remote fetching).
-
-### Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `CC_RECOMMENDER_OFFLINE_MODE` | Disable auto-updates and use only bundled data | `false` |
-| `GITHUB_TOKEN` | GitHub personal access token (increases API rate limit from 60 to 5000 req/hour) | Not set |
-| `SKIP_SECURITY_SCAN` | Skip security scanning during data fetch (for developers) | `false` |
-
-**Notes:**
-- To fetch skills from GitHub repositories, a GitHub token is recommended to avoid rate limits. Create a token at https://github.com/settings/tokens with `public_repo` scope.
-
-## Development
-
-For development setup and contribution guidelines, see:
-- [CONTRIBUTING.md](./CONTRIBUTING.md) - Contribution guide
-- [ARCHITECTURE.md](./docs/ARCHITECTURE.md) - Architecture documentation
-
-### Quick Start for Developers
-
-```bash
-# Install dependencies
-pnpm install
-
-# Run tests
 pnpm run test
-
-# Type check + Lint + Security audit
-pnpm run check
-
-# Build
-pnpm run build
+pnpm run check   # type check, lint, cc-audit, license check
 ```
+
+To try a local build in Claude Code, register `node /path/to/cc-recommender/dist/index.js` as the command.
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for the workflow, [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for the code layout, and [docs/DATA_MANAGEMENT.md](./docs/DATA_MANAGEMENT.md) for how the database is built.
 
 ## Security
 
-Security is a top priority for this project. We employ multiple layers of automated security measures:
-
-- **Automated Scanning**: Dependabot, CodeQL, and custom security audits
-- **Pre-commit Protection**: Security checks run before every commit
-- **CI/CD Gates**: All PRs must pass security scans before merging
-- **License Compliance**: All dependencies are validated for approved licenses
-
-For more details, see [SECURITY.md](./SECURITY.md).
-
-To report a security vulnerability, please use [GitHub Security Advisories](https://github.com/yuji0809/cc-recommender/security/advisories).
-
-## Contributing
-
-We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
+See [SECURITY.md](./SECURITY.md) for how to report a vulnerability and what the project does to protect its dependencies, CI, and npm releases.
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
-
-## Author
-
-Yuji
+[MIT](./LICENSE)

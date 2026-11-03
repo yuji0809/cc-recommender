@@ -1,11 +1,11 @@
-name: 🐛 Bug Report
+name: Bug report
 description: Report a bug or unexpected behavior
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for reporting a bug. Please include the cc-recommender version and how you run it (npx, global install, or local build).
 
   - type: textarea
     id: description

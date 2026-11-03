@@ -1,419 +1,171 @@
-# Contributing Guide
+# Contributing to cc-recommender
 
-Thank you for your interest in contributing to cc-recommender!
+Thanks for taking the time to contribute. This file covers setup, the checks a change has to pass, and how releases work. The coding rules are in [CLAUDE.md](./CLAUDE.md), and the design is described in [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
 
-## Important Documentation
+Please report security problems privately as described in [SECURITY.md](./SECURITY.md), not in a public issue. This project follows the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
-Before you start development, please review the following documents:
+## Setup
 
-- **[CLAUDE.md](./CLAUDE.md)** - Development guidelines, coding standards, architecture principles
-- **[ARCHITECTURE.md](./docs/ARCHITECTURE.md)** - Detailed architecture documentation
+You need Node.js 22 or later and pnpm 10. The pnpm version is pinned in `package.json` (`"packageManager": "pnpm@10.12.3"`), so running `corepack enable` once gives you the right version.
 
-## Development Setup
-
-### Prerequisites
-
-- Node.js >= 22.0.0
-- pnpm >= 10.0.0
-
-### Setup Steps
-
-1. Fork the repository
-2. Clone
+Fork the repository on GitHub, then clone your fork:
 
 ```bash
-git clone https://github.com/your-username/cc-recommender.git
+git clone https://github.com/<your-username>/cc-recommender.git
 cd cc-recommender
-```
-
-3. Install dependencies
-
-```bash
 pnpm install
+git checkout -b fix/short-description
 ```
 
-4. Create a branch
+`pnpm install` also installs the Husky git hooks through the `prepare` script.
 
-```bash
-git checkout -b feature/your-feature-name
-```
+## Checks
 
-## Code Quality Standards
+| Command | What it runs |
+|---|---|
+| `pnpm run typecheck` | `tsc --noEmit` in strict mode |
+| `pnpm run lint` | Biome lint and format check (`pnpm run lint:fix` applies fixes) |
+| `pnpm run audit` | cc-audit security scan |
+| `pnpm run license:check` | Fails if a dependency's license is outside the allowlist |
+| `pnpm run test` | Vitest (`pnpm run test:coverage` adds a coverage report) |
+| `pnpm run build` | `tsc`, output in `dist/` |
+| `pnpm run check` | typecheck, lint, audit, and license:check |
 
-This project uses the following tools for code quality management:
-
-### Biome (Linter + Formatter)
-
-- **Auto-format**: Automatically runs on file save (recommended setup)
-- **Strict rules**: OSS project-level quality standards
-- **Fast**: Built with Rust for high performance
-
-```bash
-# Check
-pnpm run lint
-
-# Auto-fix
-pnpm run lint:fix
-
-# Format only
-pnpm run format
-```
-
-### TypeScript
-
-- **strict mode**: Strict type checking enabled
-- **noUnusedLocals**: Disallow unused variables
-- **noUnusedParameters**: Disallow unused parameters
-
-```bash
-# Type check
-pnpm run typecheck
-```
-
-### Security Audit (cc-audit)
-
-- **MCP server scanning**: Scans for security vulnerabilities in MCP servers
-- **100+ detection rules**: Covers exfiltration, escalation, persistence, and injection attacks
-- **CI integration**: Automatically runs during checks
-
-```bash
-# Run security audit
-pnpm run audit
-```
-
-### Git Hooks (Husky)
-
-Automatically runs before commit:
-
-1. **lint-staged**: Checks only changed files
-2. **Type check**: Verifies no TypeScript type errors
-3. **Security audit**: Scans for security vulnerabilities
-
-**Important**: If commit fails, fix the errors and commit again.
-
-```bash
-# After fixing errors
-pnpm run lint:fix
-git add .
-git commit -m "fix: ..."
-```
-
-## Commit Message Convention
-
-Follow Conventional Commits:
-
-```
-<type>(<scope>): <subject>
-
-<body>
-
-<footer>
-```
-
-### Type
-
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Code formatting (no functional changes)
-- `refactor`: Refactoring
-- `perf`: Performance improvements
-- `test`: Adding/fixing tests
-- `chore`: Build/configuration changes
-
-### Examples
-
-```bash
-git commit -m "feat(recommender): add support for custom scoring weights"
-git commit -m "fix(analyzer): handle missing package.json gracefully"
-git commit -m "docs(readme): update installation instructions"
-```
-
-### Versioning Rules
-
-This project uses **[release-please](https://github.com/googleapis/release-please)** for automated releases. The commit type determines how the version number is bumped:
-
-| Commit Type | Version Bump | Example |
-|-------------|--------------|---------|
-| `fix:` | **patch** | 0.1.1 → 0.1.2 |
-| `feat:` | **minor** | 0.1.1 → 0.2.0 |
-| `feat!:` or `BREAKING CHANGE:` | **major** | 0.1.1 → 1.0.0 |
-| `chore:`, `docs:`, `style:`, etc. | **none** | No version change |
-
-**Important Notes:**
-- `feat:` commits trigger a **minor** version bump (new features)
-- `fix:` commits trigger a **patch** version bump (bug fixes)
-- Breaking changes trigger a **major** version bump
-- Other types (`chore:`, `ci:`, `docs:`) do not trigger version changes
-
-**Example Scenarios:**
-```bash
-# Adds a new feature → 0.1.1 to 0.2.0
-git commit -m "feat: add new recommendation algorithm"
-
-# Fixes a bug → 0.1.1 to 0.1.2
-git commit -m "fix: resolve analyzer crash on empty files"
-
-# Internal change (no version bump)
-git commit -m "chore: update dependencies"
-
-# Breaking change → 0.1.1 to 1.0.0
-git commit -m "feat!: redesign API interface"
-# or
-git commit -m "feat: redesign API interface
-
-BREAKING CHANGE: API interface has changed"
-```
-
-## Pull Requests
-
-1. **Tests**: Ensure all checks pass
+`pnpm run check` does not run the tests or the build. Before opening a pull request, run all three:
 
 ```bash
 pnpm run check
-pnpm run build
-```
-
-2. **Description**: Clearly describe your changes
-   - What was changed
-   - Why it was changed
-   - How it was tested
-
-3. **Review**: Respond to feedback
-
-## Project Structure
-
-See [CLAUDE.md](./CLAUDE.md) and [ARCHITECTURE.md](./docs/ARCHITECTURE.md) for details.
-
-```
-cc-recommender/
-├── src/
-│   ├── index.ts              # MCP server entry point
-│   ├── config/               # Configuration
-│   ├── repositories/         # Data access layer
-│   ├── utils/                # Utilities
-│   ├── types/                # Type definitions
-│   ├── schemas/              # Zod validation schemas
-│   ├── services/             # Business logic
-│   │   ├── analyzer/         # Project analysis
-│   │   ├── recommender/      # Recommendation logic
-│   │   ├── fetchers/         # Data fetching
-│   │   │   ├── plugin-fetcher.ts        # Plugin data fetching
-│   │   │   ├── mcp-fetcher.ts           # MCP server data (awesome-mcp-servers)
-│   │   │   ├── official-mcp-fetcher.ts  # Official MCP registry
-│   │   │   └── skill-fetcher.ts         # Skill data fetching
-│   │   └── repositories/     # Data access layer
-│   ├── tools/                # MCP tools
-│   │   └── handlers/         # Tool implementations
-│   └── server/               # Server setup
-├── data/
-│   └── recommendations.json  # Unified database
-├── scripts/
-│   └── fetch-data.ts         # Data fetch script
-├── tests/                    # Test files
-├── .husky/                   # Git hooks
-├── docs/                     # Technical documentation
-│   └── ARCHITECTURE.md      # Architecture details
-├── CLAUDE.md                 # Development guidelines (Important!)
-├── CONTRIBUTING.md           # Contribution guide
-├── CHANGELOG.md              # Change history
-├── biome.json               # Biome configuration
-├── tsconfig.json            # TypeScript configuration
-└── package.json             # Project configuration
-```
-
-## Coding Standards
-
-**Important**: See [CLAUDE.md](./CLAUDE.md) for detailed coding standards and architecture guidelines.
-
-### Key Rules
-
-1. **index.ts is generally prohibited** - except for `types/` and `tools/handlers/`
-2. **Use type** - Do not use interface
-3. **Follow layer dependency direction** - Upper → Lower only
-4. **Single Responsibility Principle** - Each file should have only one responsibility
-
-### Naming Conventions
-
-- **Files**: kebab-case + suffix (`plugin-fetcher.service.ts`)
-
-## Data Updates
-
-### For Maintainers
-
-See [docs/DATA_MANAGEMENT.md](./docs/DATA_MANAGEMENT.md) for the full data management guide.
-
-#### Update Database Manually
-
-```bash
-# Full update with security scan
-pnpm run fetch-data:full
-
-# Quick update (skip security scan - emergency only)
-pnpm run fetch-data:quick
-
-# Default (controlled by SKIP_SECURITY_SCAN env var)
-pnpm run fetch-data
-
-# With GitHub token to avoid rate limits (recommended)
-GITHUB_TOKEN=your_token_here pnpm run fetch-data
-```
-
-**GitHub Token Setup:**
-To fetch official skills from GitHub (Anthropic, Supabase, etc.) without hitting rate limits, create a token at https://github.com/settings/tokens with `public_repo` scope and set it as `GITHUB_TOKEN` environment variable.
-
-#### Automatic Weekly Updates
-
-The database is automatically updated every Monday at 9:00 AM JST via GitHub Actions (`.github/workflows/update-data.yml`).
-
-**What happens:**
-1. Fetches latest data from all sources
-2. Runs security scan with cc-audit
-3. Creates a PR if changes detected
-4. Maintainer reviews and merges
-
-### For Contributors
-
-To add a new data source:
-
-1. Add fetcher to `scripts/fetch-data.ts`
-2. Add type definitions to `src/types/` (domain-types.ts, raw-types.ts, etc.)
-3. Export as public API in `src/types/index.ts`
-4. Run tests
-
-```bash
-pnpm run fetch-data
-pnpm run build
-pnpm run check
-```
-
-## Testing
-
-### Running Tests
-
-```bash
-# Run all tests
 pnpm run test
-
-# Watch mode (re-runs on file changes)
-pnpm run test:watch
-
-# Coverage report
-pnpm run test:coverage
-```
-
-### Test Structure
-
-- `tests/analyzer/` - Project analyzer tests
-- `tests/fetchers/` - Fetcher tests
-- `tests/recommender/` - Recommender tests
-
-### Writing Tests
-
-- Use Vitest for testing
-- Follow the Arrange-Act-Assert pattern
-- Mock external dependencies
-- Aim for high coverage on critical paths
-
-Example:
-
-```typescript
-import { describe, expect, it } from "vitest";
-
-describe("MyService", () => {
-  it("should return expected result", () => {
-    // Arrange
-    const input = "test";
-
-    // Act
-    const result = myService.process(input);
-
-    // Assert
-    expect(result).toBe("expected");
-  });
-});
-```
-
-## Build and Release
-
-### Building
-
-```bash
-# TypeScript compilation
 pnpm run build
-
-# Watch mode (rebuilds on file changes)
-pnpm run dev
 ```
 
-### Automated Release Process
+Unused variables and imports are caught by Biome (`noUnusedVariables` and `noUnusedImports` are errors), not by `tsc`.
 
-This project uses **[release-please](https://github.com/googleapis/release-please)** for fully automated releases.
+### Pre-commit hook
 
-**How it works:**
+`.husky/pre-commit` runs on every commit:
 
-1. **Push commits to `main`** using Conventional Commits
-   ```bash
-   git commit -m "feat: add new feature"
-   git commit -m "fix: resolve bug"
-   git push origin main
-   ```
+1. `lint-staged`, which runs `biome check --write` on staged `*.js`, `*.ts`, and `*.json` files.
+2. `pnpm run typecheck`.
+3. A grep for strings that look like secrets in staged files outside `data/`. This only prints a warning.
+4. `pnpm run audit`. The commit is aborted if cc-audit fails.
 
-2. **release-please automatically creates/updates a Release PR**
-   - Automatically determines the version based on commit types
-   - Generates CHANGELOG.md
-   - Updates package.json version
-   - PR title: `chore(main): release X.Y.Z`
+The hook does not run the tests.
 
-3. **Merge the Release PR**
-   - Review the generated CHANGELOG
-   - Merge when ready to publish
-   ```bash
-   # Or merge via GitHub UI
-   gh pr merge <PR_NUMBER> --squash
-   ```
+### CI
 
-4. **Automatic GitHub Release & NPM Publish**
-   - GitHub Release is created automatically
-   - Package is published to NPM automatically
-   - No manual intervention required!
+Every pull request to `main` runs these checks:
 
-**Example Workflow:**
-```bash
-# 1. Make changes with proper commit messages
-git checkout -b feature/new-algo
-# ... make changes ...
-git commit -m "feat: implement advanced scoring algorithm"
-git push origin feature/new-algo
+- `Code Quality` (`ci.yml`, Node 24): typecheck, lint, cc-audit, `pnpm audit --audit-level=moderate`, license check, tests with coverage, Codecov upload, and build. The Codecov upload is set to `fail_ci_if_error: false` and there is no coverage threshold.
+- `Build on Node 22` and `Build on Node 24` (`ci.yml`): install and build only, then confirm `dist/index.js` exists. Tests run only on Node 24.
+- `Verify actions.lock` (`verify-lockfile.yml`): `gh actions-lock --verify`.
+- `Analyze (javascript)` (`codeql.yml`): CodeQL with the `security-and-quality` queries.
 
-# 2. Create and merge PR to main
-gh pr create --fill
-gh pr merge --squash
+`pnpm audit` is not part of `pnpm run check`. If you change dependencies, run `pnpm audit --audit-level=moderate` locally as well.
 
-# 3. release-please creates a Release PR automatically
-# 4. Review and merge the Release PR
-# 5. GitHub Release + NPM publish happens automatically!
-```
+### GitHub Actions lockfile
 
-### Manual Release (Emergency Only)
-
-If automated release fails, you can release manually:
+The actions used in `.github/workflows/` are pinned to commit SHAs in `.github/workflows/actions.lock`. If you add or change a `uses:` line, regenerate the lockfile and commit it together with the workflow change:
 
 ```bash
-# 1. Update version
-npm version patch  # or minor/major
-
-# 2. Create GitHub release
-gh release create v0.x.x --generate-notes
-
-# 3. NPM publish happens automatically via GitHub Actions
+gh extension install github/gh-actions-lock --pin v0.4.1  # first time only
+gh actions-lock
+gh actions-lock --verify
 ```
 
-## Questions & Support
+This also applies to Dependabot PRs that bump an action. If `Verify actions.lock` fails on one, run `gh actions-lock` on that branch.
 
-- **Issue**: Bug reports and feature requests via [GitHub Issues](https://github.com/yuji0809/cc-recommender/issues)
-- **Discussion**: Questions and discussions via [GitHub Discussions](https://github.com/yuji0809/cc-recommender/discussions)
+## Code rules
+
+The full rules are in [CLAUDE.md](./CLAUDE.md). These are the ones that come up most in review:
+
+- Layers depend downward only: `tools` → `services` → `repositories`. `config`, `utils`, and `types` can be used from any layer.
+- Import from the file that defines the symbol. `index.ts` exists only in `src/types/` and `src/tools/handlers/`; don't add new ones.
+- Relative imports use the `.js` extension (`moduleResolution` is `NodeNext`).
+- Use `type`, not `interface`.
+- File names are kebab-case with a type suffix, for example `project-analyzer.service.ts`, `package-json.parser.ts`, `recommend-skills.tool.ts`.
+- Write new features test-first. See [docs/TDD.md](./docs/TDD.md).
+
+## Tests
+
+Tests use Vitest and live under `tests/`. Newer tests mirror the path in `src/` (`src/utils/github-url.ts` is tested in `tests/utils/github-url.test.ts`). Older tests are grouped under `tests/analyzer/`, `tests/fetchers/`, and `tests/recommender/`. Tests don't make network calls: the fetcher and repository tests stub `fetch` or mock the GitHub API module.
+
+```bash
+pnpm run test                                  # all tests
+pnpm run test tests/utils/github-url.test.ts   # one file
+pnpm run test:watch
+pnpm run test:coverage                         # writes coverage/ (text, json, html)
+```
+
+## Commit messages
+
+Commits follow [Conventional Commits](https://www.conventionalcommits.org/). release-please reads the commit messages on `main` to decide the next version, so the type matters. If a PR is squash-merged, its title becomes the commit message, so give the PR a Conventional Commits title as well.
+
+```
+fix(analyzer): handle missing package.json
+feat(recommender): add support for custom scoring weights
+docs: update contributing guide
+```
+
+| Type | Release | Example from 0.9.1 |
+|---|---|---|
+| `fix:` | patch | 0.9.2 |
+| `feat:` | minor | 0.10.0 |
+| `feat!:`, `fix!:`, or a `BREAKING CHANGE:` footer | major | 1.0.0 |
+| `docs:`, `chore:`, `ci:`, `test:`, `refactor:`, `style:` | none | |
+
+Dependabot commits use `chore(deps)` and `chore(deps-dev)` for npm and `ci(deps)` for GitHub Actions, so they don't trigger a release on their own.
+
+## Pull requests
+
+1. Branch from `main` and keep each PR to one change.
+2. Run `pnpm run check`, `pnpm run test`, and `pnpm run build`.
+3. Fill in the PR template and link the issue it addresses.
+4. Don't edit `CHANGELOG.md` or the version in `package.json`. release-please updates both.
+
+`main` requires one approving review, and the branch has to be up to date with `main` before it can be merged. The full settings are in [.github/BRANCH_PROTECTION.md](./.github/BRANCH_PROTECTION.md).
+
+## Recommendation data
+
+The data is in `data/plugins.json`, `data/mcp-servers.json`, and `data/skills.json`. The `update-data.yml` workflow rebuilds it every day at 09:00 JST (00:00 UTC) and, if anything changed, opens a PR from the `update-recommendations-data` branch. The maintainer reviews and merges that PR.
+
+To rebuild the data locally:
+
+```bash
+pnpm run fetch-data          # all types; scans unless SKIP_SECURITY_SCAN=true
+pnpm run fetch-data:full     # all types, always with the cc-audit scan
+pnpm run fetch-data:quick    # all types, no scan
+pnpm run fetch-data:skills   # one type only (also fetch-data:plugins and fetch-data:mcp)
+```
+
+Without a token the GitHub API allows 60 requests per hour, and 5,000 with one. Pass a personal access token (see `.env.example`):
+
+```bash
+GITHUB_TOKEN=<your-token> pnpm run fetch-data
+```
+
+To add a skill source, add an entry to `src/config/direct-skill-sources.ts` (repositories that contain skills) or `src/config/curated-list-sources.ts` (README lists that link to skill repositories). A new kind of source needs a fetcher under `src/services/fetchers/` and a call from `scripts/fetch-data.ts`. See [docs/DATA_MANAGEMENT.md](./docs/DATA_MANAGEMENT.md) for details.
+
+## Releases
+
+Releases are automated. Contributors only need to write proper commit messages.
+
+1. When `fix` or `feat` commits land on `main`, release-please opens or updates a release PR titled `chore(main): release X.Y.Z` with the version bump and the `CHANGELOG.md` entry.
+2. When the maintainer merges the release PR, release-please creates the tag and the GitHub release. The `publish` job in `release-please.yml` then runs `pnpm run check`, `pnpm run test`, and `pnpm run build`.
+3. The job runs `npm stage publish`, authenticated through npm trusted publishing (OIDC) rather than a token. This stages the package; it is not public yet.
+4. The maintainer approves the staged release with 2FA. `npm stage` needs npm 11 or later.
+
+```bash
+npm stage list cc-recommender
+npm stage approve <stage-id>
+```
+
+The manual `publish.yml` workflow still uses the `NPM_TOKEN` secret, which expired on 2026-04-30, and the npm trusted publisher is configured only for `release-please.yml`. That workflow does not work at the moment.
+
+## Questions
+
+Use [GitHub Issues](https://github.com/yuji0809/cc-recommender/issues) for bug reports, feature requests, and questions.
 
 ## License
 
-By contributing, you agree that your code will be released under the MIT License.
+By contributing, you agree that your contributions are released under the [MIT License](./LICENSE).
