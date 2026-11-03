@@ -44,7 +44,7 @@ src/
 │   └── remote-data.repository.ts     GitHub からの最新データ取得
 ├── config/                   定数、環境変数、マッピング、スコア設定、データソース定義
 ├── types/                    型定義（index.ts が公開 API）
-└── utils/                    glob-matcher.ts, github-url.ts, retry.ts
+└── utils/                    glob-matcher.ts, github-url.ts, logger.ts, retry.ts
 
 scripts/fetch-data.ts         データ生成スクリプト（pnpm run fetch-data）
 data/                         plugins.json, mcp-servers.json, skills.json（npm パッケージに同梱）
@@ -144,7 +144,7 @@ index.ts を置いてよいのは `types/index.ts` と `tools/handlers/index.ts`
 
 1. 既存の `data/*.json` を読み、正規化した URL をキーにしたマップを作る。
 2. `FETCH_TYPES`（`plugins` / `mcp` / `skills` のカンマ区切り）で指定された種類を並列に取得する。指定がなければ全種類を取得し、指定外の種類は既存データをそのまま使う。
-3. 既存アイテムのセキュリティスコアを引き継ぎ、スコアのない新規アイテムのうち `isGitHubUrl()` が true のものを 10 並列でスキャンする。
+3. 既存アイテムのセキュリティスコアを引き継ぎ、スコアのない新規アイテムのうち `isGitHubUrl()` が true のものを 10 並列でスキャンする。`SECURITY_SCAN_TIME_LIMIT_MINUTES` が設定されていれば、開始からその分数を過ぎた時点で新しいバッチを始めない。
 4. セキュリティスコアが 70 未満（`SECURITY_CONFIG.minSecurityScore`）のアイテムを除く。スコアのないアイテムは残す。`SKIP_SECURITY_SCAN=true` のときは 3 のスキャンと 4 の除外を行わない。
 5. プラグインと MCP サーバーは正規化 URL で重複を除く（同じ URL なら公式を優先）。スキルは重複を除かない。
 6. 3 つのファイルに書き出す。
@@ -177,7 +177,7 @@ DB 全体の `version` と `lastUpdated` には plugins.json の値を使いま�
 | ファイル | 内容 |
 |---|---|
 | `constants.ts` | `FILE_SCAN_CONFIG`、`SKIP_DIRECTORIES`、`APP_METADATA`、`SECURITY_CONFIG`（70 点未満を除外、未スキャンは残す） |
-| `env.ts` | 環境変数をモジュール読み込み時に 1 回だけ読み、`ENV` として公開する（`GITHUB_TOKEN`、`SKIP_SECURITY_SCAN`、`CC_RECOMMENDER_OFFLINE_MODE`、`FETCH_TYPES`） |
+| `env.ts` | 環境変数をモジュール読み込み時に 1 回だけ読み、`ENV` として公開する（`GITHUB_TOKEN`、`SKIP_SECURITY_SCAN`、`CC_RECOMMENDER_OFFLINE_MODE`、`FETCH_TYPES`、`SECURITY_SCAN_TIME_LIMIT_MINUTES`） |
 | `file-mappings.ts` | `CONFIG_FILE_MAPPINGS`（設定ファイル名から言語・フレームワーク）、`EXTENSION_TO_LANGUAGE` |
 | `scoring-config.ts` | 基本スコアの重み、倍率、閾値 |
 | `enhanced-scoring-config.ts` | コンテキストスコアの重み、プロジェクトサイズの閾値、類似性の閾値、有効化フラグ |
@@ -202,6 +202,7 @@ DB 全体の `version` と `lastUpdated` には plugins.json の値を使いま�
 
 - `glob-matcher.ts` の `matchGlob()` は `*`、`**`、`?` を正規表現に変換し、大文字小文字を区別せずに照合する。スコアリングのファイルパターン一致で使う。
 - `github-url.ts` の `isGitHubUrl()` は URL をパースし、プロトコルが https でホスト名が `github.com` と完全に一致するときだけ true を返す。部分一致だと `github.com.evil.example` のようなホストを通してしまうため。`scripts/fetch-data.ts` がスキャン対象を選ぶときに使う。
+- `logger.ts` の `logger` は `info` / `warn` / `error` をすべて stderr に書く。stdio トランスポートでは stdout が JSON-RPC の通信路なので、サーバーの実行経路（`index.ts`、`server/`、`repositories/` など）のログはこれを使う。データ生成専用のコードは stdout に出してよい。
 - `retry.ts` の `retryWithBackoff()` は指数バックオフでリトライする（既定は最大 3 回、1 秒から 2 倍ずつ、上限 10 秒）。一時的なエラーとレート制限を判定する関数もここにある。
 
 ## recommend_skills の処理の流れ
@@ -243,7 +244,7 @@ DB 全体の `version` と `lastUpdated` には plugins.json の値を使いま�
 | `tests/repositories/` | remote-data.repository（Content-Type、タイムアウト、検証の上限） |
 | `tests/services/analyzer/` | metadata-analyzer |
 | `tests/services/recommender/scoring/` | context-scorer、similarity-scorer |
-| `tests/utils/` | github-url |
+| `tests/utils/` | github-url、logger |
 
 テストの置き場所は、`src/` の階層に合わせたもの（`tests/services/...`）と、平たく置いたもの（`tests/recommender/` など）が混在しています。
 

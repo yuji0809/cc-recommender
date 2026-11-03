@@ -76,6 +76,7 @@ src/
 ├── utils/              # 共通ユーティリティ
 │   ├── glob-matcher.ts # Glob パターンマッチング
 │   ├── github-url.ts   # GitHub URL 判定（ホスト名の厳密一致）
+│   ├── logger.ts       # stderr へのログ出力（サーバー経路用）
 │   └── retry.ts        # 指数バックオフ付きリトライ
 │
 ├── types/              # 型定義（ドメイン別に分割）
@@ -235,6 +236,21 @@ export interface User {
   name: string;
 }
 ```
+
+### 2. ログ出力
+
+MCP サーバーは stdio トランスポートで動くため、stdout は JSON-RPC の通信路になる。サーバーの実行経路（`src/index.ts`、`server/`、`tools/`、`repositories/`、`services/analyzer/`、`services/recommender/`）では `console.log` を使わず、stderr に書く `src/utils/logger.ts` を使う。
+
+```typescript
+// OK
+import { logger } from "../utils/logger.js";
+logger.info(`Loaded ${count} recommendations`);
+
+// NG: stdout に出て MCP の通信に混ざる
+console.log(`Loaded ${count} recommendations`);
+```
+
+データ生成専用のコード（`services/fetchers/`、`services/security-scanner.service.ts`、`scripts/`）は stdout に出してよい。
 
 ## TDD (Test-Driven Development) 開発手法
 

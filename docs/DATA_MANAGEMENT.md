@@ -113,6 +113,7 @@ URL の正規化（`normalizeUrl`）では、小文字にしたうえで、プ�
 |---|---|
 | `SKIP_SECURITY_SCAN` | `"true"` のときだけスキャンを省く。省いた場合はスコアによる除外も行わない。既存スコアのコピーは行う |
 | `FETCH_TYPES` | 取得する種類をカンマ区切りで指定する（`plugins` / `mcp` / `skills`）。未設定か、有効な値がひとつもなければ全種類 |
+| `SECURITY_SCAN_TIME_LIMIT_MINUTES` | fetch-data の開始からこの分数を過ぎたら、新しいスキャンのバッチを始めない。残りはスコアなしのまま残り、次の実行でスキャンされる。正の整数だけが有効で、未設定なら上限なし |
 | `GITHUB_TOKEN` | GitHub Contents API の認証に使う。未設定だと 1 時間 60 回の制限に当たりやすく、スキル一覧の取得が README や既知リストへのフォールバックになる。cc-audit も `--remote` の認証にこの変数を読む |
 
 cc-audit の設定ファイルはカレントディレクトリの `.cc-audit.yaml` を使うので、fetch-data はリポジトリのルートで実行する（`pnpm run` 経由なら問題ない）。
@@ -145,7 +146,8 @@ score = max(0, 100 - (critical * 25 + high * 10 + medium * 5 + low * 2))
 `.github/workflows/update-data.yml` で毎日データを作り直す。
 
 - 毎日 00:00 UTC（09:00 JST）に schedule で起動する。GitHub 側の混雑で開始が遅れることがある。手動実行は Actions タブか `gh workflow run update-data.yml` で行う。
-- Node 24 で `pnpm install --frozen-lockfile` を実行したあと、`pnpm run fetch-data` を実行する。`SKIP_SECURITY_SCAN` は `"false"` で、`GITHUB_TOKEN` にはワークフローのトークンを渡す。
+- Node 24 で `pnpm install --frozen-lockfile` を実行したあと、`pnpm run fetch-data` を実行する。`SKIP_SECURITY_SCAN` は `"false"`、`SECURITY_SCAN_TIME_LIMIT_MINUTES` は `"70"` で、`GITHUB_TOKEN` にはワークフローのトークンを渡す。
+- fetch-data の前に、未マージの `update-recommendations-data` ブランチがあれば、その `data/` を作業ツリーに取り出して増分スキャンの基準にする。index は main のまま戻すので、変更があるかどうかは main との差分で判定する。PR がマージされない間も前回までのスコアを使い回せる。
 - タイムアウトは fetch-data のステップが 90 分、ジョブ全体が 120 分。
 - `data/*.json` に差分があれば、peter-evans/create-pull-request が `update-recommendations-data` ブランチで PR を作る。PR がすでにあれば同じブランチを更新する。ラベルは `automated` と `data-update`。
 - 使うアクションのバージョンは `.github/workflows/actions.lock`（`gh actions-lock` で生成）で固定している。
@@ -208,7 +210,7 @@ gh run list --workflow=update-data.yml  # 実行履歴
 gh pr list --label automated            # 自動 PR
 ```
 
-実行が 90 分前後で失敗している場合は、fetch-data のステップのタイムアウトに当たっている。どこで時間がかかっているかは、ローカルで `fetch-data:plugins` / `fetch-data:mcp` / `fetch-data:skills` に分けて実行すると切り分けやすい。
+実行が 90 分前後で失敗している場合は、fetch-data のステップのタイムアウトに当たっている。スキャンは開始から 70 分で新しいバッチを始めなくなるので、それでも超えるならデータ取得そのものに時間がかかっている。ログ末尾の `Finished in N min` と、各種類の取得・スキャンのログで切り分けられる。ローカルでは `fetch-data:plugins` / `fetch-data:mcp` / `fetch-data:skills` に分けて実行するとよい。
 
 ソース側の形式が変わった（README の書き方が変わった、など）ときは、該当するフェッチャーのパース処理を直す。
 
