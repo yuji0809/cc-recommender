@@ -4,6 +4,8 @@
  * Application-wide constants and configuration values
  */
 
+import { createRequire } from "node:module";
+
 /** File scanning configuration */
 export const FILE_SCAN_CONFIG = {
   maxDepth: 5, // Maximum recursion depth for directory scanning
@@ -29,10 +31,19 @@ export const SKIP_DIRECTORIES = [
   "vendor", // PHP/Go
 ] as const;
 
-/** Application metadata */
+/**
+ * package.json（src/config/ と dist/config/ のどちらからも 2 階層上）
+ * rootDir の外にあるため import ではなく createRequire で読み込む
+ */
+const packageJson = createRequire(import.meta.url)("../../package.json") as {
+  name: string;
+  version: string;
+};
+
+/** Application metadata（package.json から取得し、リリースごとに更新が要らないようにする） */
 export const APP_METADATA = {
-  name: "cc-recommender",
-  version: "0.1.0",
+  name: packageJson.name,
+  version: packageJson.version,
 } as const;
 
 /** Security scanning configuration */
