@@ -24,6 +24,7 @@ import type {
   Recommendation,
   SkillDatabase,
 } from "../src/types/domain-types.js";
+import { isGitHubUrl } from "../src/utils/github-url.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -404,7 +405,7 @@ async function scanItems(
   label: string,
 ): Promise<void> {
   const reposToScan = items
-    .filter((item) => item.url.includes("github.com"))
+    .filter((item) => isGitHubUrl(item.url))
     .map((item) => ({
       url: item.url,
       type: scanType,
