@@ -157,6 +157,65 @@ describe("fetchRemoteData", () => {
     });
   });
 
+  describe("HTTP handling", () => {
+    it("should send If-None-Match and return the cached data on 304", async () => {
+      const url = nextUrl();
+      const withEtag = jsonResponse("application/json");
+      withEtag.headers.set("etag", '"abc123456789xyz"');
+      fetchMock.mockResolvedValueOnce(withEtag);
+      await fetchRemoteData(url);
+
+      fetchMock.mockResolvedValueOnce(new Response(null, { status: 304 }));
+      const cached = await fetchRemoteData(url);
+
+      expect(cached?.items).toHaveLength(1);
+      const [, init] = fetchMock.mock.calls[1] as [string, RequestInit];
+      expect((init.headers as Record<string, string>)["If-None-Match"]).toBe('"abc123456789xyz"');
+    });
+
+    it("should return null on 304 when nothing is cached", async () => {
+      fetchMock.mockResolvedValue(new Response(null, { status: 304 }));
+
+      await expect(fetchRemoteData(nextUrl())).resolves.toBeNull();
+    });
+
+    it("should return null on an HTTP error status", async () => {
+      fetchMock.mockResolvedValue(new Response("oops", { status: 500 }));
+
+      await expect(fetchRemoteData(nextUrl())).resolves.toBeNull();
+    });
+
+    it("should return null on a network error", async () => {
+      fetchMock.mockRejectedValue(new Error("ECONNRESET"));
+
+      await expect(fetchRemoteData(nextUrl())).resolves.toBeNull();
+    });
+
+    it("should return null when an unexpected error is thrown", async () => {
+      vi.mocked(process.stderr.write).mockImplementationOnce(() => {
+        throw new Error("stderr closed");
+      });
+      fetchMock.mockResolvedValue(jsonResponse("application/json"));
+
+      await expect(fetchRemoteData()).resolves.toBeNull();
+    });
+  });
+
+  describe("Single file validation", () => {
+    it.each([
+      ["missing id", { name: "x", type: "plugin" }],
+      ["missing name", { id: "x", type: "plugin" }],
+      ["missing type", { id: "x", name: "x" }],
+      ["unknown type", { id: "x", name: "x", type: "unknown" }],
+    ])("should return null when an item is invalid (%s)", async (_label, item) => {
+      fetchMock.mockResolvedValue(
+        jsonResponse("application/json", { ...validDatabase, items: [item] }),
+      );
+
+      await expect(fetchRemoteData(nextUrl())).resolves.toBeNull();
+    });
+  });
+
   describe("Logging", () => {
     it("should not write to stdout, which is the MCP stdio channel", async () => {
       fetchMock.mockResolvedValue(jsonResponse("application/json"));
