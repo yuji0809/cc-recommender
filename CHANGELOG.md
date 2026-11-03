@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.1](https://github.com/yuji0809/cc-recommender/compare/v0.9.0...v0.9.1) (2026-11-03)
+
+
+### Bug Fixes
+
+* **deps:** resolve critical/high Dependabot security alerts ([cc235f7](https://github.com/yuji0809/cc-recommender/commit/cc235f7e264318e7795db27798da4ac35534accc))
+* load remote data served as text/plain and bound the whole download by the timeout ([5d8d1ab](https://github.com/yuji0809/cc-recommender/commit/5d8d1ab8454c01b94104d33f14b5076488b47685)), closes [#47](https://github.com/yuji0809/cc-recommender/issues/47)
+* raise remote data validation limits to follow data growth ([e25cf4e](https://github.com/yuji0809/cc-recommender/commit/e25cf4e205529f57e76d5ace24532d4f0603aafc))
+* **security:** use strict hostname check for GitHub URLs in fetch-data ([80d3567](https://github.com/yuji0809/cc-recommender/commit/80d3567601e879f937262ea3f3dd4507c910beeb))
+
 ## [0.9.0](https://github.com/yuji0809/cc-recommender/compare/v0.8.2...v0.9.0) (2026-02-01)
 
 
