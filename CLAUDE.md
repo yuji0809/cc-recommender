@@ -487,6 +487,14 @@ pnpm run audit
   - セキュリティ監査
   - テスト
   - カバレッジチェック
+  - GitHub Actions lockfile（`.github/workflows/actions.lock`）の検証
+
+- ワークフローの `uses:` を追加・変更した場合は lockfile を更新する:
+  ```bash
+  gh extension install github/gh-actions-lock --pin v0.4.1  # 初回のみ
+  gh actions-lock          # lockfile を更新
+  gh actions-lock --verify # 検証（CI と同じチェック）
+  ```
 
 ## 参考資料
 
