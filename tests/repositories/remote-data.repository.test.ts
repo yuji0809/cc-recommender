@@ -87,6 +87,76 @@ describe("fetchRemoteData", () => {
     });
   });
 
+  describe("Default data files (plugins / mcp-servers / skills)", () => {
+    type Item = { id?: unknown; name?: unknown; type?: unknown; description?: string };
+    const file = (items: Item[]) => ({ version: "1.0.0", lastUpdated: "2026-11-01", items });
+    const validFiles = {
+      plugins: file([{ id: "p1", name: "Plugin 1", type: "plugin" }]),
+      mcp: file([{ id: "m1", name: "MCP 1", type: "mcp" }]),
+      skills: file([
+        { id: "s1", name: "Skill 1", type: "skill" },
+        { id: "w1", name: "Workflow 1", type: "workflow" },
+      ]),
+    };
+
+    const routeFetch = (overrides: Partial<Record<keyof typeof validFiles, unknown>> = {}) => {
+      const files = { ...validFiles, ...overrides };
+      fetchMock.mockImplementation(async (url: string) => {
+        if (url.endsWith("/plugins.json")) return jsonResponse("text/plain", files.plugins);
+        if (url.endsWith("/mcp-servers.json")) return jsonResponse("text/plain", files.mcp);
+        if (url.endsWith("/skills.json")) return jsonResponse("text/plain", files.skills);
+        throw new Error(`unexpected url ${url}`);
+      });
+    };
+
+    it("should merge the three files into one database", async () => {
+      routeFetch();
+
+      const result = await fetchRemoteData();
+
+      expect(result?.items.map((item) => item.id)).toEqual(["p1", "m1", "s1", "w1"]);
+      expect(result?.version).toBe("1.0.0");
+    });
+
+    it.each([
+      ["missing id", { name: "x", type: "plugin" }],
+      ["missing name", { id: "x", type: "plugin" }],
+      ["missing type", { id: "x", name: "x" }],
+      ["unexpected type", { id: "x", name: "x", type: "mcp" }],
+      [
+        "item larger than 100KB",
+        { id: "x", name: "x", type: "plugin", description: "x".repeat(101 * 1024) },
+      ],
+    ])("should return null when a file has an invalid item (%s)", async (_label, item) => {
+      routeFetch({ plugins: file([item]) });
+
+      await expect(fetchRemoteData()).resolves.toBeNull();
+    });
+
+    it("should return null when a file has more than 50,000 items", async () => {
+      const items = Array.from({ length: 50_001 }, (_, i) => ({
+        id: `m${i}`,
+        name: "m",
+        type: "mcp",
+      }));
+      routeFetch({ mcp: file(items) });
+
+      await expect(fetchRemoteData()).resolves.toBeNull();
+    });
+
+    it("should return null when a file is larger than 50MB", async () => {
+      const items = Array.from({ length: 600 }, (_, i) => ({
+        id: `s${i}`,
+        name: "s",
+        type: "skill",
+        description: "x".repeat(90 * 1024),
+      }));
+      routeFetch({ skills: file(items) });
+
+      await expect(fetchRemoteData()).resolves.toBeNull();
+    });
+  });
+
   describe("Logging", () => {
     it("should not write to stdout, which is the MCP stdio channel", async () => {
       fetchMock.mockResolvedValue(jsonResponse("application/json"));
