@@ -7,6 +7,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import type { RecommendationDatabase } from "../types/domain-types.js";
+import { logger } from "../utils/logger.js";
 import { registerTools } from "./tool-registry.js";
 
 /**
@@ -31,5 +32,5 @@ export async function createMcpServer(database: RecommendationDatabase): Promise
   const transport = new StdioServerTransport();
   await server.connect(transport);
 
-  console.log("cc-recommender MCP server started");
+  logger.info("cc-recommender MCP server started");
 }

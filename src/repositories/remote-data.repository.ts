@@ -11,6 +11,7 @@ import type {
   RecommendationDatabase,
   SkillDatabase,
 } from "../types/index.js";
+import { logger } from "../utils/logger.js";
 
 /** デフォルトのリモートデータURL（ベース） */
 const REMOTE_BASE_URL = "https://raw.githubusercontent.com/yuji0809/cc-recommender/main/data";
@@ -60,7 +61,7 @@ const dataCache = new Map<string, unknown>();
  */
 export async function fetchRemoteData(remoteUrl?: string): Promise<RecommendationDatabase | null> {
   try {
-    console.log("Fetching latest data from remote...");
+    logger.info("Fetching latest data from remote...");
 
     // カスタムURLが指定された場合は従来の単一ファイル方式
     if (remoteUrl) {
@@ -76,7 +77,7 @@ export async function fetchRemoteData(remoteUrl?: string): Promise<Recommendatio
 
     // いずれかが失敗した場合はnull
     if (!pluginsDb || !mcpServersDb || !skillsDb) {
-      console.warn("⚠️  Failed to fetch one or more data files");
+      logger.warn("⚠️  Failed to fetch one or more data files");
       return null;
     }
 
@@ -87,17 +88,17 @@ export async function fetchRemoteData(remoteUrl?: string): Promise<Recommendatio
       items: [...pluginsDb.items, ...mcpServersDb.items, ...skillsDb.items],
     };
 
-    console.log(
+    logger.info(
       `✅ Loaded ${mergedDatabase.items.length} recommendations from remote (${mergedDatabase.version})`,
     );
-    console.log(
+    logger.info(
       `   - Plugins: ${pluginsDb.items.length}, MCP: ${mcpServersDb.items.length}, Skills: ${skillsDb.items.length}`,
     );
 
     return mergedDatabase;
   } catch (error) {
     if (error instanceof Error) {
-      console.error(`Failed to fetch remote data: ${error.message}`);
+      logger.error(`Failed to fetch remote data: ${error.message}`);
     }
     return null;
   }
@@ -161,24 +162,24 @@ async function fetchTypedFile<T>(
 
     // 304 Not Modified - キャッシュを返す
     if (response.status === 304) {
-      console.log(`📦 Cache hit for ${url} (304 Not Modified)`);
+      logger.info(`📦 Cache hit for ${url} (304 Not Modified)`);
       const cachedData = dataCache.get(url);
       if (cachedData && validator(cachedData)) {
         return cachedData as T;
       }
-      console.warn(`⚠️  Cache miss - 304 but no cached data for ${url}`);
+      logger.warn(`⚠️  Cache miss - 304 but no cached data for ${url}`);
       return null;
     }
 
     if (!response.ok) {
-      console.error(`Failed to fetch ${url}: ${response.status}`);
+      logger.error(`Failed to fetch ${url}: ${response.status}`);
       return null;
     }
 
     // Content-Type 検証
     const contentType = response.headers.get("content-type");
     if (!contentType || !ALLOWED_CONTENT_TYPES.some((type) => contentType.includes(type))) {
-      console.warn(`⚠️  Invalid content-type for ${url}: ${contentType}`);
+      logger.warn(`⚠️  Invalid content-type for ${url}: ${contentType}`);
       return null;
     }
 
@@ -186,7 +187,7 @@ async function fetchTypedFile<T>(
 
     // データ検証
     if (!validator(data)) {
-      console.warn(`⚠️  Data validation failed for ${url}`);
+      logger.warn(`⚠️  Data validation failed for ${url}`);
       return null;
     }
 
@@ -195,16 +196,16 @@ async function fetchTypedFile<T>(
     if (newEtag) {
       etagCache.set(url, newEtag);
       dataCache.set(url, data);
-      console.log(`💾 Cached ETag for ${url}: ${newEtag.substring(0, 12)}...`);
+      logger.info(`💾 Cached ETag for ${url}: ${newEtag.substring(0, 12)}...`);
     }
 
     return data;
   } catch (error) {
     if (error instanceof Error) {
       if (error.name === "AbortError") {
-        console.error(`Fetch timeout for ${url} (${FETCH_TIMEOUT / 1000}s)`);
+        logger.error(`Fetch timeout for ${url} (${FETCH_TIMEOUT / 1000}s)`);
       } else {
-        console.error(`Failed to fetch ${url}: ${error.message}`);
+        logger.error(`Failed to fetch ${url}: ${error.message}`);
       }
     }
     return null;
@@ -242,13 +243,13 @@ function isValidDatabase(data: unknown): data is RecommendationDatabase {
   // JSON全体のサイズチェック
   const jsonSize = JSON.stringify(data).length;
   if (jsonSize > MAX_JSON_SIZE) {
-    console.warn(`⚠️  Suspicious: JSON too large (${(jsonSize / 1024 / 1024).toFixed(2)}MB)`);
+    logger.warn(`⚠️  Suspicious: JSON too large (${(jsonSize / 1024 / 1024).toFixed(2)}MB)`);
     return false;
   }
 
   // アイテム数チェック（異常に多い場合は拒否）
   if (db.items.length > MAX_ITEMS) {
-    console.warn("⚠️  Suspicious: Too many items");
+    logger.warn("⚠️  Suspicious: Too many items");
     return false;
   }
 
@@ -258,31 +259,31 @@ function isValidDatabase(data: unknown): data is RecommendationDatabase {
 
     // 必須フィールドチェック
     if (!item.id || typeof item.id !== "string") {
-      console.warn(`⚠️  Invalid item at index ${i}: missing or invalid id`);
+      logger.warn(`⚠️  Invalid item at index ${i}: missing or invalid id`);
       return false;
     }
 
     if (!item.name || typeof item.name !== "string") {
-      console.warn(`⚠️  Invalid item at index ${i}: missing or invalid name`);
+      logger.warn(`⚠️  Invalid item at index ${i}: missing or invalid name`);
       return false;
     }
 
     if (!item.type || typeof item.type !== "string") {
-      console.warn(`⚠️  Invalid item at index ${i}: missing or invalid type`);
+      logger.warn(`⚠️  Invalid item at index ${i}: missing or invalid type`);
       return false;
     }
 
     // 型の妥当性チェック
     const validTypes = ["plugin", "mcp-server", "skill"];
     if (!validTypes.includes(item.type)) {
-      console.warn(`⚠️  Invalid item at index ${i}: invalid type "${item.type}"`);
+      logger.warn(`⚠️  Invalid item at index ${i}: invalid type "${item.type}"`);
       return false;
     }
 
     // 個別アイテムのサイズチェック
     const itemSize = JSON.stringify(item).length;
     if (itemSize > MAX_ITEM_SIZE) {
-      console.warn(`⚠️  Suspicious: Item ${item.id} too large (${(itemSize / 1024).toFixed(2)}KB)`);
+      logger.warn(`⚠️  Suspicious: Item ${item.id} too large (${(itemSize / 1024).toFixed(2)}KB)`);
       return false;
     }
   }
@@ -341,13 +342,13 @@ function isValidTypedDatabase(
   // JSON全体のサイズチェック
   const jsonSize = JSON.stringify(data).length;
   if (jsonSize > MAX_JSON_SIZE) {
-    console.warn(`⚠️  Suspicious: JSON too large (${(jsonSize / 1024 / 1024).toFixed(2)}MB)`);
+    logger.warn(`⚠️  Suspicious: JSON too large (${(jsonSize / 1024 / 1024).toFixed(2)}MB)`);
     return false;
   }
 
   // アイテム数チェック
   if (db.items.length > MAX_ITEMS) {
-    console.warn("⚠️  Suspicious: Too many items");
+    logger.warn("⚠️  Suspicious: Too many items");
     return false;
   }
 
@@ -359,30 +360,30 @@ function isValidTypedDatabase(
 
     // 必須フィールドチェック
     if (!item.id || typeof item.id !== "string") {
-      console.warn(`⚠️  Invalid item at index ${i}: missing or invalid id`);
+      logger.warn(`⚠️  Invalid item at index ${i}: missing or invalid id`);
       return false;
     }
 
     if (!item.name || typeof item.name !== "string") {
-      console.warn(`⚠️  Invalid item at index ${i}: missing or invalid name`);
+      logger.warn(`⚠️  Invalid item at index ${i}: missing or invalid name`);
       return false;
     }
 
     if (!item.type || typeof item.type !== "string") {
-      console.warn(`⚠️  Invalid item at index ${i}: missing or invalid type`);
+      logger.warn(`⚠️  Invalid item at index ${i}: missing or invalid type`);
       return false;
     }
 
     // 型の妥当性チェック
     if (!allowedTypes.includes(item.type)) {
-      console.warn(`⚠️  Invalid item at index ${i}: unexpected type "${item.type}"`);
+      logger.warn(`⚠️  Invalid item at index ${i}: unexpected type "${item.type}"`);
       return false;
     }
 
     // 個別アイテムのサイズチェック
     const itemSize = JSON.stringify(item).length;
     if (itemSize > MAX_ITEM_SIZE) {
-      console.warn(`⚠️  Suspicious: Item ${item.id} too large (${(itemSize / 1024).toFixed(2)}KB)`);
+      logger.warn(`⚠️  Suspicious: Item ${item.id} too large (${(itemSize / 1024).toFixed(2)}KB)`);
       return false;
     }
   }
