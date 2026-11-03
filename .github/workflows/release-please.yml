@@ -55,14 +55,26 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Verify npm supports trusted publishing
+      - name: Verify npm supports trusted publishing and staged publishing
         run: |
           npm -v
           node -e 'const [a, b, c] = process.argv[1].split(".").map(Number); if (a < 11 || (a === 11 && (b < 5 || (b === 5 && c < 1)))) { console.error("npm >= 11.5.1 is required for trusted publishing"); process.exit(1); }' "$(npm -v)"
+          npm stage --help > /dev/null || { echo "npm stage is not available in this npm version"; exit 1; }
 
-      # Trusted Publishing が設定されていれば OIDC で認証し、
-      # 未設定の場合は NPM_TOKEN にフォールバックする
-      - name: Publish to NPM
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Trusted Publishing (OIDC) で認証し、公開待ち (staged) の状態で登録する。
+      # メンテナーが 2FA 付きで承認するまで公開されない。
+      - name: Stage release on npm
+        run: npm stage publish --access public
+
+      - name: Show how to approve the staged release
+        run: |
+          {
+            echo "## npm に staged release を登録しました"
+            echo ""
+            echo "2FA 付きで承認すると公開されます:"
+            echo ""
+            echo '```bash'
+            echo "npm stage list cc-recommender"
+            echo "npm stage approve <stage-id>"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
