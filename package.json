@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "cc-recommender": "./dist/index.js"
+    "cc-recommender": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -45,7 +45,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yuji0809/cc-recommender.git"
+    "url": "git+https://github.com/yuji0809/cc-recommender.git"
   },
   "bugs": {
     "url": "https://github.com/yuji0809/cc-recommender/issues"

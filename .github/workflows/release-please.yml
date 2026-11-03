@@ -25,6 +25,11 @@ jobs:
     needs: release-please
     runs-on: ubuntu-latest
     if: ${{ needs.release-please.outputs.release_created }}
+    # npm Trusted Publishing (OIDC) 用。job レベルの permissions は workflow レベルを
+    # 置き換えるため contents: read も明示する
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -32,7 +37,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Setup pnpm
@@ -50,6 +55,13 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Verify npm supports trusted publishing
+        run: |
+          npm -v
+          node -e 'const [a, b, c] = process.argv[1].split(".").map(Number); if (a < 11 || (a === 11 && (b < 5 || (b === 5 && c < 1)))) { console.error("npm >= 11.5.1 is required for trusted publishing"); process.exit(1); }' "$(npm -v)"
+
+      # Trusted Publishing が設定されていれば OIDC で認証し、
+      # 未設定の場合は NPM_TOKEN にフォールバックする
       - name: Publish to NPM
         run: npm publish --access public
         env:
