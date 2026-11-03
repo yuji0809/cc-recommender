@@ -1,93 +1,53 @@
-# Branch Protection クイックスタート
+# ブランチ保護の変更手順
 
-## 初回セットアップ（3ステップ）
+`main` のブランチ保護を変更するときの手順です。現在の設定、既知の問題（必須チェック名の不一致）、トークンの権限、state の扱いは [BRANCH_PROTECTION.md](./BRANCH_PROTECTION.md) にまとめています。
+
+## 準備（初回のみ）
 
 ```bash
-# 1. Terraform インストール（初回のみ）
 brew install terraform
 
-# 2. GitHub Personal Access Token 設定（初回のみ）
-export GITHUB_TOKEN="your_token_here"
+# リポジトリの管理者権限があるトークン。gh でログイン済みならこれで足ります
+export GITHUB_TOKEN=$(gh auth token)
 
-# 3. ブランチプロテクション適用
 cd .github/terraform
 terraform init
-terraform plan    # 確認
-terraform apply   # 適用
 ```
 
-## 設定変更
+state ファイル（`terraform.tfstate`）は Git に入っていません。手元に state がない場合は、先に import します。
 
 ```bash
-# 1. 設定ファイル編集
-code .github/terraform/main.tf
-
-# 2. 変更確認
-cd .github/terraform
-terraform plan
-
-# 3. 適用
-terraform apply
-
-# 4. コミット
-cd ../..
-git add .github/terraform/main.tf
-git commit -m "chore: update branch protection rules"
-git push
+terraform import github_branch_protection.main cc-recommender:main
 ```
 
-## よくある設定変更例
+## 変更する
 
-### レビュー人数を変更
+1. ブランチを作り、`.github/terraform/main.tf` を編集します。
+2. 差分を確認して適用します。
+
+   ```bash
+   cd .github/terraform
+   terraform plan
+   terraform apply
+   ```
+
+3. `main.tf` の変更をコミットし、PR を作ります。管理者は `main` に直接 push できてしまいますが、変更は PR を通してください。
+
+   ```bash
+   git add .github/terraform/main.tf
+   git commit -m "chore: update branch protection rules"
+   ```
+
+設定を変えたら [BRANCH_PROTECTION.md](./BRANCH_PROTECTION.md) の「現在の設定」も更新してください。
+
+## よくある変更
+
+必須チェックは `required_status_checks` の `contexts` に、ジョブ名と同じ名前で書きます（例: `Code Quality`、`Build on Node 22`）。実際の名前は `gh pr checks <PR 番号>` で確認できます。今の `contexts` を直すときの候補は [BRANCH_PROTECTION.md](./BRANCH_PROTECTION.md) の「既知の問題」にあります。
+
+承認の数は、既存の `required_pull_request_reviews` ブロックの中の値だけを変えます。ブロックごと書き換えると `dismiss_stale_reviews` などの設定が消えます。
 
 ```hcl
-required_pull_request_reviews {
-  required_approving_review_count = 2  # 1 → 2
-}
+    required_approving_review_count = 2
 ```
 
-### ステータスチェックを追加
-
-```hcl
-required_status_checks {
-  contexts = [
-    "Code Quality / Type check",
-    "Code Quality / Lint",
-    "Code Quality / Security Audit",
-    "Code Quality / Test with Coverage",
-    "New Check Name",  # 追加
-  ]
-}
-```
-
-### 管理者も対象にする
-
-```hcl
-enforce_admins = true  # false → true
-```
-
-## トラブルシューティング
-
-### terraform コマンドが見つからない
-```bash
-brew install terraform
-```
-
-### 認証エラー
-```bash
-export GITHUB_TOKEN="your_github_token"
-# または
-# ~/.bashrc / ~/.zshrc に追加
-```
-
-### 403 Forbidden
-- リポジトリの管理者権限が必要
-- Personal Access Token に `repo` スコープが必要
-- オーナーとして実行してください
-
-### Token の取得方法
-1. GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. "Generate new token" をクリック
-3. `repo` スコープを選択
-4. Token を生成してコピー
-5. `export GITHUB_TOKEN="..."` で設定
+`enforce_admins = true` にすると管理者もルールに従うことになり、バイパスができなくなります。今の構成でこれを有効にすると、メンテナー自身の PR（自分では承認できない）と、チェックが付かないリリース PR・データ更新 PR がマージできなくなります。詳しくは [BRANCH_PROTECTION.md](./BRANCH_PROTECTION.md) の「既知の問題」を見てください。

@@ -1,169 +1,90 @@
-# Branch Protection as Code
+# ブランチ保護の設定
 
-このプロジェクトでは、ブランチプロテクション設定を **Terraform** で管理しています。
+`main` のブランチ保護は Terraform（`.github/terraform/main.tf`）で管理しています。このファイルは設定内容と既知の問題をまとめたリファレンスです。変更の手順だけ知りたい場合は [BRANCH_PROTECTION_QUICKSTART.md](./BRANCH_PROTECTION_QUICKSTART.md) を見てください。
 
-## 設定内容
+## 現在の設定
 
-### 保護対象ブランチ
-- `main`
+2026-11-03 に `gh api repos/yuji0809/cc-recommender/branches/main/protection` で取得した値です。`main.tf` の内容と一致しています。
 
-### ルール
+| 項目 | 値 | `main.tf` |
+|---|---|---|
+| PR の承認 | 1 件必須 | `required_approving_review_count = 1` |
+| push で古い承認を取り消す | する | `dismiss_stale_reviews = true` |
+| コードオーナーのレビュー | 不要 | `require_code_owner_reviews = false` |
+| ステータスチェック | 必須。ブランチが `main` に追従していること | `strict = true` |
+| 必須チェック | `Code Quality / Type check`、`Code Quality / Lint`、`Code Quality / Security Audit`、`Code Quality / Test with Coverage` | `contexts`（次の節を参照） |
+| 会話の解決 | 必須 | `require_conversation_resolution = true` |
+| 管理者への適用 | しない | `enforce_admins = false` |
+| 線形履歴 | 不要 | `required_linear_history = false` |
+| force push | 禁止 | `allows_force_pushes = false` |
+| ブランチの削除 | 禁止 | `allows_deletions = false` |
 
-1. **Pull Request必須**
-   - mainブランチへの直接pushを禁止
-   - 1人以上のレビュー承認が必要
-   - 古いレビューは新しいpush時に自動却下
+## 既知の問題: 必須チェックの名前が実際のチェックと合っていない
 
-2. **ステータスチェック必須**
-   - CI テストが全て通過必須
-   - ブランチは最新状態である必要あり
-   - 必須チェック:
-     - Type check (TypeScript)
-     - Lint (Biome)
-     - Security Audit (cc-audit)
-     - Tests (Vitest)
+`contexts` に書いている `Code Quality / Lint` などのチェックは、どの PR でも報告されません。GitHub Actions のチェック名はジョブの `name:`（マトリクスのジョブは値が入った名前）で、ステップ名がチェックになることはないためです。`<A> / <B>` の形になるのは reusable workflow を呼び出すジョブだけです。
 
-3. **会話解決必須**
-   - PRコメントの全てが解決されている必要あり
+PR で実際に報告されるチェックは次のとおりです（PR #48 で確認）。
 
-4. **Force Push禁止**
-   - 履歴改変を防止
+| チェック名 | ワークフロー | 内容 |
+|---|---|---|
+| `Code Quality` | `ci.yml` | 型チェック、Lint、cc-audit、`pnpm audit`、ライセンス、テストとカバレッジ、ビルド（Node 24） |
+| `Build on Node 22` | `ci.yml` | インストールとビルドのみ |
+| `Build on Node 24` | `ci.yml` | インストールとビルドのみ |
+| `Verify actions.lock` | `verify-lockfile.yml` | `gh actions-lock --verify` |
+| `Analyze (javascript)` | `codeql.yml` | CodeQL |
 
-5. **ブランチ削除禁止**
-   - mainブランチの誤削除を防止
+ほかに code scanning が付ける `CodeQL` チェックと、Codecov アプリが付ける `codecov/patch` ステータスも表示されますが、どちらもワークフローのジョブではありません。
 
----
+必須チェックが報告されないので、PR は "Expected — Waiting for status to be reported" のままになり、通常の手順ではマージできません。現在は `enforce_admins = false` を利用して、管理者がバイパスしてマージしています。
 
-## Terraform による管理
+直すには、`main.tf` の `contexts` を実際のチェック名に置き換えて `terraform apply` します。どれを必須にするかはメンテナーが決めますが、たとえば次のようになります。
 
-### 前提条件
-
-```bash
-# Terraform インストール
-brew install terraform
-
-# GitHub Personal Access Token 設定
-export GITHUB_TOKEN="your_token_here"
+```hcl
+  required_status_checks {
+    strict = true
+    contexts = [
+      "Code Quality",
+      "Build on Node 22",
+      "Build on Node 24",
+      "Verify actions.lock",
+      "Analyze (javascript)",
+    ]
+  }
 ```
 
-### 適用方法
+ワークフローのジョブ名を変えたときは、`contexts` も同時に変える必要があります。
+
+`contexts` を直しても、次の PR は引き続き管理者のバイパスが必要です。
+
+- メンテナー自身の PR。PR の作成者は自分の PR を承認できないので、承認 1 件の条件を満たせません。PR #48 と #50 はどちらもレビューなしでマージしています。
+- release-please のリリース PR と `update-data.yml` のデータ更新 PR。どちらも `GITHUB_TOKEN` で作られるため CI が起動せず、チェックが 1 つも付きません（PR #49、#38）。
+
+## Terraform の運用
+
+### 必要なもの
+
+- Terraform（`brew install terraform`）。provider は `integrations/github` の `~> 6.0` です。
+- リポジトリの管理者権限があるトークンを `GITHUB_TOKEN` に設定します。classic の Personal Access Token なら `repo` スコープ、fine-grained token なら Administration の Read and write 権限が必要です。`gh` でログインしているなら `export GITHUB_TOKEN=$(gh auth token)` でも構いません。
+
+### state
+
+state はローカルの `.github/terraform/terraform.tfstate` にあり、`.github/terraform/.gitignore` で除外しているので Git には入っていません。state がない環境（新しく clone した場合など）で `terraform apply` すると、既存のルールを新しく作成しようとします。先に既存の設定を import してください。
 
 ```bash
 cd .github/terraform
-
-# 初期化
 terraform init
-
-# プラン確認
-terraform plan
-
-# 適用
-terraform apply
+terraform import github_branch_protection.main cc-recommender:main
+terraform plan   # No changes になることを確認
 ```
 
-### 設定変更
-
-1. `.github/terraform/main.tf` を編集
-2. `terraform apply` 実行
-
----
-
-## 設定ファイル
-
-`.github/terraform/main.tf`
-
-```hcl
-resource "github_branch_protection" "main" {
-  repository_id = "cc-recommender"
-  pattern       = "main"
-  ...
-}
-```
-
----
+GitHub の設定画面で直接変更すると `main.tf` とずれます。`main.tf` を変更していない状態で `terraform plan` を実行し、差分が出ればずれています。
 
 ## トラブルシューティング
 
-### エラー: 403 Forbidden
+- `403` や `Resource not accessible by personal access token` が出る: トークンにリポジトリの管理者権限がありません。上の「必要なもの」の権限を確認してください。
+- 必須チェックが "Expected — Waiting for status to be reported" のまま: `contexts` の名前が実際のチェック名と違います。`gh pr checks <PR 番号>` か PR の Checks タブで実際の名前を確認してください。
 
-**原因**: リポジトリの管理者権限がない
+## 参考
 
-**解決策**:
-- リポジトリオーナーとして実行
-- `GITHUB_TOKEN` に適切な権限を付与
-
-### Status checksが見つからない
-
-**原因**: CI workflowが一度も実行されていない
-
-**解決策**:
-1. PRを作成してCIを実行
-2. 実際のジョブ名を確認
-3. `branch-protection.json` の `contexts` を更新
-
----
-
-## CI/CD Integration（オプション）
-
-Terraform Cloud/Enterprise を使用する場合、GitHub Actions でブランチプロテクションを自動更新できます:
-
-```yaml
-# .github/workflows/terraform-apply.yml
-name: Terraform Apply
-
-on:
-  push:
-    paths:
-      - '.github/terraform/**'
-    branches:
-      - main
-
-jobs:
-  terraform:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: hashicorp/setup-terraform@v3
-      - name: Terraform Apply
-        working-directory: .github/terraform
-        run: |
-          terraform init
-          terraform apply -auto-approve
-        env:
-          GITHUB_TOKEN: ${{ secrets.TERRAFORM_GITHUB_TOKEN }}
-```
-
----
-
-## ベストプラクティス
-
-1. **Infrastructure as Code**
-   - ✅ `.github/terraform/main.tf` をGit管理下に置く
-   - ✅ Terraform state はローカルまたはリモートで管理
-   - ✅ 変更履歴を残す
-
-2. **変更手順**
-   - `.github/terraform/main.tf` を編集
-   - `terraform plan` で変更内容を確認
-   - `terraform apply` で適用
-   - PR作成してレビュー（推奨）
-
-3. **ドキュメント更新**
-   - 設定変更時はこのファイルも更新
-   - 変更理由をコミットメッセージに記載
-
-4. **定期確認**
-   - 四半期ごとに設定を見直す
-   - `terraform plan` で drift を検出
-
-5. **State管理**
-   - `.terraform/` と `*.tfstate` は `.gitignore` に追加済み
-   - 本番環境では Terraform Cloud/S3 backend 推奨
-
----
-
-## 参考資料
-
-- [GitHub Branch Protection API](https://docs.github.com/en/rest/branches/branch-protection)
-- [Terraform GitHub Provider](https://registry.terraform.io/providers/integrations/github/latest/docs)
-- [Terraform Best Practices](https://www.terraform.io/docs/cloud/guides/recommended-practices/index.html)
+- [About protected branches (GitHub Docs)](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
+- [github_branch_protection (Terraform GitHub provider)](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection)

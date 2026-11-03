@@ -37,15 +37,15 @@ presentation (tools) → business logic (services) → data access (repositories
 - `tools/handlers/index.ts` - MCP ツールの公開 API（外部インターフェース）
 
 ```typescript
-// ✅ 許可: 公開 API からのインポート
+// OK: 公開 API からのインポート
 import { Recommendation, ProjectInfo } from "../../types/index.js";
 import { recommendSkills, searchSkills } from "../../tools/handlers/index.js";
 
-// ✅ 推奨: その他は直接個別ファイルからインポート
+// OK: その他は直接個別ファイルからインポート
 import { analyzeProject } from "../../services/analyzer/project-analyzer.service.js";
 import { calculateScore } from "../../services/recommender/scoring/scorer.js";
 
-// ❌ 禁止: services/, config/, utils/ などに index.ts を作成
+// NG: services/, config/, utils/ などに index.ts を作成
 import { analyzeProject } from "../../services/analyzer/index.js"; // NG
 ```
 
@@ -66,7 +66,8 @@ src/
 │   ├── curated-list-sources.ts # キュレーションリストソース定義
 │   ├── direct-skill-sources.ts # 直接スキルソース定義
 │   ├── env.ts           # 環境変数設定
-│   └── scoring-config.ts # スコアリングの重み・閾値
+│   ├── scoring-config.ts # スコアリングの重み・閾値
+│   └── enhanced-scoring-config.ts # コンテキスト・類似度スコアの設定
 │
 ├── repositories/        # データアクセス層
 │   ├── recommendation.repository.ts # データベース読み込み・キャッシュ
@@ -81,6 +82,7 @@ src/
 │   ├── index.ts        # 型定義の公開 API
 │   ├── domain-types.ts # ドメイン型（Recommendation, Author, etc.）
 │   ├── service-types.ts # サービス型（ProjectInfo, ScoredRecommendation）
+│   ├── scoring-types.ts # スコアリング用の型
 │   └── raw-types.ts    # 外部データ型（RawPluginEntry, etc.）
 │
 ├── schemas/            # Zod バリデーションスキーマ
@@ -88,12 +90,20 @@ src/
 │
 ├── services/           # ビジネスロジック層
 │   ├── analyzer/       # プロジェクト分析サービス
-│   │   ├── parsers/    # 言語別パーサー
+│   │   ├── parsers/    # マニフェスト別パーサー
 │   │   │   ├── package-json.parser.ts
 │   │   │   ├── requirements-txt.parser.ts
+│   │   │   ├── pyproject-toml.parser.ts
 │   │   │   ├── go-mod.parser.ts
-│   │   │   └── （その他言語用パーサー）
-│   │   └── project-analyzer.service.ts # メイン分析ロジック
+│   │   │   ├── cargo-toml.parser.ts
+│   │   │   ├── composer-json.parser.ts
+│   │   │   ├── gemfile.parser.ts
+│   │   │   ├── pom-xml.parser.ts
+│   │   │   ├── build-gradle.parser.ts
+│   │   │   ├── docker-compose.parser.ts
+│   │   │   └── dotenv.parser.ts
+│   │   ├── metadata-analyzer.service.ts # 規模・種類などのメタデータ解析
+│   │   └── project-analyzer.service.ts  # メイン分析ロジック
 │   │
 │   ├── fetchers/       # 外部データ取得
 │   │   ├── mcp/        # MCP サーバー取得
@@ -107,12 +117,13 @@ src/
 │   │       │   ├── skill-parser.ts # スキルパース処理
 │   │       │   └── types.ts # フェッチャー用の内部型
 │   │       ├── curated-list-fetcher.ts # キュレーションリスト取得
-│   │       ├── direct-skill-fetcher.ts # 直接スキル取得
-│   │       └── skill-fetcher.ts # メインフェッチャー
+│   │       └── direct-skill-fetcher.ts # 直接スキル取得
 │   │
 │   ├── recommender/    # 推薦サービス
 │   │   ├── scoring/    # スコアリングロジック
-│   │   │   └── scorer.ts
+│   │   │   ├── scorer.ts
+│   │   │   ├── context-scorer.ts
+│   │   │   └── similarity-scorer.ts
 │   │   ├── recommendation.service.ts # メイン推薦ロジック
 │   │   ├── search.service.ts         # 検索機能
 │   │   ├── quality-scorer.ts         # 品質スコア算出
@@ -145,17 +156,20 @@ src/
 │   ├── security-agent.md            # セキュリティチェック
 │   ├── typescript-agent.md          # TypeScript ベストプラクティス
 │   ├── documentation-agent.md       # ドキュメント整合性チェック
+│   ├── tdd-agent.md                 # TDD での実装
 │   └── dependabot-review-agent.md   # Dependabot PRレビュー
 │
 ├── commands/            # カスタムコマンド
 │   ├── pre-commit-check.md    # コミット前の包括的チェック
-│   └── dependabot-review.md   # Dependabot PRの分析・レビュー
+│   ├── dependabot-review.md   # Dependabot PRの分析・レビュー
+│   ├── pr-description.md      # PR 説明文の生成（日本語）
+│   └── pr-description-en.md   # PR 説明文の生成（英語）
 │
 └── skills/              # カスタムスキル
     ├── documentation-check.md  # ドキュメントチェックスキル
     ├── architecture-check.md   # アーキテクチャチェックスキル
     ├── security-check.md       # セキュリティチェックスキル
-    ├── typescript-check.md     # TypeScript チェックスキル
+    ├── typescript-best-practices.md # TypeScript チェックスキル
     ├── tdd.md                  # TDD スキル
     └── dependabot-review.md    # Dependabot PRレビュースキル
 ```
@@ -165,6 +179,7 @@ src/
 - **Security Agent**: セキュリティベストプラクティスを確認し、脆弱性を検出
 - **TypeScript Agent**: TypeScript のベストプラクティスに従ってコードをレビュー
 - **Documentation Agent**: ドキュメントとコードの整合性を確認
+- **TDD Agent**: テストファーストで実装する
 - **Dependabot Review Agent**: Dependabot PRを分析し、リスク評価とレビューコメントを投稿
 
 **カスタムコマンド:**
@@ -191,13 +206,13 @@ src/
 ### 例
 
 ```typescript
-// ✅ 良い例
+// OK
 project-analyzer.service.ts
 recommendation.repository.ts
 recommend-skills.tool.ts
 package-json.parser.ts
 
-// ❌ 悪い例
+// NG
 analyzer.ts           // 曖昧
 recommend.ts          // タイプ不明
 packageJson.ts        // ケバブケースではない
@@ -208,13 +223,13 @@ packageJson.ts        // ケバブケースではない
 ### 1. TypeScript
 
 ```typescript
-// ✅ type を使用（interface は禁止）
+// OK: type を使用する
 export type User = {
   id: string;
   name: string;
 };
 
-// ❌ interface は使用しない
+// NG: interface は使用しない
 export interface User {
   id: string;
   name: string;
@@ -228,9 +243,9 @@ export interface User {
 **新機能の実装は必ずTDDで行う**
 
 ```
-1. 🔴 Red:   失敗するテストを先に書く
-2. 🟢 Green: テストを通す最小限のコードを書く
-3. 🔵 Refactor: コードをリファクタリング
+1. Red:      失敗するテストを先に書く
+2. Green:    テストを通す最小限のコードを書く
+3. Refactor: コードをリファクタリング
 ```
 
 ### TDD実践フロー
@@ -239,16 +254,16 @@ export interface User {
 
 ```bash
 # テストファイルを作成
-tests/services/new-feature.test.ts
+tests/services/new-feature.service.test.ts
 
 # ウォッチモードで開発
 pnpm run test:watch
 ```
 
 ```typescript
-// tests/services/new-feature.test.ts
+// tests/services/new-feature.service.test.ts
 import { describe, expect, it } from "vitest";
-import { newFeature } from "../../src/services/new-feature.js";
+import { newFeature } from "../../src/services/new-feature.service.js";
 
 describe("newFeature", () => {
   it("should handle basic case", () => {
@@ -268,7 +283,7 @@ describe("newFeature", () => {
 #### Step 2: Green（最小限の実装）
 
 ```typescript
-// src/services/new-feature.ts
+// src/services/new-feature.service.ts
 export function newFeature(input: string): string {
   return input; // 最小限の実装
 }
@@ -279,7 +294,7 @@ export function newFeature(input: string): string {
 #### Step 3: Refactor（リファクタリング）
 
 ```typescript
-// src/services/new-feature.ts
+// src/services/new-feature.service.ts
 export function newFeature(input: string): string {
   // より良い実装にリファクタリング
   if (!input) return "";
@@ -400,7 +415,7 @@ tests/analyzer/ に新しい言語のテストケースを追加
 
 ## 禁止事項
 
-### ❌ 絶対にやってはいけないこと
+### 絶対にやってはいけないこと
 
 1. **index.ts の作成**
    - すべてのインポートは直接個別ファイルから行う
@@ -452,7 +467,7 @@ pnpm run test:coverage
 # ビルド
 pnpm run build
 
-# 全チェック（型チェック + Lint + セキュリティ監査）
+# 全チェック（型チェック + Lint + セキュリティ監査 + ライセンスチェック）
 pnpm run check
 ```
 

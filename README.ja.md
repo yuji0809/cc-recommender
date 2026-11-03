@@ -7,53 +7,25 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)
 
-> 🎯 Claude Code向けスキル/プラグイン/MCPサーバー推薦MCPサーバー
-
 [English](./README.md) | 日本語
 
-Claude Codeで「何入れたらいい？」と聞くだけで、プロジェクトを分析し、最適なスキル・プラグイン・MCPサーバーを提案します。
+作業中のプロジェクトに合った Claude Code のプラグイン、MCP サーバー、スキルを提案する MCP サーバーです。
 
-## 特徴
+Claude Code で「このプロジェクトに何を入れたらいい？」のように聞くと、プロジェクトのマニフェストファイルから言語・フレームワーク・依存関係を読み取り、約 19,000 件（2026 年 11 月時点）のデータベースから合うものを返します。
 
-- 📦 **プラグイン推薦** - 公式マーケットプレイスから最適なプラグインを提案
-- 🔌 **MCPサーバー推薦** - awesome-mcp-serversからMCPサーバーを検索
-- 🎯 **スキル/ワークフロー推薦** - awesome-claude-codeからスキル、フック、コマンドを提案
-- 🔍 **プロジェクト分析** - 使用言語、フレームワーク、依存関係を自動検出
-- 🏷️ **キーワード検索** - 名前やタグで検索
-- 🔄 **自動更新** - GitHubから常に最新データを取得（手動更新不要）
-- ⭐ **品質スコアリング** - 公式ステータス、スター数、更新日、ソースに基づいてスキルを評価
-- 🤖 **公式スキル自動検出** - 既知の組織から公式スキルを自動的に検出
+## セットアップ
 
-## インストール
+Node.js 22 以上が必要です。
 
-### npm経由（推奨）
+### Claude Code
 
 ```bash
-npm install -g cc-recommender
+claude mcp add --scope user cc-recommender -- npx -y cc-recommender
 ```
 
-### ローカルビルド
+`--scope user` を付けると、すべてのプロジェクトで使えます。接続できているかは `claude mcp list` で確認できます。
 
-```bash
-git clone https://github.com/yuji0809/cc-recommender.git
-cd cc-recommender
-pnpm install
-pnpm run build
-```
-
-**要件:**
-- Node.js >= 22.0.0
-- pnpm >= 10.0.0（ローカルビルドの場合）
-
-## Claude Codeで使う
-
-**Cursorユーザーの方へ:** `~/.claude/settings.json`の代わりに`~/.cursor/mcp.json`を使用してください
-
-### 方法1: npx経由（推奨）
-
-インストール不要。常に最新版を使用。
-
-`~/.claude/settings.json`（Cursorの場合は`~/.cursor/mcp.json`）に追加:
+チームで設定を共有したい場合は、プロジェクト直下の `.mcp.json` に書きます。
 
 ```json
 {
@@ -66,178 +38,83 @@ pnpm run build
 }
 ```
 
-### 方法2: グローバルインストール
+### Cursor などほかの MCP クライアント
 
-起動が速く、オフラインでも動作。手動更新が必要。
+クライアントの MCP 設定ファイル（Cursor なら `~/.cursor/mcp.json`）に、同じ `mcpServers` の設定を書きます。
+
+### グローバルインストール
+
+起動のたびに `npx` を経由したくない場合は、グローバルにインストールします。
 
 ```bash
 npm install -g cc-recommender
+claude mcp add --scope user cc-recommender -- cc-recommender
 ```
 
-`~/.claude/settings.json` に追加:
+更新は `npm update -g cc-recommender` で行います。
 
-```json
-{
-  "mcpServers": {
-    "cc-recommender": {
-      "command": "cc-recommender"
-    }
-  }
-}
+## 使い方
+
+普段の言葉で聞けば、Claude が適切なツールを選びます。
+
+- 「このプロジェクトに何を入れたらいい？」
+- 「PostgreSQL 向けの MCP サーバーを探して」
+- 「このリポジトリのテストに使えるスキルだけ教えて」
+- 「playwright-skill の詳細を教えて」
+
+| ツール | 内容 | パラメータ |
+|--------|------|------------|
+| `recommend_skills` | プロジェクトを解析して、合うものを推薦する | `project_path`（必須）、`description`、`types`、`max_results`（1〜50、既定 20） |
+| `search_skills` | 全件をキーワードで検索する | `query`（必須）、`types`、`max_results` |
+| `get_skill_details` | 1 件の詳細を表示する | `name`（必須） |
+| `list_categories` | カテゴリの一覧を表示する | なし |
+| `get_stats` | データベースの統計を表示する | なし |
+
+`types` には `plugin`、`mcp`、`skill`、`workflow`、`hook`、`command`、`agent` を指定でき、結果をその種類に絞り込めます。
+
+プロジェクト解析で読むのは、`package.json`、`requirements.txt`、`pyproject.toml`、`go.mod`、`Cargo.toml`、`composer.json`、`Gemfile`、`pom.xml`、`build.gradle`、`docker-compose.yml`、`.env` です。あわせて、フレームワークの設定ファイル（Next.js、Nuxt、Vite、Prisma など）とファイルの拡張子も見ます。
+
+## データ
+
+| 種類 | 取得元 |
+|------|--------|
+| プラグイン | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
+| MCP サーバー | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)、[公式 MCP Registry](https://registry.modelcontextprotocol.io) |
+| スキル | [anthropics/skills](https://github.com/anthropics/skills)、[openai/skills](https://github.com/openai/skills)、[vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)、[supabase/agent-skills](https://github.com/supabase/agent-skills)、[obra/superpowers](https://github.com/obra/superpowers)、[lackeyjb/playwright-skill](https://github.com/lackeyjb/playwright-skill)、およびリスト [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)、[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) |
+
+データベースは GitHub Actions で毎日作り直し、結果を pull request として作成しています。
+
+サーバーは起動時に、このリポジトリから最新のデータベースをダウンロードします。ダウンロードに失敗した場合や、データが検証を通らなかった場合は npm パッケージに同梱されたデータを使うので、オフラインでも動きます。常に同梱データを使いたい場合は `CC_RECOMMENDER_OFFLINE_MODE` を設定します。
+
+```bash
+claude mcp add --scope user cc-recommender -e CC_RECOMMENDER_OFFLINE_MODE=true -- npx -y cc-recommender
 ```
 
-### 方法3: ローカルビルド（開発者向け）
+| 環境変数 | 説明 | 既定値 |
+|----------|------|--------|
+| `CC_RECOMMENDER_OFFLINE_MODE` | リモートからのダウンロードをせず、同梱データだけを使う | `false` |
+
+## 開発
+
+pnpm 10 が必要です。
 
 ```bash
 git clone https://github.com/yuji0809/cc-recommender.git
 cd cc-recommender
 pnpm install
 pnpm run build
-```
-
-`~/.claude/settings.json` に追加:
-
-```json
-{
-  "mcpServers": {
-    "cc-recommender": {
-      "command": "node",
-      "args": ["/path/to/cc-recommender/dist/index.js"]
-    }
-  }
-}
-```
-
-## 使い方
-
-### プロジェクト分析と推薦
-
-```
-You: このプロジェクトに何を入れたらいい？
-
-Claude: [recommend_skills ツールを使用]
-
-📦 プラグイン
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. typescript-lsp (公式)
-   ├─ 用途: TypeScript の定義ジャンプ、型チェック
-   ├─ スコア: 95 ✅ 高適合
-   └─ インストール: /plugin install typescript-lsp
-
-🔌 MCPサーバー
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. supabase-mcp
-   ├─ 用途: Supabase DB 操作
-   ├─ 推薦理由: @supabase/supabase-js 依存
-   └─ インストール: claude mcp add supabase-mcp
-```
-
-### キーワード検索
-
-```
-You: データベース関連のMCPを探して
-
-Claude: [search_skills ツールを使用]
-```
-
-## 提供ツール
-
-| ツール | 説明 |
-|--------|------|
-| `recommend_skills` | プロジェクトを分析し、適切なスキル/プラグイン/MCPを推薦 |
-| `search_skills` | キーワードで検索 |
-| `get_skill_details` | 特定アイテムの詳細を取得 |
-| `list_categories` | カテゴリ一覧を取得 |
-| `get_stats` | データベース統計を取得 |
-
-## データソース
-
-このMCPサーバーは、以下のソースからデータを集約しています:
-
-| ソース | 内容 | 更新頻度 |
-|--------|------|---------|
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | 公式プラグインマーケットプレイス | 日次 |
-| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | MCPサーバーのキュレーションリスト | 日次 |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | スキル/ワークフロー/フックのリスト | 日次 |
-
-### 自動更新機能
-
-**仕組み:**
-- サーバー起動時にGitHubから最新データを自動取得
-- リモート取得に失敗した場合はバンドル版データにフォールバック
-- 手動更新や再インストール不要
-
-**オフラインモード**（オプション）:
-```json
-{
-  "mcpServers": {
-    "cc-recommender": {
-      "command": "npx",
-      "args": ["-y", "cc-recommender"],
-      "env": {
-        "CC_RECOMMENDER_OFFLINE_MODE": "true"
-      }
-    }
-  }
-}
-```
-
-`CC_RECOMMENDER_OFFLINE_MODE` を有効にすると、バンドル版データのみを使用します（リモート取得なし）。
-
-### 環境変数
-
-| 変数 | 説明 | デフォルト |
-|------|------|-----------|
-| `CC_RECOMMENDER_OFFLINE_MODE` | 自動更新を無効化してバンドル版データのみを使用 | `false` |
-| `GITHUB_TOKEN` | GitHub パーソナルアクセストークン（API レート制限を 60 → 5000 req/hour に拡大） | 未設定 |
-| `SKIP_SECURITY_SCAN` | データ取得時にセキュリティスキャンをスキップ（開発者向け） | `false` |
-
-**注意:**
-- GitHub リポジトリからスキルを取得する場合、レート制限を回避するために GitHub トークンの設定を推奨します。https://github.com/settings/tokens で `public_repo` スコープのトークンを作成してください。
-
-## 開発
-
-開発セットアップと貢献ガイドラインについては、以下を参照してください:
-- [CONTRIBUTING.md](./CONTRIBUTING.md) - 貢献ガイド
-- [ARCHITECTURE.md](./docs/ARCHITECTURE.md) - アーキテクチャドキュメント
-
-### 開発者向けクイックスタート
-
-```bash
-# 依存関係インストール
-pnpm install
-
-# テスト実行
 pnpm run test
-
-# 型チェック + Lint + セキュリティ監査
-pnpm run check
-
-# ビルド
-pnpm run build
+pnpm run check   # 型チェック、lint、cc-audit、ライセンスチェック
 ```
+
+ローカルでビルドしたものを Claude Code で試すときは、コマンドに `node /path/to/cc-recommender/dist/index.js` を登録します。
+
+開発の流れは [CONTRIBUTING.md](./CONTRIBUTING.md)、コードの構成は [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md)、データベースの作り方は [docs/DATA_MANAGEMENT.md](./docs/DATA_MANAGEMENT.md) を参照してください。
 
 ## セキュリティ
 
-このプロジェクトではセキュリティを最優先事項としており、複数の自動化されたセキュリティ対策を実施しています：
-
-- **自動スキャン**: Dependabot、CodeQL、カスタムセキュリティ監査
-- **プリコミット保護**: コミット前にセキュリティチェックを実行
-- **CI/CD ゲート**: すべての PR はセキュリティスキャンに合格する必要あり
-- **ライセンス準拠**: すべての依存関係が承認されたライセンスであることを検証
-
-詳細は [SECURITY.md](./SECURITY.md) を参照してください。
-
-セキュリティ脆弱性を報告する場合は、[GitHub Security Advisories](https://github.com/yuji0809/cc-recommender/security/advisories) をご利用ください。
-
-## コントリビューション
-
-貢献を歓迎します！詳細は [CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
+脆弱性の報告方法と、依存関係・CI・npm リリースを守るための仕組みは [SECURITY.md](./SECURITY.md) にまとめています。
 
 ## ライセンス
 
-[MIT](https://opensource.org/licenses/MIT)
-
-## 作者
-
-Yuji
+[MIT](./LICENSE)

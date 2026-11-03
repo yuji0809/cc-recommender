@@ -1,99 +1,43 @@
 # Security Policy
 
-## Supported Versions
+## Supported versions
 
-We release patches for security vulnerabilities. Currently supported versions:
+Only the latest release receives security fixes. Please upgrade to the newest version on npm before reporting.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.1.x   | :white_check_mark: |
+| Version | Supported |
+| ------- | --------- |
+| 0.9.x   | Yes       |
+| < 0.9   | No        |
 
-## Reporting a Vulnerability
+## Reporting a vulnerability
 
-We take the security of cc-recommender seriously. If you believe you have found a security vulnerability, please report it to us as described below.
+Please do not open a public issue for security problems. Report them privately through GitHub instead:
 
-**Please do not report security vulnerabilities through public GitHub issues.**
+1. Open the [Security tab](https://github.com/yuji0809/cc-recommender/security) of this repository.
+2. Click **Report a vulnerability**.
+3. Describe the problem, how to reproduce it, and its impact. A proof of concept helps if you have one.
 
-Instead, please report them via GitHub's Security Advisory feature:
+This is a project maintained by one person. I will try to acknowledge reports within a week and will let you know when a fix is released.
 
-1. Go to the [Security Advisories](https://github.com/yuji0809/cc-recommender/security/advisories) page
-2. Click "Report a vulnerability"
-3. Fill out the form with details about the vulnerability
+## What is in place
 
-Alternatively, you can email the details to the repository owner.
+Dependencies and code:
 
-### What to Include
+- Dependabot alerts and security updates, plus CodeQL analysis on pushes and pull requests to `main`.
+- CI runs `pnpm audit --audit-level=moderate`, [cc-audit](https://www.npmjs.com/package/@cc-audit/cc-audit), and a license allowlist check.
+- A pre-commit hook runs type checking, Biome, cc-audit, and a warning for strings that look like secrets.
 
-Please include the following information in your report:
+Build and release:
 
-- Type of issue (e.g., buffer overflow, SQL injection, cross-site scripting, etc.)
-- Full paths of source file(s) related to the manifestation of the issue
-- The location of the affected source code (tag/branch/commit or direct URL)
-- Any special configuration required to reproduce the issue
-- Step-by-step instructions to reproduce the issue
-- Proof-of-concept or exploit code (if possible)
-- Impact of the issue, including how an attacker might exploit the issue
+- GitHub Actions dependencies are pinned to commit SHAs in `.github/workflows/actions.lock`, and the `Verify Actions Lockfile` workflow checks it on every pull request.
+- npm releases use [trusted publishing](https://docs.npmjs.com/trusted-publishers) (OIDC) instead of a long-lived token, and are published with provenance.
+- Releases go through npm staged publishing: CI only stages the package, and it is published after the maintainer approves it with 2FA.
 
-### Response Timeline
+Recommendation data:
 
-- We will acknowledge your report within 48 hours
-- We will provide a more detailed response within 7 days
-- We will work on a fix and release it as soon as possible
-- We will notify you when the vulnerability is fixed
+- At runtime, the remote data is checked before use (expected item types, at most 50,000 items and 50 MB per file, at most 100 KB per item). If the check fails, the server falls back to the data bundled with the package.
+- The database rebuild runs cc-audit against the listed repositories, but the resulting scores are not yet reliable enough to be treated as a security filter.
 
-## Automated Security Measures
+## Using recommendations safely
 
-We have implemented multiple layers of automated security measures to protect this project:
-
-### Continuous Monitoring
-
-- **Dependabot**: Automatically checks for dependency vulnerabilities and creates PRs for updates
-- **CodeQL**: Advanced semantic code analysis runs on every push and PR
-- **Security Audit**: Custom security scanner (`@cc-audit/cc-audit`) runs in CI/CD
-- **Dependency Scanning**: Checks for vulnerable dependencies with `pnpm audit`
-- **License Compliance**: Ensures all dependencies use approved licenses
-
-### Development-Time Protection
-
-- **Pre-commit Hooks**:
-  - Type checking
-  - Linting and formatting
-  - Security audit
-  - Secret detection (warns about potential secrets in code)
-- **Branch Protection**:
-  - Main branch requires PR reviews
-  - All CI checks must pass before merging
-  - Prevents direct pushes and force pushes
-
-### CI/CD Security Gates
-
-All pull requests must pass:
-- Type checking
-- Linting
-- Security audit
-- Dependency vulnerability check
-- License compliance check
-- Test coverage requirements
-
-## Security Best Practices
-
-When using cc-recommender:
-
-1. **Keep Dependencies Updated**: Regularly update to the latest version to get security patches
-2. **Review Recommendations**: Always review recommended tools before installing them
-3. **Verify Sources**: Check the authenticity of plugins and MCP servers before use
-4. **Use Official Sources**: Prefer official plugins and well-maintained projects
-5. **Check Security Scores**: Pay attention to security scores in recommendations
-
-## Disclosure Policy
-
-When we receive a security report, we will:
-
-1. Confirm the problem and determine affected versions
-2. Audit code to find any similar problems
-3. Prepare fixes for all supported releases
-4. Release new versions as soon as possible
-
-## Comments
-
-If you have suggestions on how this process could be improved, please submit a pull request.
+cc-recommender points you to third-party plugins, MCP servers, and skills. A recommendation is not a security review. Read the source and the permissions a tool asks for before installing it, and prefer official or well-maintained projects.

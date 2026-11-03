@@ -1,11 +1,11 @@
-name: 💡 Feature Request
+name: Feature request
 description: Suggest an idea for this project
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting a new feature!
+        Describe the problem you want to solve. If it is about a missing data source, link the repository or list.
 
   - type: textarea
     id: problem
