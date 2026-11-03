@@ -20,6 +20,13 @@ export type EnvConfig = {
 
   /** Types to fetch (plugins, mcp, skills) - comma-separated, or undefined for all */
   readonly FETCH_TYPES: Set<"plugins" | "mcp" | "skills"> | undefined;
+
+  /**
+   * Stop starting new security scans this many minutes after the data fetch starts.
+   * Unscanned items are kept without a score and scanned in a later run.
+   * undefined means no limit.
+   */
+  readonly SECURITY_SCAN_TIME_LIMIT_MINUTES: number | undefined;
 };
 
 /**
@@ -43,6 +50,18 @@ function parseFetchTypes(): Set<"plugins" | "mcp" | "skills"> | undefined {
 }
 
 /**
+ * Parse a positive integer environment variable
+ * Returns undefined when the value is missing or not a positive integer
+ */
+function parsePositiveInteger(value: string | undefined): number | undefined {
+  if (!value || !/^\d+$/.test(value)) {
+    return undefined;
+  }
+  const parsed = Number(value);
+  return parsed > 0 ? parsed : undefined;
+}
+
+/**
  * Parse and validate environment variables
  * Called once at module load time (cached)
  */
@@ -52,6 +71,9 @@ function loadEnvConfig(): EnvConfig {
     SKIP_SECURITY_SCAN: process.env.SKIP_SECURITY_SCAN === "true",
     CC_RECOMMENDER_OFFLINE_MODE: process.env.CC_RECOMMENDER_OFFLINE_MODE === "true",
     FETCH_TYPES: parseFetchTypes(),
+    SECURITY_SCAN_TIME_LIMIT_MINUTES: parsePositiveInteger(
+      process.env.SECURITY_SCAN_TIME_LIMIT_MINUTES,
+    ),
   };
 }
 

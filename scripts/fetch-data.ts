@@ -126,8 +126,15 @@ async function main() {
   console.log("🚀 cc-recommender Data Fetcher");
   console.log("================================\n");
 
+  const startedAt = Date.now();
   const skipSecurityScan = ENV.SKIP_SECURITY_SCAN;
   const fetchTypes = ENV.FETCH_TYPES;
+  // この時刻を過ぎたら新しいスキャンを始めない（残りはスコアなしで残し、次回スキャンする）
+  const scanTimeLimit = ENV.SECURITY_SCAN_TIME_LIMIT_MINUTES;
+  const scanDeadline = scanTimeLimit ? startedAt + scanTimeLimit * 60_000 : undefined;
+  if (scanTimeLimit) {
+    console.log(`⏱  Security scan time limit: ${scanTimeLimit} min`);
+  }
 
   // Display fetch types
   if (fetchTypes && fetchTypes.size > 0) {
@@ -162,13 +169,13 @@ async function main() {
   const fetchPromises: Promise<Recommendation[]>[] = [];
 
   if (shouldFetchPlugins) {
-    fetchPromises.push(fetchAndScanPlugins(skipSecurityScan, existingPluginsMap));
+    fetchPromises.push(fetchAndScanPlugins(skipSecurityScan, existingPluginsMap, scanDeadline));
   }
   if (shouldFetchMCP) {
-    fetchPromises.push(fetchAndScanMCPServers(skipSecurityScan, existingMCPMap));
+    fetchPromises.push(fetchAndScanMCPServers(skipSecurityScan, existingMCPMap, scanDeadline));
   }
   if (shouldFetchSkills) {
-    fetchPromises.push(fetchAndScanSkills(skipSecurityScan, existingSkillsMap));
+    fetchPromises.push(fetchAndScanSkills(skipSecurityScan, existingSkillsMap, scanDeadline));
   }
 
   const results = await Promise.all(fetchPromises);
@@ -257,6 +264,7 @@ async function main() {
   console.log(`   - Plugins: ${PLUGINS_PATH} (${pluginItems.length} items)`);
   console.log(`   - MCP Servers: ${MCP_SERVERS_PATH} (${mcpServerItems.length} items)`);
   console.log(`   - Skills: ${SKILLS_PATH} (${skillItems.length} items)`);
+  console.log(`\nFinished in ${((Date.now() - startedAt) / 60_000).toFixed(1)} min`);
 }
 
 /**
@@ -265,6 +273,7 @@ async function main() {
 async function fetchAndScanPlugins(
   skipScan: boolean,
   existingMap: Map<string, Recommendation>,
+  scanDeadline: number | undefined,
 ): Promise<Recommendation[]> {
   console.log("📦 [Plugins] Fetching from official marketplace...");
 
@@ -279,7 +288,7 @@ async function fetchAndScanPlugins(
     if (!skipScan && newCount > 0) {
       // 新規アイテムのみスキャン
       const itemsToScan = filterItemsToScan(items, existingMap);
-      await scanItems(itemsToScan, "plugin", "Plugins");
+      await scanItems(itemsToScan, "plugin", "Plugins", scanDeadline);
       // スキャン結果を元のリストにマージ
       mergeScannedResults(items, itemsToScan);
     }
@@ -302,6 +311,7 @@ async function fetchAndScanPlugins(
 async function fetchAndScanMCPServers(
   skipScan: boolean,
   existingMap: Map<string, Recommendation>,
+  scanDeadline: number | undefined,
 ): Promise<Recommendation[]> {
   console.log("🔌 [MCP] Fetching from multiple sources...");
 
@@ -327,7 +337,7 @@ async function fetchAndScanMCPServers(
     if (!skipScan && newCount > 0) {
       // 新規アイテムのみスキャン
       const itemsToScan = filterItemsToScan(items, existingMap);
-      await scanItems(itemsToScan, "mcp", "MCP Servers");
+      await scanItems(itemsToScan, "mcp", "MCP Servers", scanDeadline);
       // スキャン結果を元のリストにマージ
       mergeScannedResults(items, itemsToScan);
     }
@@ -350,6 +360,7 @@ async function fetchAndScanMCPServers(
 async function fetchAndScanSkills(
   skipScan: boolean,
   existingMap: Map<string, Recommendation>,
+  scanDeadline: number | undefined,
 ): Promise<Recommendation[]> {
   console.log("🎯 [Skills] Fetching from multiple sources...");
 
@@ -379,7 +390,7 @@ async function fetchAndScanSkills(
     if (!skipScan && newCount > 0) {
       // 新規アイテムのみスキャン
       const itemsToScan = filterItemsToScan(items, existingMap);
-      await scanItems(itemsToScan, "skill", "Skills");
+      await scanItems(itemsToScan, "skill", "Skills", scanDeadline);
       // スキャン結果を元のリストにマージ
       mergeScannedResults(items, itemsToScan);
     }
@@ -403,6 +414,7 @@ async function scanItems(
   items: Recommendation[],
   scanType: "mcp" | "skill" | "plugin",
   label: string,
+  scanDeadline: number | undefined,
 ): Promise<void> {
   const reposToScan = items
     .filter((item) => isGitHubUrl(item.url))
@@ -418,7 +430,7 @@ async function scanItems(
 
   console.log(`   🔒 Scanning ${reposToScan.length} repositories...`);
 
-  const scanResults = await scanRepositories(reposToScan, 10);
+  const scanResults = await scanRepositories(reposToScan, 10, { deadline: scanDeadline });
 
   // セキュリティスコアを更新
   for (const item of items) {
