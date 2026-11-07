@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-05-29T03:20:15.564Z",
+  "lastUpdated": "2026-11-07T05:43:08.256Z",
   "items": [
     {
       "id": "plugin-42crunch-api-security-testing",
@@ -179,6 +179,55 @@
       }
     },
     {
+      "id": "plugin-airwallex-agentos",
+      "name": "airwallex-agentos",
+      "type": "plugin",
+      "url": "https://www.airwallex.com/docs",
+      "description": "Bring Airwallex's global financial infrastructure to Claude. Orchestrate actions across your account in plain language, e.g., set up invoices from a PO, onboard suppliers from invoices, and check current cash position across currencies. AgentOS bundles pre-built finance Skills with MCP servers. A public CLI connects your agent to Airwallex's capabilities.",
+      "author": {
+        "name": "Airwallex"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install airwallex-agentos",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-aiven",
+      "name": "aiven",
+      "type": "plugin",
+      "url": "https://aiven.io",
+      "description": "Easily deploy managed PostgreSQL (pg), Kafka, OpenSearch, Clickhouse and other databases, streaming and apps. Free tier available, up and running in minutes.",
+      "author": {
+        "name": "Aiven"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install aiven",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-alloydb",
       "name": "alloydb",
       "type": "plugin",
@@ -200,6 +249,57 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install alloydb",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-alloydb-omni",
+      "name": "alloydb-omni",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/alloydb-omni",
+      "description": "Create, connect, and interact with an AlloyDB Omni database and data.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install alloydb-omni",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-altimate-code",
+      "name": "altimate-code",
+      "type": "plugin",
+      "url": "https://www.altimate.ai",
+      "description": "Delegates dbt and warehouse work to altimate-code, a specialized CLI agent with 100+ purpose-built data tools (SQL analysis, column-level lineage, dbt build/test/run, warehouse profiling, FinOps, connectivity to Snowflake, BigQuery, Redshift, Databricks, Postgres, MySQL, DuckDB).",
+      "author": {
+        "name": "AltimateAI"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install altimate-code",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -226,6 +326,30 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install amazon-location-service",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-amd-skills",
+      "name": "amd-skills",
+      "type": "plugin",
+      "url": "https://developer.amd.com/",
+      "description": "AMD's verified Agent Skills in one plugin: route image/audio through local AI on Ryzen AI, serve LLMs on AMD Instinct GPUs with vLLM, optimize inference throughput with Hyperloom, and analyze GPU kernel and PyTorch trace performance.",
+      "author": {
+        "name": "AMD"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install amd-skills",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -405,6 +529,30 @@
       }
     },
     {
+      "id": "plugin-atlassian-twg-cli",
+      "name": "atlassian-twg-cli",
+      "type": "plugin",
+      "url": "https://developer.atlassian.com/cloud/twg-cli/",
+      "description": "Teamwork Graph CLI is Atlassian's agent-first interface to your entire work context: Jira issues, Confluence pages, Bitbucket PRs, along with your connected third-party data sources. Purpose-built for coding agents like Claude Code (terminal or desktop), and powered by Atlassian's context graph. Try: \"draft a Jira issue from this PR and link it to the epic.\" Using Claude Code in the browser? Install the Atlassian Rovo MCP plugin instead. Run /twg-setup after install to connect Atlassian Teamwork Graph CLI to Claude Code.",
+      "author": {
+        "name": "Atlassian"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install atlassian-twg-cli",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-atomic-agents",
       "name": "atomic-agents",
       "type": "plugin",
@@ -434,8 +582,8 @@
       "id": "plugin-auth0",
       "name": "auth0",
       "type": "plugin",
-      "url": "https://auth0.com/docs/quickstart/agent-skills",
-      "description": "Add authentication to any app with Auth0. This plugin detects your framework, scaffolds the right Auth0 SDK integration, and guides you through login, logout, sessions, and protected routes — using current SDK patterns.",
+      "url": "https://auth0.com",
+      "description": "Enterprise-grade auth, easy to implement. Add login, SSO, MFA, and access control to any app with framework-aware guidance.",
       "author": {
         "name": "Auth0"
       },
@@ -476,31 +624,6 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install aws-agents",
-        "marketplace": "claude-plugins-official"
-      }
-    },
-    {
-      "id": "plugin-aws-dev-toolkit",
-      "name": "aws-dev-toolkit",
-      "type": "plugin",
-      "url": "https://github.com/aws-samples/sample-claude-code-plugins-for-startups",
-      "description": "AWS development toolkit — 34 skills, 11 agents, and 3 MCP servers for building, migrating, and performing architecture reviews on AWS.",
-      "author": {
-        "name": "aws-samples"
-      },
-      "category": "development",
-      "tags": ["development"],
-      "detection": {
-        "keywords": ["development", "development", "coding", "ide"]
-      },
-      "metrics": {
-        "source": "community",
-        "isOfficial": false,
-        "securityScore": 100
-      },
-      "install": {
-        "method": "plugin",
-        "command": "/plugin install aws-dev-toolkit",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -558,6 +681,32 @@
       }
     },
     {
+      "id": "plugin-azure-sql-developer",
+      "name": "azure-sql-developer",
+      "type": "plugin",
+      "url": "https://github.com/microsoft/azure-sql-database-container",
+      "description": "Agent skills for Azure SQL Developer, the Azure SQL Database engine running locally in a container. Teaches your agent to run the engine, connect, migrate, scaffold, build RAG, wire CI, and go local-to-cloud, using the real Private Preview image instead of the SQL Server image.",
+      "author": {
+        "name": "Microsoft"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install azure-sql-developer",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-base44",
       "name": "base44",
       "type": "plugin",
@@ -608,10 +757,85 @@
       }
     },
     {
+      "id": "plugin-bigquery-data-analytics",
+      "name": "bigquery-data-analytics",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/bigquery-data-analytics",
+      "description": "Connect, query, and generate data insights for BigQuery datasets and data.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install bigquery-data-analytics",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-boltz",
+      "name": "boltz",
+      "type": "plugin",
+      "url": "https://boltz.bio",
+      "description": "Predict structures, screen molecules and proteins, and design binders with Boltz from Claude Code.",
+      "author": {
+        "name": "Boltz"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install boltz",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-blackrock-advisor-center-plugin",
+      "name": "blackrock-advisor-center-plugin",
+      "type": "plugin",
+      "url": "https://github.com/blackrock/advisor-center-agent-skills",
+      "description": "BlackRock Advisor Center 360° skills for financial advisors: portfolio review, opportunity and fund-health checks, guided benchmark selection, guided portfolio building, wealth projections, and routing to Advisor Center web workflows. Requires the BlackRock Advisor Center connector and an Advisor Center account.",
+      "author": {
+        "name": "BlackRock Advisor Center"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install blackrock-advisor-center-plugin",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-box",
       "name": "box",
       "type": "plugin",
-      "url": "https://github.com/box/box-for-ai",
+      "url": "https://github.com/box/skills",
       "description": "Work with your Box content directly from Claude Code — search files, organize folders, collaborate with your team, and use Box AI to answer questions, summarize documents, and extract data without leaving your workflow.",
       "author": {
         "name": "Anthropic",
@@ -659,6 +883,30 @@
       }
     },
     {
+      "id": "plugin-browser-use",
+      "name": "browser-use",
+      "type": "plugin",
+      "url": "https://browser-use.com",
+      "description": "Give Claude a real browser — your Chrome or a Browser Use Cloud browser. Use it whenever a task involves a website or web app: browsing, scraping and data extraction, filling forms, testing sites, taking screenshots, automating web workflows.",
+      "author": {
+        "name": "Browser Use"
+      },
+      "category": "automation",
+      "tags": ["automation"],
+      "detection": {
+        "keywords": ["automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install browser-use",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-buildkite",
       "name": "buildkite",
       "type": "plugin",
@@ -683,6 +931,54 @@
       }
     },
     {
+      "id": "plugin-canva",
+      "name": "canva",
+      "type": "plugin",
+      "url": "https://www.canva.com",
+      "description": "Create, edit, review, resize, and brand-check Canva designs with the Canva MCP server.",
+      "author": {
+        "name": "Canva"
+      },
+      "category": "design",
+      "tags": ["design"],
+      "detection": {
+        "keywords": ["design"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install canva",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-carbone-skill",
+      "name": "carbone-skill",
+      "type": "plugin",
+      "url": "https://carbone.io",
+      "description": "Official Carbone skill — complete templating language reference covering tags, loops, conditions, formatters, aggregators, and all output formats (DOCX, XLSX, PPTX, ODT, HTML, Markdown, PDF)",
+      "author": {
+        "name": "Carbone"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install carbone-skill",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-carta-cap-table",
       "name": "carta-cap-table",
       "type": "plugin",
@@ -703,6 +999,30 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install carta-cap-table",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-catalyst-by-zoho",
+      "name": "catalyst-by-zoho",
+      "type": "plugin",
+      "url": "https://catalyst.zoho.com/",
+      "description": "Official Claude Code plugin for Catalyst by Zoho — full-stack serverless cloud platform. With Skills that covers all services, SDKs, CLI, architecture patterns, pricing, migration guides, and Zoho MCP tool-based resource management.",
+      "author": {
+        "name": "Catalyst by Zoho"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install catalyst-by-zoho",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -732,6 +1052,32 @@
       }
     },
     {
+      "id": "plugin-champion-kit",
+      "name": "champion-kit",
+      "type": "plugin",
+      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/champion-kit",
+      "description": "Help Claude Code champions run hackathons and office hours, find patterns worth sharing, help teammates climb the steps of AI adoption, and write a shareable AI maturity report.",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install champion-kit",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-chrome-devtools-mcp",
       "name": "chrome-devtools-mcp",
       "type": "plugin",
@@ -754,6 +1100,30 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install chrome-devtools-mcp",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-chronograph-gp",
+      "name": "chronograph-gp",
+      "type": "plugin",
+      "url": "https://www.chronograph.pe/",
+      "description": "Portfolio monitoring, valuations and analytics for private-capital GP teams using the Chronograph connector: portfolio-company one-pagers, fund quarterly review packs, markup/markdown briefs, TVPI attribution and budget-vs-actuals. Requires a Chronograph account and the Chronograph connector.",
+      "author": {
+        "name": "Chronograph"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install chronograph-gp",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -808,30 +1178,51 @@
       }
     },
     {
-      "id": "plugin-clangd-lsp",
-      "name": "clangd-lsp",
+      "id": "plugin-ckeditor",
+      "name": "ckeditor",
       "type": "plugin",
-      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/./plugins/clangd-lsp",
-      "description": "C/C++ language server (clangd) for code intelligence",
+      "url": "https://ckeditor.com",
+      "description": "Install, configure, and integrate CKEditor 5 (free and premium) in any JavaScript project.",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "CKEditor (CKSource)"
       },
       "category": "development",
       "tags": ["development"],
       "detection": {
-        "keywords": ["development", "development", "coding", "ide"],
-        "languages": ["c", "cpp"],
-        "files": ["*..c", "*..h", "*..cpp", "*..cc", "*..cxx", "*..hpp", "*..hxx", "*..C", "*..H"]
+        "keywords": ["development", "development", "coding", "ide"]
       },
       "metrics": {
-        "source": "official",
-        "isOfficial": true,
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install ckeditor",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-clay",
+      "name": "clay",
+      "type": "plugin",
+      "url": "https://github.com/clay-run/agent-plugins/tree/main/clay",
+      "description": "Work with Clay from Claude Code: set up and sign in to the clay CLI, query and analyze Clay tables, search Clay's GTM database for people and companies, manage audiences, signals, routines and workflows, and draft and review Sequencer campaigns. Includes hooks that auto-approve the plugin's own clay CLI calls and Clay skills; requires a Clay account.",
+      "author": {
+        "name": "Clay"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
         "securityScore": 100
       },
       "install": {
         "method": "plugin",
-        "command": "/plugin install clangd-lsp",
+        "command": "/plugin install clay",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -887,6 +1278,32 @@
       }
     },
     {
+      "id": "plugin-cloud-sql-mysql",
+      "name": "cloud-sql-mysql",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/cloud-sql-mysql",
+      "description": "Connect and interact with a Cloud SQL for MySQL database and data.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install cloud-sql-mysql",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-cloud-sql-postgresql",
       "name": "cloud-sql-postgresql",
       "type": "plugin",
@@ -908,6 +1325,32 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install cloud-sql-postgresql",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-cloud-sql-sqlserver",
+      "name": "cloud-sql-sqlserver",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/cloud-sql-sqlserver",
+      "description": "Connect to Cloud SQL for SQL Server",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install cloud-sql-sqlserver",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1039,6 +1482,30 @@
       }
     },
     {
+      "id": "plugin-confidence",
+      "name": "confidence",
+      "type": "plugin",
+      "url": "https://confidence.spotify.com",
+      "description": "Access Confidence feature flags, experiments, and migration tools directly from Claude Code.",
+      "author": {
+        "name": "Spotify Confidence"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install confidence",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-convex",
       "name": "convex",
       "type": "plugin",
@@ -1065,6 +1532,30 @@
       }
     },
     {
+      "id": "plugin-crowdsec",
+      "name": "crowdsec",
+      "type": "plugin",
+      "url": "https://www.crowdsec.net",
+      "description": "Operational skill for installing, configuring, operating, and debugging CrowdSec (cscli, LAPI/CAPI, hub, bouncers, WAF/AppSec) across bare-metal, Docker, and Kubernetes.",
+      "author": {
+        "name": "CrowdSec"
+      },
+      "category": "security",
+      "tags": ["security"],
+      "detection": {
+        "keywords": ["security", "security", "audit", "vulnerability"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install crowdsec",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-crowdstrike-falcon-foundry",
       "name": "crowdstrike-falcon-foundry",
       "type": "plugin",
@@ -1086,6 +1577,31 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install crowdstrike-falcon-foundry",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-crowdstrike-falcon-fusion",
+      "name": "crowdstrike-falcon-fusion",
+      "type": "plugin",
+      "url": "https://github.com/CrowdStrike/fusion-skills",
+      "description": "CrowdStrike Falcon Fusion skills for authoring, deploying, and executing Fusion workflows. Includes live action discovery, YAML authoring with schema validation, workflow import and release, execution monitoring, and Falcon Next-Gen SIEM lookup files.",
+      "author": {
+        "name": "CrowdStrike"
+      },
+      "category": "security",
+      "tags": ["security"],
+      "detection": {
+        "keywords": ["security", "security", "audit", "vulnerability"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install crowdstrike-falcon-fusion",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1139,10 +1655,10 @@
       }
     },
     {
-      "id": "plugin-data-agent-kit-starter-pack",
-      "name": "data-agent-kit-starter-pack",
+      "id": "plugin-data-agent-kit",
+      "name": "data-agent-kit",
       "type": "plugin",
-      "url": "https://github.com/gemini-cli-extensions/data-agent-kit-starter-pack",
+      "url": "https://cloud.google.com/products/data-agent-kit",
       "description": "This plugin provides a specialized suite of skills for data engineers and database practitioners working on Google Cloud. It acts as an expert assistant, allowing you to use natural language prompts in your preferred coding agent to architect complex data pipelines, transform data with dbt, write Spark and BigQuery SQL notebooks, and orchestrate end-to-end workflows across GCP's data ecosystem.",
       "author": {
         "name": "Google LLC"
@@ -1154,12 +1670,36 @@
       },
       "metrics": {
         "source": "community",
-        "isOfficial": false,
-        "securityScore": 100
+        "isOfficial": false
       },
       "install": {
         "method": "plugin",
-        "command": "/plugin install data-agent-kit-starter-pack",
+        "command": "/plugin install data-agent-kit",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-databricks",
+      "name": "databricks",
+      "type": "plugin",
+      "url": "https://developers.databricks.com/",
+      "description": "Databricks skills for the CLI, Apps, Lakebase, Model Serving, Lakeflow Jobs, Spark Declarative Pipelines, Declarative Automation Bundles (DABs), and classic-to-serverless migration.",
+      "author": {
+        "name": "Databricks"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install databricks",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1209,6 +1749,32 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install datahub-skills",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-dataproc",
+      "name": "dataproc",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/dataproc",
+      "description": "Manage Dataproc clusters and jobs.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install dataproc",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1264,6 +1830,32 @@
       }
     },
     {
+      "id": "plugin-deepeval",
+      "name": "deepeval",
+      "type": "plugin",
+      "url": "https://github.com/confident-ai/deepeval",
+      "description": "Skills for adding DeepEval evaluations, tracing, datasets, Confident AI reports, and iterative improvement loops to AI applications.",
+      "author": {
+        "name": "Confident AI",
+        "email": "open-source@confident-ai.com"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install deepeval",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-desktop-commander",
       "name": "desktop-commander",
       "type": "plugin",
@@ -1308,6 +1900,30 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install dominodatalab",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-dropbox",
+      "name": "dropbox",
+      "type": "plugin",
+      "url": "https://www.dropbox.com",
+      "description": "The Dropbox plugin for Claude connects your Dropbox files directly to Claude, so you can search, organize, save generated content, and create sharing links without switching tools. It respects your existing Dropbox permissions, and Claude only works with files you already have access to.",
+      "author": {
+        "name": "Dropbox"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install dropbox",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1513,6 +2129,32 @@
       }
     },
     {
+      "id": "plugin-firestore-native",
+      "name": "firestore-native",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/firestore-native",
+      "description": "Connect and interact with Firestore databases, collections, and documents.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install firestore-native",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-forge-skills",
       "name": "forge-skills",
       "type": "plugin",
@@ -1557,6 +2199,223 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install fullstory",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-gc-ai",
+      "name": "gc-ai",
+      "type": "plugin",
+      "url": "https://docs.gc.ai/api-reference/mcp/overview",
+      "description": "Work in your GC AI legal knowledge base from Claude: upload documents, run review playbooks, and ask questions grounded in your own files, all as you.",
+      "author": {
+        "name": "GC AI"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install gc-ai",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-gitkraken",
+      "name": "gitkraken",
+      "type": "plugin",
+      "url": "https://www.gitkraken.com",
+      "description": "Gives Claude access to your real Git and project context: commits, branches, pull requests, and issues across every repo you work in. Works with GitHub, GitLab, Azure DevOps, Bitbucket, and Jira.",
+      "author": {
+        "name": "GitKraken"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install gitkraken",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-google-cloud-storage",
+      "name": "google-cloud-storage",
+      "type": "plugin",
+      "url": "https://cloud.google.com/storage",
+      "description": "Official Google Cloud Storage (GCS) plugin. Manage buckets and objects, transfer data, and configure MCP, FUSE, IAM, security, lifecycle rules, signed URLs, Terraform, and the CLI.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "deployment",
+      "tags": ["deployment"],
+      "detection": {
+        "keywords": ["deployment", "deploy", "ci", "cd"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install google-cloud-storage",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-govtribe",
+      "name": "govtribe",
+      "type": "plugin",
+      "url": "https://govtribe.com",
+      "description": "Government contracting research and capture workflows in Claude: opportunity and pipeline briefs, bid/no-bid and competitor analysis, price-to-win and proposal prep, powered by the GovTribe connector.",
+      "author": {
+        "name": "GovTribe"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install govtribe",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-grafana-assistant",
+      "name": "grafana-assistant",
+      "type": "plugin",
+      "url": "https://grafana.com",
+      "description": "Skills and rules for developing and using the Grafana Assistant app and CLI.",
+      "author": {
+        "name": "Grafana"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install grafana-assistant",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-greptile",
+      "name": "greptile",
+      "type": "plugin",
+      "url": "https://www.greptile.com/docs/mcp-v2/overview",
+      "description": "AI code review agent for GitHub and GitLab. View and resolve Greptile's PR review comments, run reviews on your working branch, and search your organization's knowledge base and coding patterns, directly from Claude Code.",
+      "author": {
+        "name": "Greptile"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install greptile",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-growthbook",
+      "name": "growthbook",
+      "type": "plugin",
+      "url": "https://growthbook.io",
+      "description": "A suite of agent skills for the full GrowthBook feature flag and experimentation lifecycle.",
+      "author": {
+        "name": "GrowthBook"
+      },
+      "category": "testing",
+      "tags": ["testing"],
+      "detection": {
+        "keywords": ["testing", "testing", "test", "e2e"],
+        "dependencies": ["jest", "vitest", "playwright", "cypress"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install growthbook",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-honeycomb",
+      "name": "honeycomb",
+      "type": "plugin",
+      "url": "https://www.honeycomb.io",
+      "description": "Skills, agents, and workflows for Honeycomb observability — query patterns, production investigations, SLOs, OpenTelemetry instrumentation, and Beeline migration. Designed to complement the Honeycomb MCP server.",
+      "author": {
+        "name": "Honeycomb"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install honeycomb",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-hostinger",
+      "name": "hostinger",
+      "type": "plugin",
+      "url": "https://www.hostinger.com",
+      "description": "Deploy, manage and monitor your Hostinger services directly from Claude Code. The plugin connects Claude to Hostinger's remote MCP server, so you can ship sites and apps, manage domains and DNS, run WordPress and operate VPS servers without leaving your coding environment. There's nothing to install on your machine: no Node.js, no npm, no local server. Key features include one-prompt deployments for static sites, Node.js apps (built on Hostinger), full WordPress site imports, and WordPress plugins and themes, plus static and PHP sites on the Agency Plan. Beyond deployments, Claude can search and register domains, edit DNS records and snapshots, check build logs, and manage mailboxes, online stores, email marketing contacts, subscriptions and orders. It can also control VPS firewalls, snapshots and monitoring. Sign in through your browser (OAuth) on first use, or set a `HOSTINGER_API_TOKEN` from hPanel. How to use: there are no commands to memorize. Describe what you want and Claude picks the right tool or deployment skill. Try \"deploy my static site to Hostinger\", \"deploy this Next.js app to example.com\", \"create an A record pointing example.com to 1.2.3.4\", or \"show VPS metrics for the last 24 hours.\"",
+      "author": {
+        "name": "Hostinger"
+      },
+      "category": "deployment",
+      "tags": ["deployment"],
+      "detection": {
+        "keywords": ["deployment", "deploy", "ci", "cd"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install hostinger",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1635,6 +2494,82 @@
       }
     },
     {
+      "id": "plugin-idmp-plugin",
+      "name": "idmp-plugin",
+      "type": "plugin",
+      "url": "https://github.com/taosdata/agent-skills",
+      "description": "TDengine IDMP plugin with packaged skills for discovery, schema inspection, and safe operational workflows.",
+      "author": {
+        "name": "TaosData",
+        "email": "it@taosdata.com"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install idmp-plugin",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-incident-io",
+      "name": "incident-io",
+      "type": "plugin",
+      "url": "https://incident.io",
+      "description": "Work with incident.io from Claude: respond to and investigate incidents, check on-call schedules and escalations, and author the runbooks, skills and architecture docs that incident.io investigations draw on. Bundles the official incident.io MCP server (OAuth on first use).",
+      "author": {
+        "name": "incident.io"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install incident-io",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-informatica-for-claude-platform",
+      "name": "informatica-for-claude-platform",
+      "type": "plugin",
+      "url": "https://github.com/forcedotcom/informatica-claude-plugins/tree/main/informatica-for-claude-platform",
+      "description": "Governed catalog discovery for Informatica Intelligent Data Management Cloud (CDGC): find tables, columns, files, glossary terms and policies across the enterprise catalog, check ownership, certification, sensitivity and applicable policy, and get safe-usage guidance grounded in catalog metadata before querying any data. Requires an Informatica IDMC tenant and the Informatica Catalog Discovery connector.",
+      "author": {
+        "name": "Informatica"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install informatica-for-claude-platform",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-intercom",
       "name": "intercom",
       "type": "plugin",
@@ -1657,6 +2592,31 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install intercom",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-intuit-quickbooks",
+      "name": "intuit-quickbooks",
+      "type": "plugin",
+      "url": "https://github.com/intuit/quickbooks-claude-plugin",
+      "description": "QuickBooks business insights and actions: financial health briefings across P&L, cash flow, balance sheet and A/R, industry benchmarking, payroll cost analysis, overdue-invoice reminders, estimate/invoice drafting from email, payroll onboarding and base-pay changes (with confirmation), and QuickBooks Capital lending guidance. Requires the Intuit QuickBooks connector.",
+      "author": {
+        "name": "Intuit QuickBooks"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install intuit-quickbooks",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1685,6 +2645,105 @@
       }
     },
     {
+      "id": "plugin-knowledge-catalog",
+      "name": "knowledge-catalog",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/knowledge-catalog",
+      "description": "Connect to Knowledge Catalog to discover, manage, monitor, and govern data and AI artifacts across your data platform",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install knowledge-catalog",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-langfuse-observability",
+      "name": "langfuse-observability",
+      "type": "plugin",
+      "url": "https://langfuse.com/integrations/other/claude-code",
+      "description": "Langfuse observability plugin for Claude Code — captures and exports traces, spans, and session telemetry from Claude Code to Langfuse for LLM monitoring, debugging, and evaluation",
+      "author": {
+        "name": "Langfuse"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install langfuse-observability",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-leadfeeder",
+      "name": "leadfeeder",
+      "type": "plugin",
+      "url": "https://www.leadfeeder.com",
+      "description": "Turn website visitor signals into pipeline with Leadfeeder: daily visitor briefs, visitor company research, buyer and contact discovery, personalised outreach drafts, and adding companies to your Leadfeeder lists, via the Leadfeeder connector. Requires a Leadfeeder account.",
+      "author": {
+        "name": "Leadfeeder"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install leadfeeder",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-learn-with-coursera",
+      "name": "learn-with-coursera",
+      "type": "plugin",
+      "url": "https://github.com/coursera/skills",
+      "description": "Turn any learning intent into a personalized Coursera experience. Asks three quick questions (topic, familiarity, preferred format), searches Coursera's catalog, and delivers the right next step — a course, hands-on project, short video, or live roleplay — then maps a path forward. Requires the Coursera connector for catalog tools.",
+      "author": {
+        "name": "Coursera"
+      },
+      "category": "learning",
+      "tags": ["learning"],
+      "detection": {
+        "keywords": ["learning"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install learn-with-coursera",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-legalzoom",
       "name": "legalzoom",
       "type": "plugin",
@@ -1706,6 +2765,30 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install legalzoom",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-linq-alpha",
+      "name": "linq-alpha",
+      "type": "plugin",
+      "url": "https://www.linqalpha.com",
+      "description": "LinqAlpha financial research in Claude: guided setup for the LinqAlpha connector, capability-based source selection for fundamentals, estimates, transcripts, filings and market data, and an optional, opt-in default-source preference you can remove at any time. Requires a LinqAlpha account.",
+      "author": {
+        "name": "LinqAlpha"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install linq-alpha",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1761,6 +2844,80 @@
       }
     },
     {
+      "id": "plugin-logrocket",
+      "name": "logrocket",
+      "type": "plugin",
+      "url": "https://logrocket.com",
+      "description": "Connect Claude Code to LogRocket to query session replays, metrics, issues, and user behavior using natural language.",
+      "author": {
+        "name": "LogRocket"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install logrocket",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-looker",
+      "name": "looker",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/looker",
+      "description": "Connect to Looker and interact with your data using LookML.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install looker",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-lovable",
+      "name": "lovable",
+      "type": "plugin",
+      "url": "https://lovable.dev",
+      "description": "Build, iterate on, deploy, and manage Lovable apps from Claude Code. Bundles the official Lovable MCP server (remote, OAuth 2.1) and adds focused commands for the common build/iterate/database workflows, with credit- and publish-safety prompts.",
+      "author": {
+        "name": "Lovable"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install lovable",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-lumen",
       "name": "lumen",
       "type": "plugin",
@@ -1785,6 +2942,30 @@
       }
     },
     {
+      "id": "plugin-lusha",
+      "name": "lusha",
+      "type": "plugin",
+      "url": "https://www.lusha.com",
+      "description": "Prospect, enrich, and build call-ready lead lists using Lusha's B2B intelligence platform — verified phone numbers, company signals, and lookalike targeting.",
+      "author": {
+        "name": "Lusha"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install lusha",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-mapbox",
       "name": "mapbox",
       "type": "plugin",
@@ -1805,6 +2986,31 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install mapbox",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-mattpocock-skills",
+      "name": "mattpocock-skills",
+      "type": "plugin",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Matt Pocock's agent skills for real engineering — grilling, spec/ticket flows, TDD, code review, domain modelling and more. Plug-and-play, not vibe coding.",
+      "author": {
+        "name": "Matt Pocock"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install mattpocock-skills",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1858,6 +3064,30 @@
       }
     },
     {
+      "id": "plugin-mergify",
+      "name": "mergify",
+      "type": "plugin",
+      "url": "https://mergify.com",
+      "description": "Skills for the Mergify CLI: manage merge queues, stacked pull requests, Test Insights (flaky tests, quarantine), merge protections, and Mergify configuration directly from the terminal.",
+      "author": {
+        "name": "Mergify"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install mergify",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-microsoft-docs",
       "name": "microsoft-docs",
       "type": "plugin",
@@ -1880,6 +3110,31 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install microsoft-docs",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-migration-to-aws",
+      "name": "migration-to-aws",
+      "type": "plugin",
+      "url": "https://github.com/awslabs/startups",
+      "description": "Plan a migration from Google Cloud Platform (and OpenAI/Gemini AI workloads) to AWS. Analyzes your Infrastructure-as-Code files, app code, and GCP billing data to discover resources, design an AWS architecture, estimate costs, and generate migration artifacts — including AI-provider mapping to Amazon Bedrock. Processing is local; your data stays in your environment.",
+      "author": {
+        "name": "Amazon Web Services"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install migration-to-aws",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -1933,6 +3188,78 @@
       }
     },
     {
+      "id": "plugin-modern-web-guidance",
+      "name": "modern-web-guidance",
+      "type": "plugin",
+      "url": "https://goo.gle/modern-web-guidance",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "author": {
+        "name": "Google Chrome"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install modern-web-guidance",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-mlflow",
+      "name": "mlflow",
+      "type": "plugin",
+      "url": "https://mlflow.org/",
+      "description": "Skills for tracing, evaluating, and improving AI agents with MLflow. Supports the full agent improvement loop: instrument → trace → evaluate → iterate → validate.",
+      "author": {
+        "name": "MLflow Team"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install mlflow",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-monday-crm",
+      "name": "monday-crm",
+      "type": "plugin",
+      "url": "https://monday.com",
+      "description": "Run your monday CRM in plain language. Build a pipeline from scratch, start the day with a ranked deal briefing, spin up a forecast dashboard, audit board health, clean up messy data in bulk, and turn meeting notes into deal updates. Every skill writes back into monday as a real update, doc, or dashboard. Built on the official monday MCP connector.",
+      "author": {
+        "name": "monday.com"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install monday-crm",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-mongodb",
       "name": "mongodb",
       "type": "plugin",
@@ -1955,6 +3282,31 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install mongodb",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-mongodb-atlas",
+      "name": "mongodb-atlas",
+      "type": "plugin",
+      "url": "https://www.mongodb.com/docs/mcp-server/get-started/",
+      "description": "Connect to MongoDB Atlas clusters only through the Atlas Managed MCP Server. Sign in with your Atlas account to explore data, manage collections, optimize queries, generate reliable code with MongoDB best practices, and manage Atlas resources such as clusters, projects, database users, and network access. If you are running a different MongoDB deployment or want to run a local MongoDB MCP Server, install the MongoDB (Self-Managed MCP) plugin instead.",
+      "author": {
+        "name": "MongoDB"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install mongodb-atlas",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -2012,11 +3364,61 @@
       }
     },
     {
+      "id": "plugin-netsuite-ai-companion",
+      "name": "netsuite-ai-companion",
+      "type": "plugin",
+      "url": "https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-ai-companion",
+      "description": "Guides AI assistants that use the NetSuite AI Connector: tool-selection order, output formatting, NetSuite domain knowledge, multi-subsidiary and currency handling, and SuiteQL safety guardrails. Requires the NetSuite AI Connector Service.",
+      "author": {
+        "name": "Oracle NetSuite"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install netsuite-ai-companion",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-netsuite-finance-analyst",
+      "name": "netsuite-finance-analyst",
+      "type": "plugin",
+      "url": "https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-finance-analyst",
+      "description": "Director-level finance analysis on live NetSuite data: financial reporting, period close, variance, aging and reconciliation reviews, cash reporting, and board-ready narratives with next actions. Requires the NetSuite AI Connector Service.",
+      "author": {
+        "name": "Oracle NetSuite"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install netsuite-finance-analyst",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-netsuite-suitecloud",
       "name": "netsuite-suitecloud",
       "type": "plugin",
-      "url": "https://github.com/oracle/netsuite-suitecloud-sdk",
-      "description": "NetSuite agent skills from Oracle — authoring guidance for SuiteCloud Development Framework (SDF) objects and UIF single-page-app components, plus runtime guidance for the NetSuite AI Service Connector.",
+      "url": "https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-suitecloud",
+      "description": "Develop NetSuite SuiteCloud solutions with SuiteScript, SDF, and best practices: SuiteScript records and upgrades, SDF objects, roles and permissions, UIF single-page apps, OWASP secure coding, project documentation, and the SAFE Guide.",
       "author": {
         "name": "Oracle NetSuite"
       },
@@ -2033,6 +3435,30 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install netsuite-suitecloud",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-newrelic",
+      "name": "newrelic",
+      "type": "plugin",
+      "url": "https://newrelic.com",
+      "description": "New Relic observability intelligence for Claude Code. Investigate APM performance, analyze cloud costs, debug Kubernetes, write NRQL queries, and respond to alerts — all from your terminal using New Relic telemetry data.",
+      "author": {
+        "name": "New Relic"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install newrelic",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -2088,6 +3514,30 @@
       }
     },
     {
+      "id": "plugin-noibu",
+      "name": "noibu",
+      "type": "plugin",
+      "url": "https://help.noibu.com/articles/3918362002-overview-of-the-noibu-plugin-for-claude",
+      "description": "Built for ecommerce, the Noibu plugin bridges the gap between customer experience and revenue by connecting Claude directly to your store's session, error, and conversion data through Noibu — and to the marketing, support, and commerce platforms that put insight into motion. Go beyond analysis: surface what's costing you revenue, take action across your stack, build workflows to automate work end-to-end.",
+      "author": {
+        "name": "Noibu"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install noibu",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-notion",
       "name": "notion",
       "type": "plugin",
@@ -2114,11 +3564,35 @@
       }
     },
     {
-      "id": "plugin-oracle-ai-data-platform-workbench-spark-connectors",
-      "name": "oracle-ai-data-platform-workbench-spark-connectors",
+      "id": "plugin-nvidia-skills",
+      "name": "nvidia-skills",
+      "type": "plugin",
+      "url": "https://build.nvidia.com/skills/",
+      "description": "Find the right NVIDIA skill for GPU acceleration, CUDA, AI agents, data loading, training, inference, robotics, Physical AI, Omniverse, simulation, and other NVIDIA-powered workflows.",
+      "author": {
+        "name": "NVIDIA"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install nvidia-skills",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-oracle-ai-data-platform-workbench-databricks-migrator",
+      "name": "oracle-ai-data-platform-workbench-databricks-migrator",
       "type": "plugin",
       "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html",
-      "description": "Oracle AI Data Platform Workbench Spark connectors for Claude Code. 18 connector skills covering every data source workbench customers commonly need: Oracle Autonomous DB family (ALH/ADW/ATP) via wallet/IAM-DB-Token/API-key, ExaCS, Fusion ERP REST, Fusion BICC, EPM Cloud Planning, Essbase 21c, OCI Streaming (Kafka), OCI Object Storage, Apache Iceberg, plus external systems (PostgreSQL, MySQL/HeatWave, SQL Server, Snowflake, Azure ADLS Gen2, AWS S3, generic REST, custom JDBC, Excel). Live-validated on the workbench `tpcds` cluster (Spark 3.5.0): 17 PASS / 4 ship-as-is out of 21 test rows.",
+      "description": "Drive the Oracle AI Data Platform (AIDP) Databricks Migration Toolkit in natural language. Plans and executes automated Databricks → AIDP migrations of notebooks, jobs, schedules, and catalog DDL — Pass-1 dependency rewrite + Pass-2 cell-by-cell execute/verify/fix on a live AIDP cluster with Claude.",
       "author": {
         "name": "Oracle"
       },
@@ -2133,7 +3607,33 @@
       },
       "install": {
         "method": "plugin",
-        "command": "/plugin install oracle-ai-data-platform-workbench-spark-connectors",
+        "command": "/plugin install oracle-ai-data-platform-workbench-databricks-migrator",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-oracledb",
+      "name": "oracledb",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/oracledb",
+      "description": "Connect, query, and interact with Oracle Databases and their data.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install oracledb",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -2188,6 +3688,55 @@
       }
     },
     {
+      "id": "plugin-paypal",
+      "name": "paypal",
+      "type": "plugin",
+      "url": "https://developer.paypal.com/",
+      "description": "PayPal development plugin for Claude — integrate payments, subscriptions, invoices, disputes, and more using PayPal's APIs and MCP server",
+      "author": {
+        "name": "PayPal"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install paypal",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-pendo-analytics",
+      "name": "pendo-analytics",
+      "type": "plugin",
+      "url": "https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/pendo-analytics",
+      "description": "Bring Pendo product analytics into Claude Code: account health, feature adoption, session replay lookup and triage, feedback analysis, and data-informed planning grounded in real usage data. Requires the Pendo connector and a Pendo subscription.",
+      "author": {
+        "name": "Pendo"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install pendo-analytics",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-pigment",
       "name": "pigment",
       "type": "plugin",
@@ -2235,6 +3784,30 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install pinecone",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-pixeltable",
+      "name": "pixeltable",
+      "type": "plugin",
+      "url": "https://docs.pixeltable.com",
+      "description": "Build multimodal AI applications with Pixeltable -- tables, computed columns, embedding search, UDFs, tool-calling agents, and 25+ AI provider integrations.",
+      "author": {
+        "name": "Pixeltable"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install pixeltable",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -2318,8 +3891,8 @@
       "id": "plugin-postman",
       "name": "postman",
       "type": "plugin",
-      "url": "https://learning.postman.com/docs/developer/postman-mcp-server/",
-      "description": "Full API lifecycle management for Claude Code. Sync collections, generate client code, discover APIs, run tests, create mocks, publish docs, and audit security. Powered by the Postman MCP Server.",
+      "url": "https://github.com/postmanlabs/postman-plugin",
+      "description": "Work with Postman from your agent: bootstrap a repo's Postman setup, mock an API before it's implemented, run collection and governance checks in CI, monitor a live endpoint, deploy and debug Postman Flows, and publish generated API documentation.",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -2331,11 +3904,36 @@
       },
       "metrics": {
         "source": "official",
-        "isOfficial": true
+        "isOfficial": true,
+        "securityScore": 100
       },
       "install": {
         "method": "plugin",
         "command": "/plugin install postman",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-preset-cli-skills",
+      "name": "preset-cli-skills",
+      "type": "plugin",
+      "url": "https://www.preset.io",
+      "description": "Preset CLI skills for explicit shell, scripting, and CI/CD workflows driven by the `sup` CLI (PyPI package `superset-sup`). Use only for CLI workflows; do not use for MCP-only work or as a substitute for direct API calls when the user wants HTTP/SDK code.",
+      "author": {
+        "name": "Preset"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install preset-cli-skills",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -2390,14 +3988,14 @@
       }
     },
     {
-      "id": "plugin-qodo-skills",
-      "name": "qodo-skills",
+      "id": "plugin-qodo",
+      "name": "qodo",
       "type": "plugin",
       "url": "https://github.com/qodo-ai/qodo-skills.git",
-      "description": "Qodo Skills provides a curated library of reusable AI agent capabilities that extend Claude's functionality for software development workflows. Each skill is designed to integrate seamlessly into your development process, enabling tasks like code quality checks, automated testing, security scanning, and compliance validation. Skills operate across your entire SDLC—from IDE to CI/CD—ensuring consistent standards and catching issues early.",
+      "description": "Bring Qodo's codebase intelligence, coding standards, and code review into your coding agent.",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "Qodo",
+        "email": "support@qodo.ai"
       },
       "category": "development",
       "tags": ["development"],
@@ -2405,12 +4003,12 @@
         "keywords": ["development", "development", "coding", "ide"]
       },
       "metrics": {
-        "source": "official",
-        "isOfficial": true
+        "source": "community",
+        "isOfficial": false
       },
       "install": {
         "method": "plugin",
-        "command": "/plugin install qodo-skills",
+        "command": "/plugin install qodo",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -2564,6 +4162,30 @@
       }
     },
     {
+      "id": "plugin-render",
+      "name": "render",
+      "type": "plugin",
+      "url": "https://render.com",
+      "description": "Deploy, debug, and monitor applications on Render. Includes skills, an agent, slash commands, and a render.yaml validation hook.",
+      "author": {
+        "name": "Render"
+      },
+      "category": "deployment",
+      "tags": ["deployment"],
+      "detection": {
+        "keywords": ["deployment", "deploy", "ci", "cd"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install render",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-resend",
       "name": "resend",
       "type": "plugin",
@@ -2584,6 +4206,30 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install resend",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-rill",
+      "name": "rill",
+      "type": "plugin",
+      "url": "https://docs.rilldata.com/developers/build/ai-configuration",
+      "description": "Skills for developing and querying projects in the Rill business intelligence platform",
+      "author": {
+        "name": "Rill Data"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install rill",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -2616,7 +4262,7 @@
       "name": "runway-api",
       "type": "plugin",
       "url": "https://runwayml.com",
-      "description": "Video generation at scale. Generate videos, images, and audio with Runway's API — batch ad campaigns, product videos, multishot stories, and creative iteration. Supports seedance2, gen4.5, veo3, Nano, Banana Pro, and more.",
+      "description": "Get guidance for integrating video, image and audio generation with the Runway API and official SDKs. Connect to your Runway Dev account to inspect available models and task errors, manage Model Routers and existing real-time avatars, and inspect recorded routing decisions.",
       "author": {
         "name": "Runway"
       },
@@ -2632,6 +4278,31 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install runway-api",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-salesforce-development",
+      "name": "salesforce-development",
+      "type": "plugin",
+      "url": "https://github.com/forcedotcom/sf-skills/tree/main/plugins/builder/salesforce-development",
+      "description": "Build Salesforce apps and agents using these core building blocks: metadata, Apex, deploy/retrieve, security, reporting, and generated installed-versus-available capability discovery.",
+      "author": {
+        "name": "Salesforce"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install salesforce-development",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -2686,6 +4357,33 @@
       }
     },
     {
+      "id": "plugin-sap-hana-cli",
+      "name": "sap-hana-cli",
+      "type": "plugin",
+      "url": "https://github.com/SAP-samples/hana-cli-claude-plugin",
+      "description": "150+ SAP HANA database tools for AI assistants. Query tables, import/export data, profile data quality, compare schemas, manage backups, monitor performance, and more. Connects to SAP HANA Cloud and on-premise databases.",
+      "author": {
+        "name": "SAP SE",
+        "email": "ospo@sap.com"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install sap-hana-cli",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-sap-mdk-server",
       "name": "sap-mdk-server",
       "type": "plugin",
@@ -2736,6 +4434,30 @@
       }
     },
     {
+      "id": "plugin-scandit-sdk",
+      "name": "scandit-sdk",
+      "type": "plugin",
+      "url": "https://www.scandit.com",
+      "description": "AI agent skills for integrating the Scandit Data Capture SDK — product selection, documentation, and implementation guides for barcode scanning, ID capture, and smart label capture.",
+      "author": {
+        "name": "Scandit"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install scandit-sdk",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-semgrep",
       "name": "semgrep",
       "type": "plugin",
@@ -2764,7 +4486,7 @@
       "id": "plugin-sentry",
       "name": "sentry",
       "type": "plugin",
-      "url": "https://github.com/getsentry/sentry-for-claude/tree/main",
+      "url": "https://github.com/getsentry/plugin-claude",
       "description": "Sentry error monitoring integration. Access error reports, analyze stack traces, search issues by fingerprint, and debug production errors directly from your development environment.",
       "author": {
         "name": "Anthropic",
@@ -2835,18 +4557,18 @@
       }
     },
     {
-      "id": "plugin-shopify",
-      "name": "shopify",
+      "id": "plugin-shippo",
+      "name": "shippo",
       "type": "plugin",
-      "url": "https://shopify.dev/docs/apps/build/devmcp",
-      "description": "Shopify developer tools for Claude Code — search Shopify docs, generate and validate GraphQL, Liquid, and UI extension code",
+      "url": "https://docs.goshippo.com",
+      "description": "Shippo connects you to USPS, UPS, FedEx, DHL, and 40+ carriers, so you can handle a shipment end to end right inside Claude. Compare live rates and pick the cheapest or best option, buy and print labels (domestic and international, with customs declarations), validate and standardize addresses, and track packages across carriers. Just ask in plain language: rate-shop a parcel, buy the right label, check a delivery status, or confirm an address before you ship. Whether you run a store or just need to send a package, Shippo turns a pile of carrier accounts into one simple conversation.",
       "author": {
-        "name": "Shopify"
+        "name": "Shippo"
       },
-      "category": "development",
-      "tags": ["development"],
+      "category": "productivity",
+      "tags": ["productivity"],
       "detection": {
-        "keywords": ["development", "development", "coding", "ide"]
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
       },
       "metrics": {
         "source": "community",
@@ -2854,7 +4576,7 @@
       },
       "install": {
         "method": "plugin",
-        "command": "/plugin install shopify",
+        "command": "/plugin install shippo",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -3007,6 +4729,32 @@
       }
     },
     {
+      "id": "plugin-spanner",
+      "name": "spanner",
+      "type": "plugin",
+      "url": "https://github.com/gemini-cli-extensions/spanner",
+      "description": "Connect and interact with Spanner data using natural language.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install spanner",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-spotify-ads-api",
       "name": "spotify-ads-api",
       "type": "plugin",
@@ -3029,6 +4777,54 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install spotify-ads-api",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-stackhawk-hawkscan",
+      "name": "stackhawk-hawkscan",
+      "type": "plugin",
+      "url": "https://docs.stackhawk.com/ai-security/",
+      "description": "Configure, run, and interpret HawkScan DAST results inside Claude Code. Generates stackhawk.yml configs, runs scans via CLI or Docker, and transforms security findings into prioritized fix tasks for your coding agent.",
+      "author": {
+        "name": "StackHawk"
+      },
+      "category": "security",
+      "tags": ["security"],
+      "detection": {
+        "keywords": ["security", "security", "audit", "vulnerability"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install stackhawk-hawkscan",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-streaming-skills-plugin",
+      "name": "streaming-skills-plugin",
+      "type": "plugin",
+      "url": "https://www.confluent.io",
+      "description": "Skills for streaming application developers, covering Kafka and Flink client libraries and Schema Registry",
+      "author": {
+        "name": "Confluent"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install streaming-skills-plugin",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -3111,6 +4907,30 @@
       }
     },
     {
+      "id": "plugin-superdesign",
+      "name": "superdesign",
+      "type": "plugin",
+      "url": "https://superdesign.dev",
+      "description": "Design or redesign frontend UI and marketing graphics on the Superdesign infinite canvas. Reads your codebase for context, sets up a design system, and generates branchable design drafts you refine.",
+      "author": {
+        "name": "Superdesign dev, Inc."
+      },
+      "category": "design",
+      "tags": ["design"],
+      "detection": {
+        "keywords": ["design"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install superdesign",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-superpowers",
       "name": "superpowers",
       "type": "plugin",
@@ -3133,6 +4953,54 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install superpowers",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-synthflow",
+      "name": "synthflow",
+      "type": "plugin",
+      "url": "https://synthflow.ai",
+      "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server, with skills for reviewing calls and auditing agent prompts, plus a docs-search connector.",
+      "author": {
+        "name": "Synthflow"
+      },
+      "category": "automation",
+      "tags": ["automation"],
+      "detection": {
+        "keywords": ["automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install synthflow",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-tavily",
+      "name": "tavily",
+      "type": "plugin",
+      "url": "https://www.tavily.com/",
+      "description": "Build AI applications with real-time web data using Tavily's search, extract, crawl, and research APIs.",
+      "author": {
+        "name": "Tavily Team"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install tavily",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -3209,6 +5077,31 @@
       }
     },
     {
+      "id": "plugin-ui-theme-designer",
+      "name": "ui-theme-designer",
+      "type": "plugin",
+      "url": "https://github.com/SAP/ui-theme-designer-plugins-for-coding-agents",
+      "description": "Plugin for coding agents working with UI theme designer. Bundles two skills: how-to and conceptual answers about UI theme designer on BTP, and questions about the SAP Design System and SAP Fiori design tokens — theme parameters and component-level parameter usage in UI5, UI5 Web Components, and Fundamental Styles.",
+      "author": {
+        "name": "SAP SE"
+      },
+      "category": "design",
+      "tags": ["design"],
+      "detection": {
+        "keywords": ["design"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install ui-theme-designer",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-ui5",
       "name": "ui5",
       "type": "plugin",
@@ -3235,8 +5128,104 @@
       }
     },
     {
-      "id": "plugin-vanta-mcp-plugin",
-      "name": "vanta-mcp-plugin",
+      "id": "plugin-unity",
+      "name": "unity",
+      "type": "plugin",
+      "url": "https://unity.com",
+      "description": "Unity's official plugin for Claude Code, with curated skills for game development, monetization, and performance optimization.",
+      "author": {
+        "name": "Unity Technologies"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install unity",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-unreal-engine-skills-for-claude-code",
+      "name": "unreal-engine-skills-for-claude-code",
+      "type": "plugin",
+      "url": "https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor",
+      "description": "Control Unreal Editor directly from Claude Code via MCP. Hundreds of tools exposed via Unreal's ToolsetRegistry across 30+ toolsets: actors, blueprints, materials, Niagara, Control Rigs, Sequencer, State Trees, widgets, Gameplay Ability System, automation testing, and more.",
+      "author": {
+        "name": "Epic Games"
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install unreal-engine-skills-for-claude-code",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-valtown",
+      "name": "valtown",
+      "type": "plugin",
+      "url": "https://val.town",
+      "description": "Build and deploy on Val Town. Bundles the Val Town MCP server and platform skills (HTTP vals, cron/intervals, SQLite, email, OAuth, React UI, third-party integrations, templates).",
+      "author": {
+        "name": "Val Town"
+      },
+      "category": "deployment",
+      "tags": ["deployment"],
+      "detection": {
+        "keywords": ["deployment", "deploy", "ci", "cd"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install valtown",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-vanguard-advisor-tools",
+      "name": "vanguard-advisor-tools",
+      "type": "plugin",
+      "url": "https://advisors.vanguard.com",
+      "description": "Vanguard Advisor Tools for financial professionals: research and compare funds and ETFs across the industry and prepare for client conversations, using Vanguard's advisor connector in Claude.",
+      "author": {
+        "name": "Vanguard"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install vanguard-advisor-tools",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-vanta",
+      "name": "vanta",
       "type": "plugin",
       "url": "https://help.vanta.com/en/articles/14094979-connecting-to-vanta-mcp#h_887ce3f337",
       "description": "The Vanta plugin connects Claude Code to Vanta's security and compliance platform through the Vanta MCP server. It combines Vanta's test-specific remediation intelligence with your local repository context to help you fix compliance failures faster.",
@@ -3254,7 +5243,7 @@
       },
       "install": {
         "method": "plugin",
-        "command": "/plugin install vanta-mcp-plugin",
+        "command": "/plugin install vanta",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -3309,6 +5298,31 @@
       }
     },
     {
+      "id": "plugin-vsql-extension-builder",
+      "name": "vsql-extension-builder",
+      "type": "plugin",
+      "url": "https://villagesql.com",
+      "description": "Builds a VillageSQL extension for MySQL end-to-end through a 7-phase persona-driven workflow. Commonly used to port PostgreSQL extensions to MySQL.",
+      "author": {
+        "name": "VillageSQL"
+      },
+      "category": "database",
+      "tags": ["database"],
+      "detection": {
+        "keywords": ["database", "database", "sql", "nosql"],
+        "dependencies": ["prisma", "@prisma/client", "mongoose", "typeorm"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install vsql-extension-builder",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-windsor-ai",
       "name": "windsor-ai",
       "type": "plugin",
@@ -3358,11 +5372,11 @@
       }
     },
     {
-      "id": "plugin-wordpress.com",
-      "name": "wordpress.com",
+      "id": "plugin-build-with-wordpress",
+      "name": "build-with-wordpress",
       "type": "plugin",
       "url": "https://developer.wordpress.com/wordpress-com-claude-code-plugin/",
-      "description": "Uses Claude Code to create and edit WordPress sites with WordPress Studio before deploying changes to your WordPress.com site.",
+      "description": "Craft production-grade WordPress sites and applications. Everything from themes and plugins to commerce and deployment.",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -3378,7 +5392,7 @@
       },
       "install": {
         "method": "plugin",
-        "command": "/plugin install wordpress.com",
+        "command": "/plugin install build-with-wordpress",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -3403,6 +5417,30 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install workos",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-xcode",
+      "name": "xcode",
+      "type": "plugin",
+      "url": "https://developer.apple.com/xcode/",
+      "description": "Work with Xcode projects from Claude Code: build, run, and test schemes, render SwiftUI previews, drive simulators and devices, read build logs and diagnostics, and search Apple developer documentation.",
+      "author": {
+        "name": "Apple Inc."
+      },
+      "category": "development",
+      "tags": ["development"],
+      "detection": {
+        "keywords": ["development", "development", "coding", "ide"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install xcode",
         "marketplace": "claude-plugins-official"
       }
     },
@@ -3482,6 +5520,31 @@
       }
     },
     {
+      "id": "plugin-zocks-advisor",
+      "name": "zocks-advisor",
+      "type": "plugin",
+      "url": "https://github.com/zocks-communications/zocks-agent-plugins",
+      "description": "Seven skills for financial advisors built on Zocks meeting intelligence: client behavioral profiles, attrition-risk ranking, held-away asset radar, client journey dossiers, household review packs, next-best-action analysis and a tax opportunity scan. Requires the Zocks connector and a Zocks account.",
+      "author": {
+        "name": "Zocks"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install zocks-advisor",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
       "id": "plugin-zoom-plugin",
       "name": "zoom-plugin",
       "type": "plugin",
@@ -3552,6 +5615,176 @@
       "install": {
         "method": "plugin",
         "command": "/plugin install zscaler",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-langfuse",
+      "name": "langfuse",
+      "type": "plugin",
+      "url": "https://langfuse.com",
+      "description": "Skills for working with Langfuse, the open-source LLM engineering platform for tracing, prompt management, and evaluation.",
+      "author": {
+        "name": "Langfuse"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install langfuse",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-zyte-web-data",
+      "name": "zyte-web-data",
+      "type": "plugin",
+      "url": "https://www.zyte.com",
+      "description": "Web scraping skills for Claude Code powered by the Zyte API — scrape sites, generate and run Scrapy spiders, define extraction schemas, and ship to Scrapy Cloud.",
+      "author": {
+        "name": "Zyte"
+      },
+      "category": "automation",
+      "tags": ["automation"],
+      "detection": {
+        "keywords": ["automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install zyte-web-data",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-activecampaign",
+      "name": "activecampaign",
+      "type": "plugin",
+      "url": "https://www.activecampaign.com",
+      "description": "Marketing automation, CRM, and email marketing powered by ActiveCampaign. Manage contacts, campaigns, automations, deals, and get AI-powered marketing insights — all from Claude.",
+      "author": {
+        "name": "ActiveCampaign"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install activecampaign",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-hubspot-sales",
+      "name": "hubspot-sales",
+      "type": "plugin",
+      "url": "https://www.hubspot.com",
+      "description": "Run your HubSpot sales workflow directly from Claude. Adds skills that cover the full sales day: import contacts and deals into HubSpot, get a prioritised morning brief, prep for any call with full CRM context, draft personalised follow-ups grounded in deal history, log calls and update records by describing what happened, and review your pipeline to surface stalling deals. Everything writes back to HubSpot.",
+      "author": {
+        "name": "HubSpot"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install hubspot-sales",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-dynatrace",
+      "name": "dynatrace",
+      "type": "plugin",
+      "url": "https://www.dynatrace.com/hub/detail/claude-code-cli/",
+      "description": "Dynatrace observability skills: DQL query patterns, application and infrastructure monitoring, log analysis, problem investigation, and incident response workflows, with the Dynatrace MCP server for live platform access.",
+      "author": {
+        "name": "Dynatrace"
+      },
+      "category": "monitoring",
+      "tags": ["monitoring"],
+      "detection": {
+        "keywords": ["monitoring"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install dynatrace",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-wingspan",
+      "name": "wingspan",
+      "type": "plugin",
+      "url": "https://github.com/wingspanHQ/mcp-claude-plugin",
+      "description": "Ask Claude about the contractors you pay through Wingspan, what you owe them, and what is holding up a payment, then onboard contractors and log payments as drafts, with a preview before anything is written. Requires a Wingspan account; bundles the Wingspan MCP server (OAuth on first use).",
+      "author": {
+        "name": "Wingspan"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install wingspan",
+        "marketplace": "claude-plugins-official"
+      }
+    },
+    {
+      "id": "plugin-amazon-selling-partner",
+      "name": "amazon-selling-partner",
+      "type": "plugin",
+      "url": "https://github.com/amzn/selling-partner-agentic-toolkit",
+      "description": "Connect your Amazon Seller Central account to Claude. Ask about sales, inventory, and listing performance and get recommendations grounded in your own data, then review and approve every listing, inventory or FBA action before it runs. Bundles the Amazon Selling Partner MCP server (Seller Central OAuth on first use). Currently in beta.",
+      "author": {
+        "name": "Amazon"
+      },
+      "category": "productivity",
+      "tags": ["productivity"],
+      "detection": {
+        "keywords": ["productivity", "productivity", "workflow", "automation"]
+      },
+      "metrics": {
+        "source": "community",
+        "isOfficial": false,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "plugin",
+        "command": "/plugin install amazon-selling-partner",
         "marketplace": "claude-plugins-official"
       }
     }
