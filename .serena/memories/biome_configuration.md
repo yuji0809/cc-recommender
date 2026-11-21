@@ -17,7 +17,7 @@ pnpm add -D @biomejs/biome
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.5/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -39,7 +39,7 @@ pnpm add -D @biomejs/biome
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "style": {
         "noNonNullAssertion": "warn",
         "noParameterAssign": "warn",
@@ -113,7 +113,7 @@ pnpm add -D @biomejs/biome
 
 **推奨ルールをすべて有効化**:
 ```json
-"recommended": true
+"preset": "recommended"
 ```
 
 **追加の厳格なルール**:

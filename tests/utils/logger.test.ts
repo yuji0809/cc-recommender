@@ -25,16 +25,15 @@ describe("logger", () => {
   });
 
   describe("Edge Cases", () => {
-    it.each([
-      "info",
-      "warn",
-      "error",
-    ] as const)("should never write %s messages to stdout (the MCP stdio channel)", (level) => {
-      logger[level]("message");
+    it.each(["info", "warn", "error"] as const)(
+      "should never write %s messages to stdout (the MCP stdio channel)",
+      (level) => {
+        logger[level]("message");
 
-      expect(stdoutWrite).not.toHaveBeenCalled();
-      expect(consoleLog).not.toHaveBeenCalled();
-    });
+        expect(stdoutWrite).not.toHaveBeenCalled();
+        expect(consoleLog).not.toHaveBeenCalled();
+      },
+    );
 
     it("should format objects like console.log", () => {
       logger.info("count:", { a: 1 });
