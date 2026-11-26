@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-11-26T07:59:28.580Z",
+  "lastUpdated": "2026-11-26T11:54:51.655Z",
   "items": [
     {
       "id": "skill-official-vercel-labs-composition-patterns",
@@ -353861,6 +353861,7 @@
           "api",
           "test",
           "ai",
+          "llm",
           "word",
           "listening"
         ]
@@ -353905,6 +353906,7 @@
           "test",
           "ci",
           "ai",
+          "llm",
           "word",
           "new",
           "term",
@@ -353951,6 +353953,7 @@
           "test",
           "ci",
           "ai",
+          "llm",
           "word",
           "seo",
           "new",
@@ -441887,7 +441890,7 @@
       "name": "Motionboard",
       "type": "skill",
       "url": "https://github.com/krisyangdev/motionboard/tree/main/skills/motionboard/tree/main/skills/motionboard",
-      "description": "Motionboard is shot language broken down from real Apple and Linear launch films. Each shot is recreated in code as a ~10s HyperFrames film (HTML + GSAP rendered to video). This skill holds 38 recipes and their runnable source projects. You make one shot, plan and build a whole launch film, or turn a product URL or repo into a launch film in one command.",
+      "description": "Motionboard is shot language broken down from real Apple, Linear, Figma and Google launch films. Each shot is recreated in code as a ~10s HyperFrames film (HTML + GSAP rendered to video). This skill holds 48 recipes and their runnable source projects. You make one shot, plan and build a whole launch film, or turn a product URL or repo into a launch film in one command.",
       "author": {
         "name": "krisyangdev",
         "url": "https://github.com/krisyangdev"
@@ -453486,6 +453489,7 @@
       "detection": {
         "keywords": [
           "go",
+          "bun",
           "api",
           "rest",
           "test",
@@ -453811,7 +453815,7 @@
       "name": "Oma Explanation",
       "type": "skill",
       "url": "https://github.com/first-fluke/oh-my-agent/tree/main/skills/oma-explanation",
-      "description": "Generate an educational, self-contained interactive HTML document, saved under `.agents/results/explain/` and validated with `oma explain validate`. Two modes:",
+      "description": "Deliver clear, educational explanations through two routes:",
       "author": {
         "name": "first-fluke",
         "url": "https://github.com/first-fluke"
@@ -453826,6 +453830,7 @@
       "detection": {
         "keywords": [
           "go",
+          "bun",
           "git",
           "github",
           "api",
@@ -453833,6 +453838,7 @@
           "auth",
           "ai",
           "ml",
+          "llm",
           "word",
           "oma",
           "explanation"
@@ -488224,7 +488230,7 @@
       "name": "VibeSec Skill",
       "type": "skill",
       "url": "https://github.com/BehiSecc/VibeSec-Skill",
-      "description": "This guide provides comprehensive secure coding practices for web applications. As an AI assistant, your role is to approach code from a **bug hunter's perspective** and make applications **as secure as possible** without breaking functionality.",
+      "description": "Approach web code from a bug hunter's perspective: prevent exploitable vulnerabilities without breaking functionality or adding unnecessary complexity.",
       "author": {
         "name": "BehiSecc",
         "url": "https://github.com/BehiSecc"
@@ -488241,24 +488247,12 @@
           "database",
           "sql",
           "react",
-          "vue",
-          "javascript",
-          "python",
           "rust",
-          "go",
-          "java",
-          "node",
           "bun",
-          "aws",
-          "gcp",
-          "azure",
-          "git",
           "api",
-          "rest",
           "graphql",
           "test",
           "ci",
-          "cd",
           "security",
           "auth",
           "authentication",
@@ -488266,7 +488260,6 @@
           "ml",
           "docx",
           "pdf",
-          "pptx",
           "xlsx",
           "word",
           "vibesec",
