@@ -10,6 +10,21 @@ import type { Recommendation } from "../../../types/domain-types.js";
 const REGISTRY_API = "https://registry.modelcontextprotocol.io/v0.1/servers";
 const PAGE_LIMIT = 96; // Maximum allowed by API
 
+/**
+ * Safety net against a cursor loop. The registry held about 780 pages (75k entries) in 2026-11,
+ * so this leaves room to grow without letting a broken cursor run forever.
+ */
+const MAX_PAGES = 3000;
+
+/**
+ * Maximum number of official servers kept in the data file.
+ *
+ * Running servers reject a data file of more than 50,000 items or 50MB, and they download
+ * all three files at startup. The registry has about 35k unique repositories and grows quickly,
+ * so keep only the most recently updated ones to stay well below those limits.
+ */
+export const MAX_OFFICIAL_SERVERS = 15_000;
+
 type RegistryServer = {
   name: string;
   description: string;
@@ -110,8 +125,8 @@ export async function fetchOfficialMCPServers(): Promise<Recommendation[]> {
       pageCount++;
 
       // Safety limit to prevent infinite loops
-      if (pageCount > 100) {
-        console.warn("   ⚠ Reached page limit (100), stopping pagination");
+      if (pageCount >= MAX_PAGES) {
+        console.warn(`   ⚠ Reached page limit (${MAX_PAGES}), stopping pagination`);
         break;
       }
     } while (cursor);
@@ -120,12 +135,31 @@ export async function fetchOfficialMCPServers(): Promise<Recommendation[]> {
       .map(transformRegistryEntry)
       .filter((r): r is Recommendation => r !== null);
 
-    console.log(`   ✓ Fetched ${recommendations.length} official MCP servers`);
-    return recommendations;
+    const kept = keepMostRecent(recommendations, MAX_OFFICIAL_SERVERS);
+    if (kept.length < recommendations.length) {
+      console.warn(
+        `   ⚠ Keeping the ${kept.length} most recently updated of ${recommendations.length} official MCP servers`,
+      );
+    }
+
+    console.log(`   ✓ Fetched ${kept.length} official MCP servers`);
+    return kept;
   } catch (error) {
     console.error("   ✗ Failed to fetch official MCP servers:", error);
     return [];
   }
+}
+
+/**
+ * Keep the most recently updated items, up to the cap
+ */
+function keepMostRecent(items: Recommendation[], cap: number): Recommendation[] {
+  if (items.length <= cap) {
+    return items;
+  }
+  return [...items]
+    .sort((a, b) => (b.metrics.lastUpdated ?? "").localeCompare(a.metrics.lastUpdated ?? ""))
+    .slice(0, cap);
 }
 
 /**
@@ -152,9 +186,12 @@ function transformRegistryEntry(entry: RegistryEntry): Recommendation | null {
     // Extract detection rules
     const detection = extractDetectionRules(server);
 
-    // Determine source URL (prefer repository, fallback to registry)
-    const url =
-      server.repository?.url || server.homepage || `https://registry.modelcontextprotocol.io`;
+    // The URL identifies the server. Entries without one would all share the registry URL
+    // and collapse into a single item when deduplicated by URL, so skip them.
+    const url = server.repository?.url || server.homepage;
+    if (!url) {
+      return null;
+    }
 
     return {
       id: `official-mcp-${server.name.replace(/[^a-z0-9-]/gi, "-")}`,
