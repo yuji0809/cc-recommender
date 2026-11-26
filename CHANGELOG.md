@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.3](https://github.com/yuji0809/cc-recommender/compare/v0.9.2...v0.9.3) (2026-11-26)
+
+
+### Bug Fixes
+
+* **data:** fetch the whole official MCP registry instead of the first 100 pages ([#65](https://github.com/yuji0809/cc-recommender/issues/65)) ([e3dce2b](https://github.com/yuji0809/cc-recommender/commit/e3dce2b0e455d6be98f39b0f83118f47eb0ce4ba))
+
 ## [0.9.2](https://github.com/yuji0809/cc-recommender/compare/v0.9.1...v0.9.2) (2026-11-03)
 
 
