@@ -49,7 +49,7 @@
 次の 2 つを並列に取得し、正規化した URL で重複を除く。同じ URL があれば公式（`isOfficial: true`）のほうを残す。
 
 - [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) の README.md（`mcp/mcp-fetcher.ts`）。github.com へのリンクだけを拾い、見出しからカテゴリを、各行の絵文字から言語やスコープを読み取る。
-- 公式 MCP Registry の `https://registry.modelcontextprotocol.io/v0.1/servers`（`mcp/official-mcp-fetcher.ts`）。`version=latest` を指定してカーソルでページをたどり、`status` が `active` のものだけを使う。
+- 公式 MCP Registry の `https://registry.modelcontextprotocol.io/v0.1/servers`（`mcp/official-mcp-fetcher.ts`）。`version=latest` を指定してカーソルが尽きるまでページをたどり（安全のため最大 3,000 ページ）、`status` が `active` のものだけを使う。リポジトリも homepage も持たない項目は URL で識別できず重複排除で 1 件に潰れるため除外し、残りは更新日が新しい順に最大 15,000 件に絞る（起動時にダウンロードするデータの上限 50,000 件 / 50MB に収めるため）。
 
 ### スキル
 
