@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdated": "2026-11-26T11:54:51.655Z",
+  "lastUpdated": "2026-11-28T07:29:32.768Z",
   "items": [
     {
       "id": "skill-official-vercel-labs-composition-patterns",
@@ -311556,6 +311556,56 @@
       }
     },
     {
+      "id": "skill-official-nvidia-nim-select",
+      "name": "Nim Select",
+      "type": "skill",
+      "url": "https://github.com/NVIDIA/skills/tree/main/skills/tree/main/skills/nim-select",
+      "description": "<!-- SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. SPDX-License-Identifier: CC-BY-4.0 AND Apache-2.0 -->",
+      "author": {
+        "name": "NVIDIA",
+        "url": "https://github.com/NVIDIA"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "nvidia"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "node",
+          "docker",
+          "kubernetes",
+          "k8s",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "ai",
+          "llm",
+          "word",
+          "nim",
+          "select"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/NVIDIA/skills/tree/main/skills && cd skills/skills/nim-select"
+      }
+    },
+    {
       "id": "skill-official-nvidia-nim-smoke-check",
       "name": "Nim Smoke Check",
       "type": "skill",
@@ -312063,6 +312113,52 @@
       }
     },
     {
+      "id": "skill-official-nvidia-nv-reason-pathwsi",
+      "name": "Nv Reason Pathwsi",
+      "type": "skill",
+      "url": "https://github.com/NVIDIA/skills/tree/main/skills/tree/main/skills/nv-reason-pathwsi",
+      "description": "Runs the documented NV-Reason-PathWSI single-image CLI (`inference.py`) on one user-provided PNG/JPEG pathology patch or whole-slide image tile and a text prompt, then records the input hash, response text, runtime mode, dependency",
+      "author": {
+        "name": "NVIDIA",
+        "url": "https://github.com/NVIDIA"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "nvidia"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "rust",
+          "go",
+          "git",
+          "github",
+          "test",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "reason",
+          "pathwsi"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/NVIDIA/skills/tree/main/skills && cd skills/skills/nv-reason-pathwsi"
+      }
+    },
+    {
       "id": "skill-official-nvidia-nv-segment-ct-finetune",
       "name": "Nv Segment Ct Finetune",
       "type": "skill",
@@ -312247,6 +312343,135 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/NVIDIA/skills/tree/main/skills && cd skills/skills/nvalchemi-toolkit"
+      }
+    },
+    {
+      "id": "skill-official-nvidia-nvat-corim-attestation",
+      "name": "Nvat Corim Attestation",
+      "type": "skill",
+      "url": "https://github.com/NVIDIA/skills/tree/main/skills/tree/main/skills/nvat-corim-attestation",
+      "description": "<!-- SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. --> <!-- SPDX-License-Identifier: Apache-2.0 -->",
+      "author": {
+        "name": "NVIDIA",
+        "url": "https://github.com/NVIDIA"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "nvidia"
+      ],
+      "detection": {
+        "keywords": [
+          "rust",
+          "go",
+          "api",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "nvat",
+          "corim",
+          "attestation"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/NVIDIA/skills/tree/main/skills && cd skills/skills/nvat-corim-attestation"
+      }
+    },
+    {
+      "id": "skill-official-nvidia-nvat-install-and-guide",
+      "name": "Nvat Install And Guide",
+      "type": "skill",
+      "url": "https://github.com/NVIDIA/skills/tree/main/skills/tree/main/skills/nvat-install-and-guide",
+      "description": "<!-- SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. --> <!-- SPDX-License-Identifier: Apache-2.0 -->",
+      "author": {
+        "name": "NVIDIA",
+        "url": "https://github.com/NVIDIA"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "nvidia"
+      ],
+      "detection": {
+        "keywords": [
+          "rust",
+          "go",
+          "api",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "nvat",
+          "install",
+          "and",
+          "guide"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/NVIDIA/skills/tree/main/skills && cd skills/skills/nvat-install-and-guide"
+      }
+    },
+    {
+      "id": "skill-official-nvidia-nvat-troubleshooting",
+      "name": "Nvat Troubleshooting",
+      "type": "skill",
+      "url": "https://github.com/NVIDIA/skills/tree/main/skills/tree/main/skills/nvat-troubleshooting",
+      "description": "<!-- SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. --> <!-- SPDX-License-Identifier: Apache-2.0 -->",
+      "author": {
+        "name": "NVIDIA",
+        "url": "https://github.com/NVIDIA"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "nvidia"
+      ],
+      "detection": {
+        "keywords": [
+          "rust",
+          "api",
+          "test",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "nvat",
+          "troubleshooting"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/NVIDIA/skills/tree/main/skills && cd skills/skills/nvat-troubleshooting"
       }
     },
     {
@@ -337120,6 +337345,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -337265,6 +337492,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -337431,6 +337660,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/social-auto-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/social-auto-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/social-auto-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -337786,6 +338054,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -337931,6 +338201,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -338097,6 +338369,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/alipay-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/alipay-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/alipay-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -338452,6 +338763,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -338597,6 +338910,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -338763,6 +339078,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/baijiahao-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/baijiahao-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/baijiahao-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -339118,6 +339472,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -339263,6 +339619,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -339429,6 +339787,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/bilibili-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/bilibili-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/bilibili-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -339784,6 +340181,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -339929,6 +340328,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -340095,6 +340496,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/dayu-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/dayu-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/dayu-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -340450,6 +340890,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -340595,6 +341037,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -340761,6 +341205,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/douyin-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/douyin-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/douyin-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -341116,6 +341599,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -341261,6 +341746,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -341427,6 +341914,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/facebook-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/facebook-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/facebook-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -341782,6 +342308,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -341927,6 +342455,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -342093,6 +342623,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/hupu-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/hupu-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/hupu-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -342448,6 +343017,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -342593,6 +343164,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -342759,6 +343332,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/instagram-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/instagram-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/instagram-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -343114,6 +343726,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -343259,6 +343873,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -343425,6 +344041,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/kuaishou-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/kuaishou-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/kuaishou-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -343780,6 +344435,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -343925,6 +344582,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -344091,6 +344750,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/meta-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/meta-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/meta-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -344446,6 +345144,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -344591,6 +345291,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -344757,6 +345459,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/tencent-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/tencent-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/tencent-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -345112,6 +345853,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -345257,6 +346000,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -345423,6 +346168,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/tiktok-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/tiktok-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/tiktok-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -345778,6 +346562,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -345923,6 +346709,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -346089,6 +346877,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/weibo-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/weibo-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/weibo-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -346444,6 +347271,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -346589,6 +347418,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -346755,6 +347586,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/xiaohongshu-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/xiaohongshu-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/xiaohongshu-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -347110,6 +347980,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -347255,6 +348127,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -347421,6 +348295,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/xueqiu-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/xueqiu-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/xueqiu-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -347776,6 +348689,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -347921,6 +348836,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -348087,6 +349004,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/youtube-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/youtube-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/youtube-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -348442,6 +349398,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "douyin",
           "upload"
@@ -348587,6 +349545,8 @@
       ],
       "detection": {
         "keywords": [
+          "git",
+          "github",
           "ci",
           "ai",
           "kuaishou",
@@ -348753,6 +349713,45 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/zhihu-upload && cd social-auto-upload/skills/tiktok-upload"
+      }
+    },
+    {
+      "id": "skill-official-dreammis-wechat-upload",
+      "name": "Wechat Upload",
+      "type": "skill",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/main/skills/zhihu-upload/tree/main/skills/wechat-upload",
+      "description": "使用仓库的 `sau wechat` 命令，不另写网页上传逻辑。",
+      "author": {
+        "name": "dreammis",
+        "url": "https://github.com/dreammis"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "dreammis"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "wechat",
+          "upload"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/dreammis/social-auto-upload/tree/main/skills/zhihu-upload && cd social-auto-upload/skills/wechat-upload"
       }
     },
     {
@@ -369930,7 +370929,7 @@
       "name": "Translate Book",
       "type": "skill",
       "url": "https://github.com/deusyu/translate-book",
-      "description": "`{baseDir}` below is the directory containing this SKILL.md. If your runtime does not substitute it, replace it with that absolute path before running any command.",
+      "description": "`{baseDir}` below is the directory containing this SKILL.md. If your runtime does not substitute it, replace it with that absolute path before running any command, and keep the double quotes around it. If that path contains a double quote, a dollar sign, a backtick or a backslash, the shell would still act on them inside the quotes: stop and ask the user to install the skill in a directory without them.",
       "author": {
         "name": "deusyu",
         "url": "https://github.com/deusyu"
@@ -373773,6 +374772,59 @@
       }
     },
     {
+      "id": "skill-official-cbrock84-headcount",
+      "name": "Headcount",
+      "type": "skill",
+      "url": "https://github.com/cbrock84/headcount",
+      "description": "**[Claude Code](https://claude.com/claude-code)**",
+      "author": {
+        "name": "cbrock84",
+        "url": "https://github.com/cbrock84"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "cbrock84"
+      ],
+      "detection": {
+        "keywords": [
+          "database",
+          "react",
+          "rust",
+          "go",
+          "aws",
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "ml",
+          "llm",
+          "word",
+          "headcount"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/cbrock84/headcount"
+      }
+    },
+    {
       "id": "skill-official-luchasarie-bro-skill",
       "name": "Bro Skill",
       "type": "skill",
@@ -374912,6 +375964,9 @@
           "git",
           "api",
           "ml",
+          "docx",
+          "pdf",
+          "pptx",
           "lite"
         ]
       },
@@ -374931,7 +375986,7 @@
       "name": "Max",
       "type": "skill",
       "url": "https://github.com/Koloyaaa/foreign-academic-translator-skill/tree/main/skills/foreign-academic-translator/tree/main/skills/max",
-      "description": "本目录包含独立的完整新版 Skills 组。安装时将 `skills/` 下的十一个 Skill 目录一起复制到宿主的 Skills 根目录，并保持同级；通过 `translation-orchestrator` 开始。已安装其他档位的同名 Skills 时，请先安全备份并移出，避免宿主发现名称冲突。",
+      "description": "本目录包含独立的完整新版 Skills 组。安装时将 `skills/` 下的十三个 Skill 目录一起复制到宿主的 Skills 根目录，并保持同级；通过 `translation-orchestrator` 开始。已安装其他档位的同名 Skills 时，请先安全备份并移出，避免宿主发现名称冲突。Max 支持 PPTX 输出，Lite/Plus 不提供该格式。",
       "author": {
         "name": "Koloyaaa",
         "url": "https://github.com/Koloyaaa"
@@ -374945,6 +376000,10 @@
       ],
       "detection": {
         "keywords": [
+          "ml",
+          "docx",
+          "pdf",
+          "pptx",
           "max"
         ]
       },
@@ -374964,7 +376023,7 @@
       "name": "Plus",
       "type": "skill",
       "url": "https://github.com/Koloyaaa/foreign-academic-translator-skill/tree/main/skills/foreign-academic-translator/tree/main/skills/plus",
-      "description": "此目录是一个独立的 Plus 套件，包含两个入口：",
+      "description": "此目录是一个独立的 Plus 套件，共包含三个 Skills：",
       "author": {
         "name": "Koloyaaa",
         "url": "https://github.com/Koloyaaa"
@@ -374982,6 +376041,10 @@
           "git",
           "api",
           "ai",
+          "ml",
+          "docx",
+          "pdf",
+          "pptx",
           "plus"
         ]
       },
@@ -375018,6 +376081,8 @@
           "python",
           "test",
           "ci",
+          "ml",
+          "docx",
           "pdf",
           "pptx",
           "pro"
@@ -379537,6 +380602,43 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/ibelick/ui-skills && cd ui-skills/skills/device-frames"
+      }
+    },
+    {
+      "id": "skill-official-ibelick-filming-software",
+      "name": "Filming Software",
+      "type": "skill",
+      "url": "https://github.com/ibelick/ui-skills/tree/main/skills/filming-software",
+      "description": "A short film of the software: real pages on a real screen, a camera that moves like an operator's, shots joined by hard cuts. Fast, confident, no decoration.",
+      "author": {
+        "name": "ibelick",
+        "url": "https://github.com/ibelick"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "ibelick"
+      ],
+      "detection": {
+        "keywords": [
+          "go",
+          "ci",
+          "ai",
+          "filming",
+          "software"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ibelick/ui-skills && cd ui-skills/skills/filming-software"
       }
     },
     {
@@ -441890,7 +442992,7 @@
       "name": "Motionboard",
       "type": "skill",
       "url": "https://github.com/krisyangdev/motionboard/tree/main/skills/motionboard/tree/main/skills/motionboard",
-      "description": "Motionboard is shot language broken down from real Apple, Linear, Figma and Google launch films. Each shot is recreated in code as a ~10s HyperFrames film (HTML + GSAP rendered to video). This skill holds 48 recipes and their runnable source projects. You make one shot, plan and build a whole launch film, or turn a product URL or repo into a launch film in one command.",
+      "description": "Motionboard is shot language broken down from real Apple, Linear, Figma and Google launch films. Each shot is recreated in code as a ~10s HyperFrames film (HTML + GSAP rendered to video). This skill holds 58 recipes and their runnable source projects. You make one shot, plan and build a whole launch film, or turn a product URL or repo into a launch film in one command.",
       "author": {
         "name": "krisyangdev",
         "url": "https://github.com/krisyangdev"
@@ -451406,6 +452508,53 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/ollygarden/opentelemetry-agent-skills && cd opentelemetry-agent-skills/skills/otel-browser"
+      }
+    },
+    {
+      "id": "skill-official-ollygarden-otel-cicd",
+      "name": "Otel Cicd",
+      "type": "skill",
+      "url": "https://github.com/ollygarden/opentelemetry-agent-skills/tree/main/skills/otel-cicd",
+      "description": "Use the `otel-collector` skill for other components and Collector-wide rules, `otel-semantic-conventions` for full attribute definitions, and the language skills (`otel-go`, `otel-python`, ...) for SDK setup.",
+      "author": {
+        "name": "ollygarden",
+        "url": "https://github.com/ollygarden"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "ollygarden"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "git",
+          "github",
+          "gitlab",
+          "test",
+          "testing",
+          "ci",
+          "cd",
+          "security",
+          "auth",
+          "authentication",
+          "ai",
+          "otel",
+          "cicd"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/ollygarden/opentelemetry-agent-skills && cd opentelemetry-agent-skills/skills/otel-cicd"
       }
     },
     {
@@ -462010,6 +463159,53 @@
       }
     },
     {
+      "id": "skill-official-muratcankoylan-compaction-control-profiling",
+      "name": "Compaction Control Profiling",
+      "type": "skill",
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-fundamentals/tree/main/skills/compaction-control-profiling",
+      "description": "This skill covers the decision that comes before any self-compacting agent design: for this model, on this workload, should the harness or the model decide when and what to compact? The answer is measured, not assumed. In a cross-model study that gave four current models one compaction interface and one set of instructions, one model nearly tripled its score at a tight context budget while another called the interface in a small minority of tasks and trailed the harness baseline until budgets we",
+      "author": {
+        "name": "muratcankoylan",
+        "url": "https://github.com/muratcankoylan"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "muratcankoylan"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "deno",
+          "git",
+          "github",
+          "rest",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "word",
+          "compaction",
+          "control",
+          "profiling"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-fundamentals && cd Agent-Skills-for-Context-Engineering/skills/compaction-control-profiling"
+      }
+    },
+    {
       "id": "skill-official-muratcankoylan-context-compression",
       "name": "Context Compression",
       "type": "skill",
@@ -462868,6 +464064,53 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-degradation && cd Agent-Skills-for-Context-Engineering/skills/bdi-mental-states"
+      }
+    },
+    {
+      "id": "skill-official-muratcankoylan-compaction-control-profiling",
+      "name": "Compaction Control Profiling",
+      "type": "skill",
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-degradation/tree/main/skills/compaction-control-profiling",
+      "description": "This skill covers the decision that comes before any self-compacting agent design: for this model, on this workload, should the harness or the model decide when and what to compact? The answer is measured, not assumed. In a cross-model study that gave four current models one compaction interface and one set of instructions, one model nearly tripled its score at a tight context budget while another called the interface in a small minority of tasks and trailed the harness baseline until budgets we",
+      "author": {
+        "name": "muratcankoylan",
+        "url": "https://github.com/muratcankoylan"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "muratcankoylan"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "deno",
+          "git",
+          "github",
+          "rest",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "word",
+          "compaction",
+          "control",
+          "profiling"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-degradation && cd Agent-Skills-for-Context-Engineering/skills/compaction-control-profiling"
       }
     },
     {
@@ -463732,6 +464975,53 @@
       }
     },
     {
+      "id": "skill-official-muratcankoylan-compaction-control-profiling",
+      "name": "Compaction Control Profiling",
+      "type": "skill",
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-compression/tree/main/skills/compaction-control-profiling",
+      "description": "This skill covers the decision that comes before any self-compacting agent design: for this model, on this workload, should the harness or the model decide when and what to compact? The answer is measured, not assumed. In a cross-model study that gave four current models one compaction interface and one set of instructions, one model nearly tripled its score at a tight context budget while another called the interface in a small minority of tasks and trailed the harness baseline until budgets we",
+      "author": {
+        "name": "muratcankoylan",
+        "url": "https://github.com/muratcankoylan"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "muratcankoylan"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "deno",
+          "git",
+          "github",
+          "rest",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "word",
+          "compaction",
+          "control",
+          "profiling"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-compression && cd Agent-Skills-for-Context-Engineering/skills/compaction-control-profiling"
+      }
+    },
+    {
       "id": "skill-official-muratcankoylan-context-compression",
       "name": "Context Compression",
       "type": "skill",
@@ -464590,6 +465880,53 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-optimization && cd Agent-Skills-for-Context-Engineering/skills/bdi-mental-states"
+      }
+    },
+    {
+      "id": "skill-official-muratcankoylan-compaction-control-profiling",
+      "name": "Compaction Control Profiling",
+      "type": "skill",
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-optimization/tree/main/skills/compaction-control-profiling",
+      "description": "This skill covers the decision that comes before any self-compacting agent design: for this model, on this workload, should the harness or the model decide when and what to compact? The answer is measured, not assumed. In a cross-model study that gave four current models one compaction interface and one set of instructions, one model nearly tripled its score at a tight context budget while another called the interface in a small minority of tasks and trailed the harness baseline until budgets we",
+      "author": {
+        "name": "muratcankoylan",
+        "url": "https://github.com/muratcankoylan"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "muratcankoylan"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "deno",
+          "git",
+          "github",
+          "rest",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "word",
+          "compaction",
+          "control",
+          "profiling"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-optimization && cd Agent-Skills-for-Context-Engineering/skills/compaction-control-profiling"
       }
     },
     {
@@ -465454,6 +466791,53 @@
       }
     },
     {
+      "id": "skill-official-muratcankoylan-compaction-control-profiling",
+      "name": "Compaction Control Profiling",
+      "type": "skill",
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/multi-agent-patterns/tree/main/skills/compaction-control-profiling",
+      "description": "This skill covers the decision that comes before any self-compacting agent design: for this model, on this workload, should the harness or the model decide when and what to compact? The answer is measured, not assumed. In a cross-model study that gave four current models one compaction interface and one set of instructions, one model nearly tripled its score at a tight context budget while another called the interface in a small minority of tasks and trailed the harness baseline until budgets we",
+      "author": {
+        "name": "muratcankoylan",
+        "url": "https://github.com/muratcankoylan"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "muratcankoylan"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "deno",
+          "git",
+          "github",
+          "rest",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "word",
+          "compaction",
+          "control",
+          "profiling"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/multi-agent-patterns && cd Agent-Skills-for-Context-Engineering/skills/compaction-control-profiling"
+      }
+    },
+    {
       "id": "skill-official-muratcankoylan-context-compression",
       "name": "Context Compression",
       "type": "skill",
@@ -466312,6 +467696,53 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/memory-systems && cd Agent-Skills-for-Context-Engineering/skills/bdi-mental-states"
+      }
+    },
+    {
+      "id": "skill-official-muratcankoylan-compaction-control-profiling",
+      "name": "Compaction Control Profiling",
+      "type": "skill",
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/memory-systems/tree/main/skills/compaction-control-profiling",
+      "description": "This skill covers the decision that comes before any self-compacting agent design: for this model, on this workload, should the harness or the model decide when and what to compact? The answer is measured, not assumed. In a cross-model study that gave four current models one compaction interface and one set of instructions, one model nearly tripled its score at a tight context budget while another called the interface in a small minority of tasks and trailed the harness baseline until budgets we",
+      "author": {
+        "name": "muratcankoylan",
+        "url": "https://github.com/muratcankoylan"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "muratcankoylan"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "deno",
+          "git",
+          "github",
+          "rest",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "word",
+          "compaction",
+          "control",
+          "profiling"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/memory-systems && cd Agent-Skills-for-Context-Engineering/skills/compaction-control-profiling"
       }
     },
     {
@@ -467176,6 +468607,53 @@
       }
     },
     {
+      "id": "skill-official-muratcankoylan-compaction-control-profiling",
+      "name": "Compaction Control Profiling",
+      "type": "skill",
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/tool-design/tree/main/skills/compaction-control-profiling",
+      "description": "This skill covers the decision that comes before any self-compacting agent design: for this model, on this workload, should the harness or the model decide when and what to compact? The answer is measured, not assumed. In a cross-model study that gave four current models one compaction interface and one set of instructions, one model nearly tripled its score at a tight context budget while another called the interface in a small minority of tasks and trailed the harness baseline until budgets we",
+      "author": {
+        "name": "muratcankoylan",
+        "url": "https://github.com/muratcankoylan"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "muratcankoylan"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "deno",
+          "git",
+          "github",
+          "rest",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "word",
+          "compaction",
+          "control",
+          "profiling"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/tool-design && cd Agent-Skills-for-Context-Engineering/skills/compaction-control-profiling"
+      }
+    },
+    {
       "id": "skill-official-muratcankoylan-context-compression",
       "name": "Context Compression",
       "type": "skill",
@@ -468034,6 +469512,53 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/evaluation && cd Agent-Skills-for-Context-Engineering/skills/bdi-mental-states"
+      }
+    },
+    {
+      "id": "skill-official-muratcankoylan-compaction-control-profiling",
+      "name": "Compaction Control Profiling",
+      "type": "skill",
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/evaluation/tree/main/skills/compaction-control-profiling",
+      "description": "This skill covers the decision that comes before any self-compacting agent design: for this model, on this workload, should the harness or the model decide when and what to compact? The answer is measured, not assumed. In a cross-model study that gave four current models one compaction interface and one set of instructions, one model nearly tripled its score at a tight context budget while another called the interface in a small minority of tasks and trailed the harness baseline until budgets we",
+      "author": {
+        "name": "muratcankoylan",
+        "url": "https://github.com/muratcankoylan"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "muratcankoylan"
+      ],
+      "detection": {
+        "keywords": [
+          "python",
+          "go",
+          "deno",
+          "git",
+          "github",
+          "rest",
+          "test",
+          "ci",
+          "auth",
+          "ai",
+          "ml",
+          "word",
+          "compaction",
+          "control",
+          "profiling"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/evaluation && cd Agent-Skills-for-Context-Engineering/skills/compaction-control-profiling"
       }
     },
     {
@@ -471722,7 +473247,7 @@
       "name": "Universal Exam Cram Coach",
       "type": "skill",
       "url": "https://github.com/ZeKaiNie/universal-examprep-skill/tree/main/skills/universal-exam-cram-coach",
-      "description": "You are a patient exam tutor. All facts come from the student's own files through `python coach.py …` (run it from this skill's folder, or give the full path to `coach.py`). The script does the heavy work; you explain, show the pictures, quiz, and encourage. Reply in the student's language.",
+      "description": "You are a patient exam tutor who teaches through the course's own problems. All facts come from the student's files through `python coach.py …` (run it from this skill's folder, or give the full path to `coach.py`). The script finds the problems, the lecture text each one needs, the formula sheet and the reference answers; you explain, show the pictures, drill variants and grade. Reply in the student's language.",
       "author": {
         "name": "ZeKaiNie",
         "url": "https://github.com/ZeKaiNie"
@@ -510309,6 +511834,48 @@
       "install": {
         "method": "manual",
         "command": "git clone https://github.com/AceDataCloud/Skills/tree/main/skills/fish-audio && cd Skills/skills/toutiao"
+      }
+    },
+    {
+      "id": "skill-official-acedatacloud-tripo-3d",
+      "name": "Tripo 3d",
+      "type": "skill",
+      "url": "https://github.com/AceDataCloud/Skills/tree/main/skills/fish-audio/tree/main/skills/tripo-3d",
+      "description": "Use `https://api.acedata.cloud` with `Authorization: Bearer $ACEDATACLOUD_API_TOKEN` and JSON bodies. A restricted token needs the requested operation and `/tripo/tasks` for polling. [Token setup](https://github.com/AceDataCloud/Skills/blob/main/skills/_shared/authentication.md)",
+      "author": {
+        "name": "AceDataCloud",
+        "url": "https://github.com/AceDataCloud"
+      },
+      "category": "Agent Skills",
+      "tags": [
+        "agent skills",
+        "skill",
+        "official",
+        "acedatacloud"
+      ],
+      "detection": {
+        "keywords": [
+          "git",
+          "github",
+          "api",
+          "rest",
+          "test",
+          "ci",
+          "auth",
+          "authentication",
+          "ai",
+          "tripo"
+        ]
+      },
+      "metrics": {
+        "source": "official",
+        "isOfficial": true,
+        "stars": 0,
+        "securityScore": 100
+      },
+      "install": {
+        "method": "manual",
+        "command": "git clone https://github.com/AceDataCloud/Skills/tree/main/skills/fish-audio && cd Skills/skills/tripo-3d"
       }
     },
     {
